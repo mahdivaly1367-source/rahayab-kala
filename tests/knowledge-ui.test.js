@@ -87,3 +87,30 @@ test('graph layout remains responsive and pannable', () => {
   assert.match(js, /pointerdown/);
   assert.match(js, /scrollLeft/);
 });
+
+
+test('graph inspector loads real product photos through the local image proxy', () => {
+  assert.match(html, /id="kgImageGallery"/);
+  assert.match(js, /async function loadPhotoGallery/);
+  assert.match(js, /fetch\('\/api\/search\?/);
+  assert.match(js, /isTrustedProductImage/);
+  assert.match(js, /imageProxyUrl\(product\.image\)/);
+  assert.match(js, /imageByNodeId/);
+  assert.match(css, /\.kg-gallery-grid/);
+  assert.match(css, /\.kg-photo-frame/);
+});
+
+test('graph nodes and Persian labels use the larger image-card layout', () => {
+  assert.match(js, /const nodeWidth = 276/);
+  assert.match(js, /const nodeHeight = 88/);
+  assert.match(js, /class: 'kg-node-image'/);
+  assert.match(css, /\.kg-svg-label\{[^}]*font-size:14px/);
+  assert.match(css, /\.kg-inspector h3\{font-size:20px/);
+  assert.match(css, /@media\(max-width:580px\)/);
+});
+
+test('photo gallery does not imply verified price or availability', () => {
+  assert.match(js, /قیمت، فروشنده و موجودی مستقل تأیید نشده‌اند/);
+  assert.match(js, /موجودی: بررسی‌نشده/);
+  assert.match(js, /قیمت: مشاهده نشده/);
+});
