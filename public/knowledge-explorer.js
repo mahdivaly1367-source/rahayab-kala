@@ -67,6 +67,9 @@ async function initKnowledgeExplorer() {
   let searchRequest = 0;
   let zoom = 1;
   let lastLayout = null;
+  const photoSearchCache = new Map();
+  const imageByNodeId = new Map();
+  let activePhotoRequest = 0;
 
   const make = (tag, cls, text) => {
     const el = document.createElement(tag);
@@ -89,6 +92,193 @@ async function initKnowledgeExplorer() {
       return url.protocol === 'https:' && url.hostname === 'www.digikala.com' ? url.href : '';
     } catch { return ''; }
   };
+
+  function isTrustedProductImage(value) {
+    try {
+      const url = new URL(String(value || ''));
+      return url.protocol === 'https:' &&
+        /^dkstatics-public(?:-\d+)?\.digikala\.com$/i.test(url.hostname) &&
+        url.pathname.startsWith('/digikala-products/');
+    } catch { return false; }
+  }
+
+  function imageProxyUrl(value) {
+    return '/api/image?url=' + encodeURIComponent(value);
+  }
+
+  function nodeIcon(node) {
+    if (isProduct(node)) return '▣';
+    if (node.axis === 'store_taxonomy') return '▤';
+    if (node.node_type === 'system') return '⌂';
+    if (node.node_type === 'application') return '↗';
+    if (node.node_type === 'technical_feature') return '◇';
+    if (node.axis === 'nature') return '✦';
+    return '•';
+  }
+
+  function photoTermsForNode(node) {
+    const terms = [];
+    const add = value => {
+      const term = String(value || '').trim();
+      if (!term || terms.some(old => old.toLocaleLowerCase() === term.toLocaleLowerCase())) return;
+      terms.push(term);
+    };
+
+    if (isProduct(node)) add(node.label);
+    (Array.isArray(node.aliases) ? node.aliases : []).slice(0, 2).forEach(add);
+    add(node.label);
+
+    const related = relationChildren(node, node.id === focusedNodeId);
+    related.filter(item => !isProduct(item.node)).slice(0, 2).forEach(item => add(item.node.label));
+    related.filter(item => isProduct(item.node)).slice(0, 2).forEach(item => add(item.node.label));
+
+    return terms.slice(0, 3);
+  }
+
+  async function fetchPhotoSearch(term) {
+    if (photoSearchCache.has(term)) return photoSearchCache.get(term);
+    const promise = (async () => {
+      const params = new URLSearchParams({ query: term, wide: 'false' });
+      const response = await fetch('/api/search?' + params.toString(), { cache: 'no-store' });
+      const payload = await response.json();
+      if (!response.ok) throw new Error(payload.error || 'جست‌وجوی تصویر ناموفق بود.');
+      return Array.isArray(payload.products) ? payload.products : [];
+    })();
+    photoSearchCache.set(term, promise);
+    try {
+      return await promise;
+    } catch (error) {
+      photoSearchCache.delete(term);
+      throw error;
+    }
+  }
+
+  function mapPhotoResultsToGraph(node, products) {
+    const first = products.find(product => isTrustedProductImage(product.image));
+    if (first && !isProduct(node)) imageByNodeId.set(node.id, first.image);
+
+    const graphProducts = graph.nodes.filter(isProduct);
+    for (const product of products) {
+      if (!isTrustedProductImage(product.image)) continue;
+      const liveDigits = String(product.id || '').replace(/\D/g, '');
+      const liveTitle = String(product.title || '').trim().toLocaleLowerCase();
+      const match = graphProducts.find(candidate => {
+        const candidateDigits = String(candidate.product_id || candidate.candidate_product_id || '').replace(/\D/g, '');
+        return (liveDigits && candidateDigits && liveDigits === candidateDigits) ||
+          (liveTitle && candidate.label.toLocaleLowerCase() === liveTitle);
+      });
+      if (match) imageByNodeId.set(match.id, product.image);
+    }
+  }
+
+  function renderPhotoGallery(node, products, term) {
+    const host = $('kgImageGallery');
+    host.hidden = false;
+    host.replaceChildren();
+
+    const header = make('div', 'kg-gallery-heading');
+    header.append(
+      make('strong', '', 'تصاویر و کالاهای مرتبط'),
+      make('small', '', 'عبارت جست‌وجو: ' + term)
+    );
+    host.appendChild(header);
+
+    const visualProducts = products.filter(product =>
+      product && isTrustedProductImage(product.image) && product.title
+    ).slice(0, 4);
+
+    if (!visualProducts.length) {
+      host.appendChild(make('div', 'kg-gallery-empty',
+        'برای این مفهوم تصویر قابل نمایش از جست‌وجوی فعلی دریافت نشد. این به معنی نبود کالا نیست.'));
+      return;
+    }
+
+    const grid = make('div', 'kg-gallery-grid');
+    visualProducts.forEach(product => {
+      const url = safeProductUrl(product.url);
+      const card = url ? make('a', 'kg-photo-card') : make('article', 'kg-photo-card');
+      if (url) {
+        card.href = url;
+        card.target = '_blank';
+        card.rel = 'noopener noreferrer';
+      }
+
+      const imageFrame = make('div', 'kg-photo-frame');
+      const image = document.createElement('img');
+      image.src = imageProxyUrl(product.image);
+      image.alt = product.title;
+      image.loading = 'lazy';
+      image.decoding = 'async';
+      image.onerror = () => {
+        if (!image.dataset.directTried) {
+          image.dataset.directTried = '1';
+          image.src = product.image;
+        } else {
+          image.remove();
+          imageFrame.appendChild(make('span', 'kg-photo-fallback', 'تصویر بارگذاری نشد'));
+        }
+      };
+      imageFrame.appendChild(image);
+      card.append(
+        imageFrame,
+        make('strong', 'kg-photo-title', product.title),
+        make('small', 'kg-photo-source', url ? 'مشاهده مقصد کالا ↗' : 'نتیجه جست‌وجو')
+      );
+      grid.appendChild(card);
+    });
+    host.appendChild(grid);
+    host.appendChild(make('div', 'kg-gallery-note',
+      'تصاویر از پاسخ جست‌وجوی زندهٔ سرویس واسط گرفته شده‌اند؛ قیمت، فروشنده و موجودی مستقل تأیید نشده‌اند.'));
+  }
+
+  async function loadPhotoGallery(node) {
+    const host = $('kgImageGallery');
+    const requestId = ++activePhotoRequest;
+    const terms = photoTermsForNode(node);
+    host.hidden = false;
+    host.replaceChildren(
+      make('div', 'kg-gallery-heading', 'تصاویر و کالاهای مرتبط'),
+      make('div', 'kg-gallery-loading', 'در حال یافتن تصاویر مرتبط…')
+    );
+
+    if (!terms.length) {
+      host.replaceChildren(make('div', 'kg-gallery-empty', 'برای این گره عبارت جست‌وجوی تصویری در دسترس نیست.'));
+      return;
+    }
+
+    let products = [];
+    let selectedTerm = terms[0];
+    let lastError = null;
+
+    for (const term of terms) {
+      try {
+        const found = await fetchPhotoSearch(term);
+        if (requestId !== activePhotoRequest) return;
+        const images = found.filter(product => isTrustedProductImage(product.image));
+        if (images.length) {
+          products = images;
+          selectedTerm = term;
+          break;
+        }
+        if (!products.length) products = found;
+      } catch (error) {
+        lastError = error;
+      }
+      if (products.length >= 4) break;
+    }
+
+    if (requestId !== activePhotoRequest) return;
+
+    if (!products.some(product => isTrustedProductImage(product.image)) && lastError && !products.length) {
+      host.replaceChildren(make('div', 'kg-gallery-empty',
+        'دریافت تصاویر از سرویس جست‌وجو ناموفق بود: ' + String(lastError.message || lastError)));
+      return;
+    }
+
+    mapPhotoResultsToGraph(node, products);
+    renderPhotoGallery(node, products, selectedTerm);
+    drawGraph();
+  }
 
   function eligibleNodes() {
     return graph.nodes.filter(node => node.axis === activeAxis);
@@ -196,11 +386,11 @@ async function initKnowledgeExplorer() {
       entries.push(rootEntry);
     });
 
-    const nodeWidth = 224;
-    const nodeHeight = 66;
-    const columnGap = 282;
-    const width = Math.max(980, 310 + maxDepth * columnGap);
-    let cursorY = 58;
+    const nodeWidth = 276;
+    const nodeHeight = 88;
+    const columnGap = 344;
+    const width = Math.max(1120, 360 + maxDepth * columnGap);
+    let cursorY = 66;
 
     function position(entry) {
       entry.x = width - nodeWidth - 38 - entry.depth * columnGap;
@@ -209,7 +399,7 @@ async function initKnowledgeExplorer() {
         entry.y = (entry.children[0].y + entry.children[entry.children.length - 1].y) / 2;
       } else {
         entry.y = cursorY;
-        cursorY += 86;
+        cursorY += 112;
       }
     }
 
@@ -218,11 +408,11 @@ async function initKnowledgeExplorer() {
       cursorY += index < entries.length - 1 ? 30 : 0;
     });
 
-    const height = Math.max(480, cursorY + 55);
+    const height = Math.max(520, cursorY + 70);
     return { roots: entries, width, height, nodeWidth, nodeHeight, maxDepth };
   }
 
-  function wrapLabel(label, maxChars = 25) {
+  function wrapLabel(label, maxChars = 19) {
     const words = String(label || '').split(/\s+/);
     const lines = [];
     let line = '';
@@ -258,25 +448,50 @@ async function initKnowledgeExplorer() {
       x: 0, y: 0, width: layout.nodeWidth, height: layout.nodeHeight, rx: 15
     }));
 
-    const dotClass = isProduct(node) ? 'kg-svg-dot product'
-      : node.axis === 'store_taxonomy' ? 'kg-svg-dot store'
-      : 'kg-svg-dot concept';
-    group.appendChild(svg('circle', {
-      class: dotClass, cx: 19, cy: layout.nodeHeight / 2, r: 7
+    const thumbnail = imageByNodeId.get(node.id);
+    group.appendChild(svg('rect', {
+      class: 'kg-thumb-back',
+      x: 10, y: 13, width: 62, height: 62, rx: 12
     }));
+    if (thumbnail && isTrustedProductImage(thumbnail)) {
+      const clipId = 'kg-clip-' + node.id.replace(/[^a-zA-Z0-9_-]/g, '-');
+      const defs = svg('defs');
+      const clip = svg('clipPath', { id: clipId });
+      clip.appendChild(svg('rect', { x: 10, y: 13, width: 62, height: 62, rx: 12 }));
+      defs.appendChild(clip);
+      group.appendChild(defs);
+      group.appendChild(svg('image', {
+        href: imageProxyUrl(thumbnail),
+        x: 10, y: 13, width: 62, height: 62,
+        preserveAspectRatio: 'xMidYMid slice',
+        'clip-path': 'url(#' + clipId + ')',
+        class: 'kg-node-image'
+      }));
+    } else {
+      const iconClass = isProduct(node) ? 'product' : node.axis === 'store_taxonomy' ? 'store' : 'concept';
+      group.appendChild(svg('rect', {
+        class: 'kg-thumb-placeholder ' + iconClass,
+        x: 10, y: 13, width: 62, height: 62, rx: 12
+      }));
+      group.appendChild(svg('text', {
+        class: 'kg-node-icon',
+        x: 41, y: 53,
+        'text-anchor': 'middle'
+      }, nodeIcon(node)));
+    }
 
     const labelLines = wrapLabel(node.label);
     const labelText = svg('text', {
       class: 'kg-svg-label',
       x: layout.nodeWidth - 15,
-      y: labelLines.length > 1 ? 27 : 31,
+      y: labelLines.length > 1 ? 34 : 43,
       'text-anchor': 'end',
       direction: 'rtl'
     });
     labelLines.forEach((line, index) => {
       labelText.appendChild(svg('tspan', {
         x: layout.nodeWidth - 15,
-        dy: index === 0 ? 0 : 16
+        dy: index === 0 ? 0 : 21
       }, line));
     });
     group.appendChild(labelText);
@@ -287,7 +502,7 @@ async function initKnowledgeExplorer() {
     group.appendChild(svg('text', {
       class: 'kg-svg-subtitle',
       x: layout.nodeWidth - 15,
-      y: 55,
+      y: 72,
       'text-anchor': 'end',
       direction: 'rtl'
     }, subText));
@@ -297,12 +512,12 @@ async function initKnowledgeExplorer() {
         class: 'kg-svg-expand',
         cx: layout.nodeWidth - 15,
         cy: 0,
-        r: 10
+        r: 11
       }));
       group.appendChild(svg('text', {
         class: 'kg-svg-expand-text',
         x: layout.nodeWidth - 15,
-        y: 4,
+        y: 5,
         'text-anchor': 'middle'
       }, expanded.has(node.id) ? '−' : '+'));
     }
@@ -398,6 +613,8 @@ async function initKnowledgeExplorer() {
     if (node.aliases && node.aliases.length) {
       addBadge(badges, 'نام‌های دیگر: ' + node.aliases.slice(0, 5).join('، '));
     }
+
+    loadPhotoGallery(node);
 
     const relationHost = $('kgInspectorRelations');
     relationHost.replaceChildren();
@@ -521,6 +738,9 @@ async function initKnowledgeExplorer() {
     $('kgInspectorBadges').replaceChildren();
     $('kgInspectorRelations').replaceChildren();
     $('kgInspectorProductLink').replaceChildren();
+    $('kgImageGallery').hidden = true;
+    $('kgImageGallery').replaceChildren();
+    activePhotoRequest++;
     $('kgFocusButton').hidden = true;
     $('kgLiveQueryButton').hidden = true;
   }
