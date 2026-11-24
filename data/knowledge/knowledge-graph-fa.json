@@ -3315,14 +3315,6 @@
     },
     {
       "id": "rel.0030",
-      "source": "store.root.11",
-      "target": "store.root.11",
-      "type": "child_of",
-      "confidence": "high",
-      "evidence_class": "official_current_page"
-    },
-    {
-      "id": "rel.0031",
       "source": "store.group.tools.subcategory.01",
       "target": "store.root.11",
       "type": "child_of",
@@ -3330,7 +3322,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0032",
+      "id": "rel.0031",
       "source": "store.group.tools.subcategory.02",
       "target": "store.root.11",
       "type": "child_of",
@@ -3338,7 +3330,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0033",
+      "id": "rel.0032",
       "source": "store.group.tools.subcategory.03",
       "target": "store.root.11",
       "type": "child_of",
@@ -3346,7 +3338,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0034",
+      "id": "rel.0033",
       "source": "store.group.tools.subcategory.04",
       "target": "store.root.11",
       "type": "child_of",
@@ -3354,7 +3346,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0035",
+      "id": "rel.0034",
       "source": "store.group.tools.subcategory.05",
       "target": "store.root.11",
       "type": "child_of",
@@ -3362,7 +3354,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0036",
+      "id": "rel.0035",
       "source": "store.group.tools.subcategory.06",
       "target": "store.root.11",
       "type": "child_of",
@@ -3370,7 +3362,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0037",
+      "id": "rel.0036",
       "source": "store.group.tools.subcategory.07",
       "target": "store.root.11",
       "type": "child_of",
@@ -3378,7 +3370,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0038",
+      "id": "rel.0037",
       "source": "store.group.tools.subcategory.08",
       "target": "store.root.11",
       "type": "child_of",
@@ -3386,7 +3378,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0039",
+      "id": "rel.0038",
       "source": "store.group.tools.subcategory.09",
       "target": "store.root.11",
       "type": "child_of",
@@ -3394,7 +3386,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0040",
+      "id": "rel.0039",
       "source": "store.group.tools.term.01",
       "target": "store.root.11",
       "type": "listed_under",
@@ -3402,7 +3394,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0041",
+      "id": "rel.0040",
       "source": "store.group.tools.term.02",
       "target": "store.root.11",
       "type": "listed_under",
@@ -3410,7 +3402,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0042",
+      "id": "rel.0041",
       "source": "store.group.tools.term.03",
       "target": "store.root.11",
       "type": "listed_under",
@@ -3418,7 +3410,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0043",
+      "id": "rel.0042",
       "source": "store.group.tools.term.04",
       "target": "store.root.11",
       "type": "listed_under",
@@ -3426,7 +3418,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0044",
+      "id": "rel.0043",
       "source": "store.group.tools.term.05",
       "target": "store.root.11",
       "type": "listed_under",
@@ -3434,7 +3426,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0045",
+      "id": "rel.0044",
       "source": "store.group.tools.term.06",
       "target": "store.root.11",
       "type": "listed_under",
@@ -3442,7 +3434,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0046",
+      "id": "rel.0045",
       "source": "store.group.tools.term.07",
       "target": "store.root.11",
       "type": "listed_under",
@@ -3450,7 +3442,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0047",
+      "id": "rel.0046",
       "source": "store.group.tools.term.08",
       "target": "store.root.11",
       "type": "listed_under",
@@ -3458,7 +3450,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0048",
+      "id": "rel.0047",
       "source": "store.group.tools.term.09",
       "target": "store.root.11",
       "type": "listed_under",
@@ -3466,7 +3458,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0049",
+      "id": "rel.0048",
       "source": "store.group.tools.term.10",
       "target": "store.root.11",
       "type": "listed_under",
@@ -3474,7 +3466,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0050",
+      "id": "rel.0049",
       "source": "store.group.tools.term.11",
       "target": "store.root.11",
       "type": "listed_under",
@@ -3482,7 +3474,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0051",
+      "id": "rel.0050",
       "source": "store.group.tools.term.12",
       "target": "store.root.11",
       "type": "listed_under",
@@ -3490,7 +3482,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0052",
+      "id": "rel.0051",
       "source": "store.group.tools.term.13",
       "target": "store.root.11",
       "type": "listed_under",
@@ -3498,7 +3490,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0053",
+      "id": "rel.0052",
       "source": "store.group.tools.term.14",
       "target": "store.root.11",
       "type": "listed_under",
@@ -3506,7 +3498,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0054",
+      "id": "rel.0053",
       "source": "store.group.tools.term.15",
       "target": "store.root.11",
       "type": "listed_under",
@@ -3514,7 +3506,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0055",
+      "id": "rel.0054",
       "source": "store.group.tools.term.16",
       "target": "store.root.11",
       "type": "listed_under",
@@ -3522,7 +3514,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0056",
+      "id": "rel.0055",
       "source": "store.group.tools.term.17",
       "target": "store.root.11",
       "type": "listed_under",
@@ -3530,7 +3522,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0057",
+      "id": "rel.0056",
       "source": "store.group.tools.term.18",
       "target": "store.root.11",
       "type": "listed_under",
@@ -3538,7 +3530,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0058",
+      "id": "rel.0057",
       "source": "store.group.tools.term.19",
       "target": "store.root.11",
       "type": "listed_under",
@@ -3546,7 +3538,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0059",
+      "id": "rel.0058",
       "source": "store.group.tools.term.20",
       "target": "store.root.11",
       "type": "listed_under",
@@ -3554,7 +3546,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0060",
+      "id": "rel.0059",
       "source": "store.group.tools.term.21",
       "target": "store.root.11",
       "type": "listed_under",
@@ -3562,7 +3554,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0061",
+      "id": "rel.0060",
       "source": "store.group.tools.term.22",
       "target": "store.root.11",
       "type": "listed_under",
@@ -3570,7 +3562,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0062",
+      "id": "rel.0061",
       "source": "store.group.tools.term.23",
       "target": "store.root.11",
       "type": "listed_under",
@@ -3578,7 +3570,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0063",
+      "id": "rel.0062",
       "source": "store.group.tools.term.24",
       "target": "store.root.11",
       "type": "listed_under",
@@ -3586,7 +3578,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0064",
+      "id": "rel.0063",
       "source": "store.group.tools.term.25",
       "target": "store.root.11",
       "type": "listed_under",
@@ -3594,7 +3586,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0065",
+      "id": "rel.0064",
       "source": "store.group.tools.term.26",
       "target": "store.root.11",
       "type": "listed_under",
@@ -3602,7 +3594,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0066",
+      "id": "rel.0065",
       "source": "store.group.tools.term.27",
       "target": "store.root.11",
       "type": "listed_under",
@@ -3610,7 +3602,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0067",
+      "id": "rel.0066",
       "source": "store.group.tools.term.28",
       "target": "store.root.11",
       "type": "listed_under",
@@ -3618,7 +3610,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0068",
+      "id": "rel.0067",
       "source": "store.group.tools.term.29",
       "target": "store.root.11",
       "type": "listed_under",
@@ -3626,7 +3618,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0069",
+      "id": "rel.0068",
       "source": "store.group.tools.term.30",
       "target": "store.root.11",
       "type": "listed_under",
@@ -3634,7 +3626,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0070",
+      "id": "rel.0069",
       "source": "store.group.tools.term.31",
       "target": "store.root.11",
       "type": "listed_under",
@@ -3642,15 +3634,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0071",
-      "source": "store.root.09",
-      "target": "store.root.09",
-      "type": "child_of",
-      "confidence": "high",
-      "evidence_class": "official_current_page"
-    },
-    {
-      "id": "rel.0072",
+      "id": "rel.0070",
       "source": "store.group.automotive.subcategory.01",
       "target": "store.root.09",
       "type": "child_of",
@@ -3658,7 +3642,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0073",
+      "id": "rel.0071",
       "source": "store.group.automotive.subcategory.02",
       "target": "store.root.09",
       "type": "child_of",
@@ -3666,7 +3650,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0074",
+      "id": "rel.0072",
       "source": "store.group.automotive.subcategory.03",
       "target": "store.root.09",
       "type": "child_of",
@@ -3674,7 +3658,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0075",
+      "id": "rel.0073",
       "source": "store.group.automotive.subcategory.04",
       "target": "store.root.09",
       "type": "child_of",
@@ -3682,7 +3666,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0076",
+      "id": "rel.0074",
       "source": "store.group.automotive.subcategory.05",
       "target": "store.root.09",
       "type": "child_of",
@@ -3690,7 +3674,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0077",
+      "id": "rel.0075",
       "source": "store.group.automotive.subcategory.06",
       "target": "store.root.09",
       "type": "child_of",
@@ -3698,7 +3682,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0078",
+      "id": "rel.0076",
       "source": "store.group.automotive.subcategory.07",
       "target": "store.root.09",
       "type": "child_of",
@@ -3706,7 +3690,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0079",
+      "id": "rel.0077",
       "source": "store.group.automotive.subcategory.08",
       "target": "store.root.09",
       "type": "child_of",
@@ -3714,7 +3698,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0080",
+      "id": "rel.0078",
       "source": "store.group.automotive.subcategory.09",
       "target": "store.root.09",
       "type": "child_of",
@@ -3722,7 +3706,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0081",
+      "id": "rel.0079",
       "source": "store.group.automotive.subcategory.10",
       "target": "store.root.09",
       "type": "child_of",
@@ -3730,7 +3714,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0082",
+      "id": "rel.0080",
       "source": "store.group.automotive.subcategory.11",
       "target": "store.root.09",
       "type": "child_of",
@@ -3738,7 +3722,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0083",
+      "id": "rel.0081",
       "source": "store.group.automotive.term.01",
       "target": "store.root.09",
       "type": "listed_under",
@@ -3746,7 +3730,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0084",
+      "id": "rel.0082",
       "source": "store.group.automotive.term.02",
       "target": "store.root.09",
       "type": "listed_under",
@@ -3754,7 +3738,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0085",
+      "id": "rel.0083",
       "source": "store.group.automotive.term.03",
       "target": "store.root.09",
       "type": "listed_under",
@@ -3762,7 +3746,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0086",
+      "id": "rel.0084",
       "source": "store.group.automotive.term.04",
       "target": "store.root.09",
       "type": "listed_under",
@@ -3770,7 +3754,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0087",
+      "id": "rel.0085",
       "source": "store.group.automotive.term.05",
       "target": "store.root.09",
       "type": "listed_under",
@@ -3778,7 +3762,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0088",
+      "id": "rel.0086",
       "source": "store.group.automotive.term.06",
       "target": "store.root.09",
       "type": "listed_under",
@@ -3786,7 +3770,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0089",
+      "id": "rel.0087",
       "source": "store.group.automotive.term.07",
       "target": "store.root.09",
       "type": "listed_under",
@@ -3794,7 +3778,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0090",
+      "id": "rel.0088",
       "source": "store.group.automotive.term.08",
       "target": "store.root.09",
       "type": "listed_under",
@@ -3802,7 +3786,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0091",
+      "id": "rel.0089",
       "source": "store.group.automotive.term.09",
       "target": "store.root.09",
       "type": "listed_under",
@@ -3810,7 +3794,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0092",
+      "id": "rel.0090",
       "source": "store.group.automotive.term.10",
       "target": "store.root.09",
       "type": "listed_under",
@@ -3818,7 +3802,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0093",
+      "id": "rel.0091",
       "source": "store.group.automotive.term.11",
       "target": "store.root.09",
       "type": "listed_under",
@@ -3826,7 +3810,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0094",
+      "id": "rel.0092",
       "source": "store.group.automotive.term.12",
       "target": "store.root.09",
       "type": "listed_under",
@@ -3834,7 +3818,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0095",
+      "id": "rel.0093",
       "source": "store.group.automotive.term.13",
       "target": "store.root.09",
       "type": "listed_under",
@@ -3842,7 +3826,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0096",
+      "id": "rel.0094",
       "source": "store.group.automotive.term.14",
       "target": "store.root.09",
       "type": "listed_under",
@@ -3850,7 +3834,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0097",
+      "id": "rel.0095",
       "source": "store.group.automotive.term.15",
       "target": "store.root.09",
       "type": "listed_under",
@@ -3858,7 +3842,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0098",
+      "id": "rel.0096",
       "source": "store.group.automotive.term.16",
       "target": "store.root.09",
       "type": "listed_under",
@@ -3866,7 +3850,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0099",
+      "id": "rel.0097",
       "source": "store.group.automotive.term.17",
       "target": "store.root.09",
       "type": "listed_under",
@@ -3874,7 +3858,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0100",
+      "id": "rel.0098",
       "source": "store.group.automotive.term.18",
       "target": "store.root.09",
       "type": "listed_under",
@@ -3882,7 +3866,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0101",
+      "id": "rel.0099",
       "source": "store.group.automotive.term.19",
       "target": "store.root.09",
       "type": "listed_under",
@@ -3890,7 +3874,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0102",
+      "id": "rel.0100",
       "source": "store.group.automotive.term.20",
       "target": "store.root.09",
       "type": "listed_under",
@@ -3898,15 +3882,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0103",
-      "source": "store.root.04",
-      "target": "store.root.04",
-      "type": "child_of",
-      "confidence": "high",
-      "evidence_class": "official_current_page"
-    },
-    {
-      "id": "rel.0104",
+      "id": "rel.0101",
       "source": "store.group.appliances.subcategory.01",
       "target": "store.root.04",
       "type": "child_of",
@@ -3914,7 +3890,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0105",
+      "id": "rel.0102",
       "source": "store.group.appliances.subcategory.02",
       "target": "store.root.04",
       "type": "child_of",
@@ -3922,7 +3898,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0106",
+      "id": "rel.0103",
       "source": "store.group.appliances.subcategory.03",
       "target": "store.root.04",
       "type": "child_of",
@@ -3930,7 +3906,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0107",
+      "id": "rel.0104",
       "source": "store.group.appliances.subcategory.04",
       "target": "store.root.04",
       "type": "child_of",
@@ -3938,7 +3914,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0108",
+      "id": "rel.0105",
       "source": "store.group.appliances.subcategory.05",
       "target": "store.root.04",
       "type": "child_of",
@@ -3946,7 +3922,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0109",
+      "id": "rel.0106",
       "source": "store.group.appliances.subcategory.06",
       "target": "store.root.04",
       "type": "child_of",
@@ -3954,7 +3930,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0110",
+      "id": "rel.0107",
       "source": "store.group.appliances.subcategory.07",
       "target": "store.root.04",
       "type": "child_of",
@@ -3962,7 +3938,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0111",
+      "id": "rel.0108",
       "source": "store.group.appliances.subcategory.08",
       "target": "store.root.04",
       "type": "child_of",
@@ -3970,7 +3946,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0112",
+      "id": "rel.0109",
       "source": "store.group.appliances.subcategory.09",
       "target": "store.root.04",
       "type": "child_of",
@@ -3978,7 +3954,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0113",
+      "id": "rel.0110",
       "source": "store.group.appliances.subcategory.10",
       "target": "store.root.04",
       "type": "child_of",
@@ -3986,7 +3962,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0114",
+      "id": "rel.0111",
       "source": "store.group.appliances.subcategory.11",
       "target": "store.root.04",
       "type": "child_of",
@@ -3994,7 +3970,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0115",
+      "id": "rel.0112",
       "source": "store.group.appliances.subcategory.12",
       "target": "store.root.04",
       "type": "child_of",
@@ -4002,7 +3978,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0116",
+      "id": "rel.0113",
       "source": "store.group.appliances.subcategory.13",
       "target": "store.root.04",
       "type": "child_of",
@@ -4010,7 +3986,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0117",
+      "id": "rel.0114",
       "source": "store.group.appliances.subcategory.14",
       "target": "store.root.04",
       "type": "child_of",
@@ -4018,7 +3994,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0118",
+      "id": "rel.0115",
       "source": "store.group.appliances.subcategory.15",
       "target": "store.root.04",
       "type": "child_of",
@@ -4026,7 +4002,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0119",
+      "id": "rel.0116",
       "source": "store.group.appliances.term.01",
       "target": "store.root.04",
       "type": "listed_under",
@@ -4034,7 +4010,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0120",
+      "id": "rel.0117",
       "source": "store.group.appliances.term.02",
       "target": "store.root.04",
       "type": "listed_under",
@@ -4042,7 +4018,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0121",
+      "id": "rel.0118",
       "source": "store.group.appliances.term.03",
       "target": "store.root.04",
       "type": "listed_under",
@@ -4050,7 +4026,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0122",
+      "id": "rel.0119",
       "source": "store.group.appliances.term.04",
       "target": "store.root.04",
       "type": "listed_under",
@@ -4058,7 +4034,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0123",
+      "id": "rel.0120",
       "source": "store.group.appliances.term.05",
       "target": "store.root.04",
       "type": "listed_under",
@@ -4066,7 +4042,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0124",
+      "id": "rel.0121",
       "source": "store.group.appliances.term.06",
       "target": "store.root.04",
       "type": "listed_under",
@@ -4074,7 +4050,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0125",
+      "id": "rel.0122",
       "source": "store.group.appliances.term.07",
       "target": "store.root.04",
       "type": "listed_under",
@@ -4082,7 +4058,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0126",
+      "id": "rel.0123",
       "source": "store.group.appliances.term.08",
       "target": "store.root.04",
       "type": "listed_under",
@@ -4090,7 +4066,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0127",
+      "id": "rel.0124",
       "source": "store.group.appliances.term.09",
       "target": "store.root.04",
       "type": "listed_under",
@@ -4098,7 +4074,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0128",
+      "id": "rel.0125",
       "source": "store.group.appliances.term.10",
       "target": "store.root.04",
       "type": "listed_under",
@@ -4106,7 +4082,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0129",
+      "id": "rel.0126",
       "source": "store.group.appliances.term.11",
       "target": "store.root.04",
       "type": "listed_under",
@@ -4114,7 +4090,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0130",
+      "id": "rel.0127",
       "source": "store.group.appliances.term.12",
       "target": "store.root.04",
       "type": "listed_under",
@@ -4122,15 +4098,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0131",
-      "source": "store.root.05",
-      "target": "store.root.05",
-      "type": "child_of",
-      "confidence": "high",
-      "evidence_class": "official_current_page"
-    },
-    {
-      "id": "rel.0132",
+      "id": "rel.0128",
       "source": "store.group.home.subcategory.01",
       "target": "store.root.05",
       "type": "child_of",
@@ -4138,7 +4106,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0133",
+      "id": "rel.0129",
       "source": "store.group.home.subcategory.02",
       "target": "store.root.05",
       "type": "child_of",
@@ -4146,7 +4114,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0134",
+      "id": "rel.0130",
       "source": "store.group.home.subcategory.03",
       "target": "store.root.05",
       "type": "child_of",
@@ -4154,7 +4122,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0135",
+      "id": "rel.0131",
       "source": "store.group.home.subcategory.04",
       "target": "store.root.05",
       "type": "child_of",
@@ -4162,7 +4130,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0136",
+      "id": "rel.0132",
       "source": "store.group.home.subcategory.05",
       "target": "store.root.05",
       "type": "child_of",
@@ -4170,7 +4138,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0137",
+      "id": "rel.0133",
       "source": "store.group.home.subcategory.06",
       "target": "store.root.05",
       "type": "child_of",
@@ -4178,7 +4146,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0138",
+      "id": "rel.0134",
       "source": "store.group.home.subcategory.07",
       "target": "store.root.05",
       "type": "child_of",
@@ -4186,7 +4154,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0139",
+      "id": "rel.0135",
       "source": "store.group.home.subcategory.08",
       "target": "store.root.05",
       "type": "child_of",
@@ -4194,7 +4162,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0140",
+      "id": "rel.0136",
       "source": "store.group.home.subcategory.09",
       "target": "store.root.05",
       "type": "child_of",
@@ -4202,7 +4170,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0141",
+      "id": "rel.0137",
       "source": "store.group.home.term.01",
       "target": "store.root.05",
       "type": "listed_under",
@@ -4210,7 +4178,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0142",
+      "id": "rel.0138",
       "source": "store.group.home.term.02",
       "target": "store.root.05",
       "type": "listed_under",
@@ -4218,7 +4186,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0143",
+      "id": "rel.0139",
       "source": "store.group.home.term.03",
       "target": "store.root.05",
       "type": "listed_under",
@@ -4226,7 +4194,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0144",
+      "id": "rel.0140",
       "source": "store.group.home.term.04",
       "target": "store.root.05",
       "type": "listed_under",
@@ -4234,7 +4202,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0145",
+      "id": "rel.0141",
       "source": "store.group.home.term.05",
       "target": "store.root.05",
       "type": "listed_under",
@@ -4242,7 +4210,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0146",
+      "id": "rel.0142",
       "source": "store.group.home.term.06",
       "target": "store.root.05",
       "type": "listed_under",
@@ -4250,7 +4218,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0147",
+      "id": "rel.0143",
       "source": "store.group.home.term.07",
       "target": "store.root.05",
       "type": "listed_under",
@@ -4258,7 +4226,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0148",
+      "id": "rel.0144",
       "source": "store.group.home.term.08",
       "target": "store.root.05",
       "type": "listed_under",
@@ -4266,7 +4234,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0149",
+      "id": "rel.0145",
       "source": "store.group.home.term.09",
       "target": "store.root.05",
       "type": "listed_under",
@@ -4274,7 +4242,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0150",
+      "id": "rel.0146",
       "source": "store.group.home.term.10",
       "target": "store.root.05",
       "type": "listed_under",
@@ -4282,7 +4250,7 @@
       "evidence_class": "official_current_page"
     },
     {
-      "id": "rel.0151",
+      "id": "rel.0147",
       "source": "concept.generator",
       "target": "store.group.tools.term.05",
       "type": "discovery_route_in_store",
@@ -4291,7 +4259,7 @@
       "evidence_id": "evidence.digikala.tools"
     },
     {
-      "id": "rel.0152",
+      "id": "rel.0148",
       "source": "concept.portable-blower",
       "target": "store.group.tools.term.06",
       "type": "discovery_route_in_store",
@@ -4300,7 +4268,7 @@
       "evidence_id": "evidence.digikala.tools"
     },
     {
-      "id": "rel.0153",
+      "id": "rel.0149",
       "source": "concept.automotive-idle-stepper",
       "target": "store.group.automotive.subcategory.03",
       "type": "discovery_route_in_store",
@@ -4310,7 +4278,7 @@
       "note": "مسیر پیشنهادی بر مبنای ماهیت قطعه است؛ دسته واقعی محصول باید در صفحه آن بررسی شود."
     },
     {
-      "id": "rel.0154",
+      "id": "rel.0150",
       "source": "concept.irrigation-equipment",
       "target": "store.group.tools.subcategory.05",
       "type": "discovery_route_in_store",
@@ -4319,7 +4287,7 @@
       "evidence_id": "evidence.digikala.tools"
     },
     {
-      "id": "rel.0155",
+      "id": "rel.0151",
       "source": "concept.greenhouse-cover",
       "target": "store.group.tools.subcategory.05",
       "type": "discovery_route_in_store",
@@ -4329,7 +4297,7 @@
       "note": "گلخانه مسیر مجموعه‌ای است؛ این گره دسته رسمی گلخانه نیست."
     },
     {
-      "id": "rel.0156",
+      "id": "rel.0152",
       "source": "concept.pressure-tank",
       "target": "store.group.tools.subcategory.02",
       "type": "discovery_route_in_store",
@@ -4339,7 +4307,7 @@
       "note": "مسیر پیشنهادی موقت؛ دسته واقعی محصول تأیید نشده است."
     },
     {
-      "id": "rel.0157",
+      "id": "rel.0153",
       "source": "product.dkp.14267164",
       "target": "concept.automotive-idle-stepper",
       "type": "classified_as",
@@ -4347,7 +4315,7 @@
       "evidence_class": "third_party_product_description"
     },
     {
-      "id": "rel.0158",
+      "id": "rel.0154",
       "source": "product.dkp.14267164",
       "target": "concept.stepper",
       "type": "classified_as",
@@ -4355,7 +4323,7 @@
       "evidence_class": "third_party_product_description"
     },
     {
-      "id": "rel.0159",
+      "id": "rel.0155",
       "source": "product.dkp.14267164",
       "target": "system.automotive",
       "type": "used_in",
@@ -4363,7 +4331,7 @@
       "evidence_class": "mapped_research_path"
     },
     {
-      "id": "rel.0160",
+      "id": "rel.0156",
       "source": "product.dkp.14267164",
       "target": "application.idle-speed-control",
       "type": "serves_application",
@@ -4371,7 +4339,7 @@
       "evidence_class": "mapped_research_path"
     },
     {
-      "id": "rel.0161",
+      "id": "rel.0157",
       "source": "product.dkp.14267164",
       "target": "evidence.thirdparty.001",
       "type": "has_evidence",
@@ -4379,7 +4347,7 @@
       "evidence_class": "source_traceability"
     },
     {
-      "id": "rel.0162",
+      "id": "rel.0158",
       "source": "product.dkp.20233926",
       "target": "concept.portable-blower",
       "type": "classified_as",
@@ -4387,7 +4355,7 @@
       "evidence_class": "third_party_product_description"
     },
     {
-      "id": "rel.0163",
+      "id": "rel.0159",
       "source": "product.dkp.20233926",
       "target": "system.portable-tools",
       "type": "used_in",
@@ -4395,7 +4363,7 @@
       "evidence_class": "mapped_research_path"
     },
     {
-      "id": "rel.0164",
+      "id": "rel.0160",
       "source": "product.dkp.20233926",
       "target": "system.outdoor",
       "type": "used_in",
@@ -4403,7 +4371,7 @@
       "evidence_class": "mapped_research_path"
     },
     {
-      "id": "rel.0165",
+      "id": "rel.0161",
       "source": "product.dkp.20233926",
       "target": "application.air-blowing",
       "type": "serves_application",
@@ -4411,7 +4379,7 @@
       "evidence_class": "mapped_research_path"
     },
     {
-      "id": "rel.0166",
+      "id": "rel.0162",
       "source": "product.dkp.20233926",
       "target": "feature.brushless-motor",
       "type": "has_feature",
@@ -4419,7 +4387,7 @@
       "evidence_class": "third_party_product_description"
     },
     {
-      "id": "rel.0167",
+      "id": "rel.0163",
       "source": "product.dkp.20233926",
       "target": "evidence.thirdparty.002",
       "type": "has_evidence",
@@ -4427,7 +4395,7 @@
       "evidence_class": "source_traceability"
     },
     {
-      "id": "rel.0168",
+      "id": "rel.0164",
       "source": "candidate.dkp.21108319",
       "target": "concept.portable-blower",
       "type": "classified_as",
@@ -4435,7 +4403,7 @@
       "evidence_class": "third_party_product_description"
     },
     {
-      "id": "rel.0169",
+      "id": "rel.0165",
       "source": "candidate.dkp.21108319",
       "target": "system.portable-tools",
       "type": "used_in",
@@ -4443,7 +4411,7 @@
       "evidence_class": "mapped_research_path"
     },
     {
-      "id": "rel.0170",
+      "id": "rel.0166",
       "source": "candidate.dkp.21108319",
       "target": "system.outdoor",
       "type": "used_in",
@@ -4451,7 +4419,7 @@
       "evidence_class": "mapped_research_path"
     },
     {
-      "id": "rel.0171",
+      "id": "rel.0167",
       "source": "candidate.dkp.21108319",
       "target": "application.air-blowing",
       "type": "serves_application",
@@ -4459,7 +4427,7 @@
       "evidence_class": "mapped_research_path"
     },
     {
-      "id": "rel.0172",
+      "id": "rel.0168",
       "source": "candidate.dkp.21108319",
       "target": "feature.brushless-motor",
       "type": "has_feature",
@@ -4467,7 +4435,7 @@
       "evidence_class": "third_party_product_description"
     },
     {
-      "id": "rel.0173",
+      "id": "rel.0169",
       "source": "candidate.dkp.21108319",
       "target": "evidence.thirdparty.003",
       "type": "has_evidence",
@@ -4475,7 +4443,7 @@
       "evidence_class": "source_traceability"
     },
     {
-      "id": "rel.0174",
+      "id": "rel.0170",
       "source": "product.dkp.15483404",
       "target": "concept.generator",
       "type": "classified_as",
@@ -4483,7 +4451,7 @@
       "evidence_class": "third_party_product_description"
     },
     {
-      "id": "rel.0175",
+      "id": "rel.0171",
       "source": "product.dkp.15483404",
       "target": "system.home",
       "type": "used_in",
@@ -4491,87 +4459,87 @@
       "evidence_class": "mapped_research_path"
     },
     {
-      "id": "rel.0176",
+      "id": "rel.0172",
       "source": "product.dkp.15483404",
       "target": "system.workshop",
+      "type": "used_in",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0173",
+      "source": "product.dkp.15483404",
+      "target": "application.generate-electricity",
+      "type": "serves_application",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0174",
+      "source": "product.dkp.15483404",
+      "target": "evidence.thirdparty.004",
+      "type": "has_evidence",
+      "confidence": "high",
+      "evidence_class": "source_traceability"
+    },
+    {
+      "id": "rel.0175",
+      "source": "product.dkp.16806226",
+      "target": "concept.generator",
+      "type": "classified_as",
+      "confidence": "medium",
+      "evidence_class": "third_party_product_description"
+    },
+    {
+      "id": "rel.0176",
+      "source": "product.dkp.16806226",
+      "target": "system.home",
       "type": "used_in",
       "confidence": "medium",
       "evidence_class": "mapped_research_path"
     },
     {
       "id": "rel.0177",
-      "source": "product.dkp.15483404",
+      "source": "product.dkp.16806226",
+      "target": "system.workshop",
+      "type": "used_in",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0178",
+      "source": "product.dkp.16806226",
       "target": "application.generate-electricity",
       "type": "serves_application",
       "confidence": "medium",
       "evidence_class": "mapped_research_path"
     },
     {
-      "id": "rel.0178",
-      "source": "product.dkp.15483404",
+      "id": "rel.0179",
+      "source": "product.dkp.16806226",
       "target": "evidence.thirdparty.004",
       "type": "has_evidence",
       "confidence": "high",
       "evidence_class": "source_traceability"
     },
     {
-      "id": "rel.0179",
-      "source": "product.dkp.16806226",
+      "id": "rel.0180",
+      "source": "product.dkp.8319071",
       "target": "concept.generator",
       "type": "classified_as",
       "confidence": "medium",
       "evidence_class": "third_party_product_description"
     },
     {
-      "id": "rel.0180",
-      "source": "product.dkp.16806226",
-      "target": "system.home",
-      "type": "used_in",
-      "confidence": "medium",
-      "evidence_class": "mapped_research_path"
-    },
-    {
       "id": "rel.0181",
-      "source": "product.dkp.16806226",
-      "target": "system.workshop",
+      "source": "product.dkp.8319071",
+      "target": "system.home",
       "type": "used_in",
       "confidence": "medium",
       "evidence_class": "mapped_research_path"
     },
     {
       "id": "rel.0182",
-      "source": "product.dkp.16806226",
-      "target": "application.generate-electricity",
-      "type": "serves_application",
-      "confidence": "medium",
-      "evidence_class": "mapped_research_path"
-    },
-    {
-      "id": "rel.0183",
-      "source": "product.dkp.16806226",
-      "target": "evidence.thirdparty.004",
-      "type": "has_evidence",
-      "confidence": "high",
-      "evidence_class": "source_traceability"
-    },
-    {
-      "id": "rel.0184",
-      "source": "product.dkp.8319071",
-      "target": "concept.generator",
-      "type": "classified_as",
-      "confidence": "medium",
-      "evidence_class": "third_party_product_description"
-    },
-    {
-      "id": "rel.0185",
-      "source": "product.dkp.8319071",
-      "target": "system.home",
-      "type": "used_in",
-      "confidence": "medium",
-      "evidence_class": "mapped_research_path"
-    },
-    {
-      "id": "rel.0186",
       "source": "product.dkp.8319071",
       "target": "system.workshop",
       "type": "used_in",
@@ -4579,7 +4547,7 @@
       "evidence_class": "mapped_research_path"
     },
     {
-      "id": "rel.0187",
+      "id": "rel.0183",
       "source": "product.dkp.8319071",
       "target": "application.generate-electricity",
       "type": "serves_application",
@@ -4587,7 +4555,7 @@
       "evidence_class": "mapped_research_path"
     },
     {
-      "id": "rel.0188",
+      "id": "rel.0184",
       "source": "product.dkp.8319071",
       "target": "evidence.thirdparty.004",
       "type": "has_evidence",
@@ -4595,7 +4563,7 @@
       "evidence_class": "source_traceability"
     },
     {
-      "id": "rel.0189",
+      "id": "rel.0185",
       "source": "product.dkp.2451884",
       "target": "concept.engine-pump-set",
       "type": "classified_as",
@@ -4603,7 +4571,7 @@
       "evidence_class": "third_party_product_description"
     },
     {
-      "id": "rel.0190",
+      "id": "rel.0186",
       "source": "product.dkp.2451884",
       "target": "system.agriculture",
       "type": "used_in",
@@ -4611,7 +4579,7 @@
       "evidence_class": "mapped_research_path"
     },
     {
-      "id": "rel.0191",
+      "id": "rel.0187",
       "source": "product.dkp.2451884",
       "target": "system.workshop",
       "type": "used_in",
@@ -4619,7 +4587,7 @@
       "evidence_class": "mapped_research_path"
     },
     {
-      "id": "rel.0192",
+      "id": "rel.0188",
       "source": "product.dkp.2451884",
       "target": "application.fluid-transfer",
       "type": "serves_application",
@@ -4627,7 +4595,7 @@
       "evidence_class": "mapped_research_path"
     },
     {
-      "id": "rel.0193",
+      "id": "rel.0189",
       "source": "product.dkp.2451884",
       "target": "evidence.thirdparty.005",
       "type": "has_evidence",
@@ -4635,7 +4603,7 @@
       "evidence_class": "source_traceability"
     },
     {
-      "id": "rel.0194",
+      "id": "rel.0190",
       "source": "product.dkp.3884114",
       "target": "concept.water-pump",
       "type": "classified_as",
@@ -4643,7 +4611,7 @@
       "evidence_class": "third_party_product_description"
     },
     {
-      "id": "rel.0195",
+      "id": "rel.0191",
       "source": "product.dkp.3884114",
       "target": "system.home",
       "type": "used_in",
@@ -4651,7 +4619,7 @@
       "evidence_class": "mapped_research_path"
     },
     {
-      "id": "rel.0196",
+      "id": "rel.0192",
       "source": "product.dkp.3884114",
       "target": "system.agriculture",
       "type": "used_in",
@@ -4659,7 +4627,7 @@
       "evidence_class": "mapped_research_path"
     },
     {
-      "id": "rel.0197",
+      "id": "rel.0193",
       "source": "product.dkp.3884114",
       "target": "application.fluid-transfer",
       "type": "serves_application",
@@ -4667,7 +4635,7 @@
       "evidence_class": "mapped_research_path"
     },
     {
-      "id": "rel.0198",
+      "id": "rel.0194",
       "source": "product.dkp.3884114",
       "target": "application.pressure-boost",
       "type": "serves_application",
@@ -4675,7 +4643,7 @@
       "evidence_class": "mapped_research_path"
     },
     {
-      "id": "rel.0199",
+      "id": "rel.0195",
       "source": "product.dkp.3884114",
       "target": "evidence.thirdparty.005",
       "type": "has_evidence",
@@ -4683,7 +4651,7 @@
       "evidence_class": "source_traceability"
     },
     {
-      "id": "rel.0200",
+      "id": "rel.0196",
       "source": "product.dkp.19141373",
       "target": "concept.submersible-pump",
       "type": "classified_as",
@@ -4691,7 +4659,7 @@
       "evidence_class": "third_party_product_description"
     },
     {
-      "id": "rel.0201",
+      "id": "rel.0197",
       "source": "product.dkp.19141373",
       "target": "concept.pump",
       "type": "classified_as",
@@ -4699,7 +4667,7 @@
       "evidence_class": "third_party_product_description"
     },
     {
-      "id": "rel.0202",
+      "id": "rel.0198",
       "source": "product.dkp.19141373",
       "target": "system.home",
       "type": "used_in",
@@ -4707,7 +4675,7 @@
       "evidence_class": "mapped_research_path"
     },
     {
-      "id": "rel.0203",
+      "id": "rel.0199",
       "source": "product.dkp.19141373",
       "target": "system.agriculture",
       "type": "used_in",
@@ -4715,7 +4683,7 @@
       "evidence_class": "mapped_research_path"
     },
     {
-      "id": "rel.0204",
+      "id": "rel.0200",
       "source": "product.dkp.19141373",
       "target": "system.workshop",
       "type": "used_in",
@@ -4723,7 +4691,7 @@
       "evidence_class": "mapped_research_path"
     },
     {
-      "id": "rel.0205",
+      "id": "rel.0201",
       "source": "product.dkp.19141373",
       "target": "application.drainage",
       "type": "serves_application",
@@ -4731,7 +4699,7 @@
       "evidence_class": "mapped_research_path"
     },
     {
-      "id": "rel.0206",
+      "id": "rel.0202",
       "source": "product.dkp.19141373",
       "target": "application.fluid-transfer",
       "type": "serves_application",
@@ -4739,7 +4707,7 @@
       "evidence_class": "mapped_research_path"
     },
     {
-      "id": "rel.0207",
+      "id": "rel.0203",
       "source": "product.dkp.19141373",
       "target": "evidence.thirdparty.005",
       "type": "has_evidence",
@@ -4747,7 +4715,7 @@
       "evidence_class": "source_traceability"
     },
     {
-      "id": "rel.0208",
+      "id": "rel.0204",
       "source": "product.dkp.2460735",
       "target": "concept.water-pump",
       "type": "classified_as",
@@ -4755,7 +4723,7 @@
       "evidence_class": "third_party_product_description"
     },
     {
-      "id": "rel.0209",
+      "id": "rel.0205",
       "source": "product.dkp.2460735",
       "target": "system.home",
       "type": "used_in",
@@ -4763,7 +4731,7 @@
       "evidence_class": "mapped_research_path"
     },
     {
-      "id": "rel.0210",
+      "id": "rel.0206",
       "source": "product.dkp.2460735",
       "target": "system.agriculture",
       "type": "used_in",
@@ -4771,7 +4739,7 @@
       "evidence_class": "mapped_research_path"
     },
     {
-      "id": "rel.0211",
+      "id": "rel.0207",
       "source": "product.dkp.2460735",
       "target": "application.fluid-transfer",
       "type": "serves_application",
@@ -4779,7 +4747,7 @@
       "evidence_class": "mapped_research_path"
     },
     {
-      "id": "rel.0212",
+      "id": "rel.0208",
       "source": "product.dkp.2460735",
       "target": "application.pressure-boost",
       "type": "serves_application",
@@ -4787,7 +4755,7 @@
       "evidence_class": "mapped_research_path"
     },
     {
-      "id": "rel.0213",
+      "id": "rel.0209",
       "source": "product.dkp.2460735",
       "target": "evidence.thirdparty.006",
       "type": "has_evidence",
@@ -4795,7 +4763,7 @@
       "evidence_class": "source_traceability"
     },
     {
-      "id": "rel.0214",
+      "id": "rel.0210",
       "source": "product.dkp.19661679",
       "target": "concept.submersible-pump",
       "type": "classified_as",
@@ -4803,7 +4771,7 @@
       "evidence_class": "third_party_product_description"
     },
     {
-      "id": "rel.0215",
+      "id": "rel.0211",
       "source": "product.dkp.19661679",
       "target": "concept.pump",
       "type": "classified_as",
@@ -4811,7 +4779,7 @@
       "evidence_class": "third_party_product_description"
     },
     {
-      "id": "rel.0216",
+      "id": "rel.0212",
       "source": "product.dkp.19661679",
       "target": "system.home",
       "type": "used_in",
@@ -4819,7 +4787,7 @@
       "evidence_class": "mapped_research_path"
     },
     {
-      "id": "rel.0217",
+      "id": "rel.0213",
       "source": "product.dkp.19661679",
       "target": "system.agriculture",
       "type": "used_in",
@@ -4827,7 +4795,7 @@
       "evidence_class": "mapped_research_path"
     },
     {
-      "id": "rel.0218",
+      "id": "rel.0214",
       "source": "product.dkp.19661679",
       "target": "system.workshop",
       "type": "used_in",
@@ -4835,7 +4803,7 @@
       "evidence_class": "mapped_research_path"
     },
     {
-      "id": "rel.0219",
+      "id": "rel.0215",
       "source": "product.dkp.19661679",
       "target": "application.drainage",
       "type": "serves_application",
@@ -4843,7 +4811,7 @@
       "evidence_class": "mapped_research_path"
     },
     {
-      "id": "rel.0220",
+      "id": "rel.0216",
       "source": "product.dkp.19661679",
       "target": "application.fluid-transfer",
       "type": "serves_application",
@@ -4851,7 +4819,7 @@
       "evidence_class": "mapped_research_path"
     },
     {
-      "id": "rel.0221",
+      "id": "rel.0217",
       "source": "product.dkp.19661679",
       "target": "evidence.thirdparty.005",
       "type": "has_evidence",
@@ -4859,7 +4827,7 @@
       "evidence_class": "source_traceability"
     },
     {
-      "id": "rel.0222",
+      "id": "rel.0218",
       "source": "product.dkp.12463221",
       "target": "concept.pressure-tank",
       "type": "classified_as",
@@ -4867,7 +4835,7 @@
       "evidence_class": "third_party_product_description"
     },
     {
-      "id": "rel.0223",
+      "id": "rel.0219",
       "source": "product.dkp.12463221",
       "target": "system.home",
       "type": "used_in",
@@ -4875,7 +4843,7 @@
       "evidence_class": "mapped_research_path"
     },
     {
-      "id": "rel.0224",
+      "id": "rel.0220",
       "source": "product.dkp.12463221",
       "target": "application.pressure-stabilize",
       "type": "serves_application",
@@ -4883,7 +4851,7 @@
       "evidence_class": "mapped_research_path"
     },
     {
-      "id": "rel.0225",
+      "id": "rel.0221",
       "source": "product.dkp.12463221",
       "target": "evidence.thirdparty.007",
       "type": "has_evidence",
@@ -4891,7 +4859,7 @@
       "evidence_class": "source_traceability"
     },
     {
-      "id": "rel.0226",
+      "id": "rel.0222",
       "source": "product.dkp.20046701",
       "target": "concept.water-pump",
       "type": "classified_as",
@@ -4899,7 +4867,7 @@
       "evidence_class": "third_party_product_description"
     },
     {
-      "id": "rel.0227",
+      "id": "rel.0223",
       "source": "product.dkp.20046701",
       "target": "system.home",
       "type": "used_in",
@@ -4907,7 +4875,7 @@
       "evidence_class": "mapped_research_path"
     },
     {
-      "id": "rel.0228",
+      "id": "rel.0224",
       "source": "product.dkp.20046701",
       "target": "system.agriculture",
       "type": "used_in",
@@ -4915,7 +4883,7 @@
       "evidence_class": "mapped_research_path"
     },
     {
-      "id": "rel.0229",
+      "id": "rel.0225",
       "source": "product.dkp.20046701",
       "target": "application.fluid-transfer",
       "type": "serves_application",
@@ -4923,7 +4891,7 @@
       "evidence_class": "mapped_research_path"
     },
     {
-      "id": "rel.0230",
+      "id": "rel.0226",
       "source": "product.dkp.20046701",
       "target": "application.pressure-boost",
       "type": "serves_application",
@@ -4931,7 +4899,7 @@
       "evidence_class": "mapped_research_path"
     },
     {
-      "id": "rel.0231",
+      "id": "rel.0227",
       "source": "product.dkp.20046701",
       "target": "evidence.thirdparty.008",
       "type": "has_evidence",
@@ -4939,7 +4907,7 @@
       "evidence_class": "source_traceability"
     },
     {
-      "id": "rel.0232",
+      "id": "rel.0228",
       "source": "product.dkp.20662147",
       "target": "concept.misting-kit",
       "type": "classified_as",
@@ -4947,7 +4915,7 @@
       "evidence_class": "third_party_product_description"
     },
     {
-      "id": "rel.0233",
+      "id": "rel.0229",
       "source": "product.dkp.20662147",
       "target": "concept.irrigation-equipment",
       "type": "classified_as",
@@ -4955,7 +4923,7 @@
       "evidence_class": "third_party_product_description"
     },
     {
-      "id": "rel.0234",
+      "id": "rel.0230",
       "source": "product.dkp.20662147",
       "target": "system.greenhouse",
       "type": "used_in",
@@ -4963,7 +4931,7 @@
       "evidence_class": "mapped_research_path"
     },
     {
-      "id": "rel.0235",
+      "id": "rel.0231",
       "source": "product.dkp.20662147",
       "target": "system.garden",
       "type": "used_in",
@@ -4971,7 +4939,7 @@
       "evidence_class": "mapped_research_path"
     },
     {
-      "id": "rel.0236",
+      "id": "rel.0232",
       "source": "product.dkp.20662147",
       "target": "system.outdoor",
       "type": "used_in",
@@ -4979,7 +4947,7 @@
       "evidence_class": "mapped_research_path"
     },
     {
-      "id": "rel.0237",
+      "id": "rel.0233",
       "source": "product.dkp.20662147",
       "target": "application.misting-cooling",
       "type": "serves_application",
@@ -4987,7 +4955,7 @@
       "evidence_class": "mapped_research_path"
     },
     {
-      "id": "rel.0238",
+      "id": "rel.0234",
       "source": "product.dkp.20662147",
       "target": "evidence.thirdparty.009",
       "type": "has_evidence",
@@ -4995,7 +4963,7 @@
       "evidence_class": "source_traceability"
     },
     {
-      "id": "rel.0239",
+      "id": "rel.0235",
       "source": "product.dkp.3579672",
       "target": "concept.irrigation-timer",
       "type": "classified_as",
@@ -5003,7 +4971,7 @@
       "evidence_class": "third_party_product_description"
     },
     {
-      "id": "rel.0240",
+      "id": "rel.0236",
       "source": "product.dkp.3579672",
       "target": "system.greenhouse",
       "type": "used_in",
@@ -5011,7 +4979,7 @@
       "evidence_class": "mapped_research_path"
     },
     {
-      "id": "rel.0241",
+      "id": "rel.0237",
       "source": "product.dkp.3579672",
       "target": "system.garden",
       "type": "used_in",
@@ -5019,7 +4987,7 @@
       "evidence_class": "mapped_research_path"
     },
     {
-      "id": "rel.0242",
+      "id": "rel.0238",
       "source": "product.dkp.3579672",
       "target": "application.irrigation-schedule",
       "type": "serves_application",
@@ -5027,7 +4995,7 @@
       "evidence_class": "mapped_research_path"
     },
     {
-      "id": "rel.0243",
+      "id": "rel.0239",
       "source": "product.dkp.3579672",
       "target": "evidence.thirdparty.010",
       "type": "has_evidence",
@@ -5035,7 +5003,7 @@
       "evidence_class": "source_traceability"
     },
     {
-      "id": "rel.0244",
+      "id": "rel.0240",
       "source": "product.dkp.2665591",
       "target": "concept.drip-irrigation-parts",
       "type": "classified_as",
@@ -5043,7 +5011,7 @@
       "evidence_class": "third_party_product_description"
     },
     {
-      "id": "rel.0245",
+      "id": "rel.0241",
       "source": "product.dkp.2665591",
       "target": "concept.irrigation-equipment",
       "type": "classified_as",
@@ -5051,7 +5019,7 @@
       "evidence_class": "third_party_product_description"
     },
     {
-      "id": "rel.0246",
+      "id": "rel.0242",
       "source": "product.dkp.2665591",
       "target": "system.greenhouse",
       "type": "used_in",
@@ -5059,7 +5027,7 @@
       "evidence_class": "mapped_research_path"
     },
     {
-      "id": "rel.0247",
+      "id": "rel.0243",
       "source": "product.dkp.2665591",
       "target": "system.garden",
       "type": "used_in",
@@ -5067,47 +5035,47 @@
       "evidence_class": "mapped_research_path"
     },
     {
-      "id": "rel.0248",
+      "id": "rel.0244",
       "source": "product.dkp.2665591",
       "target": "application.drip-watering",
       "type": "serves_application",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0245",
+      "source": "product.dkp.2665591",
+      "target": "evidence.thirdparty.011",
+      "type": "has_evidence",
+      "confidence": "high",
+      "evidence_class": "source_traceability"
+    },
+    {
+      "id": "rel.0246",
+      "source": "product.dkp.3491209",
+      "target": "concept.drip-irrigation-parts",
+      "type": "classified_as",
+      "confidence": "medium",
+      "evidence_class": "third_party_product_description"
+    },
+    {
+      "id": "rel.0247",
+      "source": "product.dkp.3491209",
+      "target": "concept.irrigation-equipment",
+      "type": "classified_as",
+      "confidence": "medium",
+      "evidence_class": "third_party_product_description"
+    },
+    {
+      "id": "rel.0248",
+      "source": "product.dkp.3491209",
+      "target": "system.greenhouse",
+      "type": "used_in",
       "confidence": "medium",
       "evidence_class": "mapped_research_path"
     },
     {
       "id": "rel.0249",
-      "source": "product.dkp.2665591",
-      "target": "evidence.thirdparty.011",
-      "type": "has_evidence",
-      "confidence": "high",
-      "evidence_class": "source_traceability"
-    },
-    {
-      "id": "rel.0250",
-      "source": "product.dkp.3491209",
-      "target": "concept.drip-irrigation-parts",
-      "type": "classified_as",
-      "confidence": "medium",
-      "evidence_class": "third_party_product_description"
-    },
-    {
-      "id": "rel.0251",
-      "source": "product.dkp.3491209",
-      "target": "concept.irrigation-equipment",
-      "type": "classified_as",
-      "confidence": "medium",
-      "evidence_class": "third_party_product_description"
-    },
-    {
-      "id": "rel.0252",
-      "source": "product.dkp.3491209",
-      "target": "system.greenhouse",
-      "type": "used_in",
-      "confidence": "medium",
-      "evidence_class": "mapped_research_path"
-    },
-    {
-      "id": "rel.0253",
       "source": "product.dkp.3491209",
       "target": "system.garden",
       "type": "used_in",
@@ -5115,7 +5083,7 @@
       "evidence_class": "mapped_research_path"
     },
     {
-      "id": "rel.0254",
+      "id": "rel.0250",
       "source": "product.dkp.3491209",
       "target": "application.drip-watering",
       "type": "serves_application",
@@ -5123,7 +5091,7 @@
       "evidence_class": "mapped_research_path"
     },
     {
-      "id": "rel.0255",
+      "id": "rel.0251",
       "source": "product.dkp.3491209",
       "target": "evidence.thirdparty.011",
       "type": "has_evidence",
@@ -5131,7 +5099,7 @@
       "evidence_class": "source_traceability"
     },
     {
-      "id": "rel.0256",
+      "id": "rel.0252",
       "source": "product.dkp.7669891",
       "target": "concept.greenhouse-film",
       "type": "classified_as",
@@ -5139,7 +5107,7 @@
       "evidence_class": "third_party_product_description"
     },
     {
-      "id": "rel.0257",
+      "id": "rel.0253",
       "source": "product.dkp.7669891",
       "target": "concept.greenhouse-cover",
       "type": "classified_as",
@@ -5147,7 +5115,7 @@
       "evidence_class": "third_party_product_description"
     },
     {
-      "id": "rel.0258",
+      "id": "rel.0254",
       "source": "product.dkp.7669891",
       "target": "system.greenhouse",
       "type": "used_in",
@@ -5155,7 +5123,7 @@
       "evidence_class": "mapped_research_path"
     },
     {
-      "id": "rel.0259",
+      "id": "rel.0255",
       "source": "product.dkp.7669891",
       "target": "application.greenhouse-protection",
       "type": "serves_application",
@@ -5163,7 +5131,7 @@
       "evidence_class": "mapped_research_path"
     },
     {
-      "id": "rel.0260",
+      "id": "rel.0256",
       "source": "product.dkp.7669891",
       "target": "evidence.thirdparty.012",
       "type": "has_evidence",
@@ -5171,7 +5139,7 @@
       "evidence_class": "source_traceability"
     },
     {
-      "id": "rel.0261",
+      "id": "rel.0257",
       "source": "product.dkp.8399201",
       "target": "concept.shade-net",
       "type": "classified_as",
@@ -5179,87 +5147,87 @@
       "evidence_class": "third_party_product_description"
     },
     {
-      "id": "rel.0262",
+      "id": "rel.0258",
       "source": "product.dkp.8399201",
       "target": "concept.greenhouse-cover",
+      "type": "classified_as",
+      "confidence": "medium",
+      "evidence_class": "third_party_product_description"
+    },
+    {
+      "id": "rel.0259",
+      "source": "product.dkp.8399201",
+      "target": "system.greenhouse",
+      "type": "used_in",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0260",
+      "source": "product.dkp.8399201",
+      "target": "application.shading",
+      "type": "serves_application",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0261",
+      "source": "product.dkp.8399201",
+      "target": "evidence.thirdparty.013",
+      "type": "has_evidence",
+      "confidence": "high",
+      "evidence_class": "source_traceability"
+    },
+    {
+      "id": "rel.0262",
+      "source": "product.dkp.8675106",
+      "target": "concept.shade-net",
       "type": "classified_as",
       "confidence": "medium",
       "evidence_class": "third_party_product_description"
     },
     {
       "id": "rel.0263",
-      "source": "product.dkp.8399201",
+      "source": "product.dkp.8675106",
+      "target": "concept.greenhouse-cover",
+      "type": "classified_as",
+      "confidence": "medium",
+      "evidence_class": "third_party_product_description"
+    },
+    {
+      "id": "rel.0264",
+      "source": "product.dkp.8675106",
       "target": "system.greenhouse",
       "type": "used_in",
       "confidence": "medium",
       "evidence_class": "mapped_research_path"
     },
     {
-      "id": "rel.0264",
-      "source": "product.dkp.8399201",
+      "id": "rel.0265",
+      "source": "product.dkp.8675106",
       "target": "application.shading",
       "type": "serves_application",
       "confidence": "medium",
       "evidence_class": "mapped_research_path"
     },
     {
-      "id": "rel.0265",
-      "source": "product.dkp.8399201",
+      "id": "rel.0266",
+      "source": "product.dkp.8675106",
       "target": "evidence.thirdparty.013",
       "type": "has_evidence",
       "confidence": "high",
       "evidence_class": "source_traceability"
     },
     {
-      "id": "rel.0266",
-      "source": "product.dkp.8675106",
-      "target": "concept.shade-net",
-      "type": "classified_as",
-      "confidence": "medium",
-      "evidence_class": "third_party_product_description"
-    },
-    {
       "id": "rel.0267",
-      "source": "product.dkp.8675106",
-      "target": "concept.greenhouse-cover",
+      "source": "product.dkp.8675118",
+      "target": "concept.shade-net",
       "type": "classified_as",
       "confidence": "medium",
       "evidence_class": "third_party_product_description"
     },
     {
       "id": "rel.0268",
-      "source": "product.dkp.8675106",
-      "target": "system.greenhouse",
-      "type": "used_in",
-      "confidence": "medium",
-      "evidence_class": "mapped_research_path"
-    },
-    {
-      "id": "rel.0269",
-      "source": "product.dkp.8675106",
-      "target": "application.shading",
-      "type": "serves_application",
-      "confidence": "medium",
-      "evidence_class": "mapped_research_path"
-    },
-    {
-      "id": "rel.0270",
-      "source": "product.dkp.8675106",
-      "target": "evidence.thirdparty.013",
-      "type": "has_evidence",
-      "confidence": "high",
-      "evidence_class": "source_traceability"
-    },
-    {
-      "id": "rel.0271",
-      "source": "product.dkp.8675118",
-      "target": "concept.shade-net",
-      "type": "classified_as",
-      "confidence": "medium",
-      "evidence_class": "third_party_product_description"
-    },
-    {
-      "id": "rel.0272",
       "source": "product.dkp.8675118",
       "target": "concept.greenhouse-cover",
       "type": "classified_as",
@@ -5267,7 +5235,7 @@
       "evidence_class": "third_party_product_description"
     },
     {
-      "id": "rel.0273",
+      "id": "rel.0269",
       "source": "product.dkp.8675118",
       "target": "system.greenhouse",
       "type": "used_in",
@@ -5275,7 +5243,7 @@
       "evidence_class": "mapped_research_path"
     },
     {
-      "id": "rel.0274",
+      "id": "rel.0270",
       "source": "product.dkp.8675118",
       "target": "application.shading",
       "type": "serves_application",
@@ -5283,7 +5251,7 @@
       "evidence_class": "mapped_research_path"
     },
     {
-      "id": "rel.0275",
+      "id": "rel.0271",
       "source": "product.dkp.8675118",
       "target": "evidence.thirdparty.013",
       "type": "has_evidence",
@@ -5291,7 +5259,7 @@
       "evidence_class": "source_traceability"
     },
     {
-      "id": "rel.0276",
+      "id": "rel.0272",
       "source": "product.dkp.8771841",
       "target": "concept.shade-net-fitting",
       "type": "classified_as",
@@ -5299,7 +5267,7 @@
       "evidence_class": "third_party_product_description"
     },
     {
-      "id": "rel.0277",
+      "id": "rel.0273",
       "source": "product.dkp.8771841",
       "target": "system.greenhouse",
       "type": "used_in",
@@ -5307,7 +5275,7 @@
       "evidence_class": "mapped_research_path"
     },
     {
-      "id": "rel.0278",
+      "id": "rel.0274",
       "source": "product.dkp.8771841",
       "target": "application.greenhouse-protection",
       "type": "serves_application",
@@ -5315,7 +5283,7 @@
       "evidence_class": "mapped_research_path"
     },
     {
-      "id": "rel.0279",
+      "id": "rel.0275",
       "source": "product.dkp.8771841",
       "target": "evidence.thirdparty.013",
       "type": "has_evidence",
@@ -5323,7 +5291,7 @@
       "evidence_class": "source_traceability"
     },
     {
-      "id": "rel.0280",
+      "id": "rel.0276",
       "source": "product.dkp.8323827",
       "target": "concept.shade-net",
       "type": "classified_as",
@@ -5331,7 +5299,7 @@
       "evidence_class": "third_party_product_description"
     },
     {
-      "id": "rel.0281",
+      "id": "rel.0277",
       "source": "product.dkp.8323827",
       "target": "concept.greenhouse-cover",
       "type": "classified_as",
@@ -5339,7 +5307,7 @@
       "evidence_class": "third_party_product_description"
     },
     {
-      "id": "rel.0282",
+      "id": "rel.0278",
       "source": "product.dkp.8323827",
       "target": "system.greenhouse",
       "type": "used_in",
@@ -5347,7 +5315,7 @@
       "evidence_class": "mapped_research_path"
     },
     {
-      "id": "rel.0283",
+      "id": "rel.0279",
       "source": "product.dkp.8323827",
       "target": "application.shading",
       "type": "serves_application",
@@ -5355,7 +5323,7 @@
       "evidence_class": "mapped_research_path"
     },
     {
-      "id": "rel.0284",
+      "id": "rel.0280",
       "source": "product.dkp.8323827",
       "target": "evidence.thirdparty.013",
       "type": "has_evidence",
@@ -5363,7 +5331,7 @@
       "evidence_class": "source_traceability"
     },
     {
-      "id": "rel.0285",
+      "id": "rel.0281",
       "source": "concept.independent-dc-motor",
       "target": "evidence.thirdparty.014",
       "type": "has_evidence",
@@ -5371,7 +5339,7 @@
       "evidence_class": "third_party_listing_digikala_route_unresolved"
     },
     {
-      "id": "rel.0286",
+      "id": "rel.0282",
       "source": "concept.industrial-stepper",
       "target": "evidence.thirdparty.014",
       "type": "has_evidence",
@@ -5379,7 +5347,7 @@
       "evidence_class": "third_party_listing_digikala_route_unresolved"
     },
     {
-      "id": "rel.0287",
+      "id": "rel.0283",
       "source": "concept.independent-drone-bldc",
       "target": "evidence.thirdparty.015",
       "type": "has_evidence",
@@ -5387,7 +5355,7 @@
       "evidence_class": "third_party_market_only"
     },
     {
-      "id": "rel.0288",
+      "id": "rel.0284",
       "source": "concept.greenhouse-circulation-fan",
       "target": "evidence.thirdparty.016",
       "type": "has_evidence",
@@ -5395,7 +5363,7 @@
       "evidence_class": "third_party_market_only"
     },
     {
-      "id": "rel.0289",
+      "id": "rel.0285",
       "source": "concept.greenhouse-climate-controller",
       "target": "evidence.thirdparty.017",
       "type": "has_evidence",
@@ -5403,7 +5371,7 @@
       "evidence_class": "not_found_in_sample"
     },
     {
-      "id": "rel.0290",
+      "id": "rel.0286",
       "source": "concept.grow-light",
       "target": "evidence.thirdparty.017",
       "type": "has_evidence",
@@ -5411,7 +5379,7 @@
       "evidence_class": "not_found_in_sample"
     },
     {
-      "id": "rel.0291",
+      "id": "rel.0287",
       "source": "concept.fertigation-injector",
       "target": "evidence.thirdparty.017",
       "type": "has_evidence",
@@ -5419,7 +5387,7 @@
       "evidence_class": "not_found_in_sample"
     },
     {
-      "id": "rel.0292",
+      "id": "rel.0288",
       "source": "concept.greenhouse-heater",
       "target": "evidence.thirdparty.017",
       "type": "has_evidence",
