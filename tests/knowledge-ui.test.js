@@ -16,6 +16,7 @@ test('homepage mounts a graphical explorer instead of a vertical tree menu', () 
   const liveSearchIndex = html.indexOf('<section class="hero">');
   assert.ok(explorerIndex >= 0, 'knowledge explorer is missing');
   assert.ok(liveSearchIndex > explorerIndex, 'graph explorer must appear before live search');
+  assert.doesNotMatch(html, /id="discovery"|function renderDiscovery\(/, 'legacy flat discovery menu must stay removed');
   assert.match(html, /id="kgGraphViewport"/);
   assert.match(html, /id="kgGraph"/);
   assert.match(html, /href="\/knowledge-explorer\.css"/);
