@@ -320,7 +320,8 @@ async function initKnowledgeExplorer() {
 
       const other = otherId ? nodeMap.get(otherId) : null;
       if (!other || other.id === node.id || other.node_type === 'evidence_source') continue;
-      if (['nature', 'system', 'store_taxonomy', 'application'].includes(activeAxis) && !isProduct(other) && other.axis !== activeAxis) continue;
+      const linkedConceptForApplication = activeAxis === 'application' && other.axis === 'nature';
+      if (['nature', 'system', 'store_taxonomy', 'application'].includes(activeAxis) && !isProduct(other) && other.axis !== activeAxis && !linkedConceptForApplication) continue;
       if (activeAxis === 'technical_feature' && other.node_type !== 'concept' && !isProduct(other)) continue;
       if (!found.has(other.id)) found.set(other.id, { node: other, relation });
     }
