@@ -61,7 +61,7 @@
  scrollbar-color:#c4d7c7 #f3f7f3;scrollbar-width:thin;
 }
 .kg-graph-viewport.dragging{cursor:grabbing;user-select:none}
-#kgGraph{display:block;max-width:none;overflow:visible}
+#kgGraph{display:block;max-width:none;overflow:visible;margin-left:auto}
 .kg-svg-link{
  fill:none;stroke:url(#kgLineGradient);stroke-width:2.6;stroke-linecap:round;
  opacity:.84;stroke-dasharray:10 7;animation:kgFlow 1.5s linear infinite;
