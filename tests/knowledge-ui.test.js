@@ -54,7 +54,7 @@ test('right-to-left horizontal graph supports expansion, focus and zoom', () => 
 test('product evidence is not presented as confirmed stock or price', () => {
   assert.match(js, /موجودی: بررسی‌نشده/);
   assert.match(js, /قیمت: مشاهده نشده/);
-  assert.match(js, /seller/);
+  assert.match(js, /فروشنده: مشاهده نشده/);
   const candidate = graph.nodes.find(node => node.node_type === 'product_candidate');
   assert.ok(candidate, 'candidate record must remain represented separately');
   assert.equal(candidate.availability_status, 'unknown');
