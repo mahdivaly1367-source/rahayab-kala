@@ -6,6 +6,7 @@ const http = require('node:http');
 const fs = require('node:fs');
 const path = require('node:path');
 const { URL } = require('node:url');
+const knowledge = require('./src/knowledge/knowledge-service');
 
 const HOST = '127.0.0.1';
 const PORT = Number(process.env.PORT || 4173);
@@ -732,7 +733,33 @@ const server = http.createServer(async (request, response) => {
   const url = new URL(request.url, base);
   if (request.method !== 'GET') { response.writeHead(405); response.end('Method not allowed'); return; }
   if (url.pathname === '/api/health') {
-    sendJson(response, 200, { ok: true, node: process.version, mode: 'local-prototype', liveApiVerifiedHere: false });
+    sendJson(response, 200, { ok: true, node: process.version, mode: 'local-prototype', liveApiVerifiedHere: false, knowledgeGraphVersion: knowledge.getSummary().graph_version });
+    return;
+  }
+  if (url.pathname === '/api/knowledge') {
+    sendJson(response, 200, knowledge.getSummary());
+    return;
+  }
+  if (url.pathname === '/api/knowledge/graph') {
+    sendJson(response, 200, knowledge.getGraph());
+    return;
+  }
+  if (url.pathname === '/api/knowledge/search') {
+    const query = (url.searchParams.get('q') || '').trim();
+    if (!query) {
+      sendJson(response, 400, { error: 'پارامتر q برای جست‌وجوی پایگاه دانش الزامی است.' });
+      return;
+    }
+    if (query.length > MAX_QUERY_LENGTH) {
+      sendJson(response, 400, { error: 'طول عبارت جست‌وجو بیش از حد مجاز است.' });
+      return;
+    }
+    const limit = Number(url.searchParams.get('limit') || 20);
+    const payload = knowledge.searchKnowledge(query, {
+      axis: url.searchParams.get('axis') || null,
+      limit: Number.isFinite(limit) ? limit : 20,
+    });
+    sendJson(response, 200, payload);
     return;
   }
   if (url.pathname === '/api/search') {
