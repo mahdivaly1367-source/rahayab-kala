@@ -98,7 +98,7 @@
  <div class="searchbox"><div class="searchrow"><span style="font-size:20px;color:var(--green)">⌕</span><input id="query" type="search" value="موتور" placeholder="مثلاً موتور، پمپ یا باتری" aria-label="عبارت جست‌وجو"><button id="searchBtn" class="primary">جست‌وجوی زنده</button></div><div class="search-options"><label class="check"><input id="wide" type="checkbox" checked> کاوش خودکار شاخه‌های مرتبط</label><span>دادهٔ نمایشی استفاده نمی‌شود</span></div><div class="chips"><button class="chip active" data-query="موتور">موتور</button><button class="chip" data-query="پمپ">پمپ</button><button class="chip" data-query="باتری">باتری</button><button class="chip" data-query="ابزار">ابزار</button><button class="chip" data-query="موتور پاراترایک">موتور پاراترایک</button></div><div class="search-options"><button class="secondary" id="googleBtn">جست‌وجوی گسترده در وب</button><button class="secondary" id="googleDigikalaBtn">جست‌وجوی گوگل در دیجی‌کالا</button><button class="quiet" id="digikalaBtn">جست‌وجوی مستقیم دیجی‌کالا</button></div></div>
 </section>
 <div class="warning"><b>یادآوری:</b> این یک نمونهٔ فنی است و از مسیرهای API مستندنشده استفاده می‌کند. نمایش یک قیمت، تضمین موجودی یا مجوز ذخیره‌سازی و استفادهٔ تجاری از اطلاعات نیست. برای محصول واقعی باید مجوز و منبع داده از دیجی‌کالا/افیلیو تأیید شود.</div>
-<div class="toolbar"><div><h2 id="title">نتایج آزمایش برای «موتور»</h2><p id="subtitle">در حال آماده‌سازی درخواست‌ها…</p></div><div class="counts" id="count">—</div></div>
+<div class="toolbar"><div><h2 id="title">نتایج جست‌وجو برای «موتور»</h2><p id="subtitle">در حال آماده‌سازی جست‌وجوی زنده…</p></div><div class="counts" id="count">—</div></div>
 <div id="status" class="status show">برای دریافت دادهٔ زنده، روی «جست‌وجوی زنده» بزن.</div>
 <div id="results" class="results"></div>
 <div class="footnote">پروتوتایپ محلی راه‌یاب کالا · <span id="runtime">بررسی سرور…</span><br>مسیرهای آزمایشی بر اساس پروژه‌های عمومی غیررسمی شناسایی شده‌اند. <a href="https://www.digikala.com/" target="_blank" rel="noopener noreferrer">دیجی‌کالا</a> · <a href="https://publisher.affilio.ir/" target="_blank" rel="noopener noreferrer">پنل افیلیو</a> · قیمت و موجودی را پیش از خرید در فروشگاه مقصد بررسی کن.</div>
@@ -277,11 +277,11 @@ function safeProductLinkCheck(url){try{const parsed=new URL(url);return parsed.p
 function makeProduct(p){return {id:String(p.id||''),title:String(p.title||'محصول بدون عنوان'),url:safeProductLinkCheck(p.url)?p.url:'https://www.digikala.com/',image:typeof p.image==='string'&&p.image.startsWith('https://')?p.image:'',priceToman:Number.isFinite(p.priceToman)&&p.priceToman>0?p.priceToman:null,category:String(p.category||''),sourceQuery:String(p.sourceQuery||'')}}
 function render(payload) {
  const host=$('results');host.replaceChildren();
- $('title').textContent='نتایج آزمایش برای «'+payload.query+'»';
+ $('title').textContent='نتایج جست‌وجو برای «'+payload.query+'»';
  $('count').textContent=payload.total+' محصول یکتا';
  const successCount=(payload.results||[]).filter(r=>(r.products||[]).length).length;
  const categoryText=payload.searchedCategoryCount?' · شاخه‌های بررسی‌شده: '+payload.searchedCategoryCount:'';
- $('subtitle').textContent='عبارت‌های جست‌وجو: '+(payload.plannedQueries||[]).join('، ')+' · گروه پاسخ‌دار: '+successCount+categoryText+' · تصاویر: '+(payload.imageCount??0)+' از '+payload.total;
+ $('subtitle').textContent='درخواست جست‌وجو: '+(payload.plannedQueries||[]).join('، ')+' · گروه‌های پاسخ‌دار: '+successCount+categoryText+' · تصاویر: '+(payload.imageCount??0)+' از '+payload.total;
  if(payload.total===0){
   host.innerHTML='<div class="empty"><b>برای این عبارت محصولی از جست‌وجوی دیجی‌کالا دریافت نشد.</b>این به معنی نبود قطعی کالا نیست؛ ممکن است محصول با اصطلاح یا نام دیگری ثبت شده باشد. این عبارت‌های جایگزین را امتحان کن:<div id="zeroAlternatives" class="discovery-chips" style="justify-content:center;margin-top:12px"></div></div>';
 
@@ -316,7 +316,7 @@ function render(payload) {
 }
 async function search(categoryId=null, categoryTitle='') {
  const query=$('query').value.trim();if(!query){setStatus('عبارت جست‌وجو را وارد کن.','error');return;}
- $('searchBtn').disabled=true;$('searchBtn').innerHTML='<span class="spinner"></span>در حال جست‌وجو';$('count').textContent='در حال دریافت…';$('title').textContent='در حال جست‌وجوی «'+query+'»';$('subtitle').textContent='جست‌وجوی سراسری، پیشنهادهای زنده و شاخه‌های مرتبط در حال بررسی‌اند.';setStatus('درخواست دادهٔ زنده در حال اجراست…');
+ $('searchBtn').disabled=true;$('searchBtn').innerHTML='<span class="spinner"></span>در حال جست‌وجو';$('count').textContent='در حال دریافت…';$('title').textContent='در حال جست‌وجوی «'+query+'»';$('subtitle').textContent='جست‌وجوی سراسری، پیشنهادهای زنده و شاخه‌های مرتبط در حال بررسی‌اند.';setStatus('در حال دریافت نتایج جست‌وجوی زنده…');
  try {const params=new URLSearchParams({query,wide:$('wide').checked?'true':'false'});if(categoryId){params.set('categoryId',categoryId);params.set('categoryTitle',categoryTitle);}const response=await fetch('/api/search?'+params.toString(),{cache:'no-store'});const payload=await response.json();if(!response.ok)throw new Error(payload.error||'خطای سرور');render(payload);}
  catch(error){$('results').innerHTML='<div class="empty"><b>سرور محلی پاسخ نداد.</b>مطمئن شو برنامه با run.ps1 اجرا شده و آدرس آن 127.0.0.1:4173 است.</div>';setStatus('خطا: '+String(error.message||error),'error');}
  finally{$('searchBtn').disabled=false;$('searchBtn').textContent='جست‌وجوی زنده';}
