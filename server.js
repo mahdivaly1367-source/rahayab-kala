@@ -754,9 +754,14 @@ const server = http.createServer(async (request, response) => {
       sendJson(response, 400, { error: 'طول عبارت جست‌وجو بیش از حد مجاز است.' });
       return;
     }
+    const axis = url.searchParams.get('axis') || null;
+    if (axis && !knowledge.getGraph().axes.some(item => item.id === axis)) {
+      sendJson(response, 400, { error: 'محور جست‌وجوی نامعتبر است.' });
+      return;
+    }
     const limit = Number(url.searchParams.get('limit') || 20);
     const payload = knowledge.searchKnowledge(query, {
-      axis: url.searchParams.get('axis') || null,
+      axis,
       limit: Number.isFinite(limit) ? limit : 20,
     });
     sendJson(response, 200, payload);
