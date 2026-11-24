@@ -159,7 +159,20 @@ function searchKnowledge(query, options = {}) {
     });
   }
 
-  matches.sort((a, b) => b.score - a.score || a.label.localeCompare(b.label, 'fa'));
+  const typePriority = {
+    concept: 0,
+    system: 1,
+    application: 2,
+    technical_feature: 3,
+    store_category: 4,
+    product_observation: 5,
+    product_candidate: 6,
+  };
+  matches.sort((a, b) =>
+    b.score - a.score ||
+    (typePriority[a.node_type] ?? 99) - (typePriority[b.node_type] ?? 99) ||
+    a.label.localeCompare(b.label, 'fa')
+  );
   return {
     query: String(query),
     normalized_query: normalizedQuery,
