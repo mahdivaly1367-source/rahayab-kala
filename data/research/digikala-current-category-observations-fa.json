@@ -1,0 +1,371 @@
+{
+  "dataset": "rahayab_kala_digikala_category_observations",
+  "schema_version": "1.0.0",
+  "observed_at": "2026-11-24",
+  "source_scope": "Public pages on the official Digikala domain; visible navigation and rendered category sections",
+  "evidence_status": "official_current_page",
+  "limitation": "Partial public-navigation snapshot, not a complete backend taxonomy or proof of SKU availability.",
+  "sources": [
+    {
+      "id": "homepage",
+      "url": "https://www.digikala.com/",
+      "description": "Top-level navigation labels"
+    },
+    {
+      "id": "tools",
+      "url": "https://www.digikala.com/main/vehicles/",
+      "description": "Visible title: ابزارآلات و تجهیزات"
+    },
+    {
+      "id": "vehicles",
+      "url": "https://www.digikala.com/main/vehicles-spare-parts/",
+      "description": "خودرو و موتورسیکلت"
+    },
+    {
+      "id": "appliances",
+      "url": "https://www.digikala.com/main/home-appliance/",
+      "description": "لوازم خانگی برقی"
+    },
+    {
+      "id": "home",
+      "url": "https://www.digikala.com/main/home-and-kitchen/",
+      "description": "خانه و آشپزخانه"
+    }
+  ],
+  "top_level_categories": [
+    {
+      "store_node_id": "digikala-root-01",
+      "store_label_fa": "موبایل",
+      "parent_store_node_id": null,
+      "source_id": "homepage",
+      "node_kind": "top_level_category",
+      "evidence_status": "official_current_page"
+    },
+    {
+      "store_node_id": "digikala-root-02",
+      "store_label_fa": "لپ تاپ",
+      "parent_store_node_id": null,
+      "source_id": "homepage",
+      "node_kind": "top_level_category",
+      "evidence_status": "official_current_page"
+    },
+    {
+      "store_node_id": "digikala-root-03",
+      "store_label_fa": "کالای دیجیتال",
+      "parent_store_node_id": null,
+      "source_id": "homepage",
+      "node_kind": "top_level_category",
+      "evidence_status": "official_current_page"
+    },
+    {
+      "store_node_id": "digikala-root-04",
+      "store_label_fa": "لوازم خانگی برقی",
+      "parent_store_node_id": null,
+      "source_id": "homepage",
+      "node_kind": "top_level_category",
+      "evidence_status": "official_current_page"
+    },
+    {
+      "store_node_id": "digikala-root-05",
+      "store_label_fa": "خانه و آشپزخانه",
+      "parent_store_node_id": null,
+      "source_id": "homepage",
+      "node_kind": "top_level_category",
+      "evidence_status": "official_current_page"
+    },
+    {
+      "store_node_id": "digikala-root-06",
+      "store_label_fa": "آرایشی بهداشتی",
+      "parent_store_node_id": null,
+      "source_id": "homepage",
+      "node_kind": "top_level_category",
+      "evidence_status": "official_current_page"
+    },
+    {
+      "store_node_id": "digikala-root-07",
+      "store_label_fa": "مد و پوشاک",
+      "parent_store_node_id": null,
+      "source_id": "homepage",
+      "node_kind": "top_level_category",
+      "evidence_status": "official_current_page"
+    },
+    {
+      "store_node_id": "digikala-root-08",
+      "store_label_fa": "طلا و نقره",
+      "parent_store_node_id": null,
+      "source_id": "homepage",
+      "node_kind": "top_level_category",
+      "evidence_status": "official_current_page"
+    },
+    {
+      "store_node_id": "digikala-root-09",
+      "store_label_fa": "خودرو و موتورسیکلت",
+      "parent_store_node_id": null,
+      "source_id": "homepage",
+      "node_kind": "top_level_category",
+      "evidence_status": "official_current_page"
+    },
+    {
+      "store_node_id": "digikala-root-10",
+      "store_label_fa": "سلامت و پزشکی",
+      "parent_store_node_id": null,
+      "source_id": "homepage",
+      "node_kind": "top_level_category",
+      "evidence_status": "official_current_page"
+    },
+    {
+      "store_node_id": "digikala-root-11",
+      "store_label_fa": "ابزارآلات و تجهیزات",
+      "parent_store_node_id": null,
+      "source_id": "homepage",
+      "node_kind": "top_level_category",
+      "evidence_status": "official_current_page"
+    },
+    {
+      "store_node_id": "digikala-root-12",
+      "store_label_fa": "کتاب و هنر",
+      "parent_store_node_id": null,
+      "source_id": "homepage",
+      "node_kind": "top_level_category",
+      "evidence_status": "official_current_page"
+    },
+    {
+      "store_node_id": "digikala-root-13",
+      "store_label_fa": "ورزش و سفر",
+      "parent_store_node_id": null,
+      "source_id": "homepage",
+      "node_kind": "top_level_category",
+      "evidence_status": "official_current_page"
+    },
+    {
+      "store_node_id": "digikala-root-14",
+      "store_label_fa": "کارت هدیه",
+      "parent_store_node_id": null,
+      "source_id": "homepage",
+      "node_kind": "top_level_category",
+      "evidence_status": "official_current_page"
+    },
+    {
+      "store_node_id": "digikala-root-15",
+      "store_label_fa": "سوپر مارکت آنلاین",
+      "parent_store_node_id": null,
+      "source_id": "homepage",
+      "node_kind": "top_level_category",
+      "evidence_status": "official_current_page"
+    },
+    {
+      "store_node_id": "digikala-root-16",
+      "store_label_fa": "اسباب بازی، کودک و نوزاد",
+      "parent_store_node_id": null,
+      "source_id": "homepage",
+      "node_kind": "top_level_category",
+      "evidence_status": "official_current_page"
+    },
+    {
+      "store_node_id": "digikala-root-17",
+      "store_label_fa": "پت شاپ",
+      "parent_store_node_id": null,
+      "source_id": "homepage",
+      "node_kind": "top_level_category",
+      "evidence_status": "official_current_page"
+    },
+    {
+      "store_node_id": "digikala-root-18",
+      "store_label_fa": "محصولات بومی و محلی",
+      "parent_store_node_id": null,
+      "source_id": "homepage",
+      "node_kind": "top_level_category",
+      "evidence_status": "official_current_page"
+    }
+  ],
+  "observed_category_groups": [
+    {
+      "store_label_fa": "ابزارآلات و تجهیزات",
+      "source_id": "tools",
+      "category_children": [
+        "ابزار غیر برقی",
+        "تجهیزات صنعتی و انبارداری",
+        "ابزار برقی و شارژی",
+        "ابزار دقیق و اندازه گیری",
+        "باغبانی و کشاورزی",
+        "تجهیزات تردد، حفاظت و امنیت",
+        "ابزار ایمنی",
+        "یراق آلات",
+        "لوازم و مصالح ساختمانی"
+      ],
+      "observed_menu_terms": [
+        "دریل",
+        "پیچ گوشتی و دریل شارژی",
+        "آچار ضربه ای",
+        "فرز و سنگ رومیزی",
+        "موتور برق",
+        "مکنده - دمنده",
+        "جاروبرقی صنعتی",
+        "کارواش",
+        "دستگاه جوش",
+        "هویه",
+        "ابزار برش و تراشکاری",
+        "کمپرسور هوا",
+        "مولتی متر",
+        "لوازم جانبی و یدکی ابزار برقی",
+        "اره زنجیری",
+        "ابزار دستی",
+        "مجموعه ابزار",
+        "نردبان",
+        "متر، تراز، اندازه گیری دقیق",
+        "لوازم روانکاری",
+        "چسب صنعتی",
+        "پیچ و مهره، رول پلاک، میخ و پرچ",
+        "ابزار باغبانی",
+        "ادوات کشاورزی",
+        "بذر و تخم گیاهان",
+        "خاک، کود و آفت کش",
+        "کاشت و پرورش گیاه",
+        "قطعات یدکی ماشین آلات صنعتی",
+        "تجهیزات کارگاهی",
+        "مخزن آب",
+        "شیرآلات"
+      ],
+      "descriptive_terms_not_confirmed_as_category": [
+        "پمپ"
+      ],
+      "notes": "پمپ در متن معرفی گروه نام برده شده، ولی در فهرست دسته‌های قابل مشاهده به‌عنوان گره مستقل دیده نشد."
+    },
+    {
+      "store_label_fa": "خودرو و موتورسیکلت",
+      "source_id": "vehicles",
+      "category_children": [
+        "لوازم یدکی موتورسیکلت",
+        "لوازم جانبی خودرو",
+        "لوازم یدکی خودرو",
+        "لوازم مصرفی خودرو",
+        "سیستم صوتی و تصویری خودرو",
+        "موتورسیکلت",
+        "قطعات و تجهیزات آفرود",
+        "لوازم جانبی موتورسیکلت",
+        "لوازم مصرفی موتورسیکلت",
+        "تجهیزات ایمنی موتورسیکلت",
+        "لوازم موتورسیکلت"
+      ],
+      "observed_menu_terms": [
+        "روغن موتور",
+        "فیلترها",
+        "قطعات سرویسی",
+        "روغن گیربکس",
+        "روغن هیدرولیک",
+        "ضدیخ و آب رادیاتور",
+        "باتری",
+        "لاستیک",
+        "مکمل سوخت و روغن",
+        "لوازم بدنه",
+        "چراغ",
+        "آینه جانبی",
+        "لوازم جلوبندی و تعلیق",
+        "لوازم الکترونیکی",
+        "لوازم مکانیکی",
+        "دوربین ثبت وقایع خودرو",
+        "کفپوش خودرو",
+        "هدلایت",
+        "لوازم ضد سرقت",
+        "تیونینگ و تقویت موتور"
+      ],
+      "notes": "درخت ترکیبی از وسیله، قطعه، مصرفی، جانبی و کاربرد/ارتقا است."
+    },
+    {
+      "store_label_fa": "لوازم خانگی برقی",
+      "source_id": "appliances",
+      "category_children": [
+        "لوازم پخت و پز",
+        "نوشیدنی ساز",
+        "صوتی و تصویری",
+        "تصفیه کننده آب",
+        "خردکن و غذاساز",
+        "لوازم مکمل آشپزخانه",
+        "یخچال فریزر",
+        "لوازم شست و شو و نظافت",
+        "تهویه، سرمایش و گرمایش",
+        "فیلتر تصفیه کننده آب",
+        "چرخ خیاطی",
+        "لوازم توکار",
+        "لوازم ویژه خانگی برقی",
+        "لوازم یدکی خانگی",
+        "اقلام اساسی جهیزیه"
+      ],
+      "observed_menu_terms": [
+        "پنکه",
+        "کولر آبی",
+        "کولر گازی",
+        "بخاری",
+        "رادیاتور",
+        "پکیج دیواری",
+        "آبگرمکن",
+        "جاروبرقی",
+        "ماشین لباسشویی",
+        "ماشین ظرفشویی",
+        "چرخ خیاطی صنعتی",
+        "فیلتر تصفیه آب"
+      ]
+    },
+    {
+      "store_label_fa": "خانه و آشپزخانه",
+      "source_id": "home",
+      "category_children": [
+        "شستشو و نظافت",
+        "حمام و سرویس بهداشتی",
+        "آشپزخانه",
+        "سرو و پذیرایی",
+        "دکوراسیون و دکوراتیو",
+        "خواب",
+        "اکسسوری لوازم شخصی",
+        "آشپزخانه صنعتی و کافی شاپ",
+        "روشنایی و الکتریکی"
+      ],
+      "observed_menu_terms": [
+        "شیرآلات",
+        "اتصالات جانبی",
+        "فلاش تانک",
+        "لامپ",
+        "لوستر",
+        "ابزار حمام",
+        "توالت فرنگی",
+        "روشویی",
+        "پرده",
+        "گل و گیاه آپارتمانی"
+      ]
+    }
+  ],
+  "research_mappings": [
+    {
+      "concept": "موتور",
+      "evidence_routes": [
+        "خودرو و موتورسیکلت > موتورسیکلت",
+        "خودرو و موتورسیکلت > لوازم مصرفی خودرو > روغن موتور",
+        "خودرو و موتورسیکلت > لوازم جانبی خودرو > تیونینگ و تقویت موتور",
+        "ابزارآلات و تجهیزات > ابزار برقی و شارژی > موتور برق"
+      ],
+      "unresolved_knowledge_branches": [
+        "موتور الکتریکی DC/BLDC",
+        "استپر موتور",
+        "سروو موتور",
+        "موتور پروازی و پهپادی"
+      ],
+      "note": "شاخه‌های حل‌نشده، دانش‌محورند و در این ممیزی به‌عنوان دسته جاری فروشگاه تأیید نشده‌اند."
+    },
+    {
+      "concept": "خانه",
+      "store_routes": [
+        "خانه و آشپزخانه",
+        "لوازم خانگی برقی"
+      ],
+      "note": "تأسیسات و سرویس بهداشتی، روشنایی، لوازم خانگی و پخت‌وپز در بیش از یک گروه تجاری پخش‌اند."
+    },
+    {
+      "concept": "گلخانه",
+      "store_routes": [
+        "ابزارآلات و تجهیزات > باغبانی و کشاورزی"
+      ],
+      "missing_observed_store_node": "گلخانه",
+      "note": "عدم مشاهده عنوان گلخانه در این نمونه منو به معنی نبود تجهیزات گلخانه‌ای در فروشگاه نیست."
+    }
+  ]
+}
