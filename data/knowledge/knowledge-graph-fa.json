@@ -603,7 +603,7 @@
       "axis": "system",
       "label": "پهپاد و مدل‌های پروازی",
       "description": "سامانه پیشران پروازی شامل موتور، ESC، ملخ و باتری",
-      "aliases": {},
+      "aliases": [],
       "status": "active"
     },
     {
@@ -973,7 +973,8 @@
       "url": "https://www.digikala.com/",
       "observed_at": "2026-11-24",
       "evidence_status": "official_current_page",
-      "limitations": "مشاهده منوی عمومی/صفحه؛ نه اثبات موجودی کالا"
+      "limitations": "مشاهده منوی عمومی/صفحه؛ نه اثبات موجودی کالا",
+      "aliases": []
     },
     {
       "id": "evidence.digikala.tools",
@@ -984,7 +985,8 @@
       "url": "https://www.digikala.com/main/vehicles/",
       "observed_at": "2026-11-24",
       "evidence_status": "official_current_page",
-      "limitations": "مشاهده منوی عمومی/صفحه؛ نه اثبات موجودی کالا"
+      "limitations": "مشاهده منوی عمومی/صفحه؛ نه اثبات موجودی کالا",
+      "aliases": []
     },
     {
       "id": "evidence.digikala.vehicles",
@@ -995,7 +997,8 @@
       "url": "https://www.digikala.com/main/vehicles-spare-parts/",
       "observed_at": "2026-11-24",
       "evidence_status": "official_current_page",
-      "limitations": "مشاهده منوی عمومی/صفحه؛ نه اثبات موجودی کالا"
+      "limitations": "مشاهده منوی عمومی/صفحه؛ نه اثبات موجودی کالا",
+      "aliases": []
     },
     {
       "id": "evidence.digikala.appliances",
@@ -1006,7 +1009,8 @@
       "url": "https://www.digikala.com/main/home-appliance/",
       "observed_at": "2026-11-24",
       "evidence_status": "official_current_page",
-      "limitations": "مشاهده منوی عمومی/صفحه؛ نه اثبات موجودی کالا"
+      "limitations": "مشاهده منوی عمومی/صفحه؛ نه اثبات موجودی کالا",
+      "aliases": []
     },
     {
       "id": "evidence.digikala.home",
@@ -1017,7 +1021,8 @@
       "url": "https://www.digikala.com/main/home-and-kitchen/",
       "observed_at": "2026-11-24",
       "evidence_status": "official_current_page",
-      "limitations": "مشاهده منوی عمومی/صفحه؛ نه اثبات موجودی کالا"
+      "limitations": "مشاهده منوی عمومی/صفحه؛ نه اثبات موجودی کالا",
+      "aliases": []
     },
     {
       "id": "store.group.tools",
@@ -2433,7 +2438,8 @@
       "evidence_status": "affiliate_link_resolves_to_dkp",
       "observed_at": "2026-11-24",
       "note": "",
-      "limitations": "منبع شخص ثالث؛ برای اثبات قیمت/موجودی جاری دیجی‌کالا کافی نیست."
+      "limitations": "منبع شخص ثالث؛ برای اثبات قیمت/موجودی جاری دیجی‌کالا کافی نیست.",
+      "aliases": []
     },
     {
       "id": "product.dkp.14267164",
@@ -2452,7 +2458,8 @@
       "seller_status": "not_observed",
       "source_id": "evidence.thirdparty.001",
       "source_record": "data/research/specialty-product-evidence-fa.json",
-      "observed_at": "2026-11-24"
+      "observed_at": "2026-11-24",
+      "aliases": []
     },
     {
       "id": "evidence.thirdparty.002",
@@ -2464,7 +2471,8 @@
       "evidence_status": "affiliate_link_resolves_to_dkp",
       "observed_at": "2026-11-24",
       "note": "",
-      "limitations": "منبع شخص ثالث؛ برای اثبات قیمت/موجودی جاری دیجی‌کالا کافی نیست."
+      "limitations": "منبع شخص ثالث؛ برای اثبات قیمت/موجودی جاری دیجی‌کالا کافی نیست.",
+      "aliases": []
     },
     {
       "id": "product.dkp.20233926",
@@ -2483,7 +2491,8 @@
       "seller_status": "not_observed",
       "source_id": "evidence.thirdparty.002",
       "source_record": "data/research/specialty-product-evidence-fa.json",
-      "observed_at": "2026-11-24"
+      "observed_at": "2026-11-24",
+      "aliases": []
     },
     {
       "id": "evidence.thirdparty.003",
@@ -2495,7 +2504,8 @@
       "evidence_status": "third_party_listing_digikala_route_unresolved",
       "observed_at": "2026-11-24",
       "note": "",
-      "limitations": "منبع شخص ثالث؛ برای اثبات قیمت/موجودی جاری دیجی‌کالا کافی نیست."
+      "limitations": "منبع شخص ثالث؛ برای اثبات قیمت/موجودی جاری دیجی‌کالا کافی نیست.",
+      "aliases": []
     },
     {
       "id": "candidate.dkp.21108319",
@@ -2514,7 +2524,8 @@
       "seller_status": "not_observed",
       "source_id": "evidence.thirdparty.003",
       "source_record": "data/research/specialty-product-evidence-fa.json",
-      "observed_at": "2026-11-24"
+      "observed_at": "2026-11-24",
+      "aliases": []
     },
     {
       "id": "evidence.thirdparty.004",
@@ -2526,7 +2537,8 @@
       "evidence_status": "affiliate_link_resolves_to_dkp",
       "observed_at": "2026-11-24",
       "note": "",
-      "limitations": "منبع شخص ثالث؛ برای اثبات قیمت/موجودی جاری دیجی‌کالا کافی نیست."
+      "limitations": "منبع شخص ثالث؛ برای اثبات قیمت/موجودی جاری دیجی‌کالا کافی نیست.",
+      "aliases": []
     },
     {
       "id": "product.dkp.15483404",
@@ -2545,7 +2557,8 @@
       "seller_status": "not_observed",
       "source_id": "evidence.thirdparty.004",
       "source_record": "data/research/specialty-product-evidence-fa.json",
-      "observed_at": "2026-11-24"
+      "observed_at": "2026-11-24",
+      "aliases": []
     },
     {
       "id": "product.dkp.16806226",
@@ -2564,7 +2577,8 @@
       "seller_status": "not_observed",
       "source_id": "evidence.thirdparty.004",
       "source_record": "data/research/specialty-product-evidence-fa.json",
-      "observed_at": "2026-11-24"
+      "observed_at": "2026-11-24",
+      "aliases": []
     },
     {
       "id": "product.dkp.8319071",
@@ -2583,7 +2597,8 @@
       "seller_status": "not_observed",
       "source_id": "evidence.thirdparty.004",
       "source_record": "data/research/specialty-product-evidence-fa.json",
-      "observed_at": "2026-11-24"
+      "observed_at": "2026-11-24",
+      "aliases": []
     },
     {
       "id": "evidence.thirdparty.005",
@@ -2595,7 +2610,8 @@
       "evidence_status": "affiliate_link_resolves_to_dkp",
       "observed_at": "2026-11-24",
       "note": "",
-      "limitations": "منبع شخص ثالث؛ برای اثبات قیمت/موجودی جاری دیجی‌کالا کافی نیست."
+      "limitations": "منبع شخص ثالث؛ برای اثبات قیمت/موجودی جاری دیجی‌کالا کافی نیست.",
+      "aliases": []
     },
     {
       "id": "product.dkp.2451884",
@@ -2614,7 +2630,8 @@
       "seller_status": "not_observed",
       "source_id": "evidence.thirdparty.005",
       "source_record": "data/research/specialty-product-evidence-fa.json",
-      "observed_at": "2026-11-24"
+      "observed_at": "2026-11-24",
+      "aliases": []
     },
     {
       "id": "product.dkp.3884114",
@@ -2633,7 +2650,8 @@
       "seller_status": "not_observed",
       "source_id": "evidence.thirdparty.005",
       "source_record": "data/research/specialty-product-evidence-fa.json",
-      "observed_at": "2026-11-24"
+      "observed_at": "2026-11-24",
+      "aliases": []
     },
     {
       "id": "product.dkp.19141373",
@@ -2652,7 +2670,8 @@
       "seller_status": "not_observed",
       "source_id": "evidence.thirdparty.005",
       "source_record": "data/research/specialty-product-evidence-fa.json",
-      "observed_at": "2026-11-24"
+      "observed_at": "2026-11-24",
+      "aliases": []
     },
     {
       "id": "evidence.thirdparty.006",
@@ -2664,7 +2683,8 @@
       "evidence_status": "affiliate_link_resolves_to_dkp",
       "observed_at": "2026-11-24",
       "note": "",
-      "limitations": "منبع شخص ثالث؛ برای اثبات قیمت/موجودی جاری دیجی‌کالا کافی نیست."
+      "limitations": "منبع شخص ثالث؛ برای اثبات قیمت/موجودی جاری دیجی‌کالا کافی نیست.",
+      "aliases": []
     },
     {
       "id": "product.dkp.2460735",
@@ -2683,7 +2703,8 @@
       "seller_status": "not_observed",
       "source_id": "evidence.thirdparty.006",
       "source_record": "data/research/specialty-product-evidence-fa.json",
-      "observed_at": "2026-11-24"
+      "observed_at": "2026-11-24",
+      "aliases": []
     },
     {
       "id": "product.dkp.19661679",
@@ -2702,7 +2723,8 @@
       "seller_status": "not_observed",
       "source_id": "evidence.thirdparty.005",
       "source_record": "data/research/specialty-product-evidence-fa.json",
-      "observed_at": "2026-11-24"
+      "observed_at": "2026-11-24",
+      "aliases": []
     },
     {
       "id": "evidence.thirdparty.007",
@@ -2714,7 +2736,8 @@
       "evidence_status": "affiliate_link_resolves_to_dkp",
       "observed_at": "2026-11-24",
       "note": "",
-      "limitations": "منبع شخص ثالث؛ برای اثبات قیمت/موجودی جاری دیجی‌کالا کافی نیست."
+      "limitations": "منبع شخص ثالث؛ برای اثبات قیمت/موجودی جاری دیجی‌کالا کافی نیست.",
+      "aliases": []
     },
     {
       "id": "product.dkp.12463221",
@@ -2733,7 +2756,8 @@
       "seller_status": "not_observed",
       "source_id": "evidence.thirdparty.007",
       "source_record": "data/research/specialty-product-evidence-fa.json",
-      "observed_at": "2026-11-24"
+      "observed_at": "2026-11-24",
+      "aliases": []
     },
     {
       "id": "evidence.thirdparty.008",
@@ -2745,7 +2769,8 @@
       "evidence_status": "affiliate_link_resolves_to_dkp",
       "observed_at": "2026-11-24",
       "note": "",
-      "limitations": "منبع شخص ثالث؛ برای اثبات قیمت/موجودی جاری دیجی‌کالا کافی نیست."
+      "limitations": "منبع شخص ثالث؛ برای اثبات قیمت/موجودی جاری دیجی‌کالا کافی نیست.",
+      "aliases": []
     },
     {
       "id": "product.dkp.20046701",
@@ -2764,7 +2789,8 @@
       "seller_status": "not_observed",
       "source_id": "evidence.thirdparty.008",
       "source_record": "data/research/specialty-product-evidence-fa.json",
-      "observed_at": "2026-11-24"
+      "observed_at": "2026-11-24",
+      "aliases": []
     },
     {
       "id": "evidence.thirdparty.009",
@@ -2776,7 +2802,8 @@
       "evidence_status": "affiliate_link_resolves_to_dkp",
       "observed_at": "2026-11-24",
       "note": "",
-      "limitations": "منبع شخص ثالث؛ برای اثبات قیمت/موجودی جاری دیجی‌کالا کافی نیست."
+      "limitations": "منبع شخص ثالث؛ برای اثبات قیمت/موجودی جاری دیجی‌کالا کافی نیست.",
+      "aliases": []
     },
     {
       "id": "product.dkp.20662147",
@@ -2795,7 +2822,8 @@
       "seller_status": "not_observed",
       "source_id": "evidence.thirdparty.009",
       "source_record": "data/research/specialty-product-evidence-fa.json",
-      "observed_at": "2026-11-24"
+      "observed_at": "2026-11-24",
+      "aliases": []
     },
     {
       "id": "evidence.thirdparty.010",
@@ -2807,7 +2835,8 @@
       "evidence_status": "affiliate_link_resolves_to_dkp",
       "observed_at": "2026-11-24",
       "note": "",
-      "limitations": "منبع شخص ثالث؛ برای اثبات قیمت/موجودی جاری دیجی‌کالا کافی نیست."
+      "limitations": "منبع شخص ثالث؛ برای اثبات قیمت/موجودی جاری دیجی‌کالا کافی نیست.",
+      "aliases": []
     },
     {
       "id": "product.dkp.3579672",
@@ -2826,7 +2855,8 @@
       "seller_status": "not_observed",
       "source_id": "evidence.thirdparty.010",
       "source_record": "data/research/specialty-product-evidence-fa.json",
-      "observed_at": "2026-11-24"
+      "observed_at": "2026-11-24",
+      "aliases": []
     },
     {
       "id": "evidence.thirdparty.011",
@@ -2838,7 +2868,8 @@
       "evidence_status": "affiliate_link_resolves_to_dkp",
       "observed_at": "2026-11-24",
       "note": "",
-      "limitations": "منبع شخص ثالث؛ برای اثبات قیمت/موجودی جاری دیجی‌کالا کافی نیست."
+      "limitations": "منبع شخص ثالث؛ برای اثبات قیمت/موجودی جاری دیجی‌کالا کافی نیست.",
+      "aliases": []
     },
     {
       "id": "product.dkp.2665591",
@@ -2857,7 +2888,8 @@
       "seller_status": "not_observed",
       "source_id": "evidence.thirdparty.011",
       "source_record": "data/research/specialty-product-evidence-fa.json",
-      "observed_at": "2026-11-24"
+      "observed_at": "2026-11-24",
+      "aliases": []
     },
     {
       "id": "product.dkp.3491209",
@@ -2876,7 +2908,8 @@
       "seller_status": "not_observed",
       "source_id": "evidence.thirdparty.011",
       "source_record": "data/research/specialty-product-evidence-fa.json",
-      "observed_at": "2026-11-24"
+      "observed_at": "2026-11-24",
+      "aliases": []
     },
     {
       "id": "evidence.thirdparty.012",
@@ -2888,7 +2921,8 @@
       "evidence_status": "affiliate_link_resolves_to_dkp",
       "observed_at": "2026-11-24",
       "note": "",
-      "limitations": "منبع شخص ثالث؛ برای اثبات قیمت/موجودی جاری دیجی‌کالا کافی نیست."
+      "limitations": "منبع شخص ثالث؛ برای اثبات قیمت/موجودی جاری دیجی‌کالا کافی نیست.",
+      "aliases": []
     },
     {
       "id": "product.dkp.7669891",
@@ -2907,7 +2941,8 @@
       "seller_status": "not_observed",
       "source_id": "evidence.thirdparty.012",
       "source_record": "data/research/specialty-product-evidence-fa.json",
-      "observed_at": "2026-11-24"
+      "observed_at": "2026-11-24",
+      "aliases": []
     },
     {
       "id": "evidence.thirdparty.013",
@@ -2919,7 +2954,8 @@
       "evidence_status": "affiliate_link_resolves_to_dkp",
       "observed_at": "2026-11-24",
       "note": "",
-      "limitations": "منبع شخص ثالث؛ برای اثبات قیمت/موجودی جاری دیجی‌کالا کافی نیست."
+      "limitations": "منبع شخص ثالث؛ برای اثبات قیمت/موجودی جاری دیجی‌کالا کافی نیست.",
+      "aliases": []
     },
     {
       "id": "product.dkp.8399201",
@@ -2938,7 +2974,8 @@
       "seller_status": "not_observed",
       "source_id": "evidence.thirdparty.013",
       "source_record": "data/research/specialty-product-evidence-fa.json",
-      "observed_at": "2026-11-24"
+      "observed_at": "2026-11-24",
+      "aliases": []
     },
     {
       "id": "product.dkp.8675106",
@@ -2957,7 +2994,8 @@
       "seller_status": "not_observed",
       "source_id": "evidence.thirdparty.013",
       "source_record": "data/research/specialty-product-evidence-fa.json",
-      "observed_at": "2026-11-24"
+      "observed_at": "2026-11-24",
+      "aliases": []
     },
     {
       "id": "product.dkp.8675118",
@@ -2976,7 +3014,8 @@
       "seller_status": "not_observed",
       "source_id": "evidence.thirdparty.013",
       "source_record": "data/research/specialty-product-evidence-fa.json",
-      "observed_at": "2026-11-24"
+      "observed_at": "2026-11-24",
+      "aliases": []
     },
     {
       "id": "product.dkp.8771841",
@@ -2995,7 +3034,8 @@
       "seller_status": "not_observed",
       "source_id": "evidence.thirdparty.013",
       "source_record": "data/research/specialty-product-evidence-fa.json",
-      "observed_at": "2026-11-24"
+      "observed_at": "2026-11-24",
+      "aliases": []
     },
     {
       "id": "product.dkp.8323827",
@@ -3014,7 +3054,8 @@
       "seller_status": "not_observed",
       "source_id": "evidence.thirdparty.013",
       "source_record": "data/research/specialty-product-evidence-fa.json",
-      "observed_at": "2026-11-24"
+      "observed_at": "2026-11-24",
+      "aliases": []
     },
     {
       "id": "evidence.thirdparty.014",
@@ -3026,7 +3067,8 @@
       "evidence_status": "third_party_listing_digikala_route_unresolved",
       "observed_at": "2026-11-24",
       "note": "صفحه موتور DC دو سر شفت با مشخصات 12V/15000rpm و دکمه خرید دیجی‌کالا دیده شد؛ مقصد DKP حل نشد.",
-      "limitations": "منبع شخص ثالث؛ برای اثبات قیمت/موجودی جاری دیجی‌کالا کافی نیست."
+      "limitations": "منبع شخص ثالث؛ برای اثبات قیمت/موجودی جاری دیجی‌کالا کافی نیست.",
+      "aliases": []
     },
     {
       "id": "evidence.thirdparty.015",
@@ -3038,7 +3080,8 @@
       "evidence_status": "third_party_market_only",
       "observed_at": "2026-11-24",
       "note": "در فروشگاه قطعات الکترونیک دیده شد؛ شاهد پیوند به دیجی‌کالا یافت نشد.",
-      "limitations": "منبع شخص ثالث؛ برای اثبات قیمت/موجودی جاری دیجی‌کالا کافی نیست."
+      "limitations": "منبع شخص ثالث؛ برای اثبات قیمت/موجودی جاری دیجی‌کالا کافی نیست.",
+      "aliases": []
     },
     {
       "id": "evidence.thirdparty.016",
@@ -3050,7 +3093,8 @@
       "evidence_status": "third_party_market_only",
       "observed_at": "2026-11-24",
       "note": "در فروشگاه تخصصی گلخانه مشاهده شد؛ DKP تأییدشده در نمونه حاضر پیدا نشد.",
-      "limitations": "منبع شخص ثالث؛ برای اثبات قیمت/موجودی جاری دیجی‌کالا کافی نیست."
+      "limitations": "منبع شخص ثالث؛ برای اثبات قیمت/موجودی جاری دیجی‌کالا کافی نیست.",
+      "aliases": []
     },
     {
       "id": "evidence.thirdparty.017",
@@ -3062,7 +3106,8 @@
       "evidence_status": "not_found_in_sample",
       "observed_at": "2026-11-24",
       "note": "عدم یافتن در نمونه به معنی نبود کالا در دیجی‌کالا نیست.",
-      "limitations": "منبع شخص ثالث؛ برای اثبات قیمت/موجودی جاری دیجی‌کالا کافی نیست."
+      "limitations": "منبع شخص ثالث؛ برای اثبات قیمت/موجودی جاری دیجی‌کالا کافی نیست.",
+      "aliases": []
     }
   ],
   "relations": [
