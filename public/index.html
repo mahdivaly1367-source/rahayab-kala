@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#f6f3ec">
-<title>راه‌یاب کالا | آزمایش جست‌وجوی زنده</title>
+<meta name="theme-color" content="#f2f5f1">
+<title>راه‌یاب کالا | جست‌وجوی درختی و زنده</title>
 <style>
 :root{--paper:#f6f3ec;--card:#fffdf8;--ink:#202923;--muted:#657067;--line:#e2e2d8;--green:#205b4b;--green2:#dcebe2;--gold:#ae7d36;--goldbg:#f6ecd8;--red:#9d3a31;--shadow:0 12px 34px rgba(32,41,35,.055);--radius:19px}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Tahoma,"Segoe UI",Arial,sans-serif;line-height:1.8}button,input{font:inherit}button{cursor:pointer}a{color:inherit}.shell{max-width:1220px;margin:auto;padding:0 22px}.topbar{height:72px;display:flex;justify-content:space-between;align-items:center;gap:15px;border-bottom:1px solid #e4e2d8}.brand{display:flex;gap:10px;align-items:center;font-size:19px;font-weight:800}.logo{width:37px;height:37px;background:var(--green);color:white;border-radius:12px;display:grid;place-items:center;font-size:21px}.subtitle{font-size:12px;color:var(--muted);font-weight:400}.pill{font-size:11px;border-radius:99px;padding:5px 11px;background:var(--goldbg);color:#76521f;border:1px solid #e9d7b5}.hero{padding:38px 0 24px;display:grid;grid-template-columns:1.05fr .95fr;gap:27px;align-items:center}.eyebrow{color:var(--green);font-weight:700;font-size:12px}.hero h1{font-size:clamp(27px,4vw,42px);line-height:1.5;margin:8px 0 9px;letter-spacing:-.7px}.hero p{font-size:14px;color:var(--muted);margin:0;max-width:660px}.searchbox{background:var(--card);padding:13px;border:1px solid var(--line);border-radius:21px;box-shadow:var(--shadow)}.searchrow{display:flex;gap:8px;align-items:center;background:#f7f7f0;border:1px solid #e7e7dc;border-radius:13px;padding:7px 10px}.searchrow input{background:transparent;border:0;outline:0;width:100%;min-width:0;padding:7px;font-size:15px;color:var(--ink)}.primary,.secondary,.quiet{border-radius:10px;padding:9px 14px;font-size:12px;font-weight:700;border:1px solid transparent;white-space:nowrap}.primary{background:var(--green);color:white}.primary:hover{background:#174737}.secondary{background:#f6faf5;color:var(--green);border-color:#cbd9ce}.quiet{background:transparent;border-color:var(--line);color:var(--ink)}button:disabled{opacity:.55;cursor:wait}.search-options{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-top:11px;font-size:12px;color:var(--muted)}.check{display:flex;align-items:center;gap:6px}.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:11px}.chip{padding:5px 10px;border:1px solid var(--line);border-radius:99px;background:#fffdf8;font-size:11px;color:#4d5c51}.chip:hover,.chip.active{background:var(--green2);border-color:#b7d1c0;color:var(--green)}.warning{border:1px solid #e9dfc9;background:#fbf4e5;color:#6f5a36;border-radius:14px;padding:12px 14px;font-size:12px;margin:0 0 18px}.warning b{color:#5e461e}.toolbar{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:8px 0 14px}.toolbar h2{font-size:19px;margin:0}.toolbar p{font-size:12px;color:var(--muted);margin:2px 0 0}.counts{font-size:11px;color:var(--muted);white-space:nowrap}.status{display:none;border:1px solid var(--line);border-radius:14px;padding:14px;background:var(--card);margin-bottom:14px;font-size:12px}.status.show{display:block}.status.error{border-color:#ebcbc6;background:#fff7f5;color:#8a342b}.status.good{background:#edf5ee;border-color:#cbdccc;color:#385746}.results{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.product{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;min-width:0;transition:.15s}.product:hover{border-color:#b5cbbb;box-shadow:var(--shadow);transform:translateY(-2px)}.imagewrap{height:164px;background:#f4f4ec;display:grid;place-items:center;padding:12px;position:relative;overflow:hidden}.imagewrap img{position:absolute;inset:12px;width:calc(100% - 24px);height:calc(100% - 24px);object-fit:contain;opacity:0;transition:opacity .18s}.placeholder{position:absolute;inset:8px;display:grid;place-items:center;font-size:12px;color:#788579;text-align:center;line-height:1.7;pointer-events:none}.placeholder-error{color:#98604e}.productbody{padding:13px;display:flex;flex-direction:column;gap:8px;flex:1}.producttitle{font-size:13px;font-weight:800;line-height:1.75}.meta{font-size:10px;color:var(--muted);display:flex;flex-wrap:wrap;gap:5px}.tag{background:#f1f2e9;border-radius:6px;padding:3px 7px}.price{font-size:13px;color:var(--green);font-weight:800;margin-top:auto}.noprice{font-size:11px;color:var(--muted);margin-top:auto}.productfoot{padding-top:9px;border-top:1px solid #eeeede;display:flex;align-items:center;justify-content:space-between;gap:6px}.productfoot a{font-size:11px;color:var(--green);font-weight:800;text-decoration:none}.productfoot a:hover{text-decoration:underline}.sourcequery{font-size:10px;color:#806b44}.discovery{margin:0 0 16px}.discovery-panel{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:13px}.discovery-title{font-size:13px;font-weight:800;margin-bottom:3px}.discovery-help{font-size:11px;color:var(--muted);margin-bottom:10px}.discovery-chips{display:flex;flex-wrap:wrap;gap:7px}.discovery-chip{border:1px solid #cbd9ce;background:#f5faf5;color:var(--green);border-radius:10px;padding:7px 10px;text-align:right;white-space:normal;font-size:11px}.discovery-chip:hover{background:var(--green2)}.discovery-chip small{display:block;color:var(--muted);font-size:9px;font-weight:400}.discovery-back{margin-top:10px}.grouphead{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:7px;padding:8px 2px 4px;border-bottom:1px solid var(--line)}.grouphead h3{margin:0;font-size:14px}.grouphead span{font-size:10px;color:var(--muted)}.empty{grid-column:1/-1;text-align:center;padding:34px 18px;border:1px dashed #cbd4c8;background:var(--card);border-radius:16px;color:var(--muted);font-size:12px}.empty b{display:block;font-size:15px;color:var(--ink);margin-bottom:4px}.footnote{font-size:11px;color:var(--muted);padding:20px 0 28px;margin-top:22px;border-top:1px solid var(--line)}.footnote a{color:var(--green)}.spinner{display:inline-block;width:14px;height:14px;border:2px solid #c5d8cb;border-top-color:var(--green);border-radius:50%;animation:spin .7s linear infinite;vertical-align:middle;margin-left:6px}@keyframes spin{to{transform:rotate(360deg)}}
@@ -19,12 +19,52 @@
 .concept-chip small{display:block;color:#647568;font-size:10px;font-weight:400;margin-top:2px}
 .live-suggestions{border-top:1px solid var(--line);padding-top:9px;margin-top:11px}
 </style>
+<link rel="stylesheet" href="/knowledge-explorer.css">
 </head>
 <body>
 <div class="shell">
-<header class="topbar"><div class="brand"><span class="logo">ر</span><span>راه‌یاب کالا <span class="subtitle">جست‌وجو از زاویه‌ای تازه</span></span></div><span class="pill">آزمایش اتصال داده</span></header>
+<header class="topbar"><div class="brand"><span class="logo">ر</span><span>راه‌یاب کالا <span class="subtitle">جست‌وجو از زاویه‌ای تازه</span></span></div><span class="pill">کشف درختی + جست‌وجوی زنده</span></header>
+
+<section id="knowledgeExplorer" class="knowledge-explorer" aria-labelledby="kgTitle">
+ <div class="kg-heading">
+  <div>
+   <div class="kg-kicker">موتور کشف مفهومی راه‌یاب</div>
+   <h2 id="kgTitle">جست‌وجوی درختی کالا</h2>
+   <p>از ماهیت کالا، سامانه‌ای که در آن به‌کار می‌رود یا کاربردش شروع کن؛ شاخه‌ها از گراف دانش راه‌یاب بارگذاری می‌شوند.</p>
+  </div>
+  <div class="kg-stats">
+   <span class="kg-stat" id="kgVersion">در حال اتصال به گراف دانش…</span>
+   <span class="kg-stat" id="kgCounts">—</span>
+  </div>
+ </div>
+ <div class="kg-controls">
+  <div id="kgAxes" class="kg-axes" role="tablist" aria-label="محور جست‌وجوی درختی"></div>
+  <div class="kg-search-row">
+   <input id="kgQuery" type="search" placeholder="مثلاً موتور براشلس، پمپ کف‌کش، گلخانه..." aria-label="جست‌وجو در گراف دانش">
+   <button type="button" class="primary" id="kgSearchBtn">جست‌وجو در دانش</button>
+   <button type="button" class="kg-clear" id="kgClearBtn">پاک کردن</button>
+  </div>
+ </div>
+ <div id="kgSearchResults" class="kg-search-results" hidden></div>
+ <div class="kg-main">
+  <div class="kg-panel">
+   <div class="kg-panel-head"><strong id="kgTreeTitle">درخت ماهیت کالا</strong><small>برای بازکردن هر شاخه، روی علامت کنار آن بزن.</small></div>
+   <div id="kgTree" class="kg-tree" aria-live="polite"><div class="kg-loading">در حال بارگذاری ساختار مفهومی…</div></div>
+  </div>
+  <aside class="kg-panel kg-detail" aria-live="polite">
+   <span class="kg-detail-type" id="kgDetailType">راهنمای انتخاب</span>
+   <h3 id="kgDetailTitle">یک شاخه را انتخاب کن</h3>
+   <p id="kgDetailDesc">با بازکردن شاخه‌ها، زیرگروه‌ها و ارتباط مفاهیم را می‌بینی. با انتخاب هر مورد، توضیح و شواهد مرتبط نمایش داده می‌شود.</p>
+   <div id="kgDetailMeta" class="kg-detail-meta"></div>
+   <div id="kgDetailRelated"></div>
+   <button type="button" id="kgLiveSearchBtn" class="primary kg-live-search" hidden>جست‌وجوی زندهٔ این عبارت در فروشگاه</button>
+  </aside>
+ </div>
+ <p class="kg-foot">این درخت، مدل دانشی مستقل راه‌یاب است و عین منوی رسمی فروشگاه نیست. رکوردهای محصول فقط شواهد پژوهشی‌اند؛ قیمت، فروشنده و موجودی فعلی از این گراف تأیید نمی‌شوند.</p>
+</section>
+
 <section class="hero">
- <div><div class="eyebrow">گام فنی بعدی · آزمایش جست‌وجوی زنده</div><h1>یک کلمه بنویس؛<br><span style="color:var(--green)">شاخه‌های بیشتری کشف کن.</span></h1><p>این نسخه، نتایج را از مسیرهای جست‌وجوی فنی دیجی‌کالا درخواست می‌کند و برای واژه‌های کلی چند عبارت مرتبط را جداگانه می‌آزماید. این اتصال هنوز رسمی یا تجاری تأیید نشده است.</p></div>
+ <div><div class="eyebrow">کشف کالا از مسیرهای مفهومی و فروشگاهی</div><h1>از مفهوم شروع کن؛<br><span style="color:var(--green)">کالای درست را پیدا کن.</span></h1><p>درخت مفهومی راه‌یاب به تو کمک می‌کند کالا را از چند زاویه پیدا کنی. جست‌وجوی زندهٔ فروشگاه نیز جداگانه در همین صفحه در دسترس است؛ اتصال آن هنوز رسمی یا تجاری تأیید نشده است.</p></div>
  <div class="searchbox"><div class="searchrow"><span style="font-size:20px;color:var(--green)">⌕</span><input id="query" type="search" value="موتور" placeholder="مثلاً موتور، پمپ یا باتری" aria-label="عبارت جست‌وجو"><button id="searchBtn" class="primary">جست‌وجوی زنده</button></div><div class="search-options"><label class="check"><input id="wide" type="checkbox" checked> کاوش خودکار شاخه‌های مرتبط</label><span>دادهٔ نمایشی استفاده نمی‌شود</span></div><div class="chips"><button class="chip active" data-query="موتور">موتور</button><button class="chip" data-query="پمپ">پمپ</button><button class="chip" data-query="باتری">باتری</button><button class="chip" data-query="ابزار">ابزار</button><button class="chip" data-query="موتور پاراترایک">موتور پاراترایک</button></div><div class="search-options"><button class="secondary" id="googleBtn">جست‌وجوی گسترده در وب</button><button class="secondary" id="googleDigikalaBtn">جست‌وجوی گوگل در دیجی‌کالا</button><button class="quiet" id="digikalaBtn">جست‌وجوی مستقیم دیجی‌کالا</button></div></div>
 </section>
 <div class="warning"><b>یادآوری:</b> این یک نمونهٔ فنی است و از مسیرهای API مستندنشده استفاده می‌کند. نمایش یک قیمت، تضمین موجودی یا مجوز ذخیره‌سازی و استفادهٔ تجاری از اطلاعات نیست. برای محصول واقعی باید مجوز و منبع داده از دیجی‌کالا/افیلیو تأیید شود.</div>
@@ -375,5 +415,7 @@ $('searchBtn').addEventListener('click',()=>search());$('query').addEventListene
 fetch('/api/health').then(r=>r.json()).then(data=>{$('runtime').textContent='سرور محلی فعال · '+data.node;}).catch(()=>$('runtime').textContent='سرور محلی در دسترس نیست');
 search();
 </script>
+<script src="/knowledge-explorer.js"></script>
+<script>initKnowledgeExplorer();</script>
 </body>
 </html>
