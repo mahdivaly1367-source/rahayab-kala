@@ -155,7 +155,7 @@ async function initKnowledgeExplorer() {
 
   function mapPhotoResultsToGraph(node, products) {
     const first = products.find(product => isTrustedProductImage(product.image));
-    if (first && !isProduct(node)) imageByNodeId.set(node.id, first.image);
+    if (first) imageByNodeId.set(node.id, first.image);
 
     const graphProducts = graph.nodes.filter(isProduct);
     for (const product of products) {
@@ -264,7 +264,6 @@ async function initKnowledgeExplorer() {
       } catch (error) {
         lastError = error;
       }
-      if (products.length >= 4) break;
     }
 
     if (requestId !== activePhotoRequest) return;
@@ -841,6 +840,10 @@ async function initKnowledgeExplorer() {
     renderAxisControls();
     renderGraph();
     panCanvas();
+    const initialRoot = rootNodes().slice().sort((a, b) =>
+      relationChildren(b).length - relationChildren(a).length
+    )[0];
+    if (initialRoot) describeSelection(initialRoot);
 
     $('kgSearchButton').addEventListener('click', runSemanticSearch);
     $('kgQuery').addEventListener('keydown', event => {
