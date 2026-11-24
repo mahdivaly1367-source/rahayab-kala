@@ -3057,13 +3057,26 @@
       "node_type": "evidence_source",
       "axis": "evidence",
       "label": "کنترلر یکپارچه اقلیم گلخانه، هیتر تخصصی، نور رشد و تزریق کود",
-      "source_type": "third_party_or_bounded_search",
-      "url": "bounded web sample",
+      "source_type": "bounded_search_sample",
+      "url": null,
       "evidence_status": "not_found_in_sample",
       "observed_at": "2026-11-24",
-      "note": "عدم یافتن در نمونه به معنی نبود کالا در دیجی‌کالا نیست.",
-      "limitations": "منبع شخص ثالث؛ برای اثبات قیمت/موجودی جاری دیجی‌کالا کافی نیست.",
+      "note": "نمونه جست‌وجوی محدود؛ عدم مشاهده نتیجه، اثبات نبود محصول در دیجی‌کالا نیست.",
+      "limitations": "پوشش جست‌وجو محدود است؛ برای استنتاج نبود کالا قابل استفاده نیست.",
       "aliases": []
+    },
+    {
+      "id": "concept.greenhouse-heater",
+      "node_type": "concept",
+      "axis": "nature",
+      "label": "هیتر و سامانه گرمایش گلخانه",
+      "description": "تجهیزات گرمایش محیط گلخانه، از جمله هیتر هوای گرم و مشعل متناسب با سامانه",
+      "aliases": [
+        "هیتر گلخانه",
+        "بخاری گلخانه",
+        "گرمایش گلخانه"
+      ],
+      "status": "needs_store_evidence"
     }
   ],
   "relations": [
@@ -5387,6 +5400,30 @@
       "target": "evidence.thirdparty.017",
       "type": "has_evidence",
       "confidence": "medium",
+      "evidence_class": "not_found_in_sample"
+    },
+    {
+      "id": "rel.0290",
+      "source": "concept.grow-light",
+      "target": "evidence.thirdparty.017",
+      "type": "has_evidence",
+      "confidence": "low",
+      "evidence_class": "not_found_in_sample"
+    },
+    {
+      "id": "rel.0291",
+      "source": "concept.fertigation-injector",
+      "target": "evidence.thirdparty.017",
+      "type": "has_evidence",
+      "confidence": "low",
+      "evidence_class": "not_found_in_sample"
+    },
+    {
+      "id": "rel.0292",
+      "source": "concept.greenhouse-heater",
+      "target": "evidence.thirdparty.017",
+      "type": "has_evidence",
+      "confidence": "low",
       "evidence_class": "not_found_in_sample"
     }
   ]
