@@ -228,7 +228,7 @@ async function initKnowledgeExplorer() {
     });
     host.appendChild(grid);
     host.appendChild(make('div', 'kg-gallery-note',
-      'تصاویر از پاسخ جست‌وجوی زندهٔ سرویس واسط گرفته شده‌اند؛ قیمت، فروشنده و موجودی مستقل تأیید نشده‌اند.'));
+      'این تصاویر نمونه‌هایی از نتایج جست‌وجوی همان عبارت‌اند و لزوماً تطبیق قطعی با رکورد انتخاب‌شده نیستند؛ قیمت، فروشنده و موجودی نیز تأیید نشده‌اند.'));
   }
 
   async function loadPhotoGallery(node) {
