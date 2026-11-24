@@ -110,7 +110,8 @@ test('graph nodes and Persian labels use the larger image-card layout', () => {
 });
 
 test('photo gallery does not imply verified price or availability', () => {
-  assert.match(js, /قیمت، فروشنده و موجودی مستقل تأیید نشده‌اند/);
+  assert.match(js, /تطبیق قطعی با رکورد انتخاب‌شده نیست/);
+  assert.match(js, /قیمت، فروشنده و موجودی نیز تأیید نشده‌اند/);
   assert.match(js, /موجودی: بررسی‌نشده/);
   assert.match(js, /قیمت: مشاهده نشده/);
 });
