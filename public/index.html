@@ -99,7 +99,6 @@
 <div class="warning"><b>یادآوری:</b> این یک نمونهٔ فنی است و از مسیرهای API مستندنشده استفاده می‌کند. نمایش یک قیمت، تضمین موجودی یا مجوز ذخیره‌سازی و استفادهٔ تجاری از اطلاعات نیست. برای محصول واقعی باید مجوز و منبع داده از دیجی‌کالا/افیلیو تأیید شود.</div>
 <div class="toolbar"><div><h2 id="title">نتایج آزمایش برای «موتور»</h2><p id="subtitle">در حال آماده‌سازی درخواست‌ها…</p></div><div class="counts" id="count">—</div></div>
 <div id="status" class="status show">برای دریافت دادهٔ زنده، روی «جست‌وجوی زنده» بزن.</div>
-<div id="discovery" class="discovery"></div>
 <div id="results" class="results"></div>
 <div class="footnote">پروتوتایپ محلی راه‌یاب کالا · <span id="runtime">بررسی سرور…</span><br>مسیرهای آزمایشی بر اساس پروژه‌های عمومی غیررسمی شناسایی شده‌اند. <a href="https://www.digikala.com/" target="_blank" rel="noopener noreferrer">دیجی‌کالا</a> · <a href="https://publisher.affilio.ir/" target="_blank" rel="noopener noreferrer">پنل افیلیو</a> · قیمت و موجودی را پیش از خرید در فروشگاه مقصد بررسی کن.</div>
 </div>
@@ -275,126 +274,8 @@ function openSearch(engine) {
 }
 function safeProductLinkCheck(url){try{const parsed=new URL(url);return parsed.protocol==='https:'&&parsed.hostname.endsWith('digikala.com')}catch{return false}}
 function makeProduct(p){return {id:String(p.id||''),title:String(p.title||'محصول بدون عنوان'),url:safeProductLinkCheck(p.url)?p.url:'https://www.digikala.com/',image:typeof p.image==='string'&&p.image.startsWith('https://')?p.image:'',priceToman:Number.isFinite(p.priceToman)&&p.priceToman>0?p.priceToman:null,category:String(p.category||''),sourceQuery:String(p.sourceQuery||'')}}
-function conceptPathsForQuery(query) {
- const q=normalize(query);
- const motorQueries=['موتور','motor','engine'];
- const pumpQueries=['پمپ','pump','کمپرسور'];
- const batteryQueries=['باتری','باطری','battery'];
- const toolQueries=['ابزار','tool','دریل'];
- const groups={
-  motor:[
-   ['موتورهای الکتریکی','موتور الکتریکی','DC، AC و براشلس'],
-   ['موتورهای احتراقی','موتور احتراقی','موتورهای بنزینی و دیزلی'],
-   ['موتور بنزینی کوچک','موتور بنزینی کوچک','موتورهای سبک عمومی'],
-   ['موتور دیزلی کوچک','موتور دیزلی کوچک','موتورهای فشرده و صنعتی'],
-   ['موتورهای هواگرد سبک','موتور پاراموتور','پاراموتور و کاربردهای پروازی؛ نیازمند بررسی فنی'],
-   ['موتور پاراترایک','موتور پاراترایک','جست‌وجوی نام تخصصی'],
-   ['موتور صنعتی','موتور صنعتی','کاربردهای کارگاهی و تجهیزات'],
-   ['موتور کولر و لوازم خانگی','موتور کولر','موتورهای خانگی'],
-   ['موتور سیکلت','موتور سیکلت','موتورهای وسایل نقلیه'],
-   ['موتور برق','موتور برق','ژنراتور و موتور برق؛ دسته‌ای متفاوت']
-  ],
-  pump:[
-   ['پمپ آب','پمپ آب','خانگی، کشاورزی و صنعتی'],
-   ['پمپ هوا','پمپ هوا','باد و هوای فشرده'],
-   ['پمپ سوخت','پمپ سوخت','انتقال سوخت'],
-   ['پمپ کف‌کش و لجن‌کش','پمپ کف کش','کاربردهای غوطه‌ور'],
-   ['پمپ صنعتی','پمپ صنعتی','کاربری کارگاهی و فرایندی']
-  ],
-  battery:[
-   ['باتری لیتیومی','باتری لیتیومی','سلول و پک باتری'],
-   ['باتری خودرو','باتری خودرو','استارت و خودرو'],
-   ['باتری یوپی‌اس','باتری یو پی اس','پشتیبان برق'],
-   ['باتری ابزار شارژی','باتری ابزار شارژی','باتری دستگاه‌های قابل‌حمل'],
-   ['باتری صنعتی','باتری صنعتی','کاربری‌های تخصصی']
-  ],
-  tool:[
-   ['ابزار برقی','ابزار برقی','دریل، فرز و ابزار موتوردار'],
-   ['ابزار دستی','ابزار دستی','ابزارهای غیر برقی'],
-   ['ابزار اندازه‌گیری','ابزار اندازه گیری','اندازه‌گیری و آزمون'],
-   ['تجهیزات کارگاهی','تجهیزات کارگاهی','ساخت و تعمیرات']
-  ]
- };
- let key='';
- if(motorQueries.includes(q)) key='motor';
- else if(pumpQueries.includes(q)) key='pump';
- else if(batteryQueries.includes(q)) key='battery';
- else if(toolQueries.includes(q)) key='tool';
- return key ? groups[key].map(([title,term,detail])=>({title,query:term,detail})) : [];
-}
-function visibleAutocompleteKeywords(query, keywords) {
- const q=normalize(query);
- return keywords.filter(term=>{
-  const n=normalize(term);
-  if(!n||n===q)return false;
-  if(q==='موتور'&&n.startsWith('موتورولا'))return false;
-  return true;
- });
-}
-function renderDiscovery(payload) {
- const host=$('discovery');host.replaceChildren();
- const categories=Array.isArray(payload.categorySuggestions)?payload.categorySuggestions:[];
- const keywords=visibleAutocompleteKeywords(payload.query,Array.isArray(payload.autocompleteKeywords)?payload.autocompleteKeywords:[]);
- const concepts=conceptPathsForQuery(payload.query);
- if(!concepts.length&&!categories.length&&!keywords.length&&!payload.categoryScoped)return;
-
- const panel=document.createElement('section');panel.className='discovery-panel';
- const heading=document.createElement('div');heading.className='discovery-title';heading.textContent='کشف مسیرهای بیشتر';panel.appendChild(heading);
-
- if(concepts.length){
-  const section=document.createElement('div');section.className='concept-section';
-  const h=document.createElement('div');h.className='concept-heading';h.textContent='مسیرهای مفهومی پیشنهادی راه‌یاب';section.appendChild(h);
-  const help=document.createElement('div');help.className='concept-help';
-  help.textContent='این مسیرها را راه‌یاب پیشنهاد می‌کند؛ لزوماً دسته‌بندی رسمی یا نشانه موجودبودن کالا در دیجی‌کالا نیستند.';
-  section.appendChild(help);
-  const chips=document.createElement('div');chips.className='discovery-chips';
-  for(const concept of concepts){
-   const button=document.createElement('button');button.type='button';button.className='concept-chip';
-   button.dataset.conceptQuery=concept.query;button.title='جست‌وجوی زنده برای: '+concept.query;
-   button.appendChild(document.createTextNode(concept.title));
-   const small=document.createElement('small');small.textContent=concept.detail;
-   button.appendChild(small);chips.appendChild(button);
-  }
-  section.appendChild(chips);panel.appendChild(section);
- }
-
- if(categories.length||keywords.length||payload.categoryScoped){
-  const section=document.createElement('div');section.className='live-suggestions';
-  const h=document.createElement('div');h.className='concept-heading';
-  h.textContent=payload.categoryScoped?'جست‌وجو در شاخه انتخاب‌شده':'پیشنهادهای زنده جست‌وجوی دیجی‌کالا';
-  section.appendChild(h);
-  const help=document.createElement('div');help.className='concept-help';
-  help.textContent=payload.categoryScoped
-   ? 'این نتایج از دسته‌بندی انتخاب‌شده درخواست شده‌اند.'
-   : 'این عبارت‌ها از autocomplete دیجی‌کالا آمده‌اند؛ پیشنهاد متنی لزوماً به معنی دسته‌بندی کامل یا ارتباط معنایی نیست.';
-  section.appendChild(help);
-  const chips=document.createElement('div');chips.className='discovery-chips';
-  for(const category of categories){
-   const button=document.createElement('button');button.type='button';button.className='discovery-chip';
-   button.dataset.categoryId=String(category.id||'');
-   button.dataset.categoryTitle=String(category.titleFa||'');
-   button.dataset.categoryQuery=String(category.query||payload.query||'');
-   button.appendChild(document.createTextNode(String(category.titleFa||'دسته‌بندی')));
-   const small=document.createElement('small');small.textContent='عبارت: '+String(category.query||payload.query||'');
-   button.appendChild(small);chips.appendChild(button);
-  }
-  for(const keyword of keywords){
-   const button=document.createElement('button');button.type='button';button.className='discovery-chip';
-   button.dataset.discoveryTerm=String(keyword);
-   button.textContent='پیشنهاد جست‌وجو: '+String(keyword);
-   chips.appendChild(button);
-  }
-  if(chips.childElementCount)section.appendChild(chips);
-  if(payload.categoryScoped){
-   const back=document.createElement('button');back.type='button';back.className='quiet discovery-back';
-   back.dataset.discoveryBack='true';back.textContent='بازگشت به نتایج گسترده';section.appendChild(back);
-  }
-  panel.appendChild(section);
- }
- host.appendChild(panel);
-}
 function render(payload) {
- const host=$('results');host.replaceChildren();renderDiscovery(payload);
+ const host=$('results');host.replaceChildren();
  $('title').textContent='نتایج آزمایش برای «'+payload.query+'»';
  $('count').textContent=payload.total+' محصول یکتا';
  const successCount=(payload.results||[]).filter(r=>(r.products||[]).length).length;
@@ -439,7 +320,6 @@ async function search(categoryId=null, categoryTitle='') {
  catch(error){$('results').innerHTML='<div class="empty"><b>سرور محلی پاسخ نداد.</b>مطمئن شو برنامه با run.ps1 اجرا شده و آدرس آن 127.0.0.1:4173 است.</div>';setStatus('خطا: '+String(error.message||error),'error');}
  finally{$('searchBtn').disabled=false;$('searchBtn').textContent='جست‌وجوی زنده';}
 }
-$('discovery').addEventListener('click',event=>{const button=event.target.closest('button');if(!button)return;if(button.dataset.conceptQuery){$('query').value=button.dataset.conceptQuery;search();return;}if(button.dataset.categoryId){$('query').value=button.dataset.categoryQuery||$('query').value;search(button.dataset.categoryId,button.dataset.categoryTitle||'');return;}if(button.dataset.discoveryTerm){$('query').value=button.dataset.discoveryTerm;search();return;}if(button.dataset.discoveryBack){search();}});
 $('searchBtn').addEventListener('click',()=>search());$('query').addEventListener('keydown',e=>{if(e.key==='Enter')search()});document.querySelectorAll('[data-query]').forEach(btn=>btn.addEventListener('click',()=>{$('query').value=btn.dataset.query;document.querySelectorAll('[data-query]').forEach(x=>x.classList.toggle('active',x===btn));search();}));$('googleBtn').addEventListener('click',()=>openSearch('google'));$('googleDigikalaBtn').addEventListener('click',()=>openSearch('googleDigikala'));$('digikalaBtn').addEventListener('click',()=>openSearch('digikala'));
 fetch('/api/health').then(r=>r.json()).then(data=>{$('runtime').textContent='سرور محلی فعال · '+data.node;}).catch(()=>$('runtime').textContent='سرور محلی در دسترس نیست');
 search();
