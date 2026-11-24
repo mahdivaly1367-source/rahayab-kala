@@ -1025,17 +1025,6 @@
       "aliases": []
     },
     {
-      "id": "store.group.tools",
-      "node_type": "store_category",
-      "axis": "store_taxonomy",
-      "node_kind": "audited_group",
-      "label": "ابزارآلات و تجهیزات",
-      "aliases": [],
-      "source_id": "tools",
-      "evidence_status": "official_current_page",
-      "observed_at": "2026-11-24"
-    },
-    {
       "id": "store.group.tools.subcategory.01",
       "node_type": "store_category",
       "axis": "store_taxonomy",
@@ -1507,17 +1496,6 @@
       "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
     },
     {
-      "id": "store.group.automotive",
-      "node_type": "store_category",
-      "axis": "store_taxonomy",
-      "node_kind": "audited_group",
-      "label": "خودرو و موتورسیکلت",
-      "aliases": [],
-      "source_id": "vehicles",
-      "evidence_status": "official_current_page",
-      "observed_at": "2026-11-24"
-    },
-    {
       "id": "store.group.automotive.subcategory.01",
       "node_type": "store_category",
       "axis": "store_taxonomy",
@@ -1879,17 +1857,6 @@
       "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
     },
     {
-      "id": "store.group.appliances",
-      "node_type": "store_category",
-      "axis": "store_taxonomy",
-      "node_kind": "audited_group",
-      "label": "لوازم خانگی برقی",
-      "aliases": [],
-      "source_id": "appliances",
-      "evidence_status": "official_current_page",
-      "observed_at": "2026-11-24"
-    },
-    {
       "id": "store.group.appliances.subcategory.01",
       "node_type": "store_category",
       "axis": "store_taxonomy",
@@ -2197,17 +2164,6 @@
       "evidence_status": "official_current_page",
       "observed_at": "2026-11-24",
       "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
-    },
-    {
-      "id": "store.group.home",
-      "node_type": "store_category",
-      "axis": "store_taxonomy",
-      "node_kind": "audited_group",
-      "label": "خانه و آشپزخانه",
-      "aliases": [],
-      "source_id": "home",
-      "evidence_status": "official_current_page",
-      "observed_at": "2026-11-24"
     },
     {
       "id": "store.group.home.subcategory.01",
@@ -3346,7 +3302,7 @@
     },
     {
       "id": "rel.0030",
-      "source": "store.group.tools",
+      "source": "store.root.11",
       "target": "store.root.11",
       "type": "child_of",
       "confidence": "high",
@@ -3355,7 +3311,7 @@
     {
       "id": "rel.0031",
       "source": "store.group.tools.subcategory.01",
-      "target": "store.group.tools",
+      "target": "store.root.11",
       "type": "child_of",
       "confidence": "high",
       "evidence_class": "official_current_page"
@@ -3363,7 +3319,7 @@
     {
       "id": "rel.0032",
       "source": "store.group.tools.subcategory.02",
-      "target": "store.group.tools",
+      "target": "store.root.11",
       "type": "child_of",
       "confidence": "high",
       "evidence_class": "official_current_page"
@@ -3371,7 +3327,7 @@
     {
       "id": "rel.0033",
       "source": "store.group.tools.subcategory.03",
-      "target": "store.group.tools",
+      "target": "store.root.11",
       "type": "child_of",
       "confidence": "high",
       "evidence_class": "official_current_page"
@@ -3379,7 +3335,7 @@
     {
       "id": "rel.0034",
       "source": "store.group.tools.subcategory.04",
-      "target": "store.group.tools",
+      "target": "store.root.11",
       "type": "child_of",
       "confidence": "high",
       "evidence_class": "official_current_page"
@@ -3387,7 +3343,7 @@
     {
       "id": "rel.0035",
       "source": "store.group.tools.subcategory.05",
-      "target": "store.group.tools",
+      "target": "store.root.11",
       "type": "child_of",
       "confidence": "high",
       "evidence_class": "official_current_page"
@@ -3395,7 +3351,7 @@
     {
       "id": "rel.0036",
       "source": "store.group.tools.subcategory.06",
-      "target": "store.group.tools",
+      "target": "store.root.11",
       "type": "child_of",
       "confidence": "high",
       "evidence_class": "official_current_page"
@@ -3403,7 +3359,7 @@
     {
       "id": "rel.0037",
       "source": "store.group.tools.subcategory.07",
-      "target": "store.group.tools",
+      "target": "store.root.11",
       "type": "child_of",
       "confidence": "high",
       "evidence_class": "official_current_page"
@@ -3411,7 +3367,7 @@
     {
       "id": "rel.0038",
       "source": "store.group.tools.subcategory.08",
-      "target": "store.group.tools",
+      "target": "store.root.11",
       "type": "child_of",
       "confidence": "high",
       "evidence_class": "official_current_page"
@@ -3419,7 +3375,7 @@
     {
       "id": "rel.0039",
       "source": "store.group.tools.subcategory.09",
-      "target": "store.group.tools",
+      "target": "store.root.11",
       "type": "child_of",
       "confidence": "high",
       "evidence_class": "official_current_page"
@@ -3427,7 +3383,7 @@
     {
       "id": "rel.0040",
       "source": "store.group.tools.term.01",
-      "target": "store.group.tools",
+      "target": "store.root.11",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -3435,7 +3391,7 @@
     {
       "id": "rel.0041",
       "source": "store.group.tools.term.02",
-      "target": "store.group.tools",
+      "target": "store.root.11",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -3443,7 +3399,7 @@
     {
       "id": "rel.0042",
       "source": "store.group.tools.term.03",
-      "target": "store.group.tools",
+      "target": "store.root.11",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -3451,7 +3407,7 @@
     {
       "id": "rel.0043",
       "source": "store.group.tools.term.04",
-      "target": "store.group.tools",
+      "target": "store.root.11",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -3459,7 +3415,7 @@
     {
       "id": "rel.0044",
       "source": "store.group.tools.term.05",
-      "target": "store.group.tools",
+      "target": "store.root.11",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -3467,7 +3423,7 @@
     {
       "id": "rel.0045",
       "source": "store.group.tools.term.06",
-      "target": "store.group.tools",
+      "target": "store.root.11",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -3475,7 +3431,7 @@
     {
       "id": "rel.0046",
       "source": "store.group.tools.term.07",
-      "target": "store.group.tools",
+      "target": "store.root.11",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -3483,7 +3439,7 @@
     {
       "id": "rel.0047",
       "source": "store.group.tools.term.08",
-      "target": "store.group.tools",
+      "target": "store.root.11",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -3491,7 +3447,7 @@
     {
       "id": "rel.0048",
       "source": "store.group.tools.term.09",
-      "target": "store.group.tools",
+      "target": "store.root.11",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -3499,7 +3455,7 @@
     {
       "id": "rel.0049",
       "source": "store.group.tools.term.10",
-      "target": "store.group.tools",
+      "target": "store.root.11",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -3507,7 +3463,7 @@
     {
       "id": "rel.0050",
       "source": "store.group.tools.term.11",
-      "target": "store.group.tools",
+      "target": "store.root.11",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -3515,7 +3471,7 @@
     {
       "id": "rel.0051",
       "source": "store.group.tools.term.12",
-      "target": "store.group.tools",
+      "target": "store.root.11",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -3523,7 +3479,7 @@
     {
       "id": "rel.0052",
       "source": "store.group.tools.term.13",
-      "target": "store.group.tools",
+      "target": "store.root.11",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -3531,7 +3487,7 @@
     {
       "id": "rel.0053",
       "source": "store.group.tools.term.14",
-      "target": "store.group.tools",
+      "target": "store.root.11",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -3539,7 +3495,7 @@
     {
       "id": "rel.0054",
       "source": "store.group.tools.term.15",
-      "target": "store.group.tools",
+      "target": "store.root.11",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -3547,7 +3503,7 @@
     {
       "id": "rel.0055",
       "source": "store.group.tools.term.16",
-      "target": "store.group.tools",
+      "target": "store.root.11",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -3555,7 +3511,7 @@
     {
       "id": "rel.0056",
       "source": "store.group.tools.term.17",
-      "target": "store.group.tools",
+      "target": "store.root.11",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -3563,7 +3519,7 @@
     {
       "id": "rel.0057",
       "source": "store.group.tools.term.18",
-      "target": "store.group.tools",
+      "target": "store.root.11",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -3571,7 +3527,7 @@
     {
       "id": "rel.0058",
       "source": "store.group.tools.term.19",
-      "target": "store.group.tools",
+      "target": "store.root.11",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -3579,7 +3535,7 @@
     {
       "id": "rel.0059",
       "source": "store.group.tools.term.20",
-      "target": "store.group.tools",
+      "target": "store.root.11",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -3587,7 +3543,7 @@
     {
       "id": "rel.0060",
       "source": "store.group.tools.term.21",
-      "target": "store.group.tools",
+      "target": "store.root.11",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -3595,7 +3551,7 @@
     {
       "id": "rel.0061",
       "source": "store.group.tools.term.22",
-      "target": "store.group.tools",
+      "target": "store.root.11",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -3603,7 +3559,7 @@
     {
       "id": "rel.0062",
       "source": "store.group.tools.term.23",
-      "target": "store.group.tools",
+      "target": "store.root.11",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -3611,7 +3567,7 @@
     {
       "id": "rel.0063",
       "source": "store.group.tools.term.24",
-      "target": "store.group.tools",
+      "target": "store.root.11",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -3619,7 +3575,7 @@
     {
       "id": "rel.0064",
       "source": "store.group.tools.term.25",
-      "target": "store.group.tools",
+      "target": "store.root.11",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -3627,7 +3583,7 @@
     {
       "id": "rel.0065",
       "source": "store.group.tools.term.26",
-      "target": "store.group.tools",
+      "target": "store.root.11",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -3635,7 +3591,7 @@
     {
       "id": "rel.0066",
       "source": "store.group.tools.term.27",
-      "target": "store.group.tools",
+      "target": "store.root.11",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -3643,7 +3599,7 @@
     {
       "id": "rel.0067",
       "source": "store.group.tools.term.28",
-      "target": "store.group.tools",
+      "target": "store.root.11",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -3651,7 +3607,7 @@
     {
       "id": "rel.0068",
       "source": "store.group.tools.term.29",
-      "target": "store.group.tools",
+      "target": "store.root.11",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -3659,7 +3615,7 @@
     {
       "id": "rel.0069",
       "source": "store.group.tools.term.30",
-      "target": "store.group.tools",
+      "target": "store.root.11",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -3667,14 +3623,14 @@
     {
       "id": "rel.0070",
       "source": "store.group.tools.term.31",
-      "target": "store.group.tools",
+      "target": "store.root.11",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
     },
     {
       "id": "rel.0071",
-      "source": "store.group.automotive",
+      "source": "store.root.09",
       "target": "store.root.09",
       "type": "child_of",
       "confidence": "high",
@@ -3683,7 +3639,7 @@
     {
       "id": "rel.0072",
       "source": "store.group.automotive.subcategory.01",
-      "target": "store.group.automotive",
+      "target": "store.root.09",
       "type": "child_of",
       "confidence": "high",
       "evidence_class": "official_current_page"
@@ -3691,7 +3647,7 @@
     {
       "id": "rel.0073",
       "source": "store.group.automotive.subcategory.02",
-      "target": "store.group.automotive",
+      "target": "store.root.09",
       "type": "child_of",
       "confidence": "high",
       "evidence_class": "official_current_page"
@@ -3699,7 +3655,7 @@
     {
       "id": "rel.0074",
       "source": "store.group.automotive.subcategory.03",
-      "target": "store.group.automotive",
+      "target": "store.root.09",
       "type": "child_of",
       "confidence": "high",
       "evidence_class": "official_current_page"
@@ -3707,7 +3663,7 @@
     {
       "id": "rel.0075",
       "source": "store.group.automotive.subcategory.04",
-      "target": "store.group.automotive",
+      "target": "store.root.09",
       "type": "child_of",
       "confidence": "high",
       "evidence_class": "official_current_page"
@@ -3715,7 +3671,7 @@
     {
       "id": "rel.0076",
       "source": "store.group.automotive.subcategory.05",
-      "target": "store.group.automotive",
+      "target": "store.root.09",
       "type": "child_of",
       "confidence": "high",
       "evidence_class": "official_current_page"
@@ -3723,7 +3679,7 @@
     {
       "id": "rel.0077",
       "source": "store.group.automotive.subcategory.06",
-      "target": "store.group.automotive",
+      "target": "store.root.09",
       "type": "child_of",
       "confidence": "high",
       "evidence_class": "official_current_page"
@@ -3731,7 +3687,7 @@
     {
       "id": "rel.0078",
       "source": "store.group.automotive.subcategory.07",
-      "target": "store.group.automotive",
+      "target": "store.root.09",
       "type": "child_of",
       "confidence": "high",
       "evidence_class": "official_current_page"
@@ -3739,7 +3695,7 @@
     {
       "id": "rel.0079",
       "source": "store.group.automotive.subcategory.08",
-      "target": "store.group.automotive",
+      "target": "store.root.09",
       "type": "child_of",
       "confidence": "high",
       "evidence_class": "official_current_page"
@@ -3747,7 +3703,7 @@
     {
       "id": "rel.0080",
       "source": "store.group.automotive.subcategory.09",
-      "target": "store.group.automotive",
+      "target": "store.root.09",
       "type": "child_of",
       "confidence": "high",
       "evidence_class": "official_current_page"
@@ -3755,7 +3711,7 @@
     {
       "id": "rel.0081",
       "source": "store.group.automotive.subcategory.10",
-      "target": "store.group.automotive",
+      "target": "store.root.09",
       "type": "child_of",
       "confidence": "high",
       "evidence_class": "official_current_page"
@@ -3763,7 +3719,7 @@
     {
       "id": "rel.0082",
       "source": "store.group.automotive.subcategory.11",
-      "target": "store.group.automotive",
+      "target": "store.root.09",
       "type": "child_of",
       "confidence": "high",
       "evidence_class": "official_current_page"
@@ -3771,7 +3727,7 @@
     {
       "id": "rel.0083",
       "source": "store.group.automotive.term.01",
-      "target": "store.group.automotive",
+      "target": "store.root.09",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -3779,7 +3735,7 @@
     {
       "id": "rel.0084",
       "source": "store.group.automotive.term.02",
-      "target": "store.group.automotive",
+      "target": "store.root.09",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -3787,7 +3743,7 @@
     {
       "id": "rel.0085",
       "source": "store.group.automotive.term.03",
-      "target": "store.group.automotive",
+      "target": "store.root.09",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -3795,7 +3751,7 @@
     {
       "id": "rel.0086",
       "source": "store.group.automotive.term.04",
-      "target": "store.group.automotive",
+      "target": "store.root.09",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -3803,7 +3759,7 @@
     {
       "id": "rel.0087",
       "source": "store.group.automotive.term.05",
-      "target": "store.group.automotive",
+      "target": "store.root.09",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -3811,7 +3767,7 @@
     {
       "id": "rel.0088",
       "source": "store.group.automotive.term.06",
-      "target": "store.group.automotive",
+      "target": "store.root.09",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -3819,7 +3775,7 @@
     {
       "id": "rel.0089",
       "source": "store.group.automotive.term.07",
-      "target": "store.group.automotive",
+      "target": "store.root.09",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -3827,7 +3783,7 @@
     {
       "id": "rel.0090",
       "source": "store.group.automotive.term.08",
-      "target": "store.group.automotive",
+      "target": "store.root.09",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -3835,7 +3791,7 @@
     {
       "id": "rel.0091",
       "source": "store.group.automotive.term.09",
-      "target": "store.group.automotive",
+      "target": "store.root.09",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -3843,7 +3799,7 @@
     {
       "id": "rel.0092",
       "source": "store.group.automotive.term.10",
-      "target": "store.group.automotive",
+      "target": "store.root.09",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -3851,7 +3807,7 @@
     {
       "id": "rel.0093",
       "source": "store.group.automotive.term.11",
-      "target": "store.group.automotive",
+      "target": "store.root.09",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -3859,7 +3815,7 @@
     {
       "id": "rel.0094",
       "source": "store.group.automotive.term.12",
-      "target": "store.group.automotive",
+      "target": "store.root.09",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -3867,7 +3823,7 @@
     {
       "id": "rel.0095",
       "source": "store.group.automotive.term.13",
-      "target": "store.group.automotive",
+      "target": "store.root.09",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -3875,7 +3831,7 @@
     {
       "id": "rel.0096",
       "source": "store.group.automotive.term.14",
-      "target": "store.group.automotive",
+      "target": "store.root.09",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -3883,7 +3839,7 @@
     {
       "id": "rel.0097",
       "source": "store.group.automotive.term.15",
-      "target": "store.group.automotive",
+      "target": "store.root.09",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -3891,7 +3847,7 @@
     {
       "id": "rel.0098",
       "source": "store.group.automotive.term.16",
-      "target": "store.group.automotive",
+      "target": "store.root.09",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -3899,7 +3855,7 @@
     {
       "id": "rel.0099",
       "source": "store.group.automotive.term.17",
-      "target": "store.group.automotive",
+      "target": "store.root.09",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -3907,7 +3863,7 @@
     {
       "id": "rel.0100",
       "source": "store.group.automotive.term.18",
-      "target": "store.group.automotive",
+      "target": "store.root.09",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -3915,7 +3871,7 @@
     {
       "id": "rel.0101",
       "source": "store.group.automotive.term.19",
-      "target": "store.group.automotive",
+      "target": "store.root.09",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -3923,14 +3879,14 @@
     {
       "id": "rel.0102",
       "source": "store.group.automotive.term.20",
-      "target": "store.group.automotive",
+      "target": "store.root.09",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
     },
     {
       "id": "rel.0103",
-      "source": "store.group.appliances",
+      "source": "store.root.04",
       "target": "store.root.04",
       "type": "child_of",
       "confidence": "high",
@@ -3939,7 +3895,7 @@
     {
       "id": "rel.0104",
       "source": "store.group.appliances.subcategory.01",
-      "target": "store.group.appliances",
+      "target": "store.root.04",
       "type": "child_of",
       "confidence": "high",
       "evidence_class": "official_current_page"
@@ -3947,7 +3903,7 @@
     {
       "id": "rel.0105",
       "source": "store.group.appliances.subcategory.02",
-      "target": "store.group.appliances",
+      "target": "store.root.04",
       "type": "child_of",
       "confidence": "high",
       "evidence_class": "official_current_page"
@@ -3955,7 +3911,7 @@
     {
       "id": "rel.0106",
       "source": "store.group.appliances.subcategory.03",
-      "target": "store.group.appliances",
+      "target": "store.root.04",
       "type": "child_of",
       "confidence": "high",
       "evidence_class": "official_current_page"
@@ -3963,7 +3919,7 @@
     {
       "id": "rel.0107",
       "source": "store.group.appliances.subcategory.04",
-      "target": "store.group.appliances",
+      "target": "store.root.04",
       "type": "child_of",
       "confidence": "high",
       "evidence_class": "official_current_page"
@@ -3971,7 +3927,7 @@
     {
       "id": "rel.0108",
       "source": "store.group.appliances.subcategory.05",
-      "target": "store.group.appliances",
+      "target": "store.root.04",
       "type": "child_of",
       "confidence": "high",
       "evidence_class": "official_current_page"
@@ -3979,7 +3935,7 @@
     {
       "id": "rel.0109",
       "source": "store.group.appliances.subcategory.06",
-      "target": "store.group.appliances",
+      "target": "store.root.04",
       "type": "child_of",
       "confidence": "high",
       "evidence_class": "official_current_page"
@@ -3987,7 +3943,7 @@
     {
       "id": "rel.0110",
       "source": "store.group.appliances.subcategory.07",
-      "target": "store.group.appliances",
+      "target": "store.root.04",
       "type": "child_of",
       "confidence": "high",
       "evidence_class": "official_current_page"
@@ -3995,7 +3951,7 @@
     {
       "id": "rel.0111",
       "source": "store.group.appliances.subcategory.08",
-      "target": "store.group.appliances",
+      "target": "store.root.04",
       "type": "child_of",
       "confidence": "high",
       "evidence_class": "official_current_page"
@@ -4003,7 +3959,7 @@
     {
       "id": "rel.0112",
       "source": "store.group.appliances.subcategory.09",
-      "target": "store.group.appliances",
+      "target": "store.root.04",
       "type": "child_of",
       "confidence": "high",
       "evidence_class": "official_current_page"
@@ -4011,7 +3967,7 @@
     {
       "id": "rel.0113",
       "source": "store.group.appliances.subcategory.10",
-      "target": "store.group.appliances",
+      "target": "store.root.04",
       "type": "child_of",
       "confidence": "high",
       "evidence_class": "official_current_page"
@@ -4019,7 +3975,7 @@
     {
       "id": "rel.0114",
       "source": "store.group.appliances.subcategory.11",
-      "target": "store.group.appliances",
+      "target": "store.root.04",
       "type": "child_of",
       "confidence": "high",
       "evidence_class": "official_current_page"
@@ -4027,7 +3983,7 @@
     {
       "id": "rel.0115",
       "source": "store.group.appliances.subcategory.12",
-      "target": "store.group.appliances",
+      "target": "store.root.04",
       "type": "child_of",
       "confidence": "high",
       "evidence_class": "official_current_page"
@@ -4035,7 +3991,7 @@
     {
       "id": "rel.0116",
       "source": "store.group.appliances.subcategory.13",
-      "target": "store.group.appliances",
+      "target": "store.root.04",
       "type": "child_of",
       "confidence": "high",
       "evidence_class": "official_current_page"
@@ -4043,7 +3999,7 @@
     {
       "id": "rel.0117",
       "source": "store.group.appliances.subcategory.14",
-      "target": "store.group.appliances",
+      "target": "store.root.04",
       "type": "child_of",
       "confidence": "high",
       "evidence_class": "official_current_page"
@@ -4051,7 +4007,7 @@
     {
       "id": "rel.0118",
       "source": "store.group.appliances.subcategory.15",
-      "target": "store.group.appliances",
+      "target": "store.root.04",
       "type": "child_of",
       "confidence": "high",
       "evidence_class": "official_current_page"
@@ -4059,7 +4015,7 @@
     {
       "id": "rel.0119",
       "source": "store.group.appliances.term.01",
-      "target": "store.group.appliances",
+      "target": "store.root.04",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -4067,7 +4023,7 @@
     {
       "id": "rel.0120",
       "source": "store.group.appliances.term.02",
-      "target": "store.group.appliances",
+      "target": "store.root.04",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -4075,7 +4031,7 @@
     {
       "id": "rel.0121",
       "source": "store.group.appliances.term.03",
-      "target": "store.group.appliances",
+      "target": "store.root.04",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -4083,7 +4039,7 @@
     {
       "id": "rel.0122",
       "source": "store.group.appliances.term.04",
-      "target": "store.group.appliances",
+      "target": "store.root.04",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -4091,7 +4047,7 @@
     {
       "id": "rel.0123",
       "source": "store.group.appliances.term.05",
-      "target": "store.group.appliances",
+      "target": "store.root.04",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -4099,7 +4055,7 @@
     {
       "id": "rel.0124",
       "source": "store.group.appliances.term.06",
-      "target": "store.group.appliances",
+      "target": "store.root.04",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -4107,7 +4063,7 @@
     {
       "id": "rel.0125",
       "source": "store.group.appliances.term.07",
-      "target": "store.group.appliances",
+      "target": "store.root.04",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -4115,7 +4071,7 @@
     {
       "id": "rel.0126",
       "source": "store.group.appliances.term.08",
-      "target": "store.group.appliances",
+      "target": "store.root.04",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -4123,7 +4079,7 @@
     {
       "id": "rel.0127",
       "source": "store.group.appliances.term.09",
-      "target": "store.group.appliances",
+      "target": "store.root.04",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -4131,7 +4087,7 @@
     {
       "id": "rel.0128",
       "source": "store.group.appliances.term.10",
-      "target": "store.group.appliances",
+      "target": "store.root.04",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -4139,7 +4095,7 @@
     {
       "id": "rel.0129",
       "source": "store.group.appliances.term.11",
-      "target": "store.group.appliances",
+      "target": "store.root.04",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -4147,14 +4103,14 @@
     {
       "id": "rel.0130",
       "source": "store.group.appliances.term.12",
-      "target": "store.group.appliances",
+      "target": "store.root.04",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
     },
     {
       "id": "rel.0131",
-      "source": "store.group.home",
+      "source": "store.root.05",
       "target": "store.root.05",
       "type": "child_of",
       "confidence": "high",
@@ -4163,7 +4119,7 @@
     {
       "id": "rel.0132",
       "source": "store.group.home.subcategory.01",
-      "target": "store.group.home",
+      "target": "store.root.05",
       "type": "child_of",
       "confidence": "high",
       "evidence_class": "official_current_page"
@@ -4171,7 +4127,7 @@
     {
       "id": "rel.0133",
       "source": "store.group.home.subcategory.02",
-      "target": "store.group.home",
+      "target": "store.root.05",
       "type": "child_of",
       "confidence": "high",
       "evidence_class": "official_current_page"
@@ -4179,7 +4135,7 @@
     {
       "id": "rel.0134",
       "source": "store.group.home.subcategory.03",
-      "target": "store.group.home",
+      "target": "store.root.05",
       "type": "child_of",
       "confidence": "high",
       "evidence_class": "official_current_page"
@@ -4187,7 +4143,7 @@
     {
       "id": "rel.0135",
       "source": "store.group.home.subcategory.04",
-      "target": "store.group.home",
+      "target": "store.root.05",
       "type": "child_of",
       "confidence": "high",
       "evidence_class": "official_current_page"
@@ -4195,7 +4151,7 @@
     {
       "id": "rel.0136",
       "source": "store.group.home.subcategory.05",
-      "target": "store.group.home",
+      "target": "store.root.05",
       "type": "child_of",
       "confidence": "high",
       "evidence_class": "official_current_page"
@@ -4203,7 +4159,7 @@
     {
       "id": "rel.0137",
       "source": "store.group.home.subcategory.06",
-      "target": "store.group.home",
+      "target": "store.root.05",
       "type": "child_of",
       "confidence": "high",
       "evidence_class": "official_current_page"
@@ -4211,7 +4167,7 @@
     {
       "id": "rel.0138",
       "source": "store.group.home.subcategory.07",
-      "target": "store.group.home",
+      "target": "store.root.05",
       "type": "child_of",
       "confidence": "high",
       "evidence_class": "official_current_page"
@@ -4219,7 +4175,7 @@
     {
       "id": "rel.0139",
       "source": "store.group.home.subcategory.08",
-      "target": "store.group.home",
+      "target": "store.root.05",
       "type": "child_of",
       "confidence": "high",
       "evidence_class": "official_current_page"
@@ -4227,7 +4183,7 @@
     {
       "id": "rel.0140",
       "source": "store.group.home.subcategory.09",
-      "target": "store.group.home",
+      "target": "store.root.05",
       "type": "child_of",
       "confidence": "high",
       "evidence_class": "official_current_page"
@@ -4235,7 +4191,7 @@
     {
       "id": "rel.0141",
       "source": "store.group.home.term.01",
-      "target": "store.group.home",
+      "target": "store.root.05",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -4243,7 +4199,7 @@
     {
       "id": "rel.0142",
       "source": "store.group.home.term.02",
-      "target": "store.group.home",
+      "target": "store.root.05",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -4251,7 +4207,7 @@
     {
       "id": "rel.0143",
       "source": "store.group.home.term.03",
-      "target": "store.group.home",
+      "target": "store.root.05",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -4259,7 +4215,7 @@
     {
       "id": "rel.0144",
       "source": "store.group.home.term.04",
-      "target": "store.group.home",
+      "target": "store.root.05",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -4267,7 +4223,7 @@
     {
       "id": "rel.0145",
       "source": "store.group.home.term.05",
-      "target": "store.group.home",
+      "target": "store.root.05",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -4275,7 +4231,7 @@
     {
       "id": "rel.0146",
       "source": "store.group.home.term.06",
-      "target": "store.group.home",
+      "target": "store.root.05",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -4283,7 +4239,7 @@
     {
       "id": "rel.0147",
       "source": "store.group.home.term.07",
-      "target": "store.group.home",
+      "target": "store.root.05",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -4291,7 +4247,7 @@
     {
       "id": "rel.0148",
       "source": "store.group.home.term.08",
-      "target": "store.group.home",
+      "target": "store.root.05",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -4299,7 +4255,7 @@
     {
       "id": "rel.0149",
       "source": "store.group.home.term.09",
-      "target": "store.group.home",
+      "target": "store.root.05",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
@@ -4307,7 +4263,7 @@
     {
       "id": "rel.0150",
       "source": "store.group.home.term.10",
-      "target": "store.group.home",
+      "target": "store.root.05",
       "type": "listed_under",
       "confidence": "medium",
       "evidence_class": "official_current_page"
