@@ -26,7 +26,7 @@ for (const node of graph.nodes || []) {
   if (!axes.has(node.axis)) fail('Unknown axis on ' + node.id + ': ' + node.axis);
   if (typeof node.label !== 'string' || !node.label.trim()) fail('Missing label on ' + node.id);
   if (node.aliases != null && !Array.isArray(node.aliases)) fail('aliases must be an array on ' + node.id);
-  if (node.node_type === 'evidence_source' && node.url != null && !/^https?:\\/\\//.test(node.url)) fail('Evidence URL must be absolute or null: ' + node.id);
+  if (node.node_type === 'evidence_source' && node.url != null && !(node.url.startsWith('https://') || node.url.startsWith('http://'))) fail('Evidence URL must be absolute or null: ' + node.id);
 }
 
 const dkpReferences = new Map();
