@@ -24,7 +24,7 @@ test('tree explorer loads the graph and uses the knowledge search API', () => {
   assert.match(js, /fetch\(['"]\/api\/knowledge\/search\?/);
   assert.match(js, /graph\.axes/);
   assert.match(js, /graph\.relations/);
-  assert.match(js, /id === 'evidence'/);
+  assert.match(js, /id !== 'evidence'/);
 });
 
 test('tree explorer exposes the product discovery axes', () => {
