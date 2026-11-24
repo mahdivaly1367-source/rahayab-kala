@@ -1,0 +1,389 @@
+{
+  "dataset": "rahayab_kala_specialty_product_evidence",
+  "schema_version": "1.0.0",
+  "observed_at": "2026-11-24",
+  "methodology": "Public third-party catalog pages were reviewed; selected affiliate links were followed to identify canonical Digikala DKP paths. Direct Digikala product pages were not retrievable in the research browser, so live availability, price and seller were not validated.",
+  "evidence_status_definitions": {
+    "affiliate_link_resolves_to_dkp": "Affiliate redirect resolved to a canonical Digikala product URL with a DKP id; official product page content/current stock was not independently validated.",
+    "third_party_listing_digikala_route_unresolved": "Third-party page says buy from Digikala, but exact destination DKP was not recovered.",
+    "third_party_market_only": "Observed in a specialist non-Digikala catalog without a verified Digikala route.",
+    "not_found_in_sample": "No sufficiently reliable match in this bounded sample; not proof of non-existence."
+  },
+  "products": [
+    {
+      "id": "dkp-14267164",
+      "title": "استپر موتور مدل یدک کالا مناسب برای پراید و پیکان",
+      "family": "stepper_motor",
+      "interpretation": "Automotive idle-control stepper/actuator; not an industrial CNC stepper motor.",
+      "evidence_status": "affiliate_link_resolves_to_dkp",
+      "digikala_url": "https://www.digikala.com/product/dkp-14267164/",
+      "evidence_source": "https://abzar1404.ir/product/stepper-motor-spare-parts-suitable-for-pride-and-pikan/",
+      "mapped_paths": [
+        "ماهیت > محرک خودرو > استپر کنترل دور آرام",
+        "مجموعه > خودرو > سامانه موتور"
+      ]
+    },
+    {
+      "id": "dkp-20233926",
+      "title": "جت فن مدل چندکاره کد F028",
+      "family": "brushless_motor_in_finished_product",
+      "interpretation": "Finished blower product whose third-party catalog specifies a brushless motor; not a standalone motor.",
+      "evidence_status": "affiliate_link_resolves_to_dkp",
+      "digikala_url": "https://www.digikala.com/product/dkp-20233926/",
+      "evidence_source": "https://viewmag.ir/product/جت-فن-مدل-چندکاره-کد-f028/",
+      "mapped_paths": [
+        "ماهیت > دمنده شارژی",
+        "ویژگی فنی > نوع موتور > براشلس",
+        "مجموعه > ابزار/سفر"
+      ]
+    },
+    {
+      "id": "dkp-21108319",
+      "title": "جت فن شارژی مدل چراغدار X8",
+      "family": "brushless_motor_in_finished_product",
+      "interpretation": "Finished portable blower; third-party catalog describes brushless motor.",
+      "evidence_status": "third_party_listing_digikala_route_unresolved",
+      "digikala_url": "https://www.digikala.com/product/dkp-21108319/",
+      "evidence_source": "https://viewmag.ir/product/جت-فن-شارژی-مدل-چراغدار-x8/",
+      "mapped_paths": [
+        "ماهیت > دمنده شارژی",
+        "ویژگی فنی > نوع موتور > براشلس",
+        "مجموعه > ابزار/سفر"
+      ]
+    },
+    {
+      "id": "dkp-15483404",
+      "title": "موتور برق بنزینی اینورتر استریم مدل ST9000iD",
+      "family": "generator",
+      "interpretation": "Combustion engine-driven electrical generator.",
+      "evidence_status": "affiliate_link_resolves_to_dkp",
+      "digikala_url": "https://www.digikala.com/product/dkp-15483404/",
+      "evidence_source": "https://abzar1404.ir/product-category/tajhizat-sanati-va-anbardari/motorbargh/",
+      "mapped_paths": [
+        "ماهیت > مولد برق > موتور برق بنزینی",
+        "مجموعه > خانه/کارگاه > برق پشتیبان"
+      ]
+    },
+    {
+      "id": "dkp-16806226",
+      "title": "موتور برق بنزینی نووا مدل 9530",
+      "family": "generator",
+      "evidence_status": "affiliate_link_resolves_to_dkp",
+      "digikala_url": "https://www.digikala.com/product/dkp-16806226/",
+      "evidence_source": "https://abzar1404.ir/product-category/tajhizat-sanati-va-anbardari/motorbargh/",
+      "mapped_paths": [
+        "ماهیت > مولد برق > موتور برق بنزینی",
+        "مجموعه > خانه/کارگاه > برق پشتیبان"
+      ]
+    },
+    {
+      "id": "dkp-8319071",
+      "title": "موتور برق جیانگ دانگ مدل JD2800",
+      "family": "generator",
+      "evidence_status": "affiliate_link_resolves_to_dkp",
+      "digikala_url": "https://www.digikala.com/product/dkp-8319071/",
+      "evidence_source": "https://abzar1404.ir/product-category/tajhizat-sanati-va-anbardari/motorbargh/",
+      "mapped_paths": [
+        "ماهیت > مولد برق > موتور برق",
+        "مجموعه > خانه/کارگاه > برق پشتیبان"
+      ]
+    },
+    {
+      "id": "dkp-2451884",
+      "title": "موتور پمپ بنزینی لئو مدل LGP 20 H",
+      "family": "engine_pump_set",
+      "evidence_status": "affiliate_link_resolves_to_dkp",
+      "digikala_url": "https://www.digikala.com/product/dkp-2451884/",
+      "evidence_source": "https://abzar1404.ir/product/dc-3-5v-water-pump/",
+      "mapped_paths": [
+        "ماهیت > مجموعه محرکه و پمپ",
+        "مجموعه > باغبانی/کشاورزی/کارگاه"
+      ]
+    },
+    {
+      "id": "dkp-3884114",
+      "title": "پمپ آب الکتروژن مدل CM100",
+      "family": "water_pump",
+      "evidence_status": "affiliate_link_resolves_to_dkp",
+      "digikala_url": "https://www.digikala.com/product/dkp-3884114/",
+      "evidence_source": "https://abzar1404.ir/product/dc-3-5v-water-pump/",
+      "mapped_paths": [
+        "ماهیت > پمپ آب",
+        "کاربرد > انتقال و افزایش فشار آب",
+        "مجموعه > خانه/تأسیسات"
+      ]
+    },
+    {
+      "id": "dkp-19141373",
+      "title": "پمپ کف‌کش 1.1 اسب بخار توان تک مدل TMR16/6S",
+      "family": "submersible_pump",
+      "evidence_status": "affiliate_link_resolves_to_dkp",
+      "digikala_url": "https://www.digikala.com/product/dkp-19141373/",
+      "evidence_source": "https://abzar1404.ir/product/dc-3-5v-water-pump/",
+      "mapped_paths": [
+        "ماهیت > پمپ > کف‌کش",
+        "کاربرد > تخلیه/انتقال آب",
+        "مجموعه > خانه/کشاورزی/کارگاه"
+      ]
+    },
+    {
+      "id": "dkp-2460735",
+      "title": "پمپ آب لئو مدل APM37",
+      "family": "water_pump",
+      "evidence_status": "affiliate_link_resolves_to_dkp",
+      "digikala_url": "https://www.digikala.com/product/dkp-2460735/",
+      "evidence_source": "https://abzar1404.ir/product/rh-4031-floor-pump-pump/",
+      "mapped_paths": [
+        "ماهیت > پمپ آب",
+        "کاربرد > افزایش فشار/انتقال آب",
+        "مجموعه > خانه/تأسیسات"
+      ]
+    },
+    {
+      "id": "dkp-19661679",
+      "title": "پمپ کف‌کش 2 اسب بخار ای‌ام‌سی مدل QDX45-9-1.5F",
+      "family": "submersible_pump",
+      "evidence_status": "affiliate_link_resolves_to_dkp",
+      "digikala_url": "https://www.digikala.com/product/dkp-19661679/",
+      "evidence_source": "https://abzar1404.ir/product/dc-3-5v-water-pump/",
+      "mapped_paths": [
+        "ماهیت > پمپ > کف‌کش",
+        "کاربرد > تخلیه/انتقال آب",
+        "مجموعه > خانه/کشاورزی/کارگاه"
+      ]
+    },
+    {
+      "id": "dkp-12463221",
+      "title": "منبع تحت فشار هاماک مدل گیج‌دار ظرفیت 60 لیتر",
+      "family": "pump_accessory_pressure_tank",
+      "evidence_status": "affiliate_link_resolves_to_dkp",
+      "digikala_url": "https://www.digikala.com/product/dkp-12463221/",
+      "evidence_source": "https://abzar1404.ir/product/scm4f-floor-pump/",
+      "mapped_paths": [
+        "ماهیت > تجهیزات جانبی پمپ > منبع تحت فشار",
+        "کاربرد > تثبیت فشار آب"
+      ]
+    },
+    {
+      "id": "dkp-20046701",
+      "title": "پمپ آب یک اسب بخار پنتاکس مدل پروانه استیل",
+      "family": "water_pump",
+      "evidence_status": "affiliate_link_resolves_to_dkp",
+      "digikala_url": "https://www.digikala.com/product/dkp-20046701/",
+      "evidence_source": "https://abzar1404.ir/product/wp3500-water-pump-water-pump-2/",
+      "mapped_paths": [
+        "ماهیت > پمپ آب",
+        "کاربرد > افزایش فشار/انتقال آب",
+        "مجموعه > خانه/کشاورزی"
+      ]
+    },
+    {
+      "id": "dkp-20662147",
+      "title": "پک مه‌پاش خانگی مدل B51 مجموعه 24 عددی",
+      "family": "misting_irrigation_kit",
+      "evidence_status": "affiliate_link_resolves_to_dkp",
+      "digikala_url": "https://www.digikala.com/product/dkp-20662147/",
+      "evidence_source": "https://viewmag.ir/product/پک-مه-پاش-خانگی-مدل-b51-مجموعه-24-عددی/",
+      "mapped_paths": [
+        "ماهیت > تجهیزات آبیاری > مه‌پاش",
+        "مجموعه > گلخانه/باغ/فضای باز",
+        "کاربرد > افزایش رطوبت/خنک‌سازی"
+      ]
+    },
+    {
+      "id": "dkp-3579672",
+      "title": "تایمر آبیاری رین مدل آمیکو پلاس",
+      "family": "irrigation_controller_timer",
+      "evidence_status": "affiliate_link_resolves_to_dkp",
+      "digikala_url": "https://www.digikala.com/product/dkp-3579672/",
+      "evidence_source": "https://viewmag.ir/product/تایمر-آبیاری-رین-مدل-آمیکو-پلاس/",
+      "mapped_paths": [
+        "ماهیت > کنترل‌کننده آبیاری > تایمر",
+        "مجموعه > باغ/گلخانه/فضای سبز",
+        "کاربرد > زمان‌بندی آبیاری"
+      ]
+    },
+    {
+      "id": "dkp-2665591",
+      "title": "لوازم آبیاری قطره‌ای تهران دریپ مدل ALFA-50 مجموعه 50 عددی",
+      "family": "drip_irrigation_accessory",
+      "evidence_status": "affiliate_link_resolves_to_dkp",
+      "digikala_url": "https://www.digikala.com/product/dkp-2665591/",
+      "evidence_source": "https://viewmag.ir/products/vehicles/category-watering-accessories/",
+      "mapped_paths": [
+        "ماهیت > آبیاری قطره‌ای > اتصالات و اجزا",
+        "مجموعه > گلخانه/باغ"
+      ]
+    },
+    {
+      "id": "dkp-3491209",
+      "title": "لوازم جانبی آبیاری قطره‌ای مدل C-107 مجموعه 32 عددی",
+      "family": "drip_irrigation_accessory",
+      "evidence_status": "affiliate_link_resolves_to_dkp",
+      "digikala_url": "https://www.digikala.com/product/dkp-3491209/",
+      "evidence_source": "https://viewmag.ir/products/vehicles/category-watering-accessories/",
+      "mapped_paths": [
+        "ماهیت > آبیاری قطره‌ای > اتصالات و اجزا",
+        "مجموعه > گلخانه/باغ"
+      ]
+    },
+    {
+      "id": "dkp-7669891",
+      "title": "نایلون گلخانه مدل Q3meter طول 5 متر",
+      "family": "greenhouse_cover_film",
+      "evidence_status": "affiliate_link_resolves_to_dkp",
+      "digikala_url": "https://www.digikala.com/product/dkp-7669891/",
+      "evidence_source": "https://abzar1404.ir/product/greenhouse-green-model-anti-uv-model-pack-10/",
+      "mapped_paths": [
+        "ماهیت > پوشش گلخانه > فیلم/نایلون",
+        "مجموعه > گلخانه",
+        "کاربرد > پوشش و حفاظت محیط کشت"
+      ]
+    },
+    {
+      "id": "dkp-8399201",
+      "title": "توری شید گلخانه مدل 80 درصد ضدآفتاب کد 6/4 طول 6 متر",
+      "family": "greenhouse_shade_net",
+      "evidence_status": "affiliate_link_resolves_to_dkp",
+      "digikala_url": "https://www.digikala.com/product/dkp-8399201/",
+      "evidence_source": "https://abzar1404.ir/product/greenhouse-nylon-q3meter-model-5-m/",
+      "mapped_paths": [
+        "ماهیت > پوشش گلخانه > توری شید",
+        "مجموعه > گلخانه",
+        "کاربرد > سایه‌اندازی/کاهش تابش"
+      ]
+    },
+    {
+      "id": "dkp-8675106",
+      "title": "توری شید گلخانه کد G3/1 طول 3 متر",
+      "family": "greenhouse_shade_net",
+      "evidence_status": "affiliate_link_resolves_to_dkp",
+      "digikala_url": "https://www.digikala.com/product/dkp-8675106/",
+      "evidence_source": "https://abzar1404.ir/product/greenhouse-nylon-q3meter-model-5-m/",
+      "mapped_paths": [
+        "ماهیت > پوشش گلخانه > توری شید",
+        "مجموعه > گلخانه"
+      ]
+    },
+    {
+      "id": "dkp-8675118",
+      "title": "توری شید گلخانه کد G3/3 طول 3 متر",
+      "family": "greenhouse_shade_net",
+      "evidence_status": "affiliate_link_resolves_to_dkp",
+      "digikala_url": "https://www.digikala.com/product/dkp-8675118/",
+      "evidence_source": "https://abzar1404.ir/product/greenhouse-nylon-q3meter-model-5-m/",
+      "mapped_paths": [
+        "ماهیت > پوشش گلخانه > توری شید",
+        "مجموعه > گلخانه"
+      ]
+    },
+    {
+      "id": "dkp-8771841",
+      "title": "بست توری شید گلخانه مدل ضخیم کد KN6 بسته 12 عددی",
+      "family": "greenhouse_shade_net_fitting",
+      "evidence_status": "affiliate_link_resolves_to_dkp",
+      "digikala_url": "https://www.digikala.com/product/dkp-8771841/",
+      "evidence_source": "https://abzar1404.ir/product/greenhouse-nylon-q3meter-model-5-m/",
+      "mapped_paths": [
+        "ماهیت > اتصالات پوشش گلخانه > بست توری",
+        "مجموعه > گلخانه"
+      ]
+    },
+    {
+      "id": "dkp-8323827",
+      "title": "توری شید گلخانه مدل 80 درصد ضدآفتاب کد 24",
+      "family": "greenhouse_shade_net",
+      "evidence_status": "affiliate_link_resolves_to_dkp",
+      "digikala_url": "https://www.digikala.com/product/dkp-8323827/",
+      "evidence_source": "https://abzar1404.ir/product/greenhouse-nylon-q3meter-model-5-m/",
+      "mapped_paths": [
+        "ماهیت > پوشش گلخانه > توری شید",
+        "مجموعه > گلخانه"
+      ]
+    }
+  ],
+  "unresolved_terms": [
+    {
+      "concept": "موتور DC مستقل",
+      "status": "third_party_listing_digikala_route_unresolved",
+      "source": "https://nariix.com/",
+      "note": "صفحه موتور DC دو سر شفت با مشخصات 12V/15000rpm و دکمه خرید دیجی‌کالا دیده شد؛ مقصد DKP حل نشد."
+    },
+    {
+      "concept": "استپر موتور صنعتی دو فاز Sanyo Denki",
+      "status": "third_party_listing_digikala_route_unresolved",
+      "source": "https://nariix.com/",
+      "note": "فهرست شخص ثالث آن را با مشخصات 1.8 درجه، شش سیم و 1.5A نمایش می‌دهد؛ مقصد DKP حل نشد."
+    },
+    {
+      "concept": "موتور براشلس مستقل برای پهپاد (DJI 2212/MT2204)",
+      "status": "third_party_market_only",
+      "source": "https://shop.aftabrayaneh.com/",
+      "note": "در فروشگاه قطعات الکترونیک دیده شد؛ شاهد پیوند به دیجی‌کالا یافت نشد."
+    },
+    {
+      "concept": "فن سیرکوله صنعتی مخصوص گلخانه",
+      "status": "third_party_market_only",
+      "source": "https://parsanat.com/cat/electrical-and-electronic/",
+      "note": "در فروشگاه تخصصی گلخانه مشاهده شد؛ DKP تأییدشده در نمونه حاضر پیدا نشد."
+    },
+    {
+      "concept": "کنترلر یکپارچه اقلیم گلخانه، هیتر تخصصی، نور رشد و تزریق کود",
+      "status": "not_found_in_sample",
+      "source": "bounded web sample",
+      "note": "عدم یافتن در نمونه به معنی نبود کالا در دیجی‌کالا نیست."
+    }
+  ],
+  "tested_queries": [
+    {
+      "query": "موتور",
+      "expected_branches": [
+        "موتور خودرو و قطعات کنترل",
+        "موتور برق و ژنراتور",
+        "موتور الکتریکی مستقل",
+        "محصول نهایی دارای موتور براشلس",
+        "موتورپمپ"
+      ],
+      "avoid": "نتایج موتورهای ناهمگون در یک فهرست بدون تفکیک"
+    },
+    {
+      "query": "استپر موتور",
+      "expected_branches": [
+        "استپر/محرک کنترل دور آرام خودرو",
+        "استپر موتور صنعتی و حرکتی"
+      ],
+      "avoid": "یکی‌گرفتن استپر خودرو با NEMA/صنعتی"
+    },
+    {
+      "query": "موتور براشلس",
+      "expected_branches": [
+        "موتور مستقل BLDC",
+        "ابزار/محصول نهایی دارای موتور براشلس"
+      ],
+      "avoid": "طبقه‌بندی جت‌فن در گروه موتور مستقل"
+    },
+    {
+      "query": "پمپ",
+      "expected_branches": [
+        "پمپ آب",
+        "کف‌کش و شناور",
+        "مینی پمپ DC",
+        "موتورپمپ",
+        "تجهیزات کنترل فشار"
+      ],
+      "avoid": "ادغام پمپ با ست‌کنترل و منبع تحت فشار"
+    },
+    {
+      "query": "گلخانه",
+      "expected_branches": [
+        "پوشش",
+        "آبیاری",
+        "مه‌پاش",
+        "تهویه",
+        "گرمایش و سرمایش",
+        "نور رشد و اتوماسیون"
+      ],
+      "avoid": "معرفی شاخه‌های بدون شاهد به‌عنوان موجودی قطعی"
+    }
+  ]
+}
