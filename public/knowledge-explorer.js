@@ -57,6 +57,7 @@ async function initKnowledgeExplorer() {
   };
 
   let graph = null;
+  let availableAxes = [];
   let nodeMap = new Map();
   let activeAxis = 'nature';
   let focusedNodeId = null;
@@ -493,7 +494,9 @@ async function initKnowledgeExplorer() {
   function renderAxisControls() {
     const host = $('kgAxes');
     host.replaceChildren();
-    Object.entries(labels).forEach(([id, label]) => {
+    availableAxes.forEach(axis => {
+      const id = axis.id;
+      const label = labels[id] || axis.label || id;
       const button = make('button', 'kg-axis' + (activeAxis === id ? ' active' : ''), label);
       button.type = 'button';
       button.dataset.axis = id;
@@ -609,6 +612,8 @@ async function initKnowledgeExplorer() {
     const response = await fetch('/api/knowledge/graph', { cache: 'no-store' });
     if (!response.ok) throw new Error('HTTP ' + response.status);
     graph = await response.json();
+    availableAxes = (graph.axes || []).filter(axis => axis.id !== 'evidence' && graph.nodes.some(node => node.axis === axis.id));
+    if (availableAxes.length && !availableAxes.some(axis => axis.id === activeAxis)) activeAxis = availableAxes[0].id;
     nodeMap = new Map(graph.nodes.map(node => [node.id, node]));
 
     $('kgVersion').textContent = 'گراف دانش ' + graph.graph_version;
