@@ -28,39 +28,68 @@
 <section id="knowledgeExplorer" class="knowledge-explorer" aria-labelledby="kgTitle">
  <div class="kg-heading">
   <div>
-   <div class="kg-kicker">موتور کشف مفهومی راه‌یاب</div>
-   <h2 id="kgTitle">جست‌وجوی درختی کالا</h2>
-   <p>از ماهیت کالا، سامانه‌ای که در آن به‌کار می‌رود یا کاربردش شروع کن؛ شاخه‌ها از گراف دانش راه‌یاب بارگذاری می‌شوند.</p>
+   <div class="kg-kicker">RAHAYAB KNOWLEDGE GRAPH</div>
+   <h2 id="kgTitle">از یک مفهوم، به هزار مسیر برس</h2>
+   <p>یک مفهوم را انتخاب کن و شاخه‌های مرتبط را باز کن. ریشه در سمت راست است و ارتباط‌ها در چند سطح به سمت چپ گسترش پیدا می‌کنند.</p>
   </div>
   <div class="kg-stats">
-   <span class="kg-stat" id="kgVersion">در حال اتصال به گراف دانش…</span>
+   <span class="kg-stat" id="kgVersion">در حال اتصال به گراف…</span>
    <span class="kg-stat" id="kgCounts">—</span>
   </div>
  </div>
+
  <div class="kg-controls">
-  <div id="kgAxes" class="kg-axes" role="tablist" aria-label="محور جست‌وجوی درختی"></div>
-  <div class="kg-search-row">
-   <input id="kgQuery" type="search" placeholder="مثلاً موتور براشلس، پمپ کف‌کش، گلخانه..." aria-label="جست‌وجو در گراف دانش">
-   <button type="button" class="primary" id="kgSearchBtn">جست‌وجو در دانش</button>
-   <button type="button" class="kg-clear" id="kgClearBtn">پاک کردن</button>
+  <div id="kgAxes" class="kg-axes" aria-label="حوزه‌های دانش"></div>
+  <div class="kg-searchbar">
+   <input id="kgQuery" type="search" placeholder="هر چیزی را جست‌وجو کن؛ مثلاً موتور براشلس، پمپ، گلخانه..." aria-label="جست‌وجوی آزاد در گراف دانش">
+   <button type="button" class="primary" id="kgSearchButton">کشف مفهوم</button>
+   <button type="button" class="kg-clear-search" id="kgClearSearch">پاک کردن</button>
   </div>
  </div>
+
  <div id="kgSearchResults" class="kg-search-results" hidden></div>
- <div class="kg-main">
-  <div class="kg-panel">
-   <div class="kg-panel-head"><strong id="kgTreeTitle">درخت ماهیت کالا</strong><small>برای بازکردن هر شاخه، روی علامت کنار آن بزن.</small></div>
-   <div id="kgTree" class="kg-tree" aria-live="polite"><div class="kg-loading">در حال بارگذاری ساختار مفهومی…</div></div>
+
+ <div class="kg-graph-panel">
+  <div class="kg-graph-head">
+   <div class="kg-graph-title">
+    <strong>نقشهٔ زندهٔ ارتباط مفاهیم</strong>
+    <small id="kgGraphSummary">در حال ساخت نمودار…</small>
+   </div>
+   <div class="kg-graph-tools" aria-label="کنترل نمودار">
+    <button type="button" id="kgZoomOut" aria-label="کوچک‌نمایی">−</button>
+    <span id="kgZoomValue">100%</span>
+    <button type="button" id="kgZoomIn" aria-label="بزرگ‌نمایی">+</button>
+    <button type="button" id="kgZoomReset" aria-label="بازنشانی اندازه">↺</button>
+   </div>
   </div>
-  <aside class="kg-panel kg-detail" aria-live="polite">
-   <span class="kg-detail-type" id="kgDetailType">راهنمای انتخاب</span>
-   <h3 id="kgDetailTitle">یک شاخه را انتخاب کن</h3>
-   <p id="kgDetailDesc">با بازکردن شاخه‌ها، زیرگروه‌ها و ارتباط مفاهیم را می‌بینی. با انتخاب هر مورد، توضیح و شواهد مرتبط نمایش داده می‌شود.</p>
-   <div id="kgDetailMeta" class="kg-detail-meta"></div>
-   <div id="kgDetailRelated"></div>
-   <button type="button" id="kgLiveSearchBtn" class="primary kg-live-search" hidden>جست‌وجوی زندهٔ این عبارت در فروشگاه</button>
-  </aside>
+  <div id="kgGraphViewport" class="kg-graph-viewport" aria-label="بوم نمودار تعاملی">
+   <svg id="kgGraph" role="img" aria-label="درخت افقی مفاهیم و کالاها" viewBox="0 0 1000 480">
+    <text x="500" y="240" text-anchor="middle" direction="rtl">در حال بارگذاری گراف دانش…</text>
+   </svg>
+  </div>
+  <div class="kg-graph-footer">
+   <span>روی گره بزن تا انتخاب شود؛ علامت مثبت شاخه‌های بعدی را باز می‌کند.</span>
+   <span>برای حرکت در نمودار، زمینه را با ماوس بکش یا از نوار پیمایش استفاده کن.</span>
+  </div>
  </div>
- <p class="kg-foot">این درخت، مدل دانشی مستقل راه‌یاب است و عین منوی رسمی فروشگاه نیست. رکوردهای محصول فقط شواهد پژوهشی‌اند؛ قیمت، فروشنده و موجودی فعلی از این گراف تأیید نمی‌شوند.</p>
+
+ <section class="kg-inspector" aria-live="polite">
+  <div class="kg-inspector-main">
+   <span class="kg-inspector-type" id="kgInspectorType">نقشه تعاملی دانش</span>
+   <h3 id="kgInspectorTitle">یک گره را انتخاب کن</h3>
+   <p id="kgInspectorDescription">روی هر گره بزن تا اطلاعاتش را ببینی؛ با علامت مثبت شاخه‌ها باز می‌شوند. هر مفهوم را هم می‌توانی به مرکز نمودار تازه تبدیل کنی.</p>
+   <div id="kgInspectorBadges" class="kg-inspector-badges"></div>
+   <div id="kgInspectorRelations" class="kg-inspector-relations"></div>
+   <div id="kgInspectorProductLink" class="kg-inspector-product-link"></div>
+  </div>
+  <div class="kg-inspector-actions">
+   <button type="button" id="kgFocusButton" hidden>مرکز نمودار روی این مفهوم</button>
+   <button type="button" id="kgLiveQueryButton" hidden>جست‌وجوی زنده در فروشگاه</button>
+   <button type="button" id="kgShowAllRoots">نمایش ریشه‌های این حوزه</button>
+  </div>
+ </section>
+
+ <p class="kg-explorer-note">این نقشه از گراف دانشی نسخه‌دار راه‌یاب ساخته می‌شود، نه از یک فهرست ثابت. دسته‌های فروشگاه، مفاهیم فنی و مسیرهای پیشنهادی از هم تفکیک شده‌اند. رکوردهای پژوهشی به معنی تأیید قیمت، فروشنده یا موجودی فعلی نیستند.</p>
 </section>
 
 <section class="hero">
