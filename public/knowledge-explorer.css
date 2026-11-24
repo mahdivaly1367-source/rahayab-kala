@@ -151,3 +151,182 @@
  .kg-graph-footer{font-size:9px}
  .kg-search-hit{min-width:calc(50% - 4px);max-width:none;flex:1}
 }
+
+
+/* Typography, spacing and image-led presentation polish */
+body{font-family:"Segoe UI",Tahoma,Arial,sans-serif;font-size:14px;line-height:1.9}
+.shell{max-width:1440px}
+.topbar{min-height:76px}
+.brand{font-size:20px}
+.subtitle{font-size:13px}
+.pill{font-size:12px;padding:7px 13px}
+.hero{gap:34px;padding-top:30px;padding-bottom:22px}
+.hero h1{font-size:clamp(29px,3.5vw,43px);line-height:1.55}
+.hero p{font-size:14px;line-height:2.05}
+.searchbox{padding:17px}
+.searchrow input{font-size:16px;min-height:48px}
+.primary,.secondary,.quiet{font-size:13px;min-height:40px}
+.search-options{font-size:13px;line-height:1.8}
+.chip{font-size:12px;padding:7px 12px}
+.warning{font-size:13px;line-height:2.05;padding:13px 16px}
+.toolbar h2{font-size:21px;line-height:1.6}
+.toolbar p{font-size:13px;line-height:1.9}
+.counts{font-size:12px}
+.status{font-size:13px;line-height:2}
+.results{gap:16px}
+.product{border-radius:19px}
+.imagewrap{height:190px;padding:16px}
+.productbody{padding:15px;gap:10px}
+.producttitle{font-size:14px;line-height:1.85}
+.meta{font-size:11px;line-height:1.75}
+.price,.noprice{font-size:13px;line-height:1.8}
+.productfoot a{font-size:12px}
+.grouphead h3{font-size:15px}
+.grouphead span{font-size:11px}
+.footnote{font-size:12px;line-height:2.1}
+
+/* Clear hierarchy in the graph explorer */
+.knowledge-explorer{padding:28px}
+.kg-heading{align-items:center;margin-bottom:22px}
+.kg-kicker{font-size:12px}
+.kg-heading h2{font-size:clamp(24px,2.4vw,31px);line-height:1.55}
+.kg-heading p{font-size:14px;line-height:2.05;max-width:780px}
+.kg-stat{font-size:11px;padding:7px 12px}
+.kg-controls{gap:14px}
+.kg-axes{gap:9px}
+.kg-axis{font-size:13px;line-height:1.7;padding:10px 15px}
+.kg-searchbar input{font-size:15px;min-height:48px;padding:12px 16px}
+.kg-searchbar button{font-size:12px;min-height:44px}
+.kg-search-hit{padding:10px 13px;min-width:170px}
+.kg-search-hit strong{font-size:12px;line-height:1.7}
+.kg-search-hit small{font-size:10px;line-height:1.6}
+.kg-search-heading{font-size:13px;line-height:1.8}
+.kg-graph-head{padding:15px 18px}
+.kg-graph-title strong{font-size:14px;line-height:1.8}
+.kg-graph-title small{font-size:11px;line-height:1.8}
+.kg-graph-tools button{width:36px;height:34px;font-size:17px}
+#kgZoomValue{font-size:11px;min-width:48px}
+.kg-graph-viewport{height:min(74vh,740px);min-height:500px;background-size:26px 26px}
+.kg-svg-card{stroke-width:1.7;filter:drop-shadow(0 6px 10px rgba(32,75,48,.09))}
+.kg-svg-node.root .kg-svg-card{stroke-width:2.1}
+.kg-svg-label{font-size:14px;font-weight:800;letter-spacing:0}
+.kg-svg-subtitle{font-size:10.5px}
+.kg-svg-expand-text{font-size:15px}
+.kg-thumb-back{fill:#eaf2eb;stroke:#d7e5d9;stroke-width:1}
+.kg-thumb-placeholder.concept{fill:#e5f1e7}
+.kg-thumb-placeholder.store{fill:#f7efdf}
+.kg-thumb-placeholder.product{fill:#e8edf6}
+.kg-node-icon{font-family:"Segoe UI",Tahoma,Arial,sans-serif;font-size:28px;font-weight:800;fill:#3e7454;pointer-events:none}
+.kg-graph-footer{padding:11px 16px;font-size:11px;line-height:1.9}
+.kg-inspector{padding:20px 22px;gap:18px}
+.kg-inspector-type{font-size:10.5px;padding:5px 10px}
+.kg-inspector h3{font-size:20px;line-height:1.65;margin:7px 0 5px}
+.kg-inspector p{font-size:13px;line-height:2.05}
+.kg-inspector-badges{gap:7px;margin-top:11px}
+.kg-inspector-badge{font-size:10.5px;padding:5px 9px}
+.kg-inspector-actions button,.kg-evidence-link{font-size:11px;padding:10px 13px;min-height:40px}
+.kg-inspector-relations>strong{font-size:12px;margin:2px 0 9px}
+.kg-inspector-link{padding:8px 11px}
+.kg-inspector-link span{font-size:11px;line-height:1.7}
+.kg-inspector-link small{font-size:9.5px}
+.kg-explorer-note{font-size:11.5px;line-height:2.05}
+
+/* Actual Digikala product photos, not decorative placeholders */
+.kg-image-gallery{
+ margin-top:16px;padding:15px;border:1px solid #e1e9e2;border-radius:16px;
+ background:linear-gradient(145deg,#fff,#f7faf7);
+}
+.kg-image-gallery[hidden]{display:none}
+.kg-gallery-heading{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:11px}
+.kg-gallery-heading strong{font-size:13px;color:#284333}
+.kg-gallery-heading small{font-size:10.5px;color:#829087}
+.kg-gallery-loading,.kg-gallery-empty{padding:15px 10px;text-align:center;color:#758278;font-size:12px;line-height:1.9;background:#f8faf7;border:1px dashed #dce7de;border-radius:12px}
+.kg-gallery-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.kg-photo-card{
+ display:flex;min-width:0;flex-direction:column;gap:7px;padding:8px;
+ border:1px solid #e3ebe4;border-radius:13px;background:#fff;
+ text-decoration:none;color:#2c4335;transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease;
+}
+.kg-photo-card:hover{transform:translateY(-3px);border-color:#a8c9ae;box-shadow:0 8px 18px rgba(31,78,49,.09)}
+.kg-photo-frame{height:132px;display:grid;place-items:center;background:linear-gradient(145deg,#f7f9f6,#edf3ed);border-radius:9px;overflow:hidden}
+.kg-photo-frame img{display:block;width:100%;height:100%;object-fit:contain;padding:8px}
+.kg-photo-title{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:11.5px;line-height:1.8;min-height:41px}
+.kg-photo-source{color:#4f7a5e;font-size:10px;font-weight:800}
+.kg-photo-fallback{font-size:10px;color:#7b8980}
+.kg-gallery-note{font-size:10px;color:#87938a;line-height:1.8;margin-top:9px}
+
+/* Stable, readable layouts at tablet and phone widths */
+@media(max-width:900px){
+ .shell{padding:0 18px}
+ .hero{grid-template-columns:1fr}
+ .kg-heading{align-items:flex-start}
+ .kg-graph-viewport{height:580px;min-height:460px}
+ .kg-inspector{grid-template-columns:1fr}
+ .kg-inspector-actions{justify-content:flex-start}
+ .kg-gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:580px){
+ .shell{padding:0 12px}
+ .topbar{height:auto;min-height:64px}
+ .brand{font-size:17px}
+ .subtitle{font-size:11px}
+ .pill{font-size:10px;padding:6px 9px}
+ .hero{padding:23px 0 18px;gap:16px}
+ .hero h1{font-size:29px}
+ .hero p{font-size:13px;line-height:2}
+ .searchbox{padding:12px}
+ .searchrow{flex-wrap:wrap}
+ .searchrow input{font-size:15px;flex-basis:100%}
+ .searchrow .primary{width:100%}
+ .search-options{font-size:11px;align-items:flex-start}
+ .warning{font-size:11.5px;padding:10px 12px}
+ .toolbar{align-items:flex-start;flex-direction:column}
+ .toolbar h2{font-size:18px}
+ .toolbar p{font-size:11.5px}
+ .results{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+ .imagewrap{height:132px;padding:8px}
+ .productbody{padding:10px;gap:7px}
+ .producttitle{font-size:11.5px;line-height:1.8}
+ .meta{font-size:9.5px}
+ .price,.noprice{font-size:11px}
+ .productfoot a{font-size:10px}
+ .knowledge-explorer{padding:15px 12px;border-radius:20px}
+ .kg-heading{gap:10px;margin-bottom:14px}
+ .kg-heading h2{font-size:21px;line-height:1.55}
+ .kg-heading p{font-size:11.5px}
+ .kg-stats{justify-content:flex-start}
+ .kg-stat{font-size:9.5px}
+ .kg-axes{grid-template-columns:repeat(2,minmax(0,1fr));display:grid;gap:6px}
+ .kg-axis{font-size:10.5px;padding:8px 4px}
+ .kg-searchbar{flex-wrap:wrap}
+ .kg-searchbar input{flex:1 0 100%;font-size:13px}
+ .kg-searchbar .primary{flex:1}
+ .kg-searchbar .kg-clear-search{flex:0 0 auto}
+ .kg-graph-head{padding:10px 11px}
+ .kg-graph-title strong{font-size:11.5px}
+ .kg-graph-title small{font-size:9px;max-width:190px}
+ .kg-graph-tools{gap:4px}
+ .kg-graph-tools button{width:30px;height:29px;font-size:14px}
+ #kgZoomValue{font-size:9px;min-width:36px}
+ .kg-graph-viewport{height:500px;min-height:410px}
+ .kg-svg-label{font-size:13px}
+ .kg-svg-subtitle{font-size:10px}
+ .kg-graph-footer{font-size:9px;flex-direction:column;gap:3px}
+ .kg-inspector{padding:14px 12px;gap:12px}
+ .kg-inspector h3{font-size:16px}
+ .kg-inspector p{font-size:11.5px}
+ .kg-inspector-actions button{font-size:10px;padding:8px 9px}
+ .kg-gallery-heading{align-items:flex-start;flex-direction:column;gap:2px}
+ .kg-gallery-heading strong{font-size:11.5px}
+ .kg-gallery-heading small{font-size:9px}
+ .kg-gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+ .kg-photo-frame{height:112px}
+ .kg-photo-title{font-size:10px;min-height:37px}
+ .kg-photo-source{font-size:9px}
+ .kg-explorer-note{font-size:10px}
+}
+@media(max-width:360px){
+ .results{grid-template-columns:1fr}
+ .kg-graph-viewport{height:440px}
+ .kg-gallery-grid{grid-template-columns:1fr 1fr}
+}
