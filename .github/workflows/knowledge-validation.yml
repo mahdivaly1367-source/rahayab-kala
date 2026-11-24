@@ -18,5 +18,7 @@ jobs:
           node-version: 22
       - name: Validate graph integrity
         run: node scripts/validate-knowledge-graph.js
-      - name: Run knowledge graph tests
-        run: node --test tests/knowledge-graph.test.js tests/knowledge-api.test.js
+      - name: Check browser module syntax
+        run: node --check public/knowledge-explorer.js
+      - name: Run knowledge and UI tests
+        run: node --test tests/*.test.js
