@@ -26,6 +26,7 @@ for (const node of graph.nodes || []) {
   if (!axes.has(node.axis)) fail('Unknown axis on ' + node.id + ': ' + node.axis);
   if (typeof node.label !== 'string' || !node.label.trim()) fail('Missing label on ' + node.id);
   if (node.aliases != null && !Array.isArray(node.aliases)) fail('aliases must be an array on ' + node.id);
+  if (node.node_type === 'evidence_source' && node.url != null && !/^https?:\\/\\//.test(node.url)) fail('Evidence URL must be absolute or null: ' + node.id);
 }
 
 const dkpReferences = new Map();
@@ -50,6 +51,7 @@ const relationCounts = new Set();
 for (const relation of graph.relations || []) {
   if (relationIds.has(relation.id)) fail('Duplicate relation id: ' + relation.id);
   relationIds.add(relation.id);
+  if (relation.source === relation.target) fail('Self-referential relation: ' + relation.id);
   const source = nodes.get(relation.source);
   const target = nodes.get(relation.target);
   if (!source) { fail('Dangling relation source: ' + relation.id + ' -> ' + relation.source); continue; }
