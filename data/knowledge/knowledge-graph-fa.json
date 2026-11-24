@@ -1,0 +1,5392 @@
+{
+  "graph_id": "rahayab-kala-knowledge-graph-fa",
+  "schema_version": "1.0.0",
+  "graph_version": "1.0.0",
+  "generated_at": "2026-11-24",
+  "language": "fa",
+  "status": "research_baseline",
+  "description": "پایگاه دانش چندمحوره راه‌یاب کالا؛ جداکننده طبقه‌بندی دانشی، مسیرهای مجموعه‌ای، کاربرد، ویژگی فنی، دسته‌های مشاهده‌شده فروشگاه، مشاهده‌های محصول و شواهد.",
+  "source_datasets": [
+    "data/research/digikala-current-category-observations-fa.json",
+    "data/research/specialty-product-evidence-fa.json"
+  ],
+  "axes": [
+    {
+      "id": "nature",
+      "label": "ماهیت کالا",
+      "purpose": "این کالا چیست؟"
+    },
+    {
+      "id": "system",
+      "label": "مجموعه و سامانه",
+      "purpose": "در کدام مجموعه یا سامانه استفاده می‌شود؟"
+    },
+    {
+      "id": "application",
+      "label": "کاربرد و کارکرد",
+      "purpose": "چه کاری انجام می‌دهد؟"
+    },
+    {
+      "id": "technical_feature",
+      "label": "ویژگی فنی",
+      "purpose": "چه ویژگی فنی دارد؟"
+    },
+    {
+      "id": "store_taxonomy",
+      "label": "ساختار مشاهده‌شده فروشگاه",
+      "purpose": "در منوی عمومی دیجی‌کالا چه مسیر مشاهده‌شده‌ای دارد؟"
+    },
+    {
+      "id": "product",
+      "label": "محصول و نامزد محصول",
+      "purpose": "کالای دارای شناسه مشاهده‌شده یا رکورد نامزد با هویت تأییدنشده."
+    },
+    {
+      "id": "evidence",
+      "label": "منابع شواهد",
+      "purpose": "هر گره یا رابطه بر چه مدرکی متکی است؟"
+    }
+  ],
+  "node_types": [
+    "concept",
+    "system",
+    "application",
+    "technical_feature",
+    "store_category",
+    "product_observation",
+    "product_candidate",
+    "evidence_source"
+  ],
+  "relation_types": [
+    {
+      "id": "is_a",
+      "label": "زیرنوعِ",
+      "from": "concept",
+      "to": "concept"
+    },
+    {
+      "id": "has_component",
+      "label": "دارای جزء",
+      "from": "concept",
+      "to": "concept"
+    },
+    {
+      "id": "part_of",
+      "label": "جزئی از",
+      "from": "system",
+      "to": "system"
+    },
+    {
+      "id": "child_of",
+      "label": "زیرمجموعه دسته فروشگاه",
+      "from": "store_category",
+      "to": "store_category"
+    },
+    {
+      "id": "listed_under",
+      "label": "عبارت منویی زیرِ گروه",
+      "from": "store_category",
+      "to": "store_category"
+    },
+    {
+      "id": "classified_as",
+      "label": "طبقه‌بندی دانشی به‌عنوان",
+      "from": "product_observation|product_candidate",
+      "to": "concept"
+    },
+    {
+      "id": "used_in",
+      "label": "مورد استفاده در",
+      "from": "product_observation|product_candidate",
+      "to": "system"
+    },
+    {
+      "id": "serves_application",
+      "label": "خدمت به کاربرد",
+      "from": "product_observation|product_candidate",
+      "to": "application"
+    },
+    {
+      "id": "has_feature",
+      "label": "دارای ویژگی",
+      "from": "product_observation|product_candidate",
+      "to": "technical_feature"
+    },
+    {
+      "id": "may_have_feature",
+      "label": "ممکن است دارای ویژگی باشد",
+      "from": "concept",
+      "to": "technical_feature"
+    },
+    {
+      "id": "discovery_route_in_store",
+      "label": "مسیر پیشنهادی کشف در منوی فروشگاه",
+      "from": "concept",
+      "to": "store_category"
+    },
+    {
+      "id": "has_evidence",
+      "label": "دارای شاهد",
+      "from": "product_observation|product_candidate|concept",
+      "to": "evidence_source"
+    }
+  ],
+  "evidence_status_definitions": {
+    "affiliate_link_resolves_to_dkp": "Affiliate redirect resolved to a canonical Digikala product URL with a DKP id; official product page content/current stock was not independently validated.",
+    "third_party_listing_digikala_route_unresolved": "Third-party page says buy from Digikala, but exact destination DKP was not recovered.",
+    "third_party_market_only": "Observed in a specialist non-Digikala catalog without a verified Digikala route.",
+    "not_found_in_sample": "No sufficiently reliable match in this bounded sample; not proof of non-existence."
+  },
+  "availability_policy": "همه مشاهده‌های محصول در این گراف availability_status=unknown دارند. شناسه DKP استخراج‌شده از پیوند افیلیت به‌تنهایی تأیید صفحه زنده، قیمت، فروشنده یا موجودی نیست.",
+  "nodes": [
+    {
+      "id": "concept.motion-power",
+      "node_type": "concept",
+      "axis": "nature",
+      "label": "تجهیزات تولید حرکت و توان",
+      "description": "خانواده مفاهیم مربوط به موتور، محرکه و تجهیزات انتقال توان",
+      "aliases": [
+        "موتور",
+        "محرکه",
+        "سامانه محرکه"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "concept.electric-motor",
+      "node_type": "concept",
+      "axis": "nature",
+      "label": "موتور الکتریکی",
+      "description": "تبدیل انرژی الکتریکی به حرکت مکانیکی",
+      "aliases": [
+        "موتور برقی",
+        "الکتروموتور"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "concept.dc-motor",
+      "node_type": "concept",
+      "axis": "nature",
+      "label": "موتور جریان مستقیم",
+      "description": "موتور الکتریکی تغذیه‌شونده با جریان مستقیم",
+      "aliases": [
+        "موتور DC",
+        "دی سی موتور"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "concept.brushed-dc",
+      "node_type": "concept",
+      "axis": "nature",
+      "label": "موتور DC جاروبک‌دار",
+      "description": "موتور جریان مستقیم با جاروبک و کموتاتور",
+      "aliases": [
+        "براش‌دار",
+        "Brushed DC"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "concept.brushless-dc",
+      "node_type": "concept",
+      "axis": "nature",
+      "label": "موتور DC بدون جاروبک",
+      "description": "موتور جریان مستقیم بدون جاروبک با کنترل الکترونیکی",
+      "aliases": [
+        "موتور براشلس",
+        "BLDC",
+        "Brushless"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "concept.ac-motor",
+      "node_type": "concept",
+      "axis": "nature",
+      "label": "موتور جریان متناوب",
+      "description": "موتور الکتریکی تغذیه‌شونده با جریان متناوب",
+      "aliases": [
+        "موتور AC"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "concept.stepper",
+      "node_type": "concept",
+      "axis": "nature",
+      "label": "استپر موتور",
+      "description": "محرک الکتریکی گام‌به‌گام با موقعیت‌دهی پله‌ای",
+      "aliases": [
+        "موتور پله‌ای",
+        "Stepper motor"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "concept.automotive-idle-stepper",
+      "node_type": "concept",
+      "axis": "nature",
+      "label": "استپر و محرک کنترل دور آرام خودرو",
+      "description": "قطعه کنترلی خودرو برای تنظیم هوای دور آرام؛ با استپر حرکتی صنعتی یکسان نیست",
+      "aliases": [
+        "استپر موتور خودرو",
+        "استپر پراید",
+        "موتور پله‌ای دریچه گاز"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "concept.industrial-stepper",
+      "node_type": "concept",
+      "axis": "nature",
+      "label": "استپر موتور صنعتی و حرکتی",
+      "description": "موتور پله‌ای برای محورهای حرکت دقیق، CNC و رباتیک",
+      "aliases": [
+        "NEMA 17",
+        "NEMA 23",
+        "استپر CNC"
+      ],
+      "status": "needs_store_evidence"
+    },
+    {
+      "id": "concept.servo",
+      "node_type": "concept",
+      "axis": "nature",
+      "label": "سروو موتور",
+      "description": "محرک کنترل‌شده برای تنظیم موقعیت، سرعت یا گشتاور",
+      "aliases": [
+        "Servo motor"
+      ],
+      "status": "needs_store_evidence"
+    },
+    {
+      "id": "concept.combustion-engine",
+      "node_type": "concept",
+      "axis": "nature",
+      "label": "موتور احتراقی",
+      "description": "موتوری که با احتراق سوخت توان مکانیکی تولید می‌کند",
+      "aliases": [
+        "موتور بنزینی",
+        "موتور دیزلی",
+        "انجین"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "concept.generator",
+      "node_type": "concept",
+      "axis": "nature",
+      "label": "موتور برق و مولد برق احتراقی",
+      "description": "مجموعه موتور احتراقی و ژنراتور برای تولید برق؛ با موتور الکتریکی مستقل تفاوت دارد",
+      "aliases": [
+        "موتور برق",
+        "ژنراتور بنزینی",
+        "مولد برق"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "concept.engine-pump-set",
+      "node_type": "concept",
+      "axis": "nature",
+      "label": "موتورپمپ",
+      "description": "مجموعه یک موتور محرک و یک پمپ در یک تجهیز واحد",
+      "aliases": [
+        "موتور پمپ",
+        "موتورپمپ بنزینی"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "concept.pump",
+      "node_type": "concept",
+      "axis": "nature",
+      "label": "پمپ و تجهیزات انتقال سیال",
+      "description": "تجهیز جابه‌جایی سیال؛ گونه‌ها با سازوکار و کاربردهای مختلف",
+      "aliases": [
+        "پمپ"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "concept.water-pump",
+      "node_type": "concept",
+      "axis": "nature",
+      "label": "پمپ آب",
+      "description": "پمپ برای انتقال یا افزایش فشار آب",
+      "aliases": [
+        "پمپ آب خانگی",
+        "پمپ آب کشاورزی"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "concept.submersible-pump",
+      "node_type": "concept",
+      "axis": "nature",
+      "label": "پمپ مستغرق، کف‌کش و شناور",
+      "description": "پمپی که در سیال یا پایین‌تر از سطح آن کار می‌کند؛ گونه‌های کف‌کش و شناور باید دقیق‌تر تفکیک شوند",
+      "aliases": [
+        "پمپ کفکش",
+        "پمپ کف‌کش",
+        "پمپ شناور",
+        "پمپ مستغرق"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "concept.pressure-tank",
+      "node_type": "concept",
+      "axis": "nature",
+      "label": "منبع تحت فشار پمپ",
+      "description": "مخزن و تجهیز جانبی برای کاهش نوسان و تثبیت فشار سامانه آب",
+      "aliases": [
+        "منبع تحت فشار",
+        "منبع پمپ"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "concept.irrigation-equipment",
+      "node_type": "concept",
+      "axis": "nature",
+      "label": "تجهیزات آبیاری",
+      "description": "تجهیزات توزیع و کنترل آب برای آبیاری",
+      "aliases": [
+        "لوازم آبیاری"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "concept.misting-kit",
+      "node_type": "concept",
+      "axis": "nature",
+      "label": "کیت مه‌پاش",
+      "description": "مجموعه نازل و اتصالات برای پاشش ریزدانه آب",
+      "aliases": [
+        "مه پاش",
+        "مه‌پاش"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "concept.irrigation-timer",
+      "node_type": "concept",
+      "axis": "nature",
+      "label": "تایمر و کنترل‌کننده آبیاری",
+      "description": "تجهیز زمان‌بندی و کنترل روشن/خاموش شدن آبیاری",
+      "aliases": [
+        "تایمر آبیاری",
+        "کنترلر آبیاری"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "concept.drip-irrigation-parts",
+      "node_type": "concept",
+      "axis": "nature",
+      "label": "اجزا و اتصالات آبیاری قطره‌ای",
+      "description": "اتصالات، قطره‌چکان‌ها و قطعات یک سامانه آبیاری قطره‌ای",
+      "aliases": [
+        "آبیاری قطره ای",
+        "لوازم آبیاری قطره‌ای"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "concept.greenhouse-cover",
+      "node_type": "concept",
+      "axis": "nature",
+      "label": "پوشش گلخانه",
+      "description": "مواد و اجزای پوشش محیط کشت گلخانه‌ای",
+      "aliases": [
+        "پوشش گلخانه"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "concept.greenhouse-film",
+      "node_type": "concept",
+      "axis": "nature",
+      "label": "نایلون و فیلم پوشش گلخانه",
+      "description": "فیلم پلیمری پوشش گلخانه",
+      "aliases": [
+        "نایلون گلخانه",
+        "فیلم گلخانه"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "concept.shade-net",
+      "node_type": "concept",
+      "axis": "nature",
+      "label": "توری شید و سایه‌انداز گلخانه",
+      "description": "توری برای کاهش شدت تابش و تنظیم سایه",
+      "aliases": [
+        "توری شید",
+        "شید گلخانه",
+        "توری سایبان"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "concept.shade-net-fitting",
+      "node_type": "concept",
+      "axis": "nature",
+      "label": "بست و اتصالات توری شید",
+      "description": "اتصالات نگهدارنده توری سایه‌انداز",
+      "aliases": [
+        "بست شید",
+        "بست توری گلخانه"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "concept.portable-blower",
+      "node_type": "concept",
+      "axis": "nature",
+      "label": "دمنده و جت‌فن قابل‌حمل",
+      "description": "دستگاه نهایی دمش هوا؛ موتور داخلی ویژگی دستگاه است، نه ماهیت کالا",
+      "aliases": [
+        "جت فن",
+        "جت‌فن",
+        "دمنده شارژی"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "concept.independent-dc-motor",
+      "node_type": "concept",
+      "axis": "nature",
+      "label": "موتور DC مستقل",
+      "description": "موتور DC به‌عنوان قطعه مستقل؛ عرضه در دیجی‌کالا هنوز اثبات نشده",
+      "aliases": [
+        "موتور DC دو سر شفت"
+      ],
+      "status": "needs_store_evidence"
+    },
+    {
+      "id": "concept.independent-drone-bldc",
+      "node_type": "concept",
+      "axis": "nature",
+      "label": "موتور براشلس مستقل پهپاد",
+      "description": "موتور BLDC مستقل برای مدل‌های پروازی و پهپاد",
+      "aliases": [
+        "DJI 2212",
+        "MT2204"
+      ],
+      "status": "needs_store_evidence"
+    },
+    {
+      "id": "concept.greenhouse-circulation-fan",
+      "node_type": "concept",
+      "axis": "nature",
+      "label": "فن سیرکوله گلخانه",
+      "description": "فن صنعتی برای گردش یکنواخت هوای گلخانه",
+      "aliases": [
+        "فن گردش هوای گلخانه"
+      ],
+      "status": "needs_store_evidence"
+    },
+    {
+      "id": "concept.greenhouse-climate-controller",
+      "node_type": "concept",
+      "axis": "nature",
+      "label": "کنترلر اقلیم گلخانه",
+      "description": "کنترل یکپارچه دما، رطوبت، تهویه و در صورت پشتیبانی CO2",
+      "aliases": [
+        "اتوماسیون گلخانه"
+      ],
+      "status": "needs_store_evidence"
+    },
+    {
+      "id": "concept.grow-light",
+      "node_type": "concept",
+      "axis": "nature",
+      "label": "چراغ رشد گیاه",
+      "description": "نور مصنوعی طیف‌دار برای رشد گیاه",
+      "aliases": [
+        "نور رشد",
+        "Grow light"
+      ],
+      "status": "needs_store_evidence"
+    },
+    {
+      "id": "concept.fertigation-injector",
+      "node_type": "concept",
+      "axis": "nature",
+      "label": "تجهیز تزریق کود و فرتیگیشن",
+      "description": "تزریق و تنظیم محلول غذایی در سامانه آبیاری",
+      "aliases": [
+        "فرتیگیشن",
+        "تزریق کود"
+      ],
+      "status": "needs_store_evidence"
+    },
+    {
+      "id": "system.automotive",
+      "node_type": "system",
+      "axis": "system",
+      "label": "خودرو و سامانه‌های خودرویی",
+      "description": "مجموعه خودرو شامل موتور، قطعات کنترلی، انتقال قدرت و مصرفی‌ها",
+      "aliases": [],
+      "status": "active"
+    },
+    {
+      "id": "system.home",
+      "node_type": "system",
+      "axis": "system",
+      "label": "خانه و تأسیسات خانگی",
+      "description": "مجموعه تجهیزات تأسیساتی، آبرسانی، تهویه و برق پشتیبان خانه",
+      "aliases": [],
+      "status": "active"
+    },
+    {
+      "id": "system.workshop",
+      "node_type": "system",
+      "axis": "system",
+      "label": "کارگاه و ماشین‌آلات",
+      "description": "مجموعه ابزار، ماشین‌آلات، حرکت و انتقال سیال کارگاهی",
+      "aliases": [],
+      "status": "active"
+    },
+    {
+      "id": "system.agriculture",
+      "node_type": "system",
+      "axis": "system",
+      "label": "کشاورزی و آبیاری",
+      "description": "سامانه‌های تولید، انتقال و توزیع آب و تجهیزات کشاورزی",
+      "aliases": [],
+      "status": "active"
+    },
+    {
+      "id": "system.greenhouse",
+      "node_type": "system",
+      "axis": "system",
+      "label": "گلخانه سرپوشیده",
+      "description": "مجموعه سازه، پوشش، آبیاری، تهویه، اقلیم و اتوماسیون گلخانه",
+      "aliases": [],
+      "status": "active"
+    },
+    {
+      "id": "system.garden",
+      "node_type": "system",
+      "axis": "system",
+      "label": "باغ و فضای سبز",
+      "description": "مجموعه باغبانی، آبیاری و مراقبت از فضای سبز",
+      "aliases": [],
+      "status": "active"
+    },
+    {
+      "id": "system.outdoor",
+      "node_type": "system",
+      "axis": "system",
+      "label": "فضای باز و محیط بیرونی",
+      "description": "تجهیزات قابل استفاده در فضای باز",
+      "aliases": [],
+      "status": "active"
+    },
+    {
+      "id": "system.portable-tools",
+      "node_type": "system",
+      "axis": "system",
+      "label": "ابزار و تجهیزات قابل‌حمل",
+      "description": "ابزار قابل‌حمل از جمله دمنده‌های شارژی",
+      "aliases": [],
+      "status": "active"
+    },
+    {
+      "id": "system.drone",
+      "node_type": "system",
+      "axis": "system",
+      "label": "پهپاد و مدل‌های پروازی",
+      "description": "سامانه پیشران پروازی شامل موتور، ESC، ملخ و باتری",
+      "aliases": {},
+      "status": "active"
+    },
+    {
+      "id": "application.idle-speed-control",
+      "node_type": "application",
+      "axis": "application",
+      "label": "تنظیم دور آرام موتور خودرو",
+      "description": "کنترل هوای ورودی و دور آرام موتور احتراقی",
+      "aliases": [
+        "کنترل دور آرام"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "application.mechanical-motion",
+      "node_type": "application",
+      "axis": "application",
+      "label": "تولید حرکت مکانیکی",
+      "description": "تولید حرکت دورانی یا خطی برای یک سامانه",
+      "aliases": [],
+      "status": "active"
+    },
+    {
+      "id": "application.generate-electricity",
+      "node_type": "application",
+      "axis": "application",
+      "label": "تولید برق",
+      "description": "تولید انرژی الکتریکی از توان مکانیکی",
+      "aliases": [
+        "برق اضطراری",
+        "برق پشتیبان"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "application.air-blowing",
+      "node_type": "application",
+      "axis": "application",
+      "label": "دمش و جابه‌جایی هوا",
+      "description": "ایجاد جریان هوا برای دمیدن، پاک‌سازی یا خنک‌کاری",
+      "aliases": [
+        "دمش هوا"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "application.fluid-transfer",
+      "node_type": "application",
+      "axis": "application",
+      "label": "انتقال سیال",
+      "description": "انتقال آب یا سیال از یک نقطه به نقطه دیگر",
+      "aliases": [
+        "انتقال آب"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "application.pressure-boost",
+      "node_type": "application",
+      "axis": "application",
+      "label": "افزایش فشار آب",
+      "description": "افزایش فشار در شبکه آبرسانی",
+      "aliases": [],
+      "status": "active"
+    },
+    {
+      "id": "application.drainage",
+      "node_type": "application",
+      "axis": "application",
+      "label": "تخلیه و آبکشی",
+      "description": "خارج کردن آب از مخزن، چاه یا فضای آب‌گرفته",
+      "aliases": [
+        "تخلیه آب"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "application.pressure-stabilize",
+      "node_type": "application",
+      "axis": "application",
+      "label": "تثبیت فشار آب",
+      "description": "کاهش نوسان و مدیریت فشار در شبکه آبرسانی",
+      "aliases": [],
+      "status": "active"
+    },
+    {
+      "id": "application.irrigation-schedule",
+      "node_type": "application",
+      "axis": "application",
+      "label": "زمان‌بندی آبیاری",
+      "description": "اجرای برنامه زمانی برای باز و بسته کردن جریان آب",
+      "aliases": [],
+      "status": "active"
+    },
+    {
+      "id": "application.drip-watering",
+      "node_type": "application",
+      "axis": "application",
+      "label": "توزیع آب به روش قطره‌ای",
+      "description": "رساندن کنترل‌شده آب به پای گیاه",
+      "aliases": [],
+      "status": "active"
+    },
+    {
+      "id": "application.misting-cooling",
+      "node_type": "application",
+      "axis": "application",
+      "label": "مه‌پاشی، رطوبت‌سازی و خنک‌سازی",
+      "description": "افزایش رطوبت یا کاهش دمای محیط با قطرات ریز آب",
+      "aliases": [],
+      "status": "active"
+    },
+    {
+      "id": "application.greenhouse-protection",
+      "node_type": "application",
+      "axis": "application",
+      "label": "پوشش و حفاظت محیط کشت",
+      "description": "محافظت محیط گلخانه در برابر تابش و شرایط محیطی",
+      "aliases": [],
+      "status": "active"
+    },
+    {
+      "id": "application.shading",
+      "node_type": "application",
+      "axis": "application",
+      "label": "سایه‌اندازی و کاهش تابش",
+      "description": "کاهش شدت نور مستقیم با توری یا پوشش سایه‌انداز",
+      "aliases": [],
+      "status": "active"
+    },
+    {
+      "id": "application.ventilation",
+      "node_type": "application",
+      "axis": "application",
+      "label": "تهویه و گردش هوا",
+      "description": "تبادل هوا و توزیع جریان در محیط گلخانه",
+      "aliases": [
+        "گردش هوا"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "application.fertigation",
+      "node_type": "application",
+      "axis": "application",
+      "label": "تزریق کود در آبیاری",
+      "description": "افزودن محلول غذایی به جریان آبیاری",
+      "aliases": [],
+      "status": "active"
+    },
+    {
+      "id": "feature.brushless-motor",
+      "node_type": "technical_feature",
+      "axis": "technical_feature",
+      "label": "موتور داخلی از نوع براشلس",
+      "description": "ویژگی فنی یک دستگاه؛ به‌تنهایی نوع محصول نهایی را تعیین نمی‌کند",
+      "aliases": [
+        "BLDC",
+        "براشلس"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "store.root.01",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "top_level_category",
+      "label": "موبایل",
+      "aliases": [],
+      "source_id": "homepage",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "store.root.02",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "top_level_category",
+      "label": "لپ تاپ",
+      "aliases": [],
+      "source_id": "homepage",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "store.root.03",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "top_level_category",
+      "label": "کالای دیجیتال",
+      "aliases": [],
+      "source_id": "homepage",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "store.root.04",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "top_level_category",
+      "label": "لوازم خانگی برقی",
+      "aliases": [],
+      "source_id": "homepage",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "store.root.05",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "top_level_category",
+      "label": "خانه و آشپزخانه",
+      "aliases": [],
+      "source_id": "homepage",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "store.root.06",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "top_level_category",
+      "label": "آرایشی بهداشتی",
+      "aliases": [],
+      "source_id": "homepage",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "store.root.07",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "top_level_category",
+      "label": "مد و پوشاک",
+      "aliases": [],
+      "source_id": "homepage",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "store.root.08",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "top_level_category",
+      "label": "طلا و نقره",
+      "aliases": [],
+      "source_id": "homepage",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "store.root.09",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "top_level_category",
+      "label": "خودرو و موتورسیکلت",
+      "aliases": [],
+      "source_id": "homepage",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "store.root.10",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "top_level_category",
+      "label": "سلامت و پزشکی",
+      "aliases": [],
+      "source_id": "homepage",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "store.root.11",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "top_level_category",
+      "label": "ابزارآلات و تجهیزات",
+      "aliases": [],
+      "source_id": "homepage",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "store.root.12",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "top_level_category",
+      "label": "کتاب و هنر",
+      "aliases": [],
+      "source_id": "homepage",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "store.root.13",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "top_level_category",
+      "label": "ورزش و سفر",
+      "aliases": [],
+      "source_id": "homepage",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "store.root.14",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "top_level_category",
+      "label": "کارت هدیه",
+      "aliases": [],
+      "source_id": "homepage",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "store.root.15",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "top_level_category",
+      "label": "سوپر مارکت آنلاین",
+      "aliases": [],
+      "source_id": "homepage",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "store.root.16",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "top_level_category",
+      "label": "اسباب بازی، کودک و نوزاد",
+      "aliases": [],
+      "source_id": "homepage",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "store.root.17",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "top_level_category",
+      "label": "پت شاپ",
+      "aliases": [],
+      "source_id": "homepage",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "store.root.18",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "top_level_category",
+      "label": "محصولات بومی و محلی",
+      "aliases": [],
+      "source_id": "homepage",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "evidence.digikala.homepage",
+      "node_type": "evidence_source",
+      "axis": "evidence",
+      "label": "Top-level navigation labels",
+      "source_type": "official_store_page",
+      "url": "https://www.digikala.com/",
+      "observed_at": "2026-11-24",
+      "evidence_status": "official_current_page",
+      "limitations": "مشاهده منوی عمومی/صفحه؛ نه اثبات موجودی کالا"
+    },
+    {
+      "id": "evidence.digikala.tools",
+      "node_type": "evidence_source",
+      "axis": "evidence",
+      "label": "Visible title: ابزارآلات و تجهیزات",
+      "source_type": "official_store_page",
+      "url": "https://www.digikala.com/main/vehicles/",
+      "observed_at": "2026-11-24",
+      "evidence_status": "official_current_page",
+      "limitations": "مشاهده منوی عمومی/صفحه؛ نه اثبات موجودی کالا"
+    },
+    {
+      "id": "evidence.digikala.vehicles",
+      "node_type": "evidence_source",
+      "axis": "evidence",
+      "label": "خودرو و موتورسیکلت",
+      "source_type": "official_store_page",
+      "url": "https://www.digikala.com/main/vehicles-spare-parts/",
+      "observed_at": "2026-11-24",
+      "evidence_status": "official_current_page",
+      "limitations": "مشاهده منوی عمومی/صفحه؛ نه اثبات موجودی کالا"
+    },
+    {
+      "id": "evidence.digikala.appliances",
+      "node_type": "evidence_source",
+      "axis": "evidence",
+      "label": "لوازم خانگی برقی",
+      "source_type": "official_store_page",
+      "url": "https://www.digikala.com/main/home-appliance/",
+      "observed_at": "2026-11-24",
+      "evidence_status": "official_current_page",
+      "limitations": "مشاهده منوی عمومی/صفحه؛ نه اثبات موجودی کالا"
+    },
+    {
+      "id": "evidence.digikala.home",
+      "node_type": "evidence_source",
+      "axis": "evidence",
+      "label": "خانه و آشپزخانه",
+      "source_type": "official_store_page",
+      "url": "https://www.digikala.com/main/home-and-kitchen/",
+      "observed_at": "2026-11-24",
+      "evidence_status": "official_current_page",
+      "limitations": "مشاهده منوی عمومی/صفحه؛ نه اثبات موجودی کالا"
+    },
+    {
+      "id": "store.group.tools",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "audited_group",
+      "label": "ابزارآلات و تجهیزات",
+      "aliases": [],
+      "source_id": "tools",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "store.group.tools.subcategory.01",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "subcategory",
+      "label": "ابزار غیر برقی",
+      "aliases": [],
+      "source_id": "tools",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "store.group.tools.subcategory.02",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "subcategory",
+      "label": "تجهیزات صنعتی و انبارداری",
+      "aliases": [],
+      "source_id": "tools",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "store.group.tools.subcategory.03",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "subcategory",
+      "label": "ابزار برقی و شارژی",
+      "aliases": [],
+      "source_id": "tools",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "store.group.tools.subcategory.04",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "subcategory",
+      "label": "ابزار دقیق و اندازه گیری",
+      "aliases": [],
+      "source_id": "tools",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "store.group.tools.subcategory.05",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "subcategory",
+      "label": "باغبانی و کشاورزی",
+      "aliases": [],
+      "source_id": "tools",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "store.group.tools.subcategory.06",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "subcategory",
+      "label": "تجهیزات تردد، حفاظت و امنیت",
+      "aliases": [],
+      "source_id": "tools",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "store.group.tools.subcategory.07",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "subcategory",
+      "label": "ابزار ایمنی",
+      "aliases": [],
+      "source_id": "tools",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "store.group.tools.subcategory.08",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "subcategory",
+      "label": "یراق آلات",
+      "aliases": [],
+      "source_id": "tools",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "store.group.tools.subcategory.09",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "subcategory",
+      "label": "لوازم و مصالح ساختمانی",
+      "aliases": [],
+      "source_id": "tools",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "store.group.tools.term.01",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "دریل",
+      "aliases": [],
+      "source_id": "tools",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.tools.term.02",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "پیچ گوشتی و دریل شارژی",
+      "aliases": [],
+      "source_id": "tools",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.tools.term.03",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "آچار ضربه ای",
+      "aliases": [],
+      "source_id": "tools",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.tools.term.04",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "فرز و سنگ رومیزی",
+      "aliases": [],
+      "source_id": "tools",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.tools.term.05",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "موتور برق",
+      "aliases": [],
+      "source_id": "tools",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.tools.term.06",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "مکنده - دمنده",
+      "aliases": [],
+      "source_id": "tools",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.tools.term.07",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "جاروبرقی صنعتی",
+      "aliases": [],
+      "source_id": "tools",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.tools.term.08",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "کارواش",
+      "aliases": [],
+      "source_id": "tools",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.tools.term.09",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "دستگاه جوش",
+      "aliases": [],
+      "source_id": "tools",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.tools.term.10",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "هویه",
+      "aliases": [],
+      "source_id": "tools",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.tools.term.11",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "ابزار برش و تراشکاری",
+      "aliases": [],
+      "source_id": "tools",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.tools.term.12",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "کمپرسور هوا",
+      "aliases": [],
+      "source_id": "tools",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.tools.term.13",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "مولتی متر",
+      "aliases": [],
+      "source_id": "tools",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.tools.term.14",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "لوازم جانبی و یدکی ابزار برقی",
+      "aliases": [],
+      "source_id": "tools",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.tools.term.15",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "اره زنجیری",
+      "aliases": [],
+      "source_id": "tools",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.tools.term.16",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "ابزار دستی",
+      "aliases": [],
+      "source_id": "tools",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.tools.term.17",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "مجموعه ابزار",
+      "aliases": [],
+      "source_id": "tools",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.tools.term.18",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "نردبان",
+      "aliases": [],
+      "source_id": "tools",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.tools.term.19",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "متر، تراز، اندازه گیری دقیق",
+      "aliases": [],
+      "source_id": "tools",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.tools.term.20",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "لوازم روانکاری",
+      "aliases": [],
+      "source_id": "tools",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.tools.term.21",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "چسب صنعتی",
+      "aliases": [],
+      "source_id": "tools",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.tools.term.22",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "پیچ و مهره، رول پلاک، میخ و پرچ",
+      "aliases": [],
+      "source_id": "tools",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.tools.term.23",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "ابزار باغبانی",
+      "aliases": [],
+      "source_id": "tools",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.tools.term.24",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "ادوات کشاورزی",
+      "aliases": [],
+      "source_id": "tools",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.tools.term.25",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "بذر و تخم گیاهان",
+      "aliases": [],
+      "source_id": "tools",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.tools.term.26",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "خاک، کود و آفت کش",
+      "aliases": [],
+      "source_id": "tools",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.tools.term.27",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "کاشت و پرورش گیاه",
+      "aliases": [],
+      "source_id": "tools",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.tools.term.28",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "قطعات یدکی ماشین آلات صنعتی",
+      "aliases": [],
+      "source_id": "tools",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.tools.term.29",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "تجهیزات کارگاهی",
+      "aliases": [],
+      "source_id": "tools",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.tools.term.30",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "مخزن آب",
+      "aliases": [],
+      "source_id": "tools",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.tools.term.31",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "شیرآلات",
+      "aliases": [],
+      "source_id": "tools",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.automotive",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "audited_group",
+      "label": "خودرو و موتورسیکلت",
+      "aliases": [],
+      "source_id": "vehicles",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "store.group.automotive.subcategory.01",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "subcategory",
+      "label": "لوازم یدکی موتورسیکلت",
+      "aliases": [],
+      "source_id": "vehicles",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "store.group.automotive.subcategory.02",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "subcategory",
+      "label": "لوازم جانبی خودرو",
+      "aliases": [],
+      "source_id": "vehicles",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "store.group.automotive.subcategory.03",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "subcategory",
+      "label": "لوازم یدکی خودرو",
+      "aliases": [],
+      "source_id": "vehicles",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "store.group.automotive.subcategory.04",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "subcategory",
+      "label": "لوازم مصرفی خودرو",
+      "aliases": [],
+      "source_id": "vehicles",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "store.group.automotive.subcategory.05",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "subcategory",
+      "label": "سیستم صوتی و تصویری خودرو",
+      "aliases": [],
+      "source_id": "vehicles",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "store.group.automotive.subcategory.06",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "subcategory",
+      "label": "موتورسیکلت",
+      "aliases": [],
+      "source_id": "vehicles",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "store.group.automotive.subcategory.07",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "subcategory",
+      "label": "قطعات و تجهیزات آفرود",
+      "aliases": [],
+      "source_id": "vehicles",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "store.group.automotive.subcategory.08",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "subcategory",
+      "label": "لوازم جانبی موتورسیکلت",
+      "aliases": [],
+      "source_id": "vehicles",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "store.group.automotive.subcategory.09",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "subcategory",
+      "label": "لوازم مصرفی موتورسیکلت",
+      "aliases": [],
+      "source_id": "vehicles",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "store.group.automotive.subcategory.10",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "subcategory",
+      "label": "تجهیزات ایمنی موتورسیکلت",
+      "aliases": [],
+      "source_id": "vehicles",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "store.group.automotive.subcategory.11",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "subcategory",
+      "label": "لوازم موتورسیکلت",
+      "aliases": [],
+      "source_id": "vehicles",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "store.group.automotive.term.01",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "روغن موتور",
+      "aliases": [],
+      "source_id": "vehicles",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.automotive.term.02",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "فیلترها",
+      "aliases": [],
+      "source_id": "vehicles",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.automotive.term.03",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "قطعات سرویسی",
+      "aliases": [],
+      "source_id": "vehicles",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.automotive.term.04",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "روغن گیربکس",
+      "aliases": [],
+      "source_id": "vehicles",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.automotive.term.05",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "روغن هیدرولیک",
+      "aliases": [],
+      "source_id": "vehicles",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.automotive.term.06",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "ضدیخ و آب رادیاتور",
+      "aliases": [],
+      "source_id": "vehicles",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.automotive.term.07",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "باتری",
+      "aliases": [],
+      "source_id": "vehicles",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.automotive.term.08",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "لاستیک",
+      "aliases": [],
+      "source_id": "vehicles",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.automotive.term.09",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "مکمل سوخت و روغن",
+      "aliases": [],
+      "source_id": "vehicles",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.automotive.term.10",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "لوازم بدنه",
+      "aliases": [],
+      "source_id": "vehicles",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.automotive.term.11",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "چراغ",
+      "aliases": [],
+      "source_id": "vehicles",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.automotive.term.12",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "آینه جانبی",
+      "aliases": [],
+      "source_id": "vehicles",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.automotive.term.13",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "لوازم جلوبندی و تعلیق",
+      "aliases": [],
+      "source_id": "vehicles",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.automotive.term.14",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "لوازم الکترونیکی",
+      "aliases": [],
+      "source_id": "vehicles",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.automotive.term.15",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "لوازم مکانیکی",
+      "aliases": [],
+      "source_id": "vehicles",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.automotive.term.16",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "دوربین ثبت وقایع خودرو",
+      "aliases": [],
+      "source_id": "vehicles",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.automotive.term.17",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "کفپوش خودرو",
+      "aliases": [],
+      "source_id": "vehicles",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.automotive.term.18",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "هدلایت",
+      "aliases": [],
+      "source_id": "vehicles",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.automotive.term.19",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "لوازم ضد سرقت",
+      "aliases": [],
+      "source_id": "vehicles",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.automotive.term.20",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "تیونینگ و تقویت موتور",
+      "aliases": [],
+      "source_id": "vehicles",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.appliances",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "audited_group",
+      "label": "لوازم خانگی برقی",
+      "aliases": [],
+      "source_id": "appliances",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "store.group.appliances.subcategory.01",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "subcategory",
+      "label": "لوازم پخت و پز",
+      "aliases": [],
+      "source_id": "appliances",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "store.group.appliances.subcategory.02",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "subcategory",
+      "label": "نوشیدنی ساز",
+      "aliases": [],
+      "source_id": "appliances",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "store.group.appliances.subcategory.03",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "subcategory",
+      "label": "صوتی و تصویری",
+      "aliases": [],
+      "source_id": "appliances",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "store.group.appliances.subcategory.04",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "subcategory",
+      "label": "تصفیه کننده آب",
+      "aliases": [],
+      "source_id": "appliances",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "store.group.appliances.subcategory.05",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "subcategory",
+      "label": "خردکن و غذاساز",
+      "aliases": [],
+      "source_id": "appliances",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "store.group.appliances.subcategory.06",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "subcategory",
+      "label": "لوازم مکمل آشپزخانه",
+      "aliases": [],
+      "source_id": "appliances",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "store.group.appliances.subcategory.07",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "subcategory",
+      "label": "یخچال فریزر",
+      "aliases": [],
+      "source_id": "appliances",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "store.group.appliances.subcategory.08",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "subcategory",
+      "label": "لوازم شست و شو و نظافت",
+      "aliases": [],
+      "source_id": "appliances",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "store.group.appliances.subcategory.09",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "subcategory",
+      "label": "تهویه، سرمایش و گرمایش",
+      "aliases": [],
+      "source_id": "appliances",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "store.group.appliances.subcategory.10",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "subcategory",
+      "label": "فیلتر تصفیه کننده آب",
+      "aliases": [],
+      "source_id": "appliances",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "store.group.appliances.subcategory.11",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "subcategory",
+      "label": "چرخ خیاطی",
+      "aliases": [],
+      "source_id": "appliances",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "store.group.appliances.subcategory.12",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "subcategory",
+      "label": "لوازم توکار",
+      "aliases": [],
+      "source_id": "appliances",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "store.group.appliances.subcategory.13",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "subcategory",
+      "label": "لوازم ویژه خانگی برقی",
+      "aliases": [],
+      "source_id": "appliances",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "store.group.appliances.subcategory.14",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "subcategory",
+      "label": "لوازم یدکی خانگی",
+      "aliases": [],
+      "source_id": "appliances",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "store.group.appliances.subcategory.15",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "subcategory",
+      "label": "اقلام اساسی جهیزیه",
+      "aliases": [],
+      "source_id": "appliances",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "store.group.appliances.term.01",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "پنکه",
+      "aliases": [],
+      "source_id": "appliances",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.appliances.term.02",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "کولر آبی",
+      "aliases": [],
+      "source_id": "appliances",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.appliances.term.03",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "کولر گازی",
+      "aliases": [],
+      "source_id": "appliances",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.appliances.term.04",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "بخاری",
+      "aliases": [],
+      "source_id": "appliances",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.appliances.term.05",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "رادیاتور",
+      "aliases": [],
+      "source_id": "appliances",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.appliances.term.06",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "پکیج دیواری",
+      "aliases": [],
+      "source_id": "appliances",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.appliances.term.07",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "آبگرمکن",
+      "aliases": [],
+      "source_id": "appliances",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.appliances.term.08",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "جاروبرقی",
+      "aliases": [],
+      "source_id": "appliances",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.appliances.term.09",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "ماشین لباسشویی",
+      "aliases": [],
+      "source_id": "appliances",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.appliances.term.10",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "ماشین ظرفشویی",
+      "aliases": [],
+      "source_id": "appliances",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.appliances.term.11",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "چرخ خیاطی صنعتی",
+      "aliases": [],
+      "source_id": "appliances",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.appliances.term.12",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "فیلتر تصفیه آب",
+      "aliases": [],
+      "source_id": "appliances",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.home",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "audited_group",
+      "label": "خانه و آشپزخانه",
+      "aliases": [],
+      "source_id": "home",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "store.group.home.subcategory.01",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "subcategory",
+      "label": "شستشو و نظافت",
+      "aliases": [],
+      "source_id": "home",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "store.group.home.subcategory.02",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "subcategory",
+      "label": "حمام و سرویس بهداشتی",
+      "aliases": [],
+      "source_id": "home",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "store.group.home.subcategory.03",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "subcategory",
+      "label": "آشپزخانه",
+      "aliases": [],
+      "source_id": "home",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "store.group.home.subcategory.04",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "subcategory",
+      "label": "سرو و پذیرایی",
+      "aliases": [],
+      "source_id": "home",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "store.group.home.subcategory.05",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "subcategory",
+      "label": "دکوراسیون و دکوراتیو",
+      "aliases": [],
+      "source_id": "home",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "store.group.home.subcategory.06",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "subcategory",
+      "label": "خواب",
+      "aliases": [],
+      "source_id": "home",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "store.group.home.subcategory.07",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "subcategory",
+      "label": "اکسسوری لوازم شخصی",
+      "aliases": [],
+      "source_id": "home",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "store.group.home.subcategory.08",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "subcategory",
+      "label": "آشپزخانه صنعتی و کافی شاپ",
+      "aliases": [],
+      "source_id": "home",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "store.group.home.subcategory.09",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "subcategory",
+      "label": "روشنایی و الکتریکی",
+      "aliases": [],
+      "source_id": "home",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "store.group.home.term.01",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "شیرآلات",
+      "aliases": [],
+      "source_id": "home",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.home.term.02",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "اتصالات جانبی",
+      "aliases": [],
+      "source_id": "home",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.home.term.03",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "فلاش تانک",
+      "aliases": [],
+      "source_id": "home",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.home.term.04",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "لامپ",
+      "aliases": [],
+      "source_id": "home",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.home.term.05",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "لوستر",
+      "aliases": [],
+      "source_id": "home",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.home.term.06",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "ابزار حمام",
+      "aliases": [],
+      "source_id": "home",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.home.term.07",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "توالت فرنگی",
+      "aliases": [],
+      "source_id": "home",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.home.term.08",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "روشویی",
+      "aliases": [],
+      "source_id": "home",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.home.term.09",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "پرده",
+      "aliases": [],
+      "source_id": "home",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "store.group.home.term.10",
+      "node_type": "store_category",
+      "axis": "store_taxonomy",
+      "node_kind": "menu_term",
+      "label": "گل و گیاه آپارتمانی",
+      "aliases": [],
+      "source_id": "home",
+      "evidence_status": "official_current_page",
+      "observed_at": "2026-11-24",
+      "notes": "جایگاه والد دقیق این عبارت در منوی چندسطحی به‌طور مستقل تثبیت نشده است."
+    },
+    {
+      "id": "evidence.thirdparty.001",
+      "node_type": "evidence_source",
+      "axis": "evidence",
+      "label": "فهرست شخص ثالث برای: استپر موتور مدل یدک کالا مناسب برای پراید و پیکان",
+      "source_type": "third_party_catalog",
+      "url": "https://abzar1404.ir/product/stepper-motor-spare-parts-suitable-for-pride-and-pikan/",
+      "evidence_status": "affiliate_link_resolves_to_dkp",
+      "observed_at": "2026-11-24",
+      "note": "",
+      "limitations": "منبع شخص ثالث؛ برای اثبات قیمت/موجودی جاری دیجی‌کالا کافی نیست."
+    },
+    {
+      "id": "product.dkp.14267164",
+      "node_type": "product_observation",
+      "axis": "product",
+      "label": "استپر موتور مدل یدک کالا مناسب برای پراید و پیکان",
+      "product_id": "dkp-14267164",
+      "candidate_product_id": null,
+      "family": "stepper_motor",
+      "interpretation": "Automotive idle-control stepper/actuator; not an industrial CNC stepper motor.",
+      "evidence_status": "affiliate_link_resolves_to_dkp",
+      "identity_status": "affiliate_redirect_target_identified",
+      "digikala_url": "https://www.digikala.com/product/dkp-14267164/",
+      "availability_status": "unknown",
+      "price_status": "not_observed",
+      "seller_status": "not_observed",
+      "source_id": "evidence.thirdparty.001",
+      "source_record": "data/research/specialty-product-evidence-fa.json",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "evidence.thirdparty.002",
+      "node_type": "evidence_source",
+      "axis": "evidence",
+      "label": "فهرست شخص ثالث برای: جت فن مدل چندکاره کد F028",
+      "source_type": "third_party_catalog",
+      "url": "https://viewmag.ir/product/جت-فن-مدل-چندکاره-کد-f028/",
+      "evidence_status": "affiliate_link_resolves_to_dkp",
+      "observed_at": "2026-11-24",
+      "note": "",
+      "limitations": "منبع شخص ثالث؛ برای اثبات قیمت/موجودی جاری دیجی‌کالا کافی نیست."
+    },
+    {
+      "id": "product.dkp.20233926",
+      "node_type": "product_observation",
+      "axis": "product",
+      "label": "جت فن مدل چندکاره کد F028",
+      "product_id": "dkp-20233926",
+      "candidate_product_id": null,
+      "family": "brushless_motor_in_finished_product",
+      "interpretation": "Finished blower product whose third-party catalog specifies a brushless motor; not a standalone motor.",
+      "evidence_status": "affiliate_link_resolves_to_dkp",
+      "identity_status": "affiliate_redirect_target_identified",
+      "digikala_url": "https://www.digikala.com/product/dkp-20233926/",
+      "availability_status": "unknown",
+      "price_status": "not_observed",
+      "seller_status": "not_observed",
+      "source_id": "evidence.thirdparty.002",
+      "source_record": "data/research/specialty-product-evidence-fa.json",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "evidence.thirdparty.003",
+      "node_type": "evidence_source",
+      "axis": "evidence",
+      "label": "فهرست شخص ثالث برای: جت فن شارژی مدل چراغدار X8",
+      "source_type": "third_party_catalog",
+      "url": "https://viewmag.ir/product/جت-فن-شارژی-مدل-چراغدار-x8/",
+      "evidence_status": "third_party_listing_digikala_route_unresolved",
+      "observed_at": "2026-11-24",
+      "note": "",
+      "limitations": "منبع شخص ثالث؛ برای اثبات قیمت/موجودی جاری دیجی‌کالا کافی نیست."
+    },
+    {
+      "id": "candidate.dkp.21108319",
+      "node_type": "product_candidate",
+      "axis": "product",
+      "label": "جت فن شارژی مدل چراغدار X8",
+      "product_id": null,
+      "candidate_product_id": "dkp-21108319",
+      "family": "brushless_motor_in_finished_product",
+      "interpretation": "Finished portable blower; third-party catalog describes brushless motor.",
+      "evidence_status": "third_party_listing_digikala_route_unresolved",
+      "identity_status": "unverified_candidate",
+      "digikala_url": null,
+      "availability_status": "unknown",
+      "price_status": "not_observed",
+      "seller_status": "not_observed",
+      "source_id": "evidence.thirdparty.003",
+      "source_record": "data/research/specialty-product-evidence-fa.json",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "evidence.thirdparty.004",
+      "node_type": "evidence_source",
+      "axis": "evidence",
+      "label": "فهرست شخص ثالث برای: موتور برق بنزینی اینورتر استریم مدل ST9000iD",
+      "source_type": "third_party_catalog",
+      "url": "https://abzar1404.ir/product-category/tajhizat-sanati-va-anbardari/motorbargh/",
+      "evidence_status": "affiliate_link_resolves_to_dkp",
+      "observed_at": "2026-11-24",
+      "note": "",
+      "limitations": "منبع شخص ثالث؛ برای اثبات قیمت/موجودی جاری دیجی‌کالا کافی نیست."
+    },
+    {
+      "id": "product.dkp.15483404",
+      "node_type": "product_observation",
+      "axis": "product",
+      "label": "موتور برق بنزینی اینورتر استریم مدل ST9000iD",
+      "product_id": "dkp-15483404",
+      "candidate_product_id": null,
+      "family": "generator",
+      "interpretation": "Combustion engine-driven electrical generator.",
+      "evidence_status": "affiliate_link_resolves_to_dkp",
+      "identity_status": "affiliate_redirect_target_identified",
+      "digikala_url": "https://www.digikala.com/product/dkp-15483404/",
+      "availability_status": "unknown",
+      "price_status": "not_observed",
+      "seller_status": "not_observed",
+      "source_id": "evidence.thirdparty.004",
+      "source_record": "data/research/specialty-product-evidence-fa.json",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "product.dkp.16806226",
+      "node_type": "product_observation",
+      "axis": "product",
+      "label": "موتور برق بنزینی نووا مدل 9530",
+      "product_id": "dkp-16806226",
+      "candidate_product_id": null,
+      "family": "generator",
+      "interpretation": "",
+      "evidence_status": "affiliate_link_resolves_to_dkp",
+      "identity_status": "affiliate_redirect_target_identified",
+      "digikala_url": "https://www.digikala.com/product/dkp-16806226/",
+      "availability_status": "unknown",
+      "price_status": "not_observed",
+      "seller_status": "not_observed",
+      "source_id": "evidence.thirdparty.004",
+      "source_record": "data/research/specialty-product-evidence-fa.json",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "product.dkp.8319071",
+      "node_type": "product_observation",
+      "axis": "product",
+      "label": "موتور برق جیانگ دانگ مدل JD2800",
+      "product_id": "dkp-8319071",
+      "candidate_product_id": null,
+      "family": "generator",
+      "interpretation": "",
+      "evidence_status": "affiliate_link_resolves_to_dkp",
+      "identity_status": "affiliate_redirect_target_identified",
+      "digikala_url": "https://www.digikala.com/product/dkp-8319071/",
+      "availability_status": "unknown",
+      "price_status": "not_observed",
+      "seller_status": "not_observed",
+      "source_id": "evidence.thirdparty.004",
+      "source_record": "data/research/specialty-product-evidence-fa.json",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "evidence.thirdparty.005",
+      "node_type": "evidence_source",
+      "axis": "evidence",
+      "label": "فهرست شخص ثالث برای: موتور پمپ بنزینی لئو مدل LGP 20 H",
+      "source_type": "third_party_catalog",
+      "url": "https://abzar1404.ir/product/dc-3-5v-water-pump/",
+      "evidence_status": "affiliate_link_resolves_to_dkp",
+      "observed_at": "2026-11-24",
+      "note": "",
+      "limitations": "منبع شخص ثالث؛ برای اثبات قیمت/موجودی جاری دیجی‌کالا کافی نیست."
+    },
+    {
+      "id": "product.dkp.2451884",
+      "node_type": "product_observation",
+      "axis": "product",
+      "label": "موتور پمپ بنزینی لئو مدل LGP 20 H",
+      "product_id": "dkp-2451884",
+      "candidate_product_id": null,
+      "family": "engine_pump_set",
+      "interpretation": "",
+      "evidence_status": "affiliate_link_resolves_to_dkp",
+      "identity_status": "affiliate_redirect_target_identified",
+      "digikala_url": "https://www.digikala.com/product/dkp-2451884/",
+      "availability_status": "unknown",
+      "price_status": "not_observed",
+      "seller_status": "not_observed",
+      "source_id": "evidence.thirdparty.005",
+      "source_record": "data/research/specialty-product-evidence-fa.json",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "product.dkp.3884114",
+      "node_type": "product_observation",
+      "axis": "product",
+      "label": "پمپ آب الکتروژن مدل CM100",
+      "product_id": "dkp-3884114",
+      "candidate_product_id": null,
+      "family": "water_pump",
+      "interpretation": "",
+      "evidence_status": "affiliate_link_resolves_to_dkp",
+      "identity_status": "affiliate_redirect_target_identified",
+      "digikala_url": "https://www.digikala.com/product/dkp-3884114/",
+      "availability_status": "unknown",
+      "price_status": "not_observed",
+      "seller_status": "not_observed",
+      "source_id": "evidence.thirdparty.005",
+      "source_record": "data/research/specialty-product-evidence-fa.json",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "product.dkp.19141373",
+      "node_type": "product_observation",
+      "axis": "product",
+      "label": "پمپ کف‌کش 1.1 اسب بخار توان تک مدل TMR16/6S",
+      "product_id": "dkp-19141373",
+      "candidate_product_id": null,
+      "family": "submersible_pump",
+      "interpretation": "",
+      "evidence_status": "affiliate_link_resolves_to_dkp",
+      "identity_status": "affiliate_redirect_target_identified",
+      "digikala_url": "https://www.digikala.com/product/dkp-19141373/",
+      "availability_status": "unknown",
+      "price_status": "not_observed",
+      "seller_status": "not_observed",
+      "source_id": "evidence.thirdparty.005",
+      "source_record": "data/research/specialty-product-evidence-fa.json",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "evidence.thirdparty.006",
+      "node_type": "evidence_source",
+      "axis": "evidence",
+      "label": "فهرست شخص ثالث برای: پمپ آب لئو مدل APM37",
+      "source_type": "third_party_catalog",
+      "url": "https://abzar1404.ir/product/rh-4031-floor-pump-pump/",
+      "evidence_status": "affiliate_link_resolves_to_dkp",
+      "observed_at": "2026-11-24",
+      "note": "",
+      "limitations": "منبع شخص ثالث؛ برای اثبات قیمت/موجودی جاری دیجی‌کالا کافی نیست."
+    },
+    {
+      "id": "product.dkp.2460735",
+      "node_type": "product_observation",
+      "axis": "product",
+      "label": "پمپ آب لئو مدل APM37",
+      "product_id": "dkp-2460735",
+      "candidate_product_id": null,
+      "family": "water_pump",
+      "interpretation": "",
+      "evidence_status": "affiliate_link_resolves_to_dkp",
+      "identity_status": "affiliate_redirect_target_identified",
+      "digikala_url": "https://www.digikala.com/product/dkp-2460735/",
+      "availability_status": "unknown",
+      "price_status": "not_observed",
+      "seller_status": "not_observed",
+      "source_id": "evidence.thirdparty.006",
+      "source_record": "data/research/specialty-product-evidence-fa.json",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "product.dkp.19661679",
+      "node_type": "product_observation",
+      "axis": "product",
+      "label": "پمپ کف‌کش 2 اسب بخار ای‌ام‌سی مدل QDX45-9-1.5F",
+      "product_id": "dkp-19661679",
+      "candidate_product_id": null,
+      "family": "submersible_pump",
+      "interpretation": "",
+      "evidence_status": "affiliate_link_resolves_to_dkp",
+      "identity_status": "affiliate_redirect_target_identified",
+      "digikala_url": "https://www.digikala.com/product/dkp-19661679/",
+      "availability_status": "unknown",
+      "price_status": "not_observed",
+      "seller_status": "not_observed",
+      "source_id": "evidence.thirdparty.005",
+      "source_record": "data/research/specialty-product-evidence-fa.json",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "evidence.thirdparty.007",
+      "node_type": "evidence_source",
+      "axis": "evidence",
+      "label": "فهرست شخص ثالث برای: منبع تحت فشار هاماک مدل گیج‌دار ظرفیت 60 لیتر",
+      "source_type": "third_party_catalog",
+      "url": "https://abzar1404.ir/product/scm4f-floor-pump/",
+      "evidence_status": "affiliate_link_resolves_to_dkp",
+      "observed_at": "2026-11-24",
+      "note": "",
+      "limitations": "منبع شخص ثالث؛ برای اثبات قیمت/موجودی جاری دیجی‌کالا کافی نیست."
+    },
+    {
+      "id": "product.dkp.12463221",
+      "node_type": "product_observation",
+      "axis": "product",
+      "label": "منبع تحت فشار هاماک مدل گیج‌دار ظرفیت 60 لیتر",
+      "product_id": "dkp-12463221",
+      "candidate_product_id": null,
+      "family": "pump_accessory_pressure_tank",
+      "interpretation": "",
+      "evidence_status": "affiliate_link_resolves_to_dkp",
+      "identity_status": "affiliate_redirect_target_identified",
+      "digikala_url": "https://www.digikala.com/product/dkp-12463221/",
+      "availability_status": "unknown",
+      "price_status": "not_observed",
+      "seller_status": "not_observed",
+      "source_id": "evidence.thirdparty.007",
+      "source_record": "data/research/specialty-product-evidence-fa.json",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "evidence.thirdparty.008",
+      "node_type": "evidence_source",
+      "axis": "evidence",
+      "label": "فهرست شخص ثالث برای: پمپ آب یک اسب بخار پنتاکس مدل پروانه استیل",
+      "source_type": "third_party_catalog",
+      "url": "https://abzar1404.ir/product/wp3500-water-pump-water-pump-2/",
+      "evidence_status": "affiliate_link_resolves_to_dkp",
+      "observed_at": "2026-11-24",
+      "note": "",
+      "limitations": "منبع شخص ثالث؛ برای اثبات قیمت/موجودی جاری دیجی‌کالا کافی نیست."
+    },
+    {
+      "id": "product.dkp.20046701",
+      "node_type": "product_observation",
+      "axis": "product",
+      "label": "پمپ آب یک اسب بخار پنتاکس مدل پروانه استیل",
+      "product_id": "dkp-20046701",
+      "candidate_product_id": null,
+      "family": "water_pump",
+      "interpretation": "",
+      "evidence_status": "affiliate_link_resolves_to_dkp",
+      "identity_status": "affiliate_redirect_target_identified",
+      "digikala_url": "https://www.digikala.com/product/dkp-20046701/",
+      "availability_status": "unknown",
+      "price_status": "not_observed",
+      "seller_status": "not_observed",
+      "source_id": "evidence.thirdparty.008",
+      "source_record": "data/research/specialty-product-evidence-fa.json",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "evidence.thirdparty.009",
+      "node_type": "evidence_source",
+      "axis": "evidence",
+      "label": "فهرست شخص ثالث برای: پک مه‌پاش خانگی مدل B51 مجموعه 24 عددی",
+      "source_type": "third_party_catalog",
+      "url": "https://viewmag.ir/product/پک-مه-پاش-خانگی-مدل-b51-مجموعه-24-عددی/",
+      "evidence_status": "affiliate_link_resolves_to_dkp",
+      "observed_at": "2026-11-24",
+      "note": "",
+      "limitations": "منبع شخص ثالث؛ برای اثبات قیمت/موجودی جاری دیجی‌کالا کافی نیست."
+    },
+    {
+      "id": "product.dkp.20662147",
+      "node_type": "product_observation",
+      "axis": "product",
+      "label": "پک مه‌پاش خانگی مدل B51 مجموعه 24 عددی",
+      "product_id": "dkp-20662147",
+      "candidate_product_id": null,
+      "family": "misting_irrigation_kit",
+      "interpretation": "",
+      "evidence_status": "affiliate_link_resolves_to_dkp",
+      "identity_status": "affiliate_redirect_target_identified",
+      "digikala_url": "https://www.digikala.com/product/dkp-20662147/",
+      "availability_status": "unknown",
+      "price_status": "not_observed",
+      "seller_status": "not_observed",
+      "source_id": "evidence.thirdparty.009",
+      "source_record": "data/research/specialty-product-evidence-fa.json",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "evidence.thirdparty.010",
+      "node_type": "evidence_source",
+      "axis": "evidence",
+      "label": "فهرست شخص ثالث برای: تایمر آبیاری رین مدل آمیکو پلاس",
+      "source_type": "third_party_catalog",
+      "url": "https://viewmag.ir/product/تایمر-آبیاری-رین-مدل-آمیکو-پلاس/",
+      "evidence_status": "affiliate_link_resolves_to_dkp",
+      "observed_at": "2026-11-24",
+      "note": "",
+      "limitations": "منبع شخص ثالث؛ برای اثبات قیمت/موجودی جاری دیجی‌کالا کافی نیست."
+    },
+    {
+      "id": "product.dkp.3579672",
+      "node_type": "product_observation",
+      "axis": "product",
+      "label": "تایمر آبیاری رین مدل آمیکو پلاس",
+      "product_id": "dkp-3579672",
+      "candidate_product_id": null,
+      "family": "irrigation_controller_timer",
+      "interpretation": "",
+      "evidence_status": "affiliate_link_resolves_to_dkp",
+      "identity_status": "affiliate_redirect_target_identified",
+      "digikala_url": "https://www.digikala.com/product/dkp-3579672/",
+      "availability_status": "unknown",
+      "price_status": "not_observed",
+      "seller_status": "not_observed",
+      "source_id": "evidence.thirdparty.010",
+      "source_record": "data/research/specialty-product-evidence-fa.json",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "evidence.thirdparty.011",
+      "node_type": "evidence_source",
+      "axis": "evidence",
+      "label": "فهرست شخص ثالث برای: لوازم آبیاری قطره‌ای تهران دریپ مدل ALFA-50 مجموعه 50 عددی",
+      "source_type": "third_party_catalog",
+      "url": "https://viewmag.ir/products/vehicles/category-watering-accessories/",
+      "evidence_status": "affiliate_link_resolves_to_dkp",
+      "observed_at": "2026-11-24",
+      "note": "",
+      "limitations": "منبع شخص ثالث؛ برای اثبات قیمت/موجودی جاری دیجی‌کالا کافی نیست."
+    },
+    {
+      "id": "product.dkp.2665591",
+      "node_type": "product_observation",
+      "axis": "product",
+      "label": "لوازم آبیاری قطره‌ای تهران دریپ مدل ALFA-50 مجموعه 50 عددی",
+      "product_id": "dkp-2665591",
+      "candidate_product_id": null,
+      "family": "drip_irrigation_accessory",
+      "interpretation": "",
+      "evidence_status": "affiliate_link_resolves_to_dkp",
+      "identity_status": "affiliate_redirect_target_identified",
+      "digikala_url": "https://www.digikala.com/product/dkp-2665591/",
+      "availability_status": "unknown",
+      "price_status": "not_observed",
+      "seller_status": "not_observed",
+      "source_id": "evidence.thirdparty.011",
+      "source_record": "data/research/specialty-product-evidence-fa.json",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "product.dkp.3491209",
+      "node_type": "product_observation",
+      "axis": "product",
+      "label": "لوازم جانبی آبیاری قطره‌ای مدل C-107 مجموعه 32 عددی",
+      "product_id": "dkp-3491209",
+      "candidate_product_id": null,
+      "family": "drip_irrigation_accessory",
+      "interpretation": "",
+      "evidence_status": "affiliate_link_resolves_to_dkp",
+      "identity_status": "affiliate_redirect_target_identified",
+      "digikala_url": "https://www.digikala.com/product/dkp-3491209/",
+      "availability_status": "unknown",
+      "price_status": "not_observed",
+      "seller_status": "not_observed",
+      "source_id": "evidence.thirdparty.011",
+      "source_record": "data/research/specialty-product-evidence-fa.json",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "evidence.thirdparty.012",
+      "node_type": "evidence_source",
+      "axis": "evidence",
+      "label": "فهرست شخص ثالث برای: نایلون گلخانه مدل Q3meter طول 5 متر",
+      "source_type": "third_party_catalog",
+      "url": "https://abzar1404.ir/product/greenhouse-green-model-anti-uv-model-pack-10/",
+      "evidence_status": "affiliate_link_resolves_to_dkp",
+      "observed_at": "2026-11-24",
+      "note": "",
+      "limitations": "منبع شخص ثالث؛ برای اثبات قیمت/موجودی جاری دیجی‌کالا کافی نیست."
+    },
+    {
+      "id": "product.dkp.7669891",
+      "node_type": "product_observation",
+      "axis": "product",
+      "label": "نایلون گلخانه مدل Q3meter طول 5 متر",
+      "product_id": "dkp-7669891",
+      "candidate_product_id": null,
+      "family": "greenhouse_cover_film",
+      "interpretation": "",
+      "evidence_status": "affiliate_link_resolves_to_dkp",
+      "identity_status": "affiliate_redirect_target_identified",
+      "digikala_url": "https://www.digikala.com/product/dkp-7669891/",
+      "availability_status": "unknown",
+      "price_status": "not_observed",
+      "seller_status": "not_observed",
+      "source_id": "evidence.thirdparty.012",
+      "source_record": "data/research/specialty-product-evidence-fa.json",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "evidence.thirdparty.013",
+      "node_type": "evidence_source",
+      "axis": "evidence",
+      "label": "فهرست شخص ثالث برای: توری شید گلخانه مدل 80 درصد ضدآفتاب کد 6/4 طول 6 متر",
+      "source_type": "third_party_catalog",
+      "url": "https://abzar1404.ir/product/greenhouse-nylon-q3meter-model-5-m/",
+      "evidence_status": "affiliate_link_resolves_to_dkp",
+      "observed_at": "2026-11-24",
+      "note": "",
+      "limitations": "منبع شخص ثالث؛ برای اثبات قیمت/موجودی جاری دیجی‌کالا کافی نیست."
+    },
+    {
+      "id": "product.dkp.8399201",
+      "node_type": "product_observation",
+      "axis": "product",
+      "label": "توری شید گلخانه مدل 80 درصد ضدآفتاب کد 6/4 طول 6 متر",
+      "product_id": "dkp-8399201",
+      "candidate_product_id": null,
+      "family": "greenhouse_shade_net",
+      "interpretation": "",
+      "evidence_status": "affiliate_link_resolves_to_dkp",
+      "identity_status": "affiliate_redirect_target_identified",
+      "digikala_url": "https://www.digikala.com/product/dkp-8399201/",
+      "availability_status": "unknown",
+      "price_status": "not_observed",
+      "seller_status": "not_observed",
+      "source_id": "evidence.thirdparty.013",
+      "source_record": "data/research/specialty-product-evidence-fa.json",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "product.dkp.8675106",
+      "node_type": "product_observation",
+      "axis": "product",
+      "label": "توری شید گلخانه کد G3/1 طول 3 متر",
+      "product_id": "dkp-8675106",
+      "candidate_product_id": null,
+      "family": "greenhouse_shade_net",
+      "interpretation": "",
+      "evidence_status": "affiliate_link_resolves_to_dkp",
+      "identity_status": "affiliate_redirect_target_identified",
+      "digikala_url": "https://www.digikala.com/product/dkp-8675106/",
+      "availability_status": "unknown",
+      "price_status": "not_observed",
+      "seller_status": "not_observed",
+      "source_id": "evidence.thirdparty.013",
+      "source_record": "data/research/specialty-product-evidence-fa.json",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "product.dkp.8675118",
+      "node_type": "product_observation",
+      "axis": "product",
+      "label": "توری شید گلخانه کد G3/3 طول 3 متر",
+      "product_id": "dkp-8675118",
+      "candidate_product_id": null,
+      "family": "greenhouse_shade_net",
+      "interpretation": "",
+      "evidence_status": "affiliate_link_resolves_to_dkp",
+      "identity_status": "affiliate_redirect_target_identified",
+      "digikala_url": "https://www.digikala.com/product/dkp-8675118/",
+      "availability_status": "unknown",
+      "price_status": "not_observed",
+      "seller_status": "not_observed",
+      "source_id": "evidence.thirdparty.013",
+      "source_record": "data/research/specialty-product-evidence-fa.json",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "product.dkp.8771841",
+      "node_type": "product_observation",
+      "axis": "product",
+      "label": "بست توری شید گلخانه مدل ضخیم کد KN6 بسته 12 عددی",
+      "product_id": "dkp-8771841",
+      "candidate_product_id": null,
+      "family": "greenhouse_shade_net_fitting",
+      "interpretation": "",
+      "evidence_status": "affiliate_link_resolves_to_dkp",
+      "identity_status": "affiliate_redirect_target_identified",
+      "digikala_url": "https://www.digikala.com/product/dkp-8771841/",
+      "availability_status": "unknown",
+      "price_status": "not_observed",
+      "seller_status": "not_observed",
+      "source_id": "evidence.thirdparty.013",
+      "source_record": "data/research/specialty-product-evidence-fa.json",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "product.dkp.8323827",
+      "node_type": "product_observation",
+      "axis": "product",
+      "label": "توری شید گلخانه مدل 80 درصد ضدآفتاب کد 24",
+      "product_id": "dkp-8323827",
+      "candidate_product_id": null,
+      "family": "greenhouse_shade_net",
+      "interpretation": "",
+      "evidence_status": "affiliate_link_resolves_to_dkp",
+      "identity_status": "affiliate_redirect_target_identified",
+      "digikala_url": "https://www.digikala.com/product/dkp-8323827/",
+      "availability_status": "unknown",
+      "price_status": "not_observed",
+      "seller_status": "not_observed",
+      "source_id": "evidence.thirdparty.013",
+      "source_record": "data/research/specialty-product-evidence-fa.json",
+      "observed_at": "2026-11-24"
+    },
+    {
+      "id": "evidence.thirdparty.014",
+      "node_type": "evidence_source",
+      "axis": "evidence",
+      "label": "موتور DC مستقل",
+      "source_type": "third_party_or_bounded_search",
+      "url": "https://nariix.com/",
+      "evidence_status": "third_party_listing_digikala_route_unresolved",
+      "observed_at": "2026-11-24",
+      "note": "صفحه موتور DC دو سر شفت با مشخصات 12V/15000rpm و دکمه خرید دیجی‌کالا دیده شد؛ مقصد DKP حل نشد.",
+      "limitations": "منبع شخص ثالث؛ برای اثبات قیمت/موجودی جاری دیجی‌کالا کافی نیست."
+    },
+    {
+      "id": "evidence.thirdparty.015",
+      "node_type": "evidence_source",
+      "axis": "evidence",
+      "label": "موتور براشلس مستقل برای پهپاد (DJI 2212/MT2204)",
+      "source_type": "third_party_or_bounded_search",
+      "url": "https://shop.aftabrayaneh.com/",
+      "evidence_status": "third_party_market_only",
+      "observed_at": "2026-11-24",
+      "note": "در فروشگاه قطعات الکترونیک دیده شد؛ شاهد پیوند به دیجی‌کالا یافت نشد.",
+      "limitations": "منبع شخص ثالث؛ برای اثبات قیمت/موجودی جاری دیجی‌کالا کافی نیست."
+    },
+    {
+      "id": "evidence.thirdparty.016",
+      "node_type": "evidence_source",
+      "axis": "evidence",
+      "label": "فن سیرکوله صنعتی مخصوص گلخانه",
+      "source_type": "third_party_or_bounded_search",
+      "url": "https://parsanat.com/cat/electrical-and-electronic/",
+      "evidence_status": "third_party_market_only",
+      "observed_at": "2026-11-24",
+      "note": "در فروشگاه تخصصی گلخانه مشاهده شد؛ DKP تأییدشده در نمونه حاضر پیدا نشد.",
+      "limitations": "منبع شخص ثالث؛ برای اثبات قیمت/موجودی جاری دیجی‌کالا کافی نیست."
+    },
+    {
+      "id": "evidence.thirdparty.017",
+      "node_type": "evidence_source",
+      "axis": "evidence",
+      "label": "کنترلر یکپارچه اقلیم گلخانه، هیتر تخصصی، نور رشد و تزریق کود",
+      "source_type": "third_party_or_bounded_search",
+      "url": "bounded web sample",
+      "evidence_status": "not_found_in_sample",
+      "observed_at": "2026-11-24",
+      "note": "عدم یافتن در نمونه به معنی نبود کالا در دیجی‌کالا نیست.",
+      "limitations": "منبع شخص ثالث؛ برای اثبات قیمت/موجودی جاری دیجی‌کالا کافی نیست."
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel.0001",
+      "source": "concept.electric-motor",
+      "target": "concept.motion-power",
+      "type": "is_a",
+      "confidence": "high",
+      "evidence_class": "technical_taxonomy"
+    },
+    {
+      "id": "rel.0002",
+      "source": "concept.dc-motor",
+      "target": "concept.electric-motor",
+      "type": "is_a",
+      "confidence": "high",
+      "evidence_class": "technical_taxonomy"
+    },
+    {
+      "id": "rel.0003",
+      "source": "concept.brushed-dc",
+      "target": "concept.dc-motor",
+      "type": "is_a",
+      "confidence": "high",
+      "evidence_class": "technical_taxonomy"
+    },
+    {
+      "id": "rel.0004",
+      "source": "concept.brushless-dc",
+      "target": "concept.dc-motor",
+      "type": "is_a",
+      "confidence": "high",
+      "evidence_class": "technical_taxonomy"
+    },
+    {
+      "id": "rel.0005",
+      "source": "concept.ac-motor",
+      "target": "concept.electric-motor",
+      "type": "is_a",
+      "confidence": "high",
+      "evidence_class": "technical_taxonomy"
+    },
+    {
+      "id": "rel.0006",
+      "source": "concept.stepper",
+      "target": "concept.electric-motor",
+      "type": "is_a",
+      "confidence": "high",
+      "evidence_class": "technical_taxonomy"
+    },
+    {
+      "id": "rel.0007",
+      "source": "concept.automotive-idle-stepper",
+      "target": "concept.stepper",
+      "type": "is_a",
+      "confidence": "high",
+      "evidence_class": "technical_taxonomy"
+    },
+    {
+      "id": "rel.0008",
+      "source": "concept.industrial-stepper",
+      "target": "concept.stepper",
+      "type": "is_a",
+      "confidence": "high",
+      "evidence_class": "technical_taxonomy"
+    },
+    {
+      "id": "rel.0009",
+      "source": "concept.servo",
+      "target": "concept.electric-motor",
+      "type": "is_a",
+      "confidence": "high",
+      "evidence_class": "technical_taxonomy"
+    },
+    {
+      "id": "rel.0010",
+      "source": "concept.combustion-engine",
+      "target": "concept.motion-power",
+      "type": "is_a",
+      "confidence": "high",
+      "evidence_class": "technical_taxonomy"
+    },
+    {
+      "id": "rel.0011",
+      "source": "concept.generator",
+      "target": "concept.motion-power",
+      "type": "is_a",
+      "confidence": "high",
+      "evidence_class": "technical_taxonomy"
+    },
+    {
+      "id": "rel.0012",
+      "source": "concept.engine-pump-set",
+      "target": "concept.motion-power",
+      "type": "is_a",
+      "confidence": "high",
+      "evidence_class": "technical_taxonomy"
+    },
+    {
+      "id": "rel.0013",
+      "source": "concept.water-pump",
+      "target": "concept.pump",
+      "type": "is_a",
+      "confidence": "high",
+      "evidence_class": "technical_taxonomy"
+    },
+    {
+      "id": "rel.0014",
+      "source": "concept.submersible-pump",
+      "target": "concept.pump",
+      "type": "is_a",
+      "confidence": "high",
+      "evidence_class": "technical_taxonomy"
+    },
+    {
+      "id": "rel.0015",
+      "source": "concept.pressure-tank",
+      "target": "concept.pump",
+      "type": "is_a",
+      "confidence": "high",
+      "evidence_class": "technical_taxonomy"
+    },
+    {
+      "id": "rel.0016",
+      "source": "concept.misting-kit",
+      "target": "concept.irrigation-equipment",
+      "type": "is_a",
+      "confidence": "high",
+      "evidence_class": "technical_taxonomy"
+    },
+    {
+      "id": "rel.0017",
+      "source": "concept.irrigation-timer",
+      "target": "concept.irrigation-equipment",
+      "type": "is_a",
+      "confidence": "high",
+      "evidence_class": "technical_taxonomy"
+    },
+    {
+      "id": "rel.0018",
+      "source": "concept.drip-irrigation-parts",
+      "target": "concept.irrigation-equipment",
+      "type": "is_a",
+      "confidence": "high",
+      "evidence_class": "technical_taxonomy"
+    },
+    {
+      "id": "rel.0019",
+      "source": "concept.greenhouse-film",
+      "target": "concept.greenhouse-cover",
+      "type": "is_a",
+      "confidence": "high",
+      "evidence_class": "technical_taxonomy"
+    },
+    {
+      "id": "rel.0020",
+      "source": "concept.shade-net",
+      "target": "concept.greenhouse-cover",
+      "type": "is_a",
+      "confidence": "high",
+      "evidence_class": "technical_taxonomy"
+    },
+    {
+      "id": "rel.0021",
+      "source": "concept.shade-net-fitting",
+      "target": "concept.greenhouse-cover",
+      "type": "is_a",
+      "confidence": "high",
+      "evidence_class": "technical_taxonomy"
+    },
+    {
+      "id": "rel.0022",
+      "source": "concept.independent-dc-motor",
+      "target": "concept.dc-motor",
+      "type": "is_a",
+      "confidence": "high",
+      "evidence_class": "technical_taxonomy"
+    },
+    {
+      "id": "rel.0023",
+      "source": "concept.independent-drone-bldc",
+      "target": "concept.brushless-dc",
+      "type": "is_a",
+      "confidence": "high",
+      "evidence_class": "technical_taxonomy"
+    },
+    {
+      "id": "rel.0024",
+      "source": "concept.engine-pump-set",
+      "target": "concept.combustion-engine",
+      "type": "has_component",
+      "confidence": "high",
+      "evidence_class": "technical_taxonomy"
+    },
+    {
+      "id": "rel.0025",
+      "source": "concept.engine-pump-set",
+      "target": "concept.pump",
+      "type": "has_component",
+      "confidence": "high",
+      "evidence_class": "technical_taxonomy"
+    },
+    {
+      "id": "rel.0026",
+      "source": "concept.portable-blower",
+      "target": "feature.brushless-motor",
+      "type": "may_have_feature",
+      "confidence": "medium",
+      "evidence_class": "product_observation_only",
+      "note": "فقط برای نمونه‌های شواهددار این پروژه؛ ویژگی همه دمنده‌ها نیست."
+    },
+    {
+      "id": "rel.0027",
+      "source": "system.greenhouse",
+      "target": "system.agriculture",
+      "type": "part_of",
+      "confidence": "medium",
+      "evidence_class": "knowledge_model"
+    },
+    {
+      "id": "rel.0028",
+      "source": "system.garden",
+      "target": "system.agriculture",
+      "type": "part_of",
+      "confidence": "medium",
+      "evidence_class": "knowledge_model"
+    },
+    {
+      "id": "rel.0029",
+      "source": "system.outdoor",
+      "target": "system.garden",
+      "type": "part_of",
+      "confidence": "medium",
+      "evidence_class": "knowledge_model"
+    },
+    {
+      "id": "rel.0030",
+      "source": "store.group.tools",
+      "target": "store.root.11",
+      "type": "child_of",
+      "confidence": "high",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0031",
+      "source": "store.group.tools.subcategory.01",
+      "target": "store.group.tools",
+      "type": "child_of",
+      "confidence": "high",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0032",
+      "source": "store.group.tools.subcategory.02",
+      "target": "store.group.tools",
+      "type": "child_of",
+      "confidence": "high",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0033",
+      "source": "store.group.tools.subcategory.03",
+      "target": "store.group.tools",
+      "type": "child_of",
+      "confidence": "high",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0034",
+      "source": "store.group.tools.subcategory.04",
+      "target": "store.group.tools",
+      "type": "child_of",
+      "confidence": "high",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0035",
+      "source": "store.group.tools.subcategory.05",
+      "target": "store.group.tools",
+      "type": "child_of",
+      "confidence": "high",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0036",
+      "source": "store.group.tools.subcategory.06",
+      "target": "store.group.tools",
+      "type": "child_of",
+      "confidence": "high",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0037",
+      "source": "store.group.tools.subcategory.07",
+      "target": "store.group.tools",
+      "type": "child_of",
+      "confidence": "high",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0038",
+      "source": "store.group.tools.subcategory.08",
+      "target": "store.group.tools",
+      "type": "child_of",
+      "confidence": "high",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0039",
+      "source": "store.group.tools.subcategory.09",
+      "target": "store.group.tools",
+      "type": "child_of",
+      "confidence": "high",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0040",
+      "source": "store.group.tools.term.01",
+      "target": "store.group.tools",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0041",
+      "source": "store.group.tools.term.02",
+      "target": "store.group.tools",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0042",
+      "source": "store.group.tools.term.03",
+      "target": "store.group.tools",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0043",
+      "source": "store.group.tools.term.04",
+      "target": "store.group.tools",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0044",
+      "source": "store.group.tools.term.05",
+      "target": "store.group.tools",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0045",
+      "source": "store.group.tools.term.06",
+      "target": "store.group.tools",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0046",
+      "source": "store.group.tools.term.07",
+      "target": "store.group.tools",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0047",
+      "source": "store.group.tools.term.08",
+      "target": "store.group.tools",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0048",
+      "source": "store.group.tools.term.09",
+      "target": "store.group.tools",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0049",
+      "source": "store.group.tools.term.10",
+      "target": "store.group.tools",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0050",
+      "source": "store.group.tools.term.11",
+      "target": "store.group.tools",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0051",
+      "source": "store.group.tools.term.12",
+      "target": "store.group.tools",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0052",
+      "source": "store.group.tools.term.13",
+      "target": "store.group.tools",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0053",
+      "source": "store.group.tools.term.14",
+      "target": "store.group.tools",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0054",
+      "source": "store.group.tools.term.15",
+      "target": "store.group.tools",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0055",
+      "source": "store.group.tools.term.16",
+      "target": "store.group.tools",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0056",
+      "source": "store.group.tools.term.17",
+      "target": "store.group.tools",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0057",
+      "source": "store.group.tools.term.18",
+      "target": "store.group.tools",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0058",
+      "source": "store.group.tools.term.19",
+      "target": "store.group.tools",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0059",
+      "source": "store.group.tools.term.20",
+      "target": "store.group.tools",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0060",
+      "source": "store.group.tools.term.21",
+      "target": "store.group.tools",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0061",
+      "source": "store.group.tools.term.22",
+      "target": "store.group.tools",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0062",
+      "source": "store.group.tools.term.23",
+      "target": "store.group.tools",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0063",
+      "source": "store.group.tools.term.24",
+      "target": "store.group.tools",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0064",
+      "source": "store.group.tools.term.25",
+      "target": "store.group.tools",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0065",
+      "source": "store.group.tools.term.26",
+      "target": "store.group.tools",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0066",
+      "source": "store.group.tools.term.27",
+      "target": "store.group.tools",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0067",
+      "source": "store.group.tools.term.28",
+      "target": "store.group.tools",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0068",
+      "source": "store.group.tools.term.29",
+      "target": "store.group.tools",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0069",
+      "source": "store.group.tools.term.30",
+      "target": "store.group.tools",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0070",
+      "source": "store.group.tools.term.31",
+      "target": "store.group.tools",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0071",
+      "source": "store.group.automotive",
+      "target": "store.root.09",
+      "type": "child_of",
+      "confidence": "high",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0072",
+      "source": "store.group.automotive.subcategory.01",
+      "target": "store.group.automotive",
+      "type": "child_of",
+      "confidence": "high",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0073",
+      "source": "store.group.automotive.subcategory.02",
+      "target": "store.group.automotive",
+      "type": "child_of",
+      "confidence": "high",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0074",
+      "source": "store.group.automotive.subcategory.03",
+      "target": "store.group.automotive",
+      "type": "child_of",
+      "confidence": "high",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0075",
+      "source": "store.group.automotive.subcategory.04",
+      "target": "store.group.automotive",
+      "type": "child_of",
+      "confidence": "high",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0076",
+      "source": "store.group.automotive.subcategory.05",
+      "target": "store.group.automotive",
+      "type": "child_of",
+      "confidence": "high",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0077",
+      "source": "store.group.automotive.subcategory.06",
+      "target": "store.group.automotive",
+      "type": "child_of",
+      "confidence": "high",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0078",
+      "source": "store.group.automotive.subcategory.07",
+      "target": "store.group.automotive",
+      "type": "child_of",
+      "confidence": "high",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0079",
+      "source": "store.group.automotive.subcategory.08",
+      "target": "store.group.automotive",
+      "type": "child_of",
+      "confidence": "high",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0080",
+      "source": "store.group.automotive.subcategory.09",
+      "target": "store.group.automotive",
+      "type": "child_of",
+      "confidence": "high",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0081",
+      "source": "store.group.automotive.subcategory.10",
+      "target": "store.group.automotive",
+      "type": "child_of",
+      "confidence": "high",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0082",
+      "source": "store.group.automotive.subcategory.11",
+      "target": "store.group.automotive",
+      "type": "child_of",
+      "confidence": "high",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0083",
+      "source": "store.group.automotive.term.01",
+      "target": "store.group.automotive",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0084",
+      "source": "store.group.automotive.term.02",
+      "target": "store.group.automotive",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0085",
+      "source": "store.group.automotive.term.03",
+      "target": "store.group.automotive",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0086",
+      "source": "store.group.automotive.term.04",
+      "target": "store.group.automotive",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0087",
+      "source": "store.group.automotive.term.05",
+      "target": "store.group.automotive",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0088",
+      "source": "store.group.automotive.term.06",
+      "target": "store.group.automotive",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0089",
+      "source": "store.group.automotive.term.07",
+      "target": "store.group.automotive",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0090",
+      "source": "store.group.automotive.term.08",
+      "target": "store.group.automotive",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0091",
+      "source": "store.group.automotive.term.09",
+      "target": "store.group.automotive",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0092",
+      "source": "store.group.automotive.term.10",
+      "target": "store.group.automotive",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0093",
+      "source": "store.group.automotive.term.11",
+      "target": "store.group.automotive",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0094",
+      "source": "store.group.automotive.term.12",
+      "target": "store.group.automotive",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0095",
+      "source": "store.group.automotive.term.13",
+      "target": "store.group.automotive",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0096",
+      "source": "store.group.automotive.term.14",
+      "target": "store.group.automotive",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0097",
+      "source": "store.group.automotive.term.15",
+      "target": "store.group.automotive",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0098",
+      "source": "store.group.automotive.term.16",
+      "target": "store.group.automotive",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0099",
+      "source": "store.group.automotive.term.17",
+      "target": "store.group.automotive",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0100",
+      "source": "store.group.automotive.term.18",
+      "target": "store.group.automotive",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0101",
+      "source": "store.group.automotive.term.19",
+      "target": "store.group.automotive",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0102",
+      "source": "store.group.automotive.term.20",
+      "target": "store.group.automotive",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0103",
+      "source": "store.group.appliances",
+      "target": "store.root.04",
+      "type": "child_of",
+      "confidence": "high",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0104",
+      "source": "store.group.appliances.subcategory.01",
+      "target": "store.group.appliances",
+      "type": "child_of",
+      "confidence": "high",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0105",
+      "source": "store.group.appliances.subcategory.02",
+      "target": "store.group.appliances",
+      "type": "child_of",
+      "confidence": "high",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0106",
+      "source": "store.group.appliances.subcategory.03",
+      "target": "store.group.appliances",
+      "type": "child_of",
+      "confidence": "high",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0107",
+      "source": "store.group.appliances.subcategory.04",
+      "target": "store.group.appliances",
+      "type": "child_of",
+      "confidence": "high",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0108",
+      "source": "store.group.appliances.subcategory.05",
+      "target": "store.group.appliances",
+      "type": "child_of",
+      "confidence": "high",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0109",
+      "source": "store.group.appliances.subcategory.06",
+      "target": "store.group.appliances",
+      "type": "child_of",
+      "confidence": "high",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0110",
+      "source": "store.group.appliances.subcategory.07",
+      "target": "store.group.appliances",
+      "type": "child_of",
+      "confidence": "high",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0111",
+      "source": "store.group.appliances.subcategory.08",
+      "target": "store.group.appliances",
+      "type": "child_of",
+      "confidence": "high",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0112",
+      "source": "store.group.appliances.subcategory.09",
+      "target": "store.group.appliances",
+      "type": "child_of",
+      "confidence": "high",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0113",
+      "source": "store.group.appliances.subcategory.10",
+      "target": "store.group.appliances",
+      "type": "child_of",
+      "confidence": "high",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0114",
+      "source": "store.group.appliances.subcategory.11",
+      "target": "store.group.appliances",
+      "type": "child_of",
+      "confidence": "high",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0115",
+      "source": "store.group.appliances.subcategory.12",
+      "target": "store.group.appliances",
+      "type": "child_of",
+      "confidence": "high",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0116",
+      "source": "store.group.appliances.subcategory.13",
+      "target": "store.group.appliances",
+      "type": "child_of",
+      "confidence": "high",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0117",
+      "source": "store.group.appliances.subcategory.14",
+      "target": "store.group.appliances",
+      "type": "child_of",
+      "confidence": "high",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0118",
+      "source": "store.group.appliances.subcategory.15",
+      "target": "store.group.appliances",
+      "type": "child_of",
+      "confidence": "high",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0119",
+      "source": "store.group.appliances.term.01",
+      "target": "store.group.appliances",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0120",
+      "source": "store.group.appliances.term.02",
+      "target": "store.group.appliances",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0121",
+      "source": "store.group.appliances.term.03",
+      "target": "store.group.appliances",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0122",
+      "source": "store.group.appliances.term.04",
+      "target": "store.group.appliances",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0123",
+      "source": "store.group.appliances.term.05",
+      "target": "store.group.appliances",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0124",
+      "source": "store.group.appliances.term.06",
+      "target": "store.group.appliances",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0125",
+      "source": "store.group.appliances.term.07",
+      "target": "store.group.appliances",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0126",
+      "source": "store.group.appliances.term.08",
+      "target": "store.group.appliances",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0127",
+      "source": "store.group.appliances.term.09",
+      "target": "store.group.appliances",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0128",
+      "source": "store.group.appliances.term.10",
+      "target": "store.group.appliances",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0129",
+      "source": "store.group.appliances.term.11",
+      "target": "store.group.appliances",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0130",
+      "source": "store.group.appliances.term.12",
+      "target": "store.group.appliances",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0131",
+      "source": "store.group.home",
+      "target": "store.root.05",
+      "type": "child_of",
+      "confidence": "high",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0132",
+      "source": "store.group.home.subcategory.01",
+      "target": "store.group.home",
+      "type": "child_of",
+      "confidence": "high",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0133",
+      "source": "store.group.home.subcategory.02",
+      "target": "store.group.home",
+      "type": "child_of",
+      "confidence": "high",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0134",
+      "source": "store.group.home.subcategory.03",
+      "target": "store.group.home",
+      "type": "child_of",
+      "confidence": "high",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0135",
+      "source": "store.group.home.subcategory.04",
+      "target": "store.group.home",
+      "type": "child_of",
+      "confidence": "high",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0136",
+      "source": "store.group.home.subcategory.05",
+      "target": "store.group.home",
+      "type": "child_of",
+      "confidence": "high",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0137",
+      "source": "store.group.home.subcategory.06",
+      "target": "store.group.home",
+      "type": "child_of",
+      "confidence": "high",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0138",
+      "source": "store.group.home.subcategory.07",
+      "target": "store.group.home",
+      "type": "child_of",
+      "confidence": "high",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0139",
+      "source": "store.group.home.subcategory.08",
+      "target": "store.group.home",
+      "type": "child_of",
+      "confidence": "high",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0140",
+      "source": "store.group.home.subcategory.09",
+      "target": "store.group.home",
+      "type": "child_of",
+      "confidence": "high",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0141",
+      "source": "store.group.home.term.01",
+      "target": "store.group.home",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0142",
+      "source": "store.group.home.term.02",
+      "target": "store.group.home",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0143",
+      "source": "store.group.home.term.03",
+      "target": "store.group.home",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0144",
+      "source": "store.group.home.term.04",
+      "target": "store.group.home",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0145",
+      "source": "store.group.home.term.05",
+      "target": "store.group.home",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0146",
+      "source": "store.group.home.term.06",
+      "target": "store.group.home",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0147",
+      "source": "store.group.home.term.07",
+      "target": "store.group.home",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0148",
+      "source": "store.group.home.term.08",
+      "target": "store.group.home",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0149",
+      "source": "store.group.home.term.09",
+      "target": "store.group.home",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0150",
+      "source": "store.group.home.term.10",
+      "target": "store.group.home",
+      "type": "listed_under",
+      "confidence": "medium",
+      "evidence_class": "official_current_page"
+    },
+    {
+      "id": "rel.0151",
+      "source": "concept.generator",
+      "target": "store.group.tools.term.05",
+      "type": "discovery_route_in_store",
+      "confidence": "high",
+      "evidence_class": "official_current_page",
+      "evidence_id": "evidence.digikala.tools"
+    },
+    {
+      "id": "rel.0152",
+      "source": "concept.portable-blower",
+      "target": "store.group.tools.term.06",
+      "type": "discovery_route_in_store",
+      "confidence": "high",
+      "evidence_class": "official_current_page",
+      "evidence_id": "evidence.digikala.tools"
+    },
+    {
+      "id": "rel.0153",
+      "source": "concept.automotive-idle-stepper",
+      "target": "store.group.automotive.subcategory.03",
+      "type": "discovery_route_in_store",
+      "confidence": "medium",
+      "evidence_class": "inferred_route",
+      "evidence_id": "evidence.digikala.vehicles",
+      "note": "مسیر پیشنهادی بر مبنای ماهیت قطعه است؛ دسته واقعی محصول باید در صفحه آن بررسی شود."
+    },
+    {
+      "id": "rel.0154",
+      "source": "concept.irrigation-equipment",
+      "target": "store.group.tools.subcategory.05",
+      "type": "discovery_route_in_store",
+      "confidence": "high",
+      "evidence_class": "official_current_page",
+      "evidence_id": "evidence.digikala.tools"
+    },
+    {
+      "id": "rel.0155",
+      "source": "concept.greenhouse-cover",
+      "target": "store.group.tools.subcategory.05",
+      "type": "discovery_route_in_store",
+      "confidence": "medium",
+      "evidence_class": "inferred_route",
+      "evidence_id": "evidence.digikala.tools",
+      "note": "گلخانه مسیر مجموعه‌ای است؛ این گره دسته رسمی گلخانه نیست."
+    },
+    {
+      "id": "rel.0156",
+      "source": "concept.pressure-tank",
+      "target": "store.group.tools.subcategory.02",
+      "type": "discovery_route_in_store",
+      "confidence": "low",
+      "evidence_class": "inferred_route",
+      "evidence_id": "evidence.digikala.tools",
+      "note": "مسیر پیشنهادی موقت؛ دسته واقعی محصول تأیید نشده است."
+    },
+    {
+      "id": "rel.0157",
+      "source": "product.dkp.14267164",
+      "target": "concept.automotive-idle-stepper",
+      "type": "classified_as",
+      "confidence": "medium",
+      "evidence_class": "third_party_product_description"
+    },
+    {
+      "id": "rel.0158",
+      "source": "product.dkp.14267164",
+      "target": "concept.stepper",
+      "type": "classified_as",
+      "confidence": "medium",
+      "evidence_class": "third_party_product_description"
+    },
+    {
+      "id": "rel.0159",
+      "source": "product.dkp.14267164",
+      "target": "system.automotive",
+      "type": "used_in",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0160",
+      "source": "product.dkp.14267164",
+      "target": "application.idle-speed-control",
+      "type": "serves_application",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0161",
+      "source": "product.dkp.14267164",
+      "target": "evidence.thirdparty.001",
+      "type": "has_evidence",
+      "confidence": "high",
+      "evidence_class": "source_traceability"
+    },
+    {
+      "id": "rel.0162",
+      "source": "product.dkp.20233926",
+      "target": "concept.portable-blower",
+      "type": "classified_as",
+      "confidence": "medium",
+      "evidence_class": "third_party_product_description"
+    },
+    {
+      "id": "rel.0163",
+      "source": "product.dkp.20233926",
+      "target": "system.portable-tools",
+      "type": "used_in",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0164",
+      "source": "product.dkp.20233926",
+      "target": "system.outdoor",
+      "type": "used_in",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0165",
+      "source": "product.dkp.20233926",
+      "target": "application.air-blowing",
+      "type": "serves_application",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0166",
+      "source": "product.dkp.20233926",
+      "target": "feature.brushless-motor",
+      "type": "has_feature",
+      "confidence": "medium",
+      "evidence_class": "third_party_product_description"
+    },
+    {
+      "id": "rel.0167",
+      "source": "product.dkp.20233926",
+      "target": "evidence.thirdparty.002",
+      "type": "has_evidence",
+      "confidence": "high",
+      "evidence_class": "source_traceability"
+    },
+    {
+      "id": "rel.0168",
+      "source": "candidate.dkp.21108319",
+      "target": "concept.portable-blower",
+      "type": "classified_as",
+      "confidence": "low",
+      "evidence_class": "third_party_product_description"
+    },
+    {
+      "id": "rel.0169",
+      "source": "candidate.dkp.21108319",
+      "target": "system.portable-tools",
+      "type": "used_in",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0170",
+      "source": "candidate.dkp.21108319",
+      "target": "system.outdoor",
+      "type": "used_in",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0171",
+      "source": "candidate.dkp.21108319",
+      "target": "application.air-blowing",
+      "type": "serves_application",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0172",
+      "source": "candidate.dkp.21108319",
+      "target": "feature.brushless-motor",
+      "type": "has_feature",
+      "confidence": "medium",
+      "evidence_class": "third_party_product_description"
+    },
+    {
+      "id": "rel.0173",
+      "source": "candidate.dkp.21108319",
+      "target": "evidence.thirdparty.003",
+      "type": "has_evidence",
+      "confidence": "high",
+      "evidence_class": "source_traceability"
+    },
+    {
+      "id": "rel.0174",
+      "source": "product.dkp.15483404",
+      "target": "concept.generator",
+      "type": "classified_as",
+      "confidence": "medium",
+      "evidence_class": "third_party_product_description"
+    },
+    {
+      "id": "rel.0175",
+      "source": "product.dkp.15483404",
+      "target": "system.home",
+      "type": "used_in",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0176",
+      "source": "product.dkp.15483404",
+      "target": "system.workshop",
+      "type": "used_in",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0177",
+      "source": "product.dkp.15483404",
+      "target": "application.generate-electricity",
+      "type": "serves_application",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0178",
+      "source": "product.dkp.15483404",
+      "target": "evidence.thirdparty.004",
+      "type": "has_evidence",
+      "confidence": "high",
+      "evidence_class": "source_traceability"
+    },
+    {
+      "id": "rel.0179",
+      "source": "product.dkp.16806226",
+      "target": "concept.generator",
+      "type": "classified_as",
+      "confidence": "medium",
+      "evidence_class": "third_party_product_description"
+    },
+    {
+      "id": "rel.0180",
+      "source": "product.dkp.16806226",
+      "target": "system.home",
+      "type": "used_in",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0181",
+      "source": "product.dkp.16806226",
+      "target": "system.workshop",
+      "type": "used_in",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0182",
+      "source": "product.dkp.16806226",
+      "target": "application.generate-electricity",
+      "type": "serves_application",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0183",
+      "source": "product.dkp.16806226",
+      "target": "evidence.thirdparty.004",
+      "type": "has_evidence",
+      "confidence": "high",
+      "evidence_class": "source_traceability"
+    },
+    {
+      "id": "rel.0184",
+      "source": "product.dkp.8319071",
+      "target": "concept.generator",
+      "type": "classified_as",
+      "confidence": "medium",
+      "evidence_class": "third_party_product_description"
+    },
+    {
+      "id": "rel.0185",
+      "source": "product.dkp.8319071",
+      "target": "system.home",
+      "type": "used_in",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0186",
+      "source": "product.dkp.8319071",
+      "target": "system.workshop",
+      "type": "used_in",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0187",
+      "source": "product.dkp.8319071",
+      "target": "application.generate-electricity",
+      "type": "serves_application",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0188",
+      "source": "product.dkp.8319071",
+      "target": "evidence.thirdparty.004",
+      "type": "has_evidence",
+      "confidence": "high",
+      "evidence_class": "source_traceability"
+    },
+    {
+      "id": "rel.0189",
+      "source": "product.dkp.2451884",
+      "target": "concept.engine-pump-set",
+      "type": "classified_as",
+      "confidence": "medium",
+      "evidence_class": "third_party_product_description"
+    },
+    {
+      "id": "rel.0190",
+      "source": "product.dkp.2451884",
+      "target": "system.agriculture",
+      "type": "used_in",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0191",
+      "source": "product.dkp.2451884",
+      "target": "system.workshop",
+      "type": "used_in",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0192",
+      "source": "product.dkp.2451884",
+      "target": "application.fluid-transfer",
+      "type": "serves_application",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0193",
+      "source": "product.dkp.2451884",
+      "target": "evidence.thirdparty.005",
+      "type": "has_evidence",
+      "confidence": "high",
+      "evidence_class": "source_traceability"
+    },
+    {
+      "id": "rel.0194",
+      "source": "product.dkp.3884114",
+      "target": "concept.water-pump",
+      "type": "classified_as",
+      "confidence": "medium",
+      "evidence_class": "third_party_product_description"
+    },
+    {
+      "id": "rel.0195",
+      "source": "product.dkp.3884114",
+      "target": "system.home",
+      "type": "used_in",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0196",
+      "source": "product.dkp.3884114",
+      "target": "system.agriculture",
+      "type": "used_in",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0197",
+      "source": "product.dkp.3884114",
+      "target": "application.fluid-transfer",
+      "type": "serves_application",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0198",
+      "source": "product.dkp.3884114",
+      "target": "application.pressure-boost",
+      "type": "serves_application",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0199",
+      "source": "product.dkp.3884114",
+      "target": "evidence.thirdparty.005",
+      "type": "has_evidence",
+      "confidence": "high",
+      "evidence_class": "source_traceability"
+    },
+    {
+      "id": "rel.0200",
+      "source": "product.dkp.19141373",
+      "target": "concept.submersible-pump",
+      "type": "classified_as",
+      "confidence": "medium",
+      "evidence_class": "third_party_product_description"
+    },
+    {
+      "id": "rel.0201",
+      "source": "product.dkp.19141373",
+      "target": "concept.pump",
+      "type": "classified_as",
+      "confidence": "medium",
+      "evidence_class": "third_party_product_description"
+    },
+    {
+      "id": "rel.0202",
+      "source": "product.dkp.19141373",
+      "target": "system.home",
+      "type": "used_in",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0203",
+      "source": "product.dkp.19141373",
+      "target": "system.agriculture",
+      "type": "used_in",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0204",
+      "source": "product.dkp.19141373",
+      "target": "system.workshop",
+      "type": "used_in",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0205",
+      "source": "product.dkp.19141373",
+      "target": "application.drainage",
+      "type": "serves_application",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0206",
+      "source": "product.dkp.19141373",
+      "target": "application.fluid-transfer",
+      "type": "serves_application",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0207",
+      "source": "product.dkp.19141373",
+      "target": "evidence.thirdparty.005",
+      "type": "has_evidence",
+      "confidence": "high",
+      "evidence_class": "source_traceability"
+    },
+    {
+      "id": "rel.0208",
+      "source": "product.dkp.2460735",
+      "target": "concept.water-pump",
+      "type": "classified_as",
+      "confidence": "medium",
+      "evidence_class": "third_party_product_description"
+    },
+    {
+      "id": "rel.0209",
+      "source": "product.dkp.2460735",
+      "target": "system.home",
+      "type": "used_in",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0210",
+      "source": "product.dkp.2460735",
+      "target": "system.agriculture",
+      "type": "used_in",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0211",
+      "source": "product.dkp.2460735",
+      "target": "application.fluid-transfer",
+      "type": "serves_application",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0212",
+      "source": "product.dkp.2460735",
+      "target": "application.pressure-boost",
+      "type": "serves_application",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0213",
+      "source": "product.dkp.2460735",
+      "target": "evidence.thirdparty.006",
+      "type": "has_evidence",
+      "confidence": "high",
+      "evidence_class": "source_traceability"
+    },
+    {
+      "id": "rel.0214",
+      "source": "product.dkp.19661679",
+      "target": "concept.submersible-pump",
+      "type": "classified_as",
+      "confidence": "medium",
+      "evidence_class": "third_party_product_description"
+    },
+    {
+      "id": "rel.0215",
+      "source": "product.dkp.19661679",
+      "target": "concept.pump",
+      "type": "classified_as",
+      "confidence": "medium",
+      "evidence_class": "third_party_product_description"
+    },
+    {
+      "id": "rel.0216",
+      "source": "product.dkp.19661679",
+      "target": "system.home",
+      "type": "used_in",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0217",
+      "source": "product.dkp.19661679",
+      "target": "system.agriculture",
+      "type": "used_in",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0218",
+      "source": "product.dkp.19661679",
+      "target": "system.workshop",
+      "type": "used_in",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0219",
+      "source": "product.dkp.19661679",
+      "target": "application.drainage",
+      "type": "serves_application",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0220",
+      "source": "product.dkp.19661679",
+      "target": "application.fluid-transfer",
+      "type": "serves_application",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0221",
+      "source": "product.dkp.19661679",
+      "target": "evidence.thirdparty.005",
+      "type": "has_evidence",
+      "confidence": "high",
+      "evidence_class": "source_traceability"
+    },
+    {
+      "id": "rel.0222",
+      "source": "product.dkp.12463221",
+      "target": "concept.pressure-tank",
+      "type": "classified_as",
+      "confidence": "medium",
+      "evidence_class": "third_party_product_description"
+    },
+    {
+      "id": "rel.0223",
+      "source": "product.dkp.12463221",
+      "target": "system.home",
+      "type": "used_in",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0224",
+      "source": "product.dkp.12463221",
+      "target": "application.pressure-stabilize",
+      "type": "serves_application",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0225",
+      "source": "product.dkp.12463221",
+      "target": "evidence.thirdparty.007",
+      "type": "has_evidence",
+      "confidence": "high",
+      "evidence_class": "source_traceability"
+    },
+    {
+      "id": "rel.0226",
+      "source": "product.dkp.20046701",
+      "target": "concept.water-pump",
+      "type": "classified_as",
+      "confidence": "medium",
+      "evidence_class": "third_party_product_description"
+    },
+    {
+      "id": "rel.0227",
+      "source": "product.dkp.20046701",
+      "target": "system.home",
+      "type": "used_in",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0228",
+      "source": "product.dkp.20046701",
+      "target": "system.agriculture",
+      "type": "used_in",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0229",
+      "source": "product.dkp.20046701",
+      "target": "application.fluid-transfer",
+      "type": "serves_application",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0230",
+      "source": "product.dkp.20046701",
+      "target": "application.pressure-boost",
+      "type": "serves_application",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0231",
+      "source": "product.dkp.20046701",
+      "target": "evidence.thirdparty.008",
+      "type": "has_evidence",
+      "confidence": "high",
+      "evidence_class": "source_traceability"
+    },
+    {
+      "id": "rel.0232",
+      "source": "product.dkp.20662147",
+      "target": "concept.misting-kit",
+      "type": "classified_as",
+      "confidence": "medium",
+      "evidence_class": "third_party_product_description"
+    },
+    {
+      "id": "rel.0233",
+      "source": "product.dkp.20662147",
+      "target": "concept.irrigation-equipment",
+      "type": "classified_as",
+      "confidence": "medium",
+      "evidence_class": "third_party_product_description"
+    },
+    {
+      "id": "rel.0234",
+      "source": "product.dkp.20662147",
+      "target": "system.greenhouse",
+      "type": "used_in",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0235",
+      "source": "product.dkp.20662147",
+      "target": "system.garden",
+      "type": "used_in",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0236",
+      "source": "product.dkp.20662147",
+      "target": "system.outdoor",
+      "type": "used_in",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0237",
+      "source": "product.dkp.20662147",
+      "target": "application.misting-cooling",
+      "type": "serves_application",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0238",
+      "source": "product.dkp.20662147",
+      "target": "evidence.thirdparty.009",
+      "type": "has_evidence",
+      "confidence": "high",
+      "evidence_class": "source_traceability"
+    },
+    {
+      "id": "rel.0239",
+      "source": "product.dkp.3579672",
+      "target": "concept.irrigation-timer",
+      "type": "classified_as",
+      "confidence": "medium",
+      "evidence_class": "third_party_product_description"
+    },
+    {
+      "id": "rel.0240",
+      "source": "product.dkp.3579672",
+      "target": "system.greenhouse",
+      "type": "used_in",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0241",
+      "source": "product.dkp.3579672",
+      "target": "system.garden",
+      "type": "used_in",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0242",
+      "source": "product.dkp.3579672",
+      "target": "application.irrigation-schedule",
+      "type": "serves_application",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0243",
+      "source": "product.dkp.3579672",
+      "target": "evidence.thirdparty.010",
+      "type": "has_evidence",
+      "confidence": "high",
+      "evidence_class": "source_traceability"
+    },
+    {
+      "id": "rel.0244",
+      "source": "product.dkp.2665591",
+      "target": "concept.drip-irrigation-parts",
+      "type": "classified_as",
+      "confidence": "medium",
+      "evidence_class": "third_party_product_description"
+    },
+    {
+      "id": "rel.0245",
+      "source": "product.dkp.2665591",
+      "target": "concept.irrigation-equipment",
+      "type": "classified_as",
+      "confidence": "medium",
+      "evidence_class": "third_party_product_description"
+    },
+    {
+      "id": "rel.0246",
+      "source": "product.dkp.2665591",
+      "target": "system.greenhouse",
+      "type": "used_in",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0247",
+      "source": "product.dkp.2665591",
+      "target": "system.garden",
+      "type": "used_in",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0248",
+      "source": "product.dkp.2665591",
+      "target": "application.drip-watering",
+      "type": "serves_application",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0249",
+      "source": "product.dkp.2665591",
+      "target": "evidence.thirdparty.011",
+      "type": "has_evidence",
+      "confidence": "high",
+      "evidence_class": "source_traceability"
+    },
+    {
+      "id": "rel.0250",
+      "source": "product.dkp.3491209",
+      "target": "concept.drip-irrigation-parts",
+      "type": "classified_as",
+      "confidence": "medium",
+      "evidence_class": "third_party_product_description"
+    },
+    {
+      "id": "rel.0251",
+      "source": "product.dkp.3491209",
+      "target": "concept.irrigation-equipment",
+      "type": "classified_as",
+      "confidence": "medium",
+      "evidence_class": "third_party_product_description"
+    },
+    {
+      "id": "rel.0252",
+      "source": "product.dkp.3491209",
+      "target": "system.greenhouse",
+      "type": "used_in",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0253",
+      "source": "product.dkp.3491209",
+      "target": "system.garden",
+      "type": "used_in",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0254",
+      "source": "product.dkp.3491209",
+      "target": "application.drip-watering",
+      "type": "serves_application",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0255",
+      "source": "product.dkp.3491209",
+      "target": "evidence.thirdparty.011",
+      "type": "has_evidence",
+      "confidence": "high",
+      "evidence_class": "source_traceability"
+    },
+    {
+      "id": "rel.0256",
+      "source": "product.dkp.7669891",
+      "target": "concept.greenhouse-film",
+      "type": "classified_as",
+      "confidence": "medium",
+      "evidence_class": "third_party_product_description"
+    },
+    {
+      "id": "rel.0257",
+      "source": "product.dkp.7669891",
+      "target": "concept.greenhouse-cover",
+      "type": "classified_as",
+      "confidence": "medium",
+      "evidence_class": "third_party_product_description"
+    },
+    {
+      "id": "rel.0258",
+      "source": "product.dkp.7669891",
+      "target": "system.greenhouse",
+      "type": "used_in",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0259",
+      "source": "product.dkp.7669891",
+      "target": "application.greenhouse-protection",
+      "type": "serves_application",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0260",
+      "source": "product.dkp.7669891",
+      "target": "evidence.thirdparty.012",
+      "type": "has_evidence",
+      "confidence": "high",
+      "evidence_class": "source_traceability"
+    },
+    {
+      "id": "rel.0261",
+      "source": "product.dkp.8399201",
+      "target": "concept.shade-net",
+      "type": "classified_as",
+      "confidence": "medium",
+      "evidence_class": "third_party_product_description"
+    },
+    {
+      "id": "rel.0262",
+      "source": "product.dkp.8399201",
+      "target": "concept.greenhouse-cover",
+      "type": "classified_as",
+      "confidence": "medium",
+      "evidence_class": "third_party_product_description"
+    },
+    {
+      "id": "rel.0263",
+      "source": "product.dkp.8399201",
+      "target": "system.greenhouse",
+      "type": "used_in",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0264",
+      "source": "product.dkp.8399201",
+      "target": "application.shading",
+      "type": "serves_application",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0265",
+      "source": "product.dkp.8399201",
+      "target": "evidence.thirdparty.013",
+      "type": "has_evidence",
+      "confidence": "high",
+      "evidence_class": "source_traceability"
+    },
+    {
+      "id": "rel.0266",
+      "source": "product.dkp.8675106",
+      "target": "concept.shade-net",
+      "type": "classified_as",
+      "confidence": "medium",
+      "evidence_class": "third_party_product_description"
+    },
+    {
+      "id": "rel.0267",
+      "source": "product.dkp.8675106",
+      "target": "concept.greenhouse-cover",
+      "type": "classified_as",
+      "confidence": "medium",
+      "evidence_class": "third_party_product_description"
+    },
+    {
+      "id": "rel.0268",
+      "source": "product.dkp.8675106",
+      "target": "system.greenhouse",
+      "type": "used_in",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0269",
+      "source": "product.dkp.8675106",
+      "target": "application.shading",
+      "type": "serves_application",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0270",
+      "source": "product.dkp.8675106",
+      "target": "evidence.thirdparty.013",
+      "type": "has_evidence",
+      "confidence": "high",
+      "evidence_class": "source_traceability"
+    },
+    {
+      "id": "rel.0271",
+      "source": "product.dkp.8675118",
+      "target": "concept.shade-net",
+      "type": "classified_as",
+      "confidence": "medium",
+      "evidence_class": "third_party_product_description"
+    },
+    {
+      "id": "rel.0272",
+      "source": "product.dkp.8675118",
+      "target": "concept.greenhouse-cover",
+      "type": "classified_as",
+      "confidence": "medium",
+      "evidence_class": "third_party_product_description"
+    },
+    {
+      "id": "rel.0273",
+      "source": "product.dkp.8675118",
+      "target": "system.greenhouse",
+      "type": "used_in",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0274",
+      "source": "product.dkp.8675118",
+      "target": "application.shading",
+      "type": "serves_application",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0275",
+      "source": "product.dkp.8675118",
+      "target": "evidence.thirdparty.013",
+      "type": "has_evidence",
+      "confidence": "high",
+      "evidence_class": "source_traceability"
+    },
+    {
+      "id": "rel.0276",
+      "source": "product.dkp.8771841",
+      "target": "concept.shade-net-fitting",
+      "type": "classified_as",
+      "confidence": "medium",
+      "evidence_class": "third_party_product_description"
+    },
+    {
+      "id": "rel.0277",
+      "source": "product.dkp.8771841",
+      "target": "system.greenhouse",
+      "type": "used_in",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0278",
+      "source": "product.dkp.8771841",
+      "target": "application.greenhouse-protection",
+      "type": "serves_application",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0279",
+      "source": "product.dkp.8771841",
+      "target": "evidence.thirdparty.013",
+      "type": "has_evidence",
+      "confidence": "high",
+      "evidence_class": "source_traceability"
+    },
+    {
+      "id": "rel.0280",
+      "source": "product.dkp.8323827",
+      "target": "concept.shade-net",
+      "type": "classified_as",
+      "confidence": "medium",
+      "evidence_class": "third_party_product_description"
+    },
+    {
+      "id": "rel.0281",
+      "source": "product.dkp.8323827",
+      "target": "concept.greenhouse-cover",
+      "type": "classified_as",
+      "confidence": "medium",
+      "evidence_class": "third_party_product_description"
+    },
+    {
+      "id": "rel.0282",
+      "source": "product.dkp.8323827",
+      "target": "system.greenhouse",
+      "type": "used_in",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0283",
+      "source": "product.dkp.8323827",
+      "target": "application.shading",
+      "type": "serves_application",
+      "confidence": "medium",
+      "evidence_class": "mapped_research_path"
+    },
+    {
+      "id": "rel.0284",
+      "source": "product.dkp.8323827",
+      "target": "evidence.thirdparty.013",
+      "type": "has_evidence",
+      "confidence": "high",
+      "evidence_class": "source_traceability"
+    },
+    {
+      "id": "rel.0285",
+      "source": "concept.independent-dc-motor",
+      "target": "evidence.thirdparty.014",
+      "type": "has_evidence",
+      "confidence": "medium",
+      "evidence_class": "third_party_listing_digikala_route_unresolved"
+    },
+    {
+      "id": "rel.0286",
+      "source": "concept.industrial-stepper",
+      "target": "evidence.thirdparty.014",
+      "type": "has_evidence",
+      "confidence": "medium",
+      "evidence_class": "third_party_listing_digikala_route_unresolved"
+    },
+    {
+      "id": "rel.0287",
+      "source": "concept.independent-drone-bldc",
+      "target": "evidence.thirdparty.015",
+      "type": "has_evidence",
+      "confidence": "medium",
+      "evidence_class": "third_party_market_only"
+    },
+    {
+      "id": "rel.0288",
+      "source": "concept.greenhouse-circulation-fan",
+      "target": "evidence.thirdparty.016",
+      "type": "has_evidence",
+      "confidence": "medium",
+      "evidence_class": "third_party_market_only"
+    },
+    {
+      "id": "rel.0289",
+      "source": "concept.greenhouse-climate-controller",
+      "target": "evidence.thirdparty.017",
+      "type": "has_evidence",
+      "confidence": "medium",
+      "evidence_class": "not_found_in_sample"
+    }
+  ]
+}
