@@ -311,7 +311,7 @@ function render(payload) {
   return;
  } const shown=new Set();
  for(const group of payload.results||[]){const prods=(group.products||[]).map(makeProduct).filter(p=>!shown.has(p.id));if(!prods.length)continue;prods.forEach(p=>shown.add(p.id));const head=document.createElement('div');head.className='grouphead';const h=document.createElement('h3');h.textContent=group.categoryTitle?'شاخهٔ «'+group.categoryTitle+'» · عبارت «'+group.query+'»':'نتایج عبارت «'+group.query+'»';const n=document.createElement('span');n.textContent=prods.length+' محصول';head.append(h,n);host.appendChild(head);prods.forEach(p=>host.appendChild(makeCard(p)));}
- setStatus('از مسیرهای آزمایشی داده دریافت شد. پیشنهادهای دسته‌بندی اکنون از پاسخ autocomplete خوانده می‌شوند؛ برای هر شاخه می‌توانی جست‌وجوی محدود به همان دسته را اجرا کنی. این APIها هنوز رسمی یا تجاری تأیید نشده‌اند.','good');
+ setStatus('نتایج از مسیر جست‌وجوی آزمایشی دریافت شد. این اتصال رسمی یا تجاری تأیید نشده است؛ قیمت و موجودی را در صفحه مقصد بررسی کن.','good');
 }
 async function search(categoryId=null, categoryTitle='') {
  const query=$('query').value.trim();if(!query){setStatus('عبارت جست‌وجو را وارد کن.','error');return;}
