@@ -139,8 +139,8 @@ test('graph inspector loads product photos through the local image proxy', () =>
 });
 
 test('graph nodes and Persian labels use the corrected spacious card layout', () => {
-  assert.match(js, /const nodeWidth = 292/);
-  assert.match(js, /const nodeHeight = 90/);
+  assert.match(js, /const nodeWidth = 308/);
+  assert.match(js, /const nodeHeight = 112/);
   assert.match(js, /class: 'kg-node-image'/);
   assert.match(css, /\.kg-svg-label\{[^}]*font-size:13px/);
   assert.match(css, /\.kg-inspector h3\{[^}]*font-size:17px/);
