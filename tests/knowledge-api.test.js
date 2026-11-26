@@ -26,6 +26,17 @@ test('health endpoint reports the knowledge graph version', async () => {
   assert.equal(payload.knowledgeGraphVersion, '1.1.0');
 });
 
+test('affiliate configuration stays disabled until publisher and media are approved', async () => {
+  const response = await fetch(baseUrl + '/api/affiliate/config');
+  const payload = await response.json();
+  assert.equal(response.status, 200);
+  assert.equal(payload.program, 'affilio');
+  assert.equal(payload.publisher_status, 'not_registered');
+  assert.equal(payload.media_status, 'not_submitted');
+  assert.equal(payload.tracking_enabled, false);
+  assert.deepEqual(payload.tracked_links, {});
+});
+
 test('knowledge summary endpoint returns graph counts and axes', async () => {
   const response = await fetch(baseUrl + '/api/knowledge');
   const payload = await response.json();
