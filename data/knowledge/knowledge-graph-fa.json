@@ -1,16 +1,21 @@
 {
   "graph_id": "rahayab-kala-knowledge-graph-fa",
   "schema_version": "1.0.0",
-  "graph_version": "1.0.0",
-  "generated_at": "2026-11-24",
+  "graph_version": "1.1.0",
+  "generated_at": "2026-11-27",
   "language": "fa",
   "status": "research_baseline",
-  "description": "پایگاه دانش چندمحوره راه‌یاب کالا؛ جداکننده طبقه‌بندی دانشی، مسیرهای مجموعه‌ای، کاربرد، ویژگی فنی، دسته‌های مشاهده‌شده فروشگاه، مشاهده‌های محصول و شواهد.",
+  "description": "گراف دانش چندمحوره راه‌یاب کالا با لایه موضوعی سطح اول برای شروع کشف از حوزه‌های عمومی و حرکت تدریجی به دسته‌ها، مفاهیم، سامانه‌ها و محصولات.",
   "source_datasets": [
     "data/research/digikala-current-category-observations-fa.json",
     "data/research/specialty-product-evidence-fa.json"
   ],
   "axes": [
+    {
+      "id": "topic",
+      "label": "موضوعات اصلی",
+      "purpose": "از حوزه‌های عمومی شروع کن و به دسته، مفهوم، سامانه و کالا برس."
+    },
     {
       "id": "nature",
       "label": "ماهیت کالا",
@@ -55,7 +60,8 @@
     "store_category",
     "product_observation",
     "product_candidate",
-    "evidence_source"
+    "evidence_source",
+    "topic"
   ],
   "relation_types": [
     {
@@ -129,6 +135,12 @@
       "label": "دارای شاهد",
       "from": "product_observation|product_candidate|concept",
       "to": "evidence_source"
+    },
+    {
+      "id": "topic_contains",
+      "label": "دارای شاخه موضوعی",
+      "from": "topic",
+      "to": "concept|system|application|technical_feature|store_category"
     }
   ],
   "evidence_status_definitions": {
@@ -3077,6 +3089,220 @@
         "گرمایش گلخانه"
       ],
       "status": "needs_store_evidence"
+    },
+    {
+      "id": "topic.technology",
+      "node_type": "topic",
+      "axis": "topic",
+      "label": "فناوری و ارتباطات",
+      "description": "موبایل، رایانه، لپ‌تاپ و کالاهای دیجیتال و ارتباطی.",
+      "aliases": [
+        "فناوری",
+        "دیجیتال",
+        "ارتباطات",
+        "موبایل و رایانه"
+      ],
+      "icon": "▣",
+      "display_order": 1,
+      "status": "editorial_topic"
+    },
+    {
+      "id": "topic.home-living",
+      "node_type": "topic",
+      "axis": "topic",
+      "label": "خانه و زندگی",
+      "description": "لوازم خانگی برقی، آشپزخانه، نظافت، سرمایش، گرمایش و تجهیزات خانه.",
+      "aliases": [
+        "خانه",
+        "آشپزخانه",
+        "لوازم خانه",
+        "زندگی روزمره"
+      ],
+      "icon": "⌂",
+      "display_order": 2,
+      "status": "editorial_topic"
+    },
+    {
+      "id": "topic.industry-tools",
+      "node_type": "topic",
+      "axis": "topic",
+      "label": "ابزار، صنعت و ساخت",
+      "description": "ابزارهای دستی و برقی، تجهیزات صنعتی و کارگاهی و سامانه‌های تولید حرکت و انتقال سیال.",
+      "aliases": [
+        "صنعت",
+        "ابزار",
+        "کارگاه",
+        "ساخت و تولید",
+        "تجهیزات صنعتی"
+      ],
+      "icon": "⚙",
+      "display_order": 3,
+      "status": "editorial_topic"
+    },
+    {
+      "id": "topic.mobility",
+      "node_type": "topic",
+      "axis": "topic",
+      "label": "خودرو و حمل‌ونقل",
+      "description": "خودرو، موتورسیکلت، قطعات، لوازم مصرفی و سامانه‌های حرکتی.",
+      "aliases": [
+        "حمل و نقل",
+        "وسایل نقلیه",
+        "خودرو",
+        "موتورسیکلت"
+      ],
+      "icon": "↗",
+      "display_order": 4,
+      "status": "editorial_topic"
+    },
+    {
+      "id": "topic.agriculture",
+      "node_type": "topic",
+      "axis": "topic",
+      "label": "کشاورزی و فضای سبز",
+      "description": "کاشت و پرورش گیاه، آبیاری، باغ، گلخانه و تجهیزات محیط کشت.",
+      "aliases": [
+        "کشاورزی",
+        "باغبانی",
+        "گلخانه",
+        "آبیاری",
+        "فضای سبز"
+      ],
+      "icon": "❋",
+      "display_order": 5,
+      "status": "editorial_topic"
+    },
+    {
+      "id": "topic.health-care",
+      "node_type": "topic",
+      "axis": "topic",
+      "label": "سلامت و مراقبت شخصی",
+      "description": "بهداشت فردی، آرایشی و مراقبتی و تجهیزات سلامت و پزشکی.",
+      "aliases": [
+        "سلامت",
+        "پزشکی",
+        "بهداشت",
+        "زیبایی",
+        "مراقبت"
+      ],
+      "icon": "✚",
+      "display_order": 6,
+      "status": "editorial_topic"
+    },
+    {
+      "id": "topic.fashion-jewelry",
+      "node_type": "topic",
+      "axis": "topic",
+      "label": "مد، پوشاک و زیورآلات",
+      "description": "پوشاک، کفش، اکسسوری و کالاهای زینتی از جمله طلا و نقره.",
+      "aliases": [
+        "مد",
+        "پوشاک",
+        "لباس",
+        "زیورآلات",
+        "طلا",
+        "نقره"
+      ],
+      "icon": "◇",
+      "display_order": 7,
+      "status": "editorial_topic"
+    },
+    {
+      "id": "topic.food-daily",
+      "node_type": "topic",
+      "axis": "topic",
+      "label": "خوراک و نیازهای روزمره",
+      "description": "مواد غذایی و کالاهای مصرفی و خریدهای روزمره.",
+      "aliases": [
+        "خوراک",
+        "غذا",
+        "سوپرمارکت",
+        "مواد غذایی",
+        "مصرف روزانه"
+      ],
+      "icon": "◉",
+      "display_order": 8,
+      "status": "editorial_topic"
+    },
+    {
+      "id": "topic.sports-travel",
+      "node_type": "topic",
+      "axis": "topic",
+      "label": "ورزش، سفر و فضای باز",
+      "description": "تجهیزات ورزشی، سفر، کمپینگ و فعالیت در محیط بیرونی.",
+      "aliases": [
+        "ورزش",
+        "سفر",
+        "کمپینگ",
+        "طبیعت گردی",
+        "فضای باز"
+      ],
+      "icon": "△",
+      "display_order": 9,
+      "status": "editorial_topic"
+    },
+    {
+      "id": "topic.children",
+      "node_type": "topic",
+      "axis": "topic",
+      "label": "کودک، نوزاد و اسباب‌بازی",
+      "description": "کالاهای نوزاد و کودک، بازی، سرگرمی و اسباب‌بازی.",
+      "aliases": [
+        "کودک",
+        "نوزاد",
+        "اسباب بازی",
+        "بازی و سرگرمی"
+      ],
+      "icon": "☆",
+      "display_order": 10,
+      "status": "editorial_topic"
+    },
+    {
+      "id": "topic.pets",
+      "node_type": "topic",
+      "axis": "topic",
+      "label": "حیوانات و نگهداری",
+      "description": "خوراک، لوازم و محصولات نگهداری و رفاه حیوانات خانگی.",
+      "aliases": [
+        "حیوانات خانگی",
+        "پت شاپ",
+        "حیوان خانگی"
+      ],
+      "icon": "♡",
+      "display_order": 11,
+      "status": "editorial_topic"
+    },
+    {
+      "id": "topic.books-art",
+      "node_type": "topic",
+      "axis": "topic",
+      "label": "کتاب، هنر و آموزش",
+      "description": "کتاب، محصولات هنری و ابزارهای یادگیری و آموزش.",
+      "aliases": [
+        "کتاب",
+        "هنر",
+        "آموزش",
+        "یادگیری"
+      ],
+      "icon": "▤",
+      "display_order": 12,
+      "status": "editorial_topic"
+    },
+    {
+      "id": "topic.gifts-local",
+      "node_type": "topic",
+      "axis": "topic",
+      "label": "هدیه و محصولات بومی",
+      "description": "کارت هدیه و محصولات بومی و محلی.",
+      "aliases": [
+        "هدیه",
+        "کارت هدیه",
+        "محصولات محلی",
+        "بومی"
+      ],
+      "icon": "✧",
+      "display_order": 13,
+      "status": "editorial_topic"
     }
   ],
   "relations": [
@@ -5393,6 +5619,255 @@
       "type": "has_evidence",
       "confidence": "low",
       "evidence_class": "not_found_in_sample"
+    },
+    {
+      "id": "topic.technology.branch.01",
+      "source": "topic.technology",
+      "target": "store.root.01",
+      "type": "topic_contains",
+      "confidence": "curated",
+      "note": "گروه‌بندی موضوعی راه‌یاب؛ دسته رسمی فروشگاه یا رابطه فنی ذاتی محسوب نمی‌شود."
+    },
+    {
+      "id": "topic.technology.branch.02",
+      "source": "topic.technology",
+      "target": "store.root.02",
+      "type": "topic_contains",
+      "confidence": "curated",
+      "note": "گروه‌بندی موضوعی راه‌یاب؛ دسته رسمی فروشگاه یا رابطه فنی ذاتی محسوب نمی‌شود."
+    },
+    {
+      "id": "topic.technology.branch.03",
+      "source": "topic.technology",
+      "target": "store.root.03",
+      "type": "topic_contains",
+      "confidence": "curated",
+      "note": "گروه‌بندی موضوعی راه‌یاب؛ دسته رسمی فروشگاه یا رابطه فنی ذاتی محسوب نمی‌شود."
+    },
+    {
+      "id": "topic.home-living.branch.01",
+      "source": "topic.home-living",
+      "target": "store.root.04",
+      "type": "topic_contains",
+      "confidence": "curated",
+      "note": "گروه‌بندی موضوعی راه‌یاب؛ دسته رسمی فروشگاه یا رابطه فنی ذاتی محسوب نمی‌شود."
+    },
+    {
+      "id": "topic.home-living.branch.02",
+      "source": "topic.home-living",
+      "target": "store.root.05",
+      "type": "topic_contains",
+      "confidence": "curated",
+      "note": "گروه‌بندی موضوعی راه‌یاب؛ دسته رسمی فروشگاه یا رابطه فنی ذاتی محسوب نمی‌شود."
+    },
+    {
+      "id": "topic.home-living.branch.03",
+      "source": "topic.home-living",
+      "target": "system.home",
+      "type": "topic_contains",
+      "confidence": "curated",
+      "note": "گروه‌بندی موضوعی راه‌یاب؛ دسته رسمی فروشگاه یا رابطه فنی ذاتی محسوب نمی‌شود."
+    },
+    {
+      "id": "topic.industry-tools.branch.01",
+      "source": "topic.industry-tools",
+      "target": "store.root.11",
+      "type": "topic_contains",
+      "confidence": "curated",
+      "note": "گروه‌بندی موضوعی راه‌یاب؛ دسته رسمی فروشگاه یا رابطه فنی ذاتی محسوب نمی‌شود."
+    },
+    {
+      "id": "topic.industry-tools.branch.02",
+      "source": "topic.industry-tools",
+      "target": "system.workshop",
+      "type": "topic_contains",
+      "confidence": "curated",
+      "note": "گروه‌بندی موضوعی راه‌یاب؛ دسته رسمی فروشگاه یا رابطه فنی ذاتی محسوب نمی‌شود."
+    },
+    {
+      "id": "topic.industry-tools.branch.03",
+      "source": "topic.industry-tools",
+      "target": "system.portable-tools",
+      "type": "topic_contains",
+      "confidence": "curated",
+      "note": "گروه‌بندی موضوعی راه‌یاب؛ دسته رسمی فروشگاه یا رابطه فنی ذاتی محسوب نمی‌شود."
+    },
+    {
+      "id": "topic.industry-tools.branch.04",
+      "source": "topic.industry-tools",
+      "target": "concept.motion-power",
+      "type": "topic_contains",
+      "confidence": "curated",
+      "note": "گروه‌بندی موضوعی راه‌یاب؛ دسته رسمی فروشگاه یا رابطه فنی ذاتی محسوب نمی‌شود."
+    },
+    {
+      "id": "topic.industry-tools.branch.05",
+      "source": "topic.industry-tools",
+      "target": "concept.pump",
+      "type": "topic_contains",
+      "confidence": "curated",
+      "note": "گروه‌بندی موضوعی راه‌یاب؛ دسته رسمی فروشگاه یا رابطه فنی ذاتی محسوب نمی‌شود."
+    },
+    {
+      "id": "topic.mobility.branch.01",
+      "source": "topic.mobility",
+      "target": "store.root.09",
+      "type": "topic_contains",
+      "confidence": "curated",
+      "note": "گروه‌بندی موضوعی راه‌یاب؛ دسته رسمی فروشگاه یا رابطه فنی ذاتی محسوب نمی‌شود."
+    },
+    {
+      "id": "topic.mobility.branch.02",
+      "source": "topic.mobility",
+      "target": "system.automotive",
+      "type": "topic_contains",
+      "confidence": "curated",
+      "note": "گروه‌بندی موضوعی راه‌یاب؛ دسته رسمی فروشگاه یا رابطه فنی ذاتی محسوب نمی‌شود."
+    },
+    {
+      "id": "topic.agriculture.branch.01",
+      "source": "topic.agriculture",
+      "target": "store.group.tools.subcategory.05",
+      "type": "topic_contains",
+      "confidence": "curated",
+      "note": "گروه‌بندی موضوعی راه‌یاب؛ دسته رسمی فروشگاه یا رابطه فنی ذاتی محسوب نمی‌شود."
+    },
+    {
+      "id": "topic.agriculture.branch.02",
+      "source": "topic.agriculture",
+      "target": "system.agriculture",
+      "type": "topic_contains",
+      "confidence": "curated",
+      "note": "گروه‌بندی موضوعی راه‌یاب؛ دسته رسمی فروشگاه یا رابطه فنی ذاتی محسوب نمی‌شود."
+    },
+    {
+      "id": "topic.agriculture.branch.03",
+      "source": "topic.agriculture",
+      "target": "system.greenhouse",
+      "type": "topic_contains",
+      "confidence": "curated",
+      "note": "گروه‌بندی موضوعی راه‌یاب؛ دسته رسمی فروشگاه یا رابطه فنی ذاتی محسوب نمی‌شود."
+    },
+    {
+      "id": "topic.agriculture.branch.04",
+      "source": "topic.agriculture",
+      "target": "system.garden",
+      "type": "topic_contains",
+      "confidence": "curated",
+      "note": "گروه‌بندی موضوعی راه‌یاب؛ دسته رسمی فروشگاه یا رابطه فنی ذاتی محسوب نمی‌شود."
+    },
+    {
+      "id": "topic.agriculture.branch.05",
+      "source": "topic.agriculture",
+      "target": "concept.irrigation-equipment",
+      "type": "topic_contains",
+      "confidence": "curated",
+      "note": "گروه‌بندی موضوعی راه‌یاب؛ دسته رسمی فروشگاه یا رابطه فنی ذاتی محسوب نمی‌شود."
+    },
+    {
+      "id": "topic.agriculture.branch.06",
+      "source": "topic.agriculture",
+      "target": "concept.greenhouse-cover",
+      "type": "topic_contains",
+      "confidence": "curated",
+      "note": "گروه‌بندی موضوعی راه‌یاب؛ دسته رسمی فروشگاه یا رابطه فنی ذاتی محسوب نمی‌شود."
+    },
+    {
+      "id": "topic.health-care.branch.01",
+      "source": "topic.health-care",
+      "target": "store.root.06",
+      "type": "topic_contains",
+      "confidence": "curated",
+      "note": "گروه‌بندی موضوعی راه‌یاب؛ دسته رسمی فروشگاه یا رابطه فنی ذاتی محسوب نمی‌شود."
+    },
+    {
+      "id": "topic.health-care.branch.02",
+      "source": "topic.health-care",
+      "target": "store.root.10",
+      "type": "topic_contains",
+      "confidence": "curated",
+      "note": "گروه‌بندی موضوعی راه‌یاب؛ دسته رسمی فروشگاه یا رابطه فنی ذاتی محسوب نمی‌شود."
+    },
+    {
+      "id": "topic.fashion-jewelry.branch.01",
+      "source": "topic.fashion-jewelry",
+      "target": "store.root.07",
+      "type": "topic_contains",
+      "confidence": "curated",
+      "note": "گروه‌بندی موضوعی راه‌یاب؛ دسته رسمی فروشگاه یا رابطه فنی ذاتی محسوب نمی‌شود."
+    },
+    {
+      "id": "topic.fashion-jewelry.branch.02",
+      "source": "topic.fashion-jewelry",
+      "target": "store.root.08",
+      "type": "topic_contains",
+      "confidence": "curated",
+      "note": "گروه‌بندی موضوعی راه‌یاب؛ دسته رسمی فروشگاه یا رابطه فنی ذاتی محسوب نمی‌شود."
+    },
+    {
+      "id": "topic.food-daily.branch.01",
+      "source": "topic.food-daily",
+      "target": "store.root.15",
+      "type": "topic_contains",
+      "confidence": "curated",
+      "note": "گروه‌بندی موضوعی راه‌یاب؛ دسته رسمی فروشگاه یا رابطه فنی ذاتی محسوب نمی‌شود."
+    },
+    {
+      "id": "topic.sports-travel.branch.01",
+      "source": "topic.sports-travel",
+      "target": "store.root.13",
+      "type": "topic_contains",
+      "confidence": "curated",
+      "note": "گروه‌بندی موضوعی راه‌یاب؛ دسته رسمی فروشگاه یا رابطه فنی ذاتی محسوب نمی‌شود."
+    },
+    {
+      "id": "topic.sports-travel.branch.02",
+      "source": "topic.sports-travel",
+      "target": "system.outdoor",
+      "type": "topic_contains",
+      "confidence": "curated",
+      "note": "گروه‌بندی موضوعی راه‌یاب؛ دسته رسمی فروشگاه یا رابطه فنی ذاتی محسوب نمی‌شود."
+    },
+    {
+      "id": "topic.children.branch.01",
+      "source": "topic.children",
+      "target": "store.root.16",
+      "type": "topic_contains",
+      "confidence": "curated",
+      "note": "گروه‌بندی موضوعی راه‌یاب؛ دسته رسمی فروشگاه یا رابطه فنی ذاتی محسوب نمی‌شود."
+    },
+    {
+      "id": "topic.pets.branch.01",
+      "source": "topic.pets",
+      "target": "store.root.17",
+      "type": "topic_contains",
+      "confidence": "curated",
+      "note": "گروه‌بندی موضوعی راه‌یاب؛ دسته رسمی فروشگاه یا رابطه فنی ذاتی محسوب نمی‌شود."
+    },
+    {
+      "id": "topic.books-art.branch.01",
+      "source": "topic.books-art",
+      "target": "store.root.12",
+      "type": "topic_contains",
+      "confidence": "curated",
+      "note": "گروه‌بندی موضوعی راه‌یاب؛ دسته رسمی فروشگاه یا رابطه فنی ذاتی محسوب نمی‌شود."
+    },
+    {
+      "id": "topic.gifts-local.branch.01",
+      "source": "topic.gifts-local",
+      "target": "store.root.14",
+      "type": "topic_contains",
+      "confidence": "curated",
+      "note": "گروه‌بندی موضوعی راه‌یاب؛ دسته رسمی فروشگاه یا رابطه فنی ذاتی محسوب نمی‌شود."
+    },
+    {
+      "id": "topic.gifts-local.branch.02",
+      "source": "topic.gifts-local",
+      "target": "store.root.18",
+      "type": "topic_contains",
+      "confidence": "curated",
+      "note": "گروه‌بندی موضوعی راه‌یاب؛ دسته رسمی فروشگاه یا رابطه فنی ذاتی محسوب نمی‌شود."
     }
-  ]
+  ],
+  "topic_layer_policy": "سرعنوان‌های موضوعی، گروه‌بندی تحریریه‌ای راه‌یاب بر پایه ۱۸ عنوان سطح اول مشاهده‌شده در منوی عمومی دیجی‌کالا و گره‌های دانشی موجود هستند؛ این سرعنوان‌ها دسته‌بندی رسمی دیجی‌کالا نیستند. عمق شاخه‌ها فقط تا جایی نمایش داده می‌شود که گره یا رابطه ثبت‌شده وجود داشته باشد؛ شاخه مشاهده‌نشده جعل نمی‌شود."
 }
