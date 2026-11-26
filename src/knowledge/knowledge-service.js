@@ -52,6 +52,7 @@ function getSummary() {
       products: graph.nodes.filter(node => node.node_type === 'product_observation').length,
       product_candidates: graph.nodes.filter(node => node.node_type === 'product_candidate').length,
       unresolved_concepts: graph.nodes.filter(node => node.node_type === 'concept' && node.status === 'needs_store_evidence').length,
+      topics: graph.nodes.filter(node => node.node_type === 'topic').length,
     },
     node_types: nodeTypes,
     axes,
@@ -115,7 +116,7 @@ function searchKnowledge(query, options = {}) {
   const axis = options.axis && allowedAxes.has(options.axis) ? options.axis : null;
   const limit = Math.max(1, Math.min(Number(options.limit) || 20, 50));
   const searchableTypes = new Set([
-    'concept', 'system', 'application', 'technical_feature',
+    'topic', 'concept', 'system', 'application', 'technical_feature',
     'store_category', 'product_observation', 'product_candidate'
   ]);
 
@@ -160,6 +161,7 @@ function searchKnowledge(query, options = {}) {
   }
 
   const typePriority = {
+    topic: -1,
     concept: 0,
     system: 1,
     application: 2,
