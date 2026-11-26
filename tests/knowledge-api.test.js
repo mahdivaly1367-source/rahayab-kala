@@ -23,7 +23,7 @@ test('health endpoint reports the knowledge graph version', async () => {
   const response = await fetch(baseUrl + '/api/health');
   const payload = await response.json();
   assert.equal(response.status, 200);
-  assert.equal(payload.knowledgeGraphVersion, '1.0.0');
+  assert.equal(payload.knowledgeGraphVersion, '1.1.0');
 });
 
 test('knowledge summary endpoint returns graph counts and axes', async () => {
