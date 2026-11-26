@@ -147,6 +147,32 @@ test('graph nodes and Persian labels use the corrected spacious card layout', ()
   assert.match(css, /@media\(max-width:600px\)/);
 });
 
+test('long Persian and Latin names are wrapped within graph nodes and cards', () => {
+  assert.match(js, /function wrapLabel\(label, maxChars = 17, maxLines = 3\)/);
+  assert.match(js, /const labelStartY/);
+  assert.match(js, /nodeHeight = 112/);
+  assert.match(css, /overflow-wrap:anywhere/);
+  assert.match(css, /\.kg-inspector-link span,.kg-inspector-link small/);
+  assert.match(html, /\.producttitle,.meta,.tag/);
+});
+
+test('only approved Affilio media and product-specific links can be used for commission tracking', () => {
+  assert.match(html, /fetch\('\/api\/affiliate\/config'/);
+  assert.match(html, /function affiliateLinkFor\(productId, directUrl\)/);
+  assert.match(html, /affiliateConfig\.tracking_enabled/);
+  assert.match(html, /sponsored nofollow noopener noreferrer/);
+  assert.match(html, /خرید از دیجی‌کالا/);
+  assert.match(html, /پورسانتی برای راه‌یاب رهگیری نمی‌شود/);
+  assert.match(js, /rahayabAffiliateLinkFor/);
+});
+
+test('Digikala-inspired visual palette does not claim official ownership', () => {
+  assert.match(html, /--green:#ef394e/);
+  assert.match(html, /رسانه مستقل راهنمای خرید/);
+  assert.match(html, /راه‌یاب کالا یک رسانه مستقل است/);
+  assert.match(css, /\.kg-svg-node\.topic \.kg-svg-card/);
+});
+
 test('photo gallery does not imply verified price or availability', () => {
   assert.match(js, /تطبیق قطعی با رکورد انتخاب‌شده نیست/);
   assert.match(js, /قیمت، فروشنده و موجودی نیز تأیید نشده‌اند/);
