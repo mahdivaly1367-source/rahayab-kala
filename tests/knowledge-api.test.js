@@ -31,6 +31,8 @@ test('knowledge summary endpoint returns graph counts and axes', async () => {
   const payload = await response.json();
   assert.equal(response.status, 200);
   assert.ok(payload.counts.nodes > 100);
+  assert.equal(payload.counts.topics, 13);
+  assert.ok(payload.axes.topic > 0);
   assert.ok(payload.axes.nature > 0);
   assert.ok(payload.axes.system > 0);
 });
@@ -44,6 +46,13 @@ test('knowledge search endpoint returns separated greenhouse products', async ()
   assert.ok(greenhouse.related_products.some(item => item.product_id === 'dkp-7669891'));
 });
 
+test('knowledge search can discover broad topic headings', async () => {
+  const response = await fetch(baseUrl + '/api/knowledge/search?q=' + encodeURIComponent('فناوری'));
+  const payload = await response.json();
+  assert.equal(response.status, 200);
+  assert.ok(payload.results.some(item => item.node_id === 'topic.technology'));
+});
+
 test('knowledge search rejects invalid axes and empty queries', async () => {
   const invalidAxis = await fetch(baseUrl + '/api/knowledge/search?q=' + encodeURIComponent('موتور') + '&axis=unknown');
   assert.equal(invalidAxis.status, 400);
@@ -55,7 +64,7 @@ test('full graph endpoint returns versioned nodes and relations', async () => {
   const response = await fetch(baseUrl + '/api/knowledge/graph');
   const payload = await response.json();
   assert.equal(response.status, 200);
-  assert.equal(payload.graph_version, '1.0.0');
+  assert.equal(payload.graph_version, '1.1.0');
   assert.ok(payload.nodes.length > 100);
   assert.ok(payload.relations.length > 100);
 });
