@@ -188,12 +188,16 @@ async function initKnowledgeExplorer() {
 
     const grid = make('div', 'kg-gallery-grid');
     visualProducts.forEach(product => {
-      const url = safeProductUrl(product.url);
+      const directUrl = safeProductUrl(product.url);
+      const linkInfo = window.rahayabAffiliateLinkFor
+        ? window.rahayabAffiliateLinkFor(product.id, directUrl)
+        : { url: directUrl, tracked: false };
+      const url = linkInfo.url;
       const card = url ? make('a', 'kg-photo-card') : make('article', 'kg-photo-card');
       if (url) {
         card.href = url;
         card.target = '_blank';
-        card.rel = 'noopener noreferrer';
+        card.rel = linkInfo.tracked ? 'sponsored nofollow noopener noreferrer' : 'nofollow noopener noreferrer';
       }
 
       const imageFrame = make('div', 'kg-photo-frame');
@@ -215,7 +219,7 @@ async function initKnowledgeExplorer() {
       card.append(
         imageFrame,
         make('strong', 'kg-photo-title', product.title),
-        make('small', 'kg-photo-source', url ? 'مشاهده مقصد کالا ↗' : 'نتیجه جست‌وجو')
+        make('small', 'kg-photo-source', url ? (linkInfo.tracked ? 'خرید از دیجی‌کالا با لینک رهگیری ↗' : 'مشاهده مستقیم در دیجی‌کالا ↗') : 'نتیجه جست‌وجو')
       );
       grid.appendChild(card);
     });
@@ -226,6 +230,7 @@ async function initKnowledgeExplorer() {
 
   async function loadPhotoGallery(node) {
     const host = $('kgImageGallery');
+    if (window.rahayabAffiliateReady) await window.rahayabAffiliateReady;
     const requestId = ++activePhotoRequest;
     const terms = photoTermsForNode(node);
     host.hidden = false;
@@ -353,11 +358,11 @@ async function initKnowledgeExplorer() {
       entries.push(rootEntry);
     });
 
-    const nodeWidth = 292;
-    const nodeHeight = 90;
-    const columnGap = 350;
-    const width = Math.max(1120, 390 + maxDepth * columnGap);
-    let cursorY = 48;
+    const nodeWidth = 308;
+    const nodeHeight = 112;
+    const columnGap = 366;
+    const width = Math.max(1160, 414 + maxDepth * columnGap);
+    let cursorY = 54;
 
     function position(entry) {
       entry.x = width - nodeWidth - 38 - entry.depth * columnGap;
@@ -366,36 +371,47 @@ async function initKnowledgeExplorer() {
         entry.y = (entry.children[0].y + entry.children[entry.children.length - 1].y) / 2;
       } else {
         entry.y = cursorY;
-        cursorY += 104;
+        cursorY += 130;
       }
     }
 
     entries.forEach((entry, index) => {
       position(entry);
-      cursorY += index < entries.length - 1 ? 16 : 0;
+      cursorY += index < entries.length - 1 ? 20 : 0;
     });
 
-    const height = Math.max(470, cursorY + 50);
+    const height = Math.max(500, cursorY + 56);
     return { roots: entries, width, height, nodeWidth, nodeHeight, maxDepth };
   }
 
-  function wrapLabel(label, maxChars = 19) {
-    const words = String(label || '').split(/\s+/);
+  function wrapLabel(label, maxChars = 17, maxLines = 3) {
+    const words = String(label || '').trim().split(/\s+/).filter(Boolean);
+    const chunks = [];
+    for (const word of words) {
+      const chars = Array.from(word);
+      for (let index = 0; index < chars.length; index += maxChars) {
+        chunks.push(chars.slice(index, index + maxChars).join(''));
+      }
+    }
     const lines = [];
     let line = '';
-    for (const word of words) {
-      const candidate = line ? line + ' ' + word : word;
-      if (candidate.length > maxChars && line) {
+    for (const chunk of chunks) {
+      const candidate = line ? line + ' ' + chunk : chunk;
+      if (Array.from(candidate).length > maxChars && line) {
         lines.push(line);
-        line = word;
-      } else line = candidate;
+        line = chunk;
+      } else {
+        line = candidate;
+      }
     }
     if (line) lines.push(line);
-    if (lines.length > 2) {
-      const second = lines.slice(1).join(' ');
-      lines.splice(1, lines.length - 1, second.length > 25 ? second.slice(0, 24) + '…' : second);
+    if (lines.length > maxLines) {
+      const visible = lines.slice(0, maxLines);
+      const last = Array.from(visible[maxLines - 1]);
+      visible[maxLines - 1] = last.slice(0, Math.max(1, maxChars - 1)).join('') + '…';
+      return visible;
     }
-    return lines;
+    return lines.length ? lines : [''];
   }
 
   function createNodeGroup(entry, layout) {
@@ -448,20 +464,16 @@ async function initKnowledgeExplorer() {
       }, nodeIcon(node)));
     }
 
-    const labelLines = wrapLabel(node.label, 19);
+    const labelLines = wrapLabel(node.label, 17, 3);
+    const labelStartY = labelLines.length === 1 ? 51 : labelLines.length === 2 ? 41 : 31;
     const labelText = svg('text', {
-      class: 'kg-svg-label',
-      x: layout.nodeWidth - 31,
-      y: labelLines.length > 1 ? 31 : 41,
-      'text-anchor': 'end',
-      direction: 'rtl'
+      class: 'kg-svg-label', x: layout.nodeWidth - 27, y: labelStartY,
+      'text-anchor': 'end', direction: 'rtl'
     });
     labelLines.forEach((line, index) => {
-      labelText.appendChild(svg('tspan', {
-        x: layout.nodeWidth - 31,
-        dy: index === 0 ? 0 : 19
-      }, line));
+      labelText.appendChild(svg('tspan', { x: layout.nodeWidth - 27, dy: index === 0 ? 0 : 18 }, line));
     });
+    labelText.appendChild(svg('title', {}, node.label));
     group.appendChild(labelText);
 
     const childCount = relationChildren(node).length;
@@ -470,7 +482,7 @@ async function initKnowledgeExplorer() {
     group.appendChild(svg('text', {
       class: 'kg-svg-subtitle',
       x: layout.nodeWidth - 15,
-      y: 75,
+      y: 98,
       'text-anchor': 'end',
       direction: 'rtl'
     }, subText));
@@ -478,14 +490,14 @@ async function initKnowledgeExplorer() {
     if (childCount) {
       group.appendChild(svg('circle', {
         class: 'kg-svg-expand',
-        cx: layout.nodeWidth - 17,
-        cy: 13,
+        cx: layout.nodeWidth - 18,
+        cy: 15,
         r: 11
       }));
       group.appendChild(svg('text', {
         class: 'kg-svg-expand-text',
-        x: layout.nodeWidth - 17,
-        y: 18,
+        x: layout.nodeWidth - 18,
+        y: 20,
         'text-anchor': 'middle'
       }, expanded.has(node.id) ? '−' : '+'));
     }
@@ -610,13 +622,16 @@ async function initKnowledgeExplorer() {
     }
 
     const productUrl = safeProductUrl(node.digikala_url);
+    const productLink = window.rahayabAffiliateLinkFor
+      ? window.rahayabAffiliateLinkFor(node.product_id || node.candidate_product_id, productUrl)
+      : { url: productUrl, tracked: false };
     const linkHost = $('kgInspectorProductLink');
     linkHost.replaceChildren();
     if (productUrl) {
-      const anchor = make('a', 'kg-evidence-link', 'بازکردن مقصد شناسایی‌شده در دیجی‌کالا ↗');
-      anchor.href = productUrl;
+      const anchor = make('a', 'kg-evidence-link', productLink.tracked ? 'خرید از دیجی‌کالا با لینک رهگیری ↗' : 'بازکردن مقصد شناسایی‌شده در دیجی‌کالا ↗');
+      anchor.href = productLink.url;
       anchor.target = '_blank';
-      anchor.rel = 'noopener noreferrer';
+      anchor.rel = productLink.tracked ? 'sponsored nofollow noopener noreferrer' : 'nofollow noopener noreferrer';
       linkHost.appendChild(anchor);
     } else if (node.node_type === 'product_candidate') {
       linkHost.appendChild(make('span', 'kg-candidate-note', 'این مورد فقط یک نامزد پژوهشی است؛ مقصد محصول تأیید نشده است.'));
