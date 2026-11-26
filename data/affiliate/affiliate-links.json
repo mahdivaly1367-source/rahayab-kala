@@ -1,0 +1,9 @@
+{
+  "schema_version": "1.0.0",
+  "program": "affilio",
+  "publisher_status": "not_registered",
+  "media_status": "not_submitted",
+  "media_url": null,
+  "tracked_links": {},
+  "policy_note": "Only product-specific HTTPS tracking URLs generated inside the approved Affilio publisher account may be added here. Never derive affiliate parameters from public Digikala product URLs."
+}
