@@ -9,6 +9,7 @@ async function initKnowledgeExplorer() {
   const $ = id => document.getElementById(id);
   const svgNS = 'http://www.w3.org/2000/svg';
   const labels = {
+    topic: 'موضوعات اصلی',
     nature: 'ماهیت کالا',
     system: 'مجموعه و سامانه',
     application: 'کاربرد و کارکرد',
@@ -17,6 +18,7 @@ async function initKnowledgeExplorer() {
     product: 'محصول و شواهد کالا'
   };
   const typeLabels = {
+    topic: 'موضوع اصلی راه‌یاب',
     concept: 'مفهوم کالا',
     system: 'سامانه',
     application: 'کاربرد',
@@ -45,21 +47,11 @@ async function initKnowledgeExplorer() {
     has_component: 'دارای جزء',
     has_feature: 'دارای ویژگی',
     may_have_feature: 'ممکن است دارای ویژگی باشد',
-    discovery_route_in_store: 'مسیر پیشنهادی در فروشگاه'
+    discovery_route_in_store: 'مسیر پیشنهادی در فروشگاه',
+    topic_contains: 'گروه‌بندی موضوعی'
   };
-  const hierarchyTypes = {
-    nature: ['is_a', 'classified_as'],
-    system: ['part_of', 'used_in'],
-    store_taxonomy: ['child_of', 'listed_under'],
-    application: ['serves_application'],
-    technical_feature: ['has_feature', 'may_have_feature'],
-    product: ['classified_as', 'used_in', 'serves_application', 'has_feature', 'may_have_feature']
-  };
-
   let graph = null;
-  let availableAxes = [];
   let nodeMap = new Map();
-  let activeAxis = 'nature';
   let focusedNodeId = null;
   let selectedNodeId = null;
   let expanded = new Set();
@@ -107,6 +99,7 @@ async function initKnowledgeExplorer() {
   }
 
   function nodeIcon(node) {
+    if (node.node_type === 'topic') return node.icon || '◆';
     if (isProduct(node)) return '▣';
     if (node.axis === 'store_taxonomy') return '▤';
     if (node.node_type === 'system') return '⌂';
@@ -279,78 +272,52 @@ async function initKnowledgeExplorer() {
     drawGraph();
   }
 
-  function eligibleNodes() {
-    return graph.nodes.filter(node => node.axis === activeAxis);
-  }
-
-  function relationChildren(node, focused = false) {
-    const allowed = new Set(hierarchyTypes[activeAxis] || []);
+  function relationChildren(node) {
     const found = new Map();
+    const add = (edge, otherId) => {
+      const other = nodeMap.get(otherId);
+      if (!other || other.id === node.id || other.node_type === 'evidence_source') return;
+      if (!found.has(other.id)) found.set(other.id, { node: other, relation: edge.type });
+    };
 
     for (const edge of graph.relations) {
-      if (!allowed.has(edge.type)) continue;
-
-      let otherId = null;
-      let relation = edge.type;
-
-      if (activeAxis === 'product') {
-        if (edge.source === node.id) otherId = edge.target;
-      } else if (activeAxis === 'nature') {
-        if (edge.target === node.id) otherId = edge.source;
-        else if (focused && edge.source === node.id && edge.type === 'is_a') {
-          otherId = edge.target;
-          relation = 'parent_of';
-        }
-      } else if (activeAxis === 'system') {
-        if (edge.target === node.id) otherId = edge.source;
-        else if (focused && edge.source === node.id && edge.type === 'part_of') {
-          otherId = edge.target;
-          relation = 'parent_of';
-        }
-      } else if (activeAxis === 'store_taxonomy') {
-        if (edge.target === node.id) otherId = edge.source;
-        else if (focused && edge.source === node.id) {
-          otherId = edge.target;
-          relation = 'parent_of';
-        }
-      } else {
-        if (edge.target === node.id) otherId = edge.source;
-        else if (focused && edge.source === node.id) otherId = edge.target;
+      if (node.node_type === 'topic') {
+        if (edge.type === 'topic_contains' && edge.source === node.id) add(edge, edge.target);
+        continue;
       }
-
-      const other = otherId ? nodeMap.get(otherId) : null;
-      if (!other || other.id === node.id || other.node_type === 'evidence_source') continue;
-      const linkedConceptForApplication = activeAxis === 'application' && other.axis === 'nature';
-      if (['nature', 'system', 'store_taxonomy', 'application'].includes(activeAxis) && !isProduct(other) && other.axis !== activeAxis && !linkedConceptForApplication) continue;
-      if (activeAxis === 'technical_feature' && other.node_type !== 'concept' && !isProduct(other)) continue;
-      if (!found.has(other.id)) found.set(other.id, { node: other, relation });
+      if (node.axis === 'nature') {
+        if (edge.type === 'is_a' && edge.target === node.id) add(edge, edge.source);
+        if (edge.type === 'has_component' && edge.source === node.id) add(edge, edge.target);
+        if (edge.type === 'discovery_route_in_store' && edge.source === node.id) add(edge, edge.target);
+        if (edge.type === 'classified_as' && edge.target === node.id) add(edge, edge.source);
+      } else if (node.axis === 'system') {
+        if (edge.type === 'part_of' && edge.target === node.id) add(edge, edge.source);
+        if (edge.type === 'used_in' && edge.target === node.id) add(edge, edge.source);
+      } else if (node.axis === 'store_taxonomy') {
+        if (['child_of', 'listed_under'].includes(edge.type) && edge.target === node.id) add(edge, edge.source);
+        if (edge.type === 'discovery_route_in_store' && edge.target === node.id) add(edge, edge.source);
+      } else if (node.axis === 'application') {
+        if (edge.type === 'serves_application' && edge.target === node.id) add(edge, edge.source);
+      } else if (node.axis === 'technical_feature') {
+        if (['may_have_feature', 'has_feature'].includes(edge.type) && edge.target === node.id) add(edge, edge.source);
+      }
     }
 
     return [...found.values()].sort((a, b) => {
-      const aProduct = isProduct(a.node) ? 1 : 0;
-      const bProduct = isProduct(b.node) ? 1 : 0;
-      return aProduct - bProduct || String(a.node.label).localeCompare(String(b.node.label), 'fa');
+      const priority = item => isProduct(item.node) ? 4
+        : item.node.node_type === 'store_category' ? 1
+        : item.node.node_type === 'system' ? 2
+        : item.node.node_type === 'application' ? 3
+        : 0;
+      return priority(a) - priority(b) || String(a.node.label).localeCompare(String(b.node.label), 'fa');
     });
   }
 
   function rootNodes() {
     if (focusedNodeId && nodeMap.has(focusedNodeId)) return [nodeMap.get(focusedNodeId)];
-
-    const nodes = eligibleNodes();
-    const parentIds = new Set();
-    const mainTypes = activeAxis === 'nature' ? new Set(['is_a'])
-      : activeAxis === 'system' ? new Set(['part_of'])
-      : activeAxis === 'store_taxonomy' ? new Set(['child_of', 'listed_under'])
-      : new Set();
-
-    if (mainTypes.size) {
-      for (const edge of graph.relations) {
-        if (mainTypes.has(edge.type)) parentIds.add(edge.source);
-      }
-      return nodes.filter(node => !parentIds.has(node.id));
-    }
-
-    return nodes;
+    return graph.nodes
+      .filter(node => node.node_type === 'topic')
+      .sort((a, b) => (a.display_order || 999) - (b.display_order || 999));
   }
 
   function buildVisibleTree() {
@@ -360,17 +327,17 @@ async function initKnowledgeExplorer() {
     let maxDepth = 0;
     let leafCount = 0;
 
-    function visit(node, depth, pathSet, focusedRoot = false) {
+    function visit(node, depth, pathSet) {
       maxDepth = Math.max(maxDepth, depth);
       const entry = { node, depth, children: [], x: 0, y: 0, relation: null };
-      if (depth >= 4 || !expanded.has(node.id)) {
+      if (depth >= 5 || !expanded.has(node.id)) {
         leafCount++;
         return entry;
       }
 
       const nextPath = new Set(pathSet);
       nextPath.add(node.id);
-      const children = relationChildren(node, focusedRoot);
+      const children = relationChildren(node);
       for (const child of children) {
         if (nextPath.has(child.node.id)) continue;
         const childEntry = visit(child.node, depth + 1, nextPath, false);
@@ -386,11 +353,11 @@ async function initKnowledgeExplorer() {
       entries.push(rootEntry);
     });
 
-    const nodeWidth = 276;
-    const nodeHeight = 88;
-    const columnGap = 344;
-    const width = Math.max(1120, 360 + maxDepth * columnGap);
-    let cursorY = 66;
+    const nodeWidth = 292;
+    const nodeHeight = 90;
+    const columnGap = 350;
+    const width = Math.max(1120, 390 + maxDepth * columnGap);
+    let cursorY = 48;
 
     function position(entry) {
       entry.x = width - nodeWidth - 38 - entry.depth * columnGap;
@@ -399,16 +366,16 @@ async function initKnowledgeExplorer() {
         entry.y = (entry.children[0].y + entry.children[entry.children.length - 1].y) / 2;
       } else {
         entry.y = cursorY;
-        cursorY += 112;
+        cursorY += 104;
       }
     }
 
     entries.forEach((entry, index) => {
       position(entry);
-      cursorY += index < entries.length - 1 ? 30 : 0;
+      cursorY += index < entries.length - 1 ? 16 : 0;
     });
 
-    const height = Math.max(520, cursorY + 70);
+    const height = Math.max(470, cursorY + 50);
     return { roots: entries, width, height, nodeWidth, nodeHeight, maxDepth };
   }
 
@@ -434,7 +401,8 @@ async function initKnowledgeExplorer() {
   function createNodeGroup(entry, layout) {
     const node = entry.node;
     const group = svg('g', {
-      class: 'kg-svg-node' + (selectedNodeId === node.id ? ' selected' : '') +
+      class: 'kg-svg-node' + (node.node_type === 'topic' ? ' topic' : '') +
+        (selectedNodeId === node.id ? ' selected' : '') +
         (entry.depth === 0 ? ' root' : ''),
       transform: 'translate(' + entry.x + ',' + (entry.y - layout.nodeHeight / 2) + ')',
       tabindex: '0',
@@ -451,18 +419,18 @@ async function initKnowledgeExplorer() {
     const thumbnail = imageByNodeId.get(node.id);
     group.appendChild(svg('rect', {
       class: 'kg-thumb-back',
-      x: 10, y: 13, width: 62, height: 62, rx: 12
+      x: 11, y: 15, width: 58, height: 58, rx: 12
     }));
     if (thumbnail && isTrustedProductImage(thumbnail)) {
       const clipId = 'kg-clip-' + node.id.replace(/[^a-zA-Z0-9_-]/g, '-');
       const defs = svg('defs');
       const clip = svg('clipPath', { id: clipId });
-      clip.appendChild(svg('rect', { x: 10, y: 13, width: 62, height: 62, rx: 12 }));
+      clip.appendChild(svg('rect', { x: 11, y: 15, width: 58, height: 58, rx: 12 }));
       defs.appendChild(clip);
       group.appendChild(defs);
       group.appendChild(svg('image', {
         href: imageProxyUrl(thumbnail),
-        x: 10, y: 13, width: 62, height: 62,
+        x: 11, y: 15, width: 58, height: 58,
         preserveAspectRatio: 'xMidYMid slice',
         'clip-path': 'url(#' + clipId + ')',
         class: 'kg-node-image'
@@ -471,38 +439,38 @@ async function initKnowledgeExplorer() {
       const iconClass = isProduct(node) ? 'product' : node.axis === 'store_taxonomy' ? 'store' : 'concept';
       group.appendChild(svg('rect', {
         class: 'kg-thumb-placeholder ' + iconClass,
-        x: 10, y: 13, width: 62, height: 62, rx: 12
+        x: 11, y: 15, width: 58, height: 58, rx: 12
       }));
       group.appendChild(svg('text', {
         class: 'kg-node-icon',
-        x: 41, y: 53,
+        x: 40, y: 52,
         'text-anchor': 'middle'
       }, nodeIcon(node)));
     }
 
-    const labelLines = wrapLabel(node.label);
+    const labelLines = wrapLabel(node.label, 19);
     const labelText = svg('text', {
       class: 'kg-svg-label',
-      x: layout.nodeWidth - 15,
-      y: labelLines.length > 1 ? 34 : 43,
+      x: layout.nodeWidth - 31,
+      y: labelLines.length > 1 ? 31 : 41,
       'text-anchor': 'end',
       direction: 'rtl'
     });
     labelLines.forEach((line, index) => {
       labelText.appendChild(svg('tspan', {
-        x: layout.nodeWidth - 15,
-        dy: index === 0 ? 0 : 21
+        x: layout.nodeWidth - 31,
+        dy: index === 0 ? 0 : 19
       }, line));
     });
     group.appendChild(labelText);
 
-    const childCount = relationChildren(node, entry.depth === 0 && Boolean(focusedNodeId)).length;
+    const childCount = relationChildren(node).length;
     const subText = childCount ? childCount + ' شاخه مرتبط'
       : isProduct(node) ? 'رکورد پژوهشی' : (typeLabels[node.node_type] || 'گره مفهومی');
     group.appendChild(svg('text', {
       class: 'kg-svg-subtitle',
       x: layout.nodeWidth - 15,
-      y: 72,
+      y: 75,
       'text-anchor': 'end',
       direction: 'rtl'
     }, subText));
@@ -510,14 +478,14 @@ async function initKnowledgeExplorer() {
     if (childCount) {
       group.appendChild(svg('circle', {
         class: 'kg-svg-expand',
-        cx: layout.nodeWidth - 15,
-        cy: 0,
+        cx: layout.nodeWidth - 17,
+        cy: 13,
         r: 11
       }));
       group.appendChild(svg('text', {
         class: 'kg-svg-expand-text',
-        x: layout.nodeWidth - 15,
-        y: 5,
+        x: layout.nodeWidth - 17,
+        y: 18,
         'text-anchor': 'middle'
       }, expanded.has(node.id) ? '−' : '+'));
     }
@@ -673,7 +641,7 @@ async function initKnowledgeExplorer() {
   }
 
   function onNodeClick(node) {
-    const children = relationChildren(node, node.id === focusedNodeId);
+    const children = relationChildren(node);
     if (children.length) {
       if (expanded.has(node.id)) expanded.delete(node.id);
       else expanded.add(node.id);
@@ -682,11 +650,9 @@ async function initKnowledgeExplorer() {
   }
 
   function focusNode(node) {
-    activeAxis = node.axis === 'evidence' ? activeAxis : node.axis;
     focusedNodeId = node.id;
     selectedNodeId = node.id;
     expanded = new Set([node.id]);
-    renderAxisControls();
     renderGraph();
     describeSelection(node);
     $('kgGraphViewport').scrollLeft = $('kgGraphViewport').scrollWidth;
@@ -696,45 +662,17 @@ async function initKnowledgeExplorer() {
     const roots = rootNodes();
     if (!roots.length) {
       $('kgGraph').replaceChildren();
-      $('kgGraphSummary').textContent = 'در این محور داده‌ای ثبت نشده است.';
+      $('kgGraphSummary').textContent = 'موضوعی برای نمایش ثبت نشده است.';
       return;
     }
-    if (!focusedNodeId && expanded.size === 0) {
-      const sorted = roots.slice().sort((a, b) =>
-        relationChildren(b).length - relationChildren(a).length
-      );
-      if (sorted[0] && relationChildren(sorted[0]).length) expanded.add(sorted[0].id);
-    }
     drawGraph();
-  }
-
-  function renderAxisControls() {
-    const host = $('kgAxes');
-    host.replaceChildren();
-    availableAxes.forEach(axis => {
-      const id = axis.id;
-      const label = labels[id] || axis.label || id;
-      const button = make('button', 'kg-axis' + (activeAxis === id ? ' active' : ''), label);
-      button.type = 'button';
-      button.dataset.axis = id;
-      button.addEventListener('click', () => {
-        activeAxis = id;
-        focusedNodeId = null;
-        selectedNodeId = null;
-        expanded.clear();
-        renderAxisControls();
-        resetInspector();
-        renderGraph();
-      });
-      host.appendChild(button);
-    });
   }
 
   function resetInspector() {
     $('kgInspectorType').textContent = 'نقشه تعاملی دانش';
     $('kgInspectorTitle').textContent = 'یک گره را انتخاب کن';
     $('kgInspectorDescription').textContent =
-      'روی هر گره بزن تا اطلاعاتش را ببینی؛ با علامت مثبت شاخه‌ها باز می‌شوند. می‌توانی هر مفهوم را به مرکز یک نمودار تازه تبدیل کنی.';
+      'از یکی از موضوعات اصلی شروع کن، شاخه‌های آن را باز کن و از دسته‌های فروشگاه به مفاهیم فنی، سامانه‌ها و کالاهای مرتبط برس.';
     $('kgInspectorBadges').replaceChildren();
     $('kgInspectorRelations').replaceChildren();
     $('kgInspectorProductLink').replaceChildren();
@@ -832,19 +770,15 @@ async function initKnowledgeExplorer() {
     const response = await fetch('/api/knowledge/graph', { cache: 'no-store' });
     if (!response.ok) throw new Error('HTTP ' + response.status);
     graph = await response.json();
-    availableAxes = (graph.axes || []).filter(axis => axis.id !== 'evidence' && graph.nodes.some(node => node.axis === axis.id));
-    if (availableAxes.length && !availableAxes.some(axis => axis.id === activeAxis)) activeAxis = availableAxes[0].id;
     nodeMap = new Map(graph.nodes.map(node => [node.id, node]));
 
     $('kgVersion').textContent = 'گراف دانش ' + graph.graph_version;
-    $('kgCounts').textContent = graph.nodes.length + ' گره · ' + graph.relations.length + ' ارتباط';
-    renderAxisControls();
+    $('kgCounts').textContent =
+      graph.nodes.filter(node => node.node_type === 'topic').length + ' موضوع اصلی · ' +
+      graph.nodes.length + ' گره · ' + graph.relations.length + ' ارتباط';
+    resetInspector();
     renderGraph();
     panCanvas();
-    const initialRoot = rootNodes().slice().sort((a, b) =>
-      relationChildren(b).length - relationChildren(a).length
-    )[0];
-    if (initialRoot) describeSelection(initialRoot);
 
     $('kgSearchButton').addEventListener('click', runSemanticSearch);
     $('kgQuery').addEventListener('keydown', event => {
