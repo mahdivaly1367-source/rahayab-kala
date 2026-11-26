@@ -7,13 +7,33 @@ const { getGraph, getSummary, searchKnowledge, normalizeFa } = require('../src/k
 test('graph has stable version and populated multidimensional axes', () => {
   const graph = getGraph();
   const summary = getSummary();
-  assert.equal(graph.graph_version, '1.0.0');
+  assert.equal(graph.graph_version, '1.1.0');
+  assert.equal(summary.counts.topics, 13);
   assert.ok(summary.counts.nodes > 100);
   assert.ok(summary.counts.relations > 100);
   assert.ok(summary.axes.nature > 0);
   assert.ok(summary.axes.system > 0);
   assert.ok(summary.axes.application > 0);
   assert.ok(summary.axes.store_taxonomy > 0);
+});
+
+test('first discovery layer uses broad topic headings, not store subcategories', () => {
+  const graph = getGraph();
+  const topics = graph.nodes.filter(node => node.node_type === 'topic').sort((a, b) => a.display_order - b.display_order);
+  assert.equal(topics.length, 13);
+  assert.equal(topics[0].label, 'فناوری و ارتباطات');
+  const mobility = topics.find(node => node.id === 'topic.mobility');
+  assert.ok(mobility);
+  assert.ok(graph.relations.some(edge => edge.type === 'topic_contains' && edge.source === mobility.id && edge.target === 'store.root.09'));
+  assert.ok(!topics.some(node => node.id === 'store.root.09'));
+  const motorcycle = graph.nodes.find(node => node.axis === 'store_taxonomy' && node.label === 'موتورسیکلت');
+  assert.ok(motorcycle);
+  assert.ok(graph.relations.some(edge => edge.type === 'child_of' && edge.source === motorcycle.id && edge.target === 'store.root.09'));
+});
+
+test('topic aliases are indexed by semantic search', () => {
+  const result = searchKnowledge('فناوری');
+  assert.ok(result.results.some(item => item.node_id === 'topic.technology'));
 });
 
 test('Persian normalization unifies Arabic and Persian character variants', () => {
