@@ -23,14 +23,19 @@
 </head>
 <body>
 <div class="shell">
-<header class="topbar"><div class="brand"><span class="logo">ر</span><span>راه‌یاب کالا <span class="subtitle">جست‌وجو از زاویه‌ای تازه</span></span></div><span class="pill">کشف درختی + جست‌وجوی زنده</span></header>
+<header class="topbar"><div class="brand"><span class="logo">ر</span><span>راه‌یاب کالا <span class="subtitle">جست‌وجو از زاویه‌ای تازه</span></span></div><span class="pill">کشف موضوعی + جست‌وجوی زنده</span></header>
+
+<section class="hero">
+ <div><div class="eyebrow">کشف کالا از مسیرهای مفهومی و فروشگاهی</div><h1>از مفهوم شروع کن؛<br><span style="color:var(--green)">کالای درست را پیدا کن.</span></h1><p>درخت مفهومی راه‌یاب به تو کمک می‌کند کالا را از چند زاویه پیدا کنی. جست‌وجوی زندهٔ فروشگاه نیز جداگانه در همین صفحه در دسترس است؛ اتصال آن هنوز رسمی یا تجاری تأیید نشده است.</p></div>
+ <div class="searchbox"><div class="searchrow"><span style="font-size:20px;color:var(--green)">⌕</span><input id="query" type="search" value="" placeholder="مثلاً موبایل، ابزار، پمپ یا گلخانه" aria-label="عبارت جست‌وجو"><button id="searchBtn" class="primary">جست‌وجوی زنده</button></div><div class="search-options"><label class="check"><input id="wide" type="checkbox" checked> کاوش خودکار شاخه‌های مرتبط</label><span>دادهٔ نمایشی استفاده نمی‌شود</span></div><div class="chips"><button class="chip" data-query="فناوری">فناوری</button><button class="chip" data-query="خانه">خانه</button><button class="chip" data-query="ابزار">ابزار</button><button class="chip" data-query="سلامت">سلامت</button><button class="chip" data-query="کشاورزی">کشاورزی</button></div><div class="search-options"><button class="secondary" id="googleBtn">جست‌وجوی گسترده در وب</button><button class="secondary" id="googleDigikalaBtn">جست‌وجوی گوگل در دیجی‌کالا</button><button class="quiet" id="digikalaBtn">جست‌وجوی مستقیم دیجی‌کالا</button></div></div>
+</section>
 
 <section id="knowledgeExplorer" class="knowledge-explorer" aria-labelledby="kgTitle">
  <div class="kg-heading">
   <div>
    <div class="kg-kicker">RAHAYAB KNOWLEDGE GRAPH</div>
-   <h2 id="kgTitle">از یک مفهوم، به هزار مسیر برس</h2>
-   <p>یک مفهوم را انتخاب کن و شاخه‌های مرتبط را باز کن. ریشه در سمت راست است و ارتباط‌ها در چند سطح به سمت چپ گسترش پیدا می‌کنند.</p>
+   <h2 id="kgTitle">از موضوعات کلی شروع کن؛ به کالای دقیق برس</h2>
+   <p>ابتدا یک حوزهٔ عمومی را انتخاب کن؛ بعد از دسته‌های فروشگاهی و مفاهیم مرتبط عبور کن تا به سامانه‌ها، کاربردها و محصولات برسی. شاخه‌ها از سمت راست به چپ باز می‌شوند.</p>
   </div>
   <div class="kg-stats">
    <span class="kg-stat" id="kgVersion">در حال اتصال به گراف…</span>
@@ -39,9 +44,15 @@
  </div>
 
  <div class="kg-controls">
-  <div id="kgAxes" class="kg-axes" aria-label="حوزه‌های دانش"></div>
+  <div class="kg-level-intro">
+   <span class="kg-level-mark">۱</span>
+   <div class="kg-level-copy">
+    <strong>موضوعات اصلی راه‌یاب</strong>
+    <small>این سرعنوان‌ها گروه‌بندی موضوعی‌اند؛ دسته‌های ثبت‌شدهٔ فروشگاه در لایهٔ بعدی نمایش داده می‌شوند.</small>
+   </div>
+  </div>
   <div class="kg-searchbar">
-   <input id="kgQuery" type="search" placeholder="هر چیزی را جست‌وجو کن؛ مثلاً موتور براشلس، پمپ، گلخانه..." aria-label="جست‌وجوی آزاد در گراف دانش">
+   <input id="kgQuery" type="search" placeholder="جست‌وجو در موضوعات و مفاهیم؛ مثلاً فناوری، خانه، پمپ یا گلخانه..." aria-label="جست‌وجوی آزاد در گراف دانش">
    <button type="button" class="primary" id="kgSearchButton">کشف مفهوم</button>
    <button type="button" class="kg-clear-search" id="kgClearSearch">پاک کردن</button>
   </div>
@@ -52,14 +63,17 @@
  <div class="kg-graph-panel">
   <div class="kg-graph-head">
    <div class="kg-graph-title">
-    <strong>نقشهٔ زندهٔ ارتباط مفاهیم</strong>
+    <strong>نقشهٔ موضوعی و شاخه‌های مرتبط</strong>
     <small id="kgGraphSummary">در حال ساخت نمودار…</small>
    </div>
-   <div class="kg-graph-tools" aria-label="کنترل نمودار">
+   <div class="kg-graph-head-actions">
+    <button type="button" id="kgShowAllRoots">بازگشت به موضوعات اصلی</button>
+    <div class="kg-graph-tools" aria-label="کنترل نمودار">
     <button type="button" id="kgZoomOut" aria-label="کوچک‌نمایی">−</button>
     <span id="kgZoomValue">100%</span>
     <button type="button" id="kgZoomIn" aria-label="بزرگ‌نمایی">+</button>
     <button type="button" id="kgZoomReset" aria-label="بازنشانی اندازه">↺</button>
+    </div>
    </div>
   </div>
   <div id="kgGraphViewport" class="kg-graph-viewport" aria-label="بوم نمودار تعاملی">
@@ -68,8 +82,8 @@
    </svg>
   </div>
   <div class="kg-graph-footer">
-   <span>روی گره بزن تا انتخاب شود؛ علامت مثبت شاخه‌های بعدی را باز می‌کند.</span>
-   <span>برای حرکت در نمودار، زمینه را با ماوس بکش یا از نوار پیمایش استفاده کن.</span>
+   <span>گره‌ها را انتخاب کن؛ علامت مثبت شاخه‌های بعدی را باز می‌کند.</span>
+   <span>زمینه را بکش یا با نوار پیمایش حرکت کن. سمت راست، ریشهٔ شاخه است.</span>
   </div>
  </div>
 
@@ -77,7 +91,7 @@
   <div class="kg-inspector-main">
    <span class="kg-inspector-type" id="kgInspectorType">نقشه تعاملی دانش</span>
    <h3 id="kgInspectorTitle">یک گره را انتخاب کن</h3>
-   <p id="kgInspectorDescription">روی هر گره بزن تا اطلاعاتش را ببینی؛ با علامت مثبت شاخه‌ها باز می‌شوند. هر مفهوم را هم می‌توانی به مرکز نمودار تازه تبدیل کنی.</p>
+   <p id="kgInspectorDescription">از یکی از موضوعات اصلی شروع کن و شاخه‌های مرتبط را باز کن. با انتخاب هر گره می‌توانی مسیر آن را به مرکز نمودار تبدیل کنی.</p>
    <div id="kgInspectorBadges" class="kg-inspector-badges"></div>
    <div id="kgImageGallery" class="kg-image-gallery" hidden></div>
    <div id="kgInspectorRelations" class="kg-inspector-relations"></div>
@@ -86,20 +100,16 @@
   <div class="kg-inspector-actions">
    <button type="button" id="kgFocusButton" hidden>مرکز نمودار روی این مفهوم</button>
    <button type="button" id="kgLiveQueryButton" hidden>جست‌وجوی زنده در فروشگاه</button>
-   <button type="button" id="kgShowAllRoots">نمایش ریشه‌های این حوزه</button>
-  </div>
+     </div>
  </section>
 
- <p class="kg-explorer-note">این نقشه از گراف دانشی نسخه‌دار راه‌یاب ساخته می‌شود، نه از یک فهرست ثابت. دسته‌های فروشگاه، مفاهیم فنی و مسیرهای پیشنهادی از هم تفکیک شده‌اند. رکوردهای پژوهشی به معنی تأیید قیمت، فروشنده یا موجودی فعلی نیستند.</p>
+ <p class="kg-explorer-note">۱۳ سرعنوان موضوعی، گروه‌بندی پیشنهادی راه‌یاب بر پایهٔ ۱۸ عنوان سطح اول مشاهده‌شده در منوی عمومی فروشگاه‌اند و دسته‌بندی رسمی دیجی‌کالا نیستند. عمق هر شاخه به شواهد و روابط ثبت‌شده محدود است. قیمت، فروشنده و موجودی محصولات پژوهشی تأیید نشده‌اند.</p>
 </section>
 
-<section class="hero">
- <div><div class="eyebrow">کشف کالا از مسیرهای مفهومی و فروشگاهی</div><h1>از مفهوم شروع کن؛<br><span style="color:var(--green)">کالای درست را پیدا کن.</span></h1><p>درخت مفهومی راه‌یاب به تو کمک می‌کند کالا را از چند زاویه پیدا کنی. جست‌وجوی زندهٔ فروشگاه نیز جداگانه در همین صفحه در دسترس است؛ اتصال آن هنوز رسمی یا تجاری تأیید نشده است.</p></div>
- <div class="searchbox"><div class="searchrow"><span style="font-size:20px;color:var(--green)">⌕</span><input id="query" type="search" value="موتور" placeholder="مثلاً موتور، پمپ یا باتری" aria-label="عبارت جست‌وجو"><button id="searchBtn" class="primary">جست‌وجوی زنده</button></div><div class="search-options"><label class="check"><input id="wide" type="checkbox" checked> کاوش خودکار شاخه‌های مرتبط</label><span>دادهٔ نمایشی استفاده نمی‌شود</span></div><div class="chips"><button class="chip active" data-query="موتور">موتور</button><button class="chip" data-query="پمپ">پمپ</button><button class="chip" data-query="باتری">باتری</button><button class="chip" data-query="ابزار">ابزار</button><button class="chip" data-query="موتور پاراترایک">موتور پاراترایک</button></div><div class="search-options"><button class="secondary" id="googleBtn">جست‌وجوی گسترده در وب</button><button class="secondary" id="googleDigikalaBtn">جست‌وجوی گوگل در دیجی‌کالا</button><button class="quiet" id="digikalaBtn">جست‌وجوی مستقیم دیجی‌کالا</button></div></div>
-</section>
+
 <div class="warning"><b>یادآوری:</b> این یک نمونهٔ فنی است و از مسیرهای API مستندنشده استفاده می‌کند. نمایش یک قیمت، تضمین موجودی یا مجوز ذخیره‌سازی و استفادهٔ تجاری از اطلاعات نیست. برای محصول واقعی باید مجوز و منبع داده از دیجی‌کالا/افیلیو تأیید شود.</div>
-<div class="toolbar"><div><h2 id="title">نتایج جست‌وجو برای «موتور»</h2><p id="subtitle">در حال آماده‌سازی جست‌وجوی زنده…</p></div><div class="counts" id="count">—</div></div>
-<div id="status" class="status show">برای دریافت دادهٔ زنده، روی «جست‌وجوی زنده» بزن.</div>
+<div class="toolbar"><div><h2 id="title">نتایج جست‌وجوی زنده</h2><p id="subtitle">برای جست‌وجوی کالا، عبارت موردنظر را وارد کن.</p></div><div class="counts" id="count">—</div></div>
+<div id="status" class="status show">برای مشاهده کالاها، عبارتت را جست‌وجو کن؛ یا از نقشه موضوعی بالا وارد شاخه‌ها شو.</div>
 <div id="results" class="results"></div>
 <div class="footnote">پروتوتایپ محلی راه‌یاب کالا · <span id="runtime">بررسی سرور…</span><br>مسیرهای آزمایشی بر اساس پروژه‌های عمومی غیررسمی شناسایی شده‌اند. <a href="https://www.digikala.com/" target="_blank" rel="noopener noreferrer">دیجی‌کالا</a> · <a href="https://publisher.affilio.ir/" target="_blank" rel="noopener noreferrer">پنل افیلیو</a> · قیمت و موجودی را پیش از خرید در فروشگاه مقصد بررسی کن.</div>
 </div>
@@ -323,7 +333,6 @@ async function search(categoryId=null, categoryTitle='') {
 }
 $('searchBtn').addEventListener('click',()=>search());$('query').addEventListener('keydown',e=>{if(e.key==='Enter')search()});document.querySelectorAll('[data-query]').forEach(btn=>btn.addEventListener('click',()=>{$('query').value=btn.dataset.query;document.querySelectorAll('[data-query]').forEach(x=>x.classList.toggle('active',x===btn));search();}));$('googleBtn').addEventListener('click',()=>openSearch('google'));$('googleDigikalaBtn').addEventListener('click',()=>openSearch('googleDigikala'));$('digikalaBtn').addEventListener('click',()=>openSearch('digikala'));
 fetch('/api/health').then(r=>r.json()).then(data=>{$('runtime').textContent='سرور محلی فعال · '+data.node;}).catch(()=>$('runtime').textContent='سرور محلی در دسترس نیست');
-search();
 </script>
 <script src="/knowledge-explorer.js"></script>
 <script>initKnowledgeExplorer();</script>
