@@ -7,6 +7,33 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { URL } = require('node:url');
 const knowledge = require('./src/knowledge/knowledge-service');
+const AFFILIATE_CONFIG_PATH = path.join(__dirname, 'data', 'affiliate', 'affiliate-links.json');
+
+function readAffiliateConfig() {
+  const fallback = { schema_version: '1.0.0', program: 'affilio', publisher_status: 'not_registered', media_status: 'not_submitted', media_url: null, tracked_links: {} };
+  try {
+    const stored = JSON.parse(fs.readFileSync(AFFILIATE_CONFIG_PATH, 'utf8'));
+    const trackedLinks = {};
+    for (const [key, value] of Object.entries(stored.tracked_links || {})) {
+      const rawUrl = typeof value === 'string' ? value : value && (value.url || value.tracking_url);
+      try {
+        const parsed = new URL(String(rawUrl || ''));
+        if (parsed.protocol === 'https:' && stored.publisher_status === 'approved' && stored.media_status === 'approved') {
+          trackedLinks[key] = { url: parsed.href, store: (value && value.store) || 'digikala' };
+        }
+      } catch { /* Ignore malformed tracking links. */ }
+    }
+    const trackingEnabled = stored.publisher_status === 'approved' && stored.media_status === 'approved' && Object.keys(trackedLinks).length > 0;
+    return {
+      schema_version: stored.schema_version || '1.0.0', program: 'affilio',
+      publisher_status: stored.publisher_status || 'not_registered',
+      media_status: stored.media_status || 'not_submitted', media_url: stored.media_url || null,
+      tracking_enabled: trackingEnabled, tracked_links: trackedLinks,
+    };
+  } catch {
+    return { ...fallback, tracking_enabled: false };
+  }
+}
 
 const HOST = '127.0.0.1';
 const PORT = Number(process.env.PORT || 4173);
@@ -736,6 +763,10 @@ const server = http.createServer(async (request, response) => {
     sendJson(response, 200, { ok: true, node: process.version, mode: 'local-prototype', liveApiVerifiedHere: false, knowledgeGraphVersion: knowledge.getSummary().graph_version });
     return;
   }
+  if (url.pathname === '/api/affiliate/config') {
+    sendJson(response, 200, readAffiliateConfig());
+    return;
+  }
   if (url.pathname === '/api/knowledge') {
     sendJson(response, 200, knowledge.getSummary());
     return;
@@ -789,4 +820,4 @@ if (require.main === module) {
   process.on('SIGTERM', shutdown);
 }
 
-module.exports = { getImage, extractProducts, isAllowedImageUrl, requestAutocomplete, queryPlan, server };
+module.exports = { getImage, extractProducts, isAllowedImageUrl, requestAutocomplete, queryPlan, readAffiliateConfig, server };
