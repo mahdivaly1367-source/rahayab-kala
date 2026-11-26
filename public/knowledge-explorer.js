@@ -8,6 +8,7 @@
 async function initKnowledgeExplorer() {
   const $ = id => document.getElementById(id);
   const svgNS = 'http://www.w3.org/2000/svg';
+  if (window.rahayabAffiliateReady) await window.rahayabAffiliateReady;
   const labels = {
     topic: 'موضوعات اصلی',
     nature: 'ماهیت کالا',
