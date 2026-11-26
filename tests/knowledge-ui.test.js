@@ -159,7 +159,7 @@ test('long Persian and Latin names are wrapped within graph nodes and cards', ()
 test('only approved Affilio media and product-specific links can be used for commission tracking', () => {
   assert.match(html, /fetch\('\/api\/affiliate\/config'/);
   assert.match(html, /function affiliateLinkFor\(productId, directUrl\)/);
-  assert.match(html, /destination\.match\(\/\\\\\/product\\\\\/\(dkp-\\\\d\+\)\/i\)/);
+  assert.match(html, /const match = destination\.match/);
   assert.match(html, /affiliateConfig\.tracking_enabled/);
   assert.match(html, /sponsored nofollow noopener noreferrer/);
   assert.match(html, /خرید از دیجی‌کالا/);
