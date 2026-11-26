@@ -78,6 +78,17 @@ for (const node of nodes.values()) {
   }
 }
 
+const topics = [...nodes.values()].filter(node => node.node_type === 'topic');
+if (topics.length < 10) fail('Topic-first navigation requires at least 10 broad topic roots.');
+for (const topic of topics) {
+  if (topic.axis !== 'topic') fail('Topic root must use the topic axis: ' + topic.id);
+  if (!(graph.relations || []).some(relation => relation.type === 'topic_contains' && relation.source === topic.id)) {
+    fail('Topic root has no child branches: ' + topic.id);
+  }
+}
+if ((graph.axes || []).every(axis => axis.id !== 'topic')) fail('Missing topic axis.');
+if (!relationSpecs.has('topic_contains')) fail('Missing topic_contains relation type.');
+
 for (const relation of graph.relations || []) {
   if (relation.type === 'discovery_route_in_store') {
     if (!relation.evidence_id || !nodes.has(relation.evidence_id)) fail('Store discovery route missing valid evidence_id: ' + relation.id);
